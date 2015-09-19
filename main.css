@@ -38,7 +38,7 @@ a:before{
 
 header a:before{
   display: none;
-};
+}
 
 a:hover, a:focus{
   outline: none;
