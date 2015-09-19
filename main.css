@@ -86,17 +86,10 @@ header{
 }
 
 .logo{
-  width: 16em;
+  width: 17em;
   display: block;
   margin: 0 auto;
   color: #0F0;
-}
-
-header span{
-  text-align: center;
-  max-width: 80%;
-  display: block;
-  margin: 0 auto;
 }
 
 .main{
