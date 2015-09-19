@@ -32,7 +32,8 @@ a{
 }
 
 a:before{
-  content: "▸ ";
+  content: "▸";
+  margin-right: 0.5em;
 }
 
 a:hover, a:focus{
@@ -58,7 +59,8 @@ ul:not(.nav) li ul li{
 }
 
 ul:not(.nav) li:before{
-  content: "▸ ";
+  content: "▸";
+  margin-right: 0.5em;
 }
 
 .nav li.active {
