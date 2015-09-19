@@ -45,7 +45,23 @@ ul{
   padding-left: 1rem;
 }
 
-li.active {
+ul:not(.nav) li{
+  margin-bottom: 1.5em;
+}
+
+ul:not(.nav) li ul{
+  margin-top: 1em;
+}
+
+ul:not(.nav) li ul li{
+  margin-bottom: 0;
+}
+
+ul:not(.nav) li:before{
+  content: "▸ ";
+}
+
+.nav li.active {
   padding-left: 1.1em;
 }
 
