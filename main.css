@@ -1,0 +1,93 @@
+body{
+  background-color: #26292C;
+  color: #31B731;
+  font-family: Courier New, Courier, monospace;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4{
+  font-size: 1rem;
+  color: #FF0;
+  margin: 2em 0 1em;
+}
+
+h1:before,
+h2:before,
+h3:before,
+h4:before {
+  content: "▸ ";
+  margin-left: -1.2em;
+}
+
+strong{
+  color: #0F0;
+}
+
+a{
+  color: #D6D625;
+  text-decoration: none;
+}
+
+a:before{
+  content: "▸ ";
+}
+
+a:hover, a:focus{
+  outline: none;
+  color: #FF0;
+}
+
+ul{
+  list-style: none;
+  padding-left: 1rem;
+}
+
+li.active {
+  padding-left: 1.1em;
+}
+
+.hr{
+  margin: 2em 0;
+  display: block;
+  overflow: hidden;
+}
+
+.hr:before{
+  content: "..................................................................................";
+}
+
+header{
+  margin-top: 4rem;
+}
+
+.logo{
+  width: 17em;
+  display: block;
+  margin: 0 auto;
+  color: #0F0;
+}
+
+.main{
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 800px) {
+  .container{
+  }
+  header{
+    margin-top: auto;
+    width: 50%;
+    position: fixed;
+    top: calc(50% - 7em);
+  }
+  .main{
+    width: 45%;
+    max-width: 600px;
+    margin-left: 50%;
+  }
+}
