@@ -94,12 +94,23 @@ header{
   margin: 0 auto;
 }
 
+.main pre {
+  margin: 0;
+  display: inline;
+  color: #0f0;
+}
+
+.main pre:before {
+  content: "$";
+  margin-right: 0.5em;
+}
+
 @media screen and (min-width: 800px) {
   .container{
   }
   header{
     margin-top: auto;
-    width: 50%;
+    width: 48%;
     position: fixed;
     top: calc(50% - 7em);
   }
