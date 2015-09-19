@@ -85,6 +85,13 @@ header{
   margin-top: 4rem;
 }
 
+header span{
+  text-align: center;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .logo{
   width: 17em;
   display: block;
