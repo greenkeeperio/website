@@ -85,11 +85,15 @@ header{
   margin-top: 4rem;
 }
 
-header span{
+header span:not(.wide){
   text-align: center;
   display: block;
   width: 80%;
   margin: 0 auto;
+}
+
+.wide{
+  letter-spacing: .5em;
 }
 
 .logo{
