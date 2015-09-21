@@ -147,6 +147,7 @@ header span:not(.wide){
 
 .wide{
   letter-spacing: .5em;
+  padding-left: 0.5em;
 }
 
 .logo{
@@ -154,6 +155,7 @@ header span:not(.wide){
   display: block;
   margin: 0 auto;
   color: #0F0;
+  padding-left: 0.5em;
 }
 
 .main{
