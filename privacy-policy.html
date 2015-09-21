@@ -27,9 +27,9 @@
 </head>
 <body>
   <div class="container">
-    <header>
+    <header role="banner">
       <a href="/">
-        <pre class="logo">
+        <pre class="logo" aria-hidden="true">
              oooo
              `888
     .ooooooo  888  oooo
@@ -46,7 +46,7 @@
       </a>
       <span>Your software, up to date, all&nbsp;the&nbsp;time.</span>
     </header>
-    <div class="main">
+    <div class="main" role="main">
       <h1>Privacy Policy</h1>
       <!-- content starts here -->
       <p>greenkeeper.io takes the protection of your personal data seriously. We are committed to protect personal Data against loss, abuse, unauthorised access and illegal publication, tampering and deletion.</p>
@@ -103,16 +103,20 @@
 
       <!-- content ends here -->
       <span class="hr"></span>
-      <ul class="nav">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="terms-of-service.html">Terms of Service</a></li>
-        <li class="active">Privacy Policy</li>
-      </ul>
+      <nav role="navigation">
+        <ul class="nav">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li class="active">Privacy Policy</li>
+        </ul>
+      </nav>
       <span class="hr"></span>
-      <p>greenkeeper.io is best used together with our open source library <a href="http://git.io/semantic-release">semantic-release: fully automated package publishing</a>.</p>
-      <p>Brought to you by the people behind <a href="http://hood.ie">Hoodie</a>. We're re-inventing web app development. Take a look!</p>
-      <p>.io domain? — <a href="http://www.chagossupport.org.uk" title="chagos-support">Yes, we support Chagos!</a></p>
-      <p>&copy; 2015 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
+      <footer role='contentinfo'>
+        <p>greenkeeper.io is best used together with our open source library <a href="http://git.io/semantic-release">semantic-release: fully automated package publishing</a>.</p>
+        <p>Brought to you by the people behind <a href="http://hood.ie">Hoodie</a>. We're re-inventing web app development. Take a look!</p>
+        <p>.io domain? — <a href="http://www.chagossupport.org.uk" title="chagos-support">Yes, we support Chagos!</a></p>
+        <p>&copy; 2015 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
+      </footer>
     </div>
   </div>
 
