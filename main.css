@@ -120,6 +120,11 @@ ul:not(.nav) li:before{
   margin-right: 0.5em;
 }
 
+.main > ul {
+  border-left: 2px solid #31B731;
+  margin-left: 0.25em;
+}
+
 .nav li.active {
   padding-left: 1.1em;
 }
