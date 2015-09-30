@@ -168,6 +168,7 @@ header span:not(.wide){
   max-width: 600px;
   margin: 0 auto;
   padding-bottom: 2em;
+  line-height: 1.25;
 }
 
 .main pre {
