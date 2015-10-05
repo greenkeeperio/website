@@ -163,6 +163,10 @@ header span:not(.wide){
   padding-left: 0.5em;
 }
 
+.logo:nth-child(2){
+  margin-bottom: 1em;
+}
+
 .main{
   width: 90%;
   max-width: 600px;
