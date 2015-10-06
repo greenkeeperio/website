@@ -105,6 +105,8 @@ ul{
 
 ul:not(.nav) li{
   margin-bottom: 1.5em;
+  text-indent: -1em;
+  padding-left: 1em;
 }
 
 ul:not(.nav) li ul{
@@ -125,6 +127,20 @@ ul:not(.nav) li:before{
   margin-left: 0.25em;
 }
 
+.main > .tweets{
+  border: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.tweets a{
+  display: block;
+  margin-left: 1em;
+}
+
+.tweets a:before{
+  content: "—";
+}
 .nav li.active {
   padding-left: 1.1em;
 }
