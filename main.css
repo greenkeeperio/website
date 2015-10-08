@@ -373,14 +373,9 @@ pre:not(.logo):before {
     margin: 0 auto;
     margin-top: 2em;
   }
-  .nav li {
-    display: inline;
-    margin-right: 2em;
-  }
 }
 
 @media screen and (min-width: 700px) {
-
   .plan{
     padding-bottom: 6em;
     width: calc(33% - 5.5px);
@@ -397,6 +392,10 @@ pre:not(.logo):before {
   }
   .plan:nth-child(4){
     margin-top: 0.5rem;
+  }
+  .index .nav li {
+    display: inline;
+    margin-right: 2em;
   }
 }
 
