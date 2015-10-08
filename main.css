@@ -1,24 +1,14 @@
-.inputmonocondensed {
-  font-family: "Input Mono Cond";
-  font-style: normal;
-  font-weight: normal;
-}
-​
-.inputsanscondensed {
-  font-family: "Input Sans Cond";
-  font-style: normal;
-  font-weight: normal;
-}
-
 body{
   background-color: #26292C;
   /*color: #38CF38;*/
   color: #38CF38;
-  font-family: inputsanscondensed, Courier New, Courier, monospace;
+  font-family: "Input Sans Cond", Courier New, Courier, monospace;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.25;
   font-weight: bold;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .yellow{
@@ -269,7 +259,9 @@ header span:not(.wide){
 }
 
 pre:not(.logo) {
-  font-family: inputmonocondensed, Courier New, Courier, monospace;
+  font-family: "Input Mono Cond", Courier New, Courier, monospace;
+  font-style: normal;
+  font-weight: normal;
   margin: 0;
   display: inline;
   color: #0f0;
