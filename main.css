@@ -277,6 +277,8 @@ pre:not(.logo):before {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-top: 3em;
   margin-bottom: 3em;
