@@ -49,6 +49,7 @@ strong{
 a{
   color: #D6D625;
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:before{
