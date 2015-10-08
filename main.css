@@ -274,8 +274,9 @@ pre:not(.logo):before {
 }
 
 .pricing{
-  display: flex;
+  display: -ms-flexbox;
   display: -webkit-flex;
+  display: flex;
   flex-wrap: wrap;
   margin-top: 3em;
   margin-bottom: 3em;
@@ -420,8 +421,9 @@ pre:not(.logo):before {
     top: calc(50% - 7em);
   }
   .double-flex{
-    display: flex;
+    display: -ms-flexbox;
     display: -webkit-flex;
+    display: flex;
   }
   .double-flex section{
     width: 50%;
@@ -436,8 +438,9 @@ pre:not(.logo):before {
     display: inline;
   }
   .triple-flex{
-    display: flex;
+    display: -ms-flexbox;
     display: -webkit-flex;
+    display: flex;
   }
   .triple-flex section{
     width: 33%;
