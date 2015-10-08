@@ -126,6 +126,13 @@ a:hover:before, a:focus:before{
   animation: 1s blink step-end infinite;
 }
 
+.main {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+}
+
 .index .container{
   max-width: 1000px;
   margin: 0 auto;
@@ -211,7 +218,7 @@ ul:not(.nav) li:before{
 }
 
 .hr{
-  margin: 2em 0;
+  margin: 1.75em 0 2em 0;
   display: block;
   overflow: hidden;
 }
@@ -339,7 +346,7 @@ pre:not(.logo):before {
   display: none;
 }
 
-footer{
+.index footer{
   padding: 0 2em 1em;
 }
 
@@ -359,6 +366,10 @@ footer{
     max-width: 700px;
     margin: 0 auto;
     margin-top: 2em;
+  }
+  .nav li {
+    display: inline;
+    margin-right: 2em;
   }
 }
 
@@ -384,6 +395,11 @@ footer{
 }
 
 @media screen and (min-width: 800px) {
+  .main {
+    width: 45%;
+    max-width: 600px;
+    margin-left: 50%;
+  }
   .billboard{
     max-width: 75%;
     text-align: center;
