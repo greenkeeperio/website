@@ -409,6 +409,9 @@ pre:not(.logo):before {
     max-width: 75%;
     text-align: center;
   }
+  .billboard h2{
+    margin: 1em auto 0;
+  }
   body:not(.index) header{
     margin-top: auto;
     width: 48%;
