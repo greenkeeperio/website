@@ -1,17 +1,34 @@
 body{
   background-color: #26292C;
-  color: #31B731;
-  font-family: Courier New, Courier, monospace;
+  /*color: #38CF38;*/
+  color: #38CF38;
+  font-family: InputSansCondensed-Regular, Courier New, Courier, monospace;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 1.25;
   font-weight: bold;
+}
+
+.yellow{
+  color: #FF0;
+}
+
+.paleYellow{
+  color: #D6D625;
+}
+
+.green{
+  color: #0F0;
+}
+
+.paleGreen{
+  color: #38CF38;
 }
 
 h1, h2, h3, h4{
   font-size: 1rem;
   color: #FF0;
-  margin: 2em 0 1em;
+  margin: 2em 0 1em 1em;
 }
 
 h1:before,
@@ -19,7 +36,8 @@ h2:before,
 h3:before,
 h4:before {
   content: "▸ ";
-  margin-left: -1.2em;
+  margin-left: -1.1em;
+  font-family: Courier New, Courier, monospace;
 }
 
 strong{
@@ -34,6 +52,7 @@ a{
 a:before{
   content: "▸";
   margin-right: 0.5em;
+  font-family: Courier New, Courier, monospace;
 }
 
 header a:before{
@@ -43,6 +62,15 @@ header a:before{
 a:hover, a:focus{
   outline: none;
   color: #FF0;
+}
+
+a:not([href]){
+  display: block;
+}
+
+a[href^="#"]:before,
+a:not([href]):before{
+  display: none;
 }
 
 @keyframes "blink" {
@@ -98,13 +126,60 @@ a:hover:before, a:focus:before{
   animation: 1s blink step-end infinite;
 }
 
+.index .container{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.billboard{
+  margin: 0 auto;
+  max-width: 95%;
+  padding: 4em 0 2em;
+}
+
+.billboard h1{
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.billboard h1,
+.billboard h2{
+  margin: 0;
+}
+
+.billboard h2{
+  max-width: 90%;
+  margin-top: 1em;
+}
+
+.billboard h1:before,
+.billboard h2:before{
+  display: none;
+}
+
+.double-flex section,
+.triple-flex section{
+  padding: 0 2em;
+}
+
 ul{
   list-style: none;
   padding-left: 1rem;
 }
 
-ul:not(.nav) li{
+ul.links li:before{
+  display: none;
+}
+
+ul.compact li{
+  margin-bottom: 0;
+}
+
+ul.spaced li{
   margin-bottom: 1.5em;
+}
+
+ul:not(.nav) li{
   text-indent: -1em;
   padding-left: 1em;
 }
@@ -120,17 +195,7 @@ ul:not(.nav) li ul li{
 ul:not(.nav) li:before{
   content: "▸";
   margin-right: 0.5em;
-}
-
-.main > ul {
-  border-left: 2px solid #31B731;
-  margin-left: 0.25em;
-}
-
-.main > .tweets{
-  border: none;
-  padding-left: 0;
-  margin-left: 0;
+  font-family: Courier New, Courier, monospace;
 }
 
 .tweets a{
@@ -152,7 +217,7 @@ ul:not(.nav) li:before{
 }
 
 .hr:before{
-  content: "..................................................................................";
+  content: ".................................................................................................................................";
 }
 
 header{
@@ -183,37 +248,171 @@ header span:not(.wide){
   margin-bottom: 1em;
 }
 
-.main{
-  width: 90%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding-bottom: 2em;
-  line-height: 1.25;
-}
-
-.main pre {
+pre:not(.logo) {
+  font-family: InputMonoCondensed-Regular, Courier New, Courier, monospace;
   margin: 0;
   display: inline;
   color: #0f0;
 }
 
-.main pre:before {
+pre:not(.logo):before {
   content: "$";
   margin-right: 0.5em;
 }
 
-@media screen and (min-width: 800px) {
-  .container{
+.pricing{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.pricing > h2{
+  padding: 1em;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.pricing h2:before{
+  display: none;
+}
+
+.plan {
+  border: 2px solid;
+  padding: 1em;
+  text-align: center;
+  margin: 0 0 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 7em;
+  transition: all 0.25s;
+}
+
+.plan.free{
+  color: #38CF38;
+}
+
+.plan.paid{
+  color: #0F0;
+}
+
+.plan:hover{
+  color: #26292C;
+  cursor: pointer;
+  background: #FF0;
+  border-color: #FF0;
+}
+
+.plan:hover h2{
+  color: #26292C;
+}
+
+.plan h2{
+  margin-top: 0;
+}
+
+.plan h2:before{
+  display: none;
+}
+
+.plan ul{
+  padding: 0 0.5em 0 0;
+  text-align: left;
+}
+
+.plan .price {
+  display: block;
+  position: absolute;
+  bottom: 1em;
+  width: calc(100% - 2em);
+  padding: 0em 0 0 0;
+}
+
+.notes ul{
+  padding-left: 0;
+}
+
+.if-wide{
+  display: none;
+}
+
+footer{
+  padding: 0 2em 1em;
+}
+
+@media screen and (min-width: 600px) {
+  .billboard{
+    max-width: 80%;
   }
-  header{
+  /*
+  .plan{
+    width: calc(50% - 5px);
+    margin: 0 10px 10px 0;
+  }
+  .plan:nth-child(2n+1){
+    margin-right: 0;
+  }*/
+  .pricing .notes{
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 2em;
+  }
+}
+
+@media screen and (min-width: 700px) {
+
+  .plan{
+    padding-bottom: 6em;
+    width: calc(33% - 5.5px);
+    margin: 0 10px 0 0;
+  }
+  .plan:nth-child(4){
+    margin-right: 0;
+  }
+  .plan:nth-child(2){
+    margin-top: 1.5rem;
+  }
+  .plan:nth-child(3){
+    margin-top: 1rem;
+  }
+  .plan:nth-child(4){
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .billboard{
+    max-width: 75%;
+    text-align: center;
+  }
+  body:not(.index) header{
     margin-top: auto;
     width: 48%;
     position: fixed;
     top: calc(50% - 7em);
   }
-  .main{
-    width: 45%;
-    max-width: 600px;
-    margin-left: 50%;
+  .double-flex{
+    display: flex;
+  }
+  .double-flex section{
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .if-narrow{
+    display: none;
+  }
+  .if-wide{
+    display: inline;
+  }
+  .triple-flex{
+    display: flex;
+  }
+  .triple-flex section{
+    width: 33%;
   }
 }
