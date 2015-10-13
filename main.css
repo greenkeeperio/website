@@ -27,6 +27,14 @@ body{
   color: #38CF38;
 }
 
+.red{
+  color: #B4270F;
+}
+
+.purple{
+  color: #A52A9A;
+}
+
 h1, h2, h3, h4{
   font-size: 1rem;
   color: #FF0;
@@ -74,6 +82,22 @@ a:not([href]){
 a[href^="#"]:before,
 a:not([href]):before{
   display: none;
+}
+
+.links a[href^="#"]:before{
+  display: inherit;
+}
+
+a[href="#top"]:before{
+  content: "▴";
+  display: inherit;
+  font-size: 0.8em;
+  vertical-align: text-bottom;
+}
+
+a#top{
+  display: block;
+  height: 0.5rem;
 }
 
 @keyframes "blink" {
@@ -360,6 +384,10 @@ pre:not(.logo):before {
   padding: 0 2em 1em;
 }
 
+.solution{
+  margin-left: 1.2rem;
+}
+
 @media screen and (min-width: 600px) {
   .billboard{
     max-width: 80%;
@@ -399,7 +427,7 @@ pre:not(.logo):before {
   }
   .index .nav li {
     display: inline;
-    margin-right: 2em;
+    margin-right: 1.5em;
   }
 }
 

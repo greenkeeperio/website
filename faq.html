@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+  <title>greenkeeper - FAQ</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link href="//cloud.webtype.com/css/c827b5bc-a082-4b65-93fa-4ad46ebbbd74.css" rel="stylesheet" type="text/css" />
+  <meta name="apple-mobile-web-app-title" content="greenkeeper">
+  <meta name="application-name" content="greenkeeper">
+  <meta name="msapplication-TileColor" content="#00a300">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link href="main.css" media="all" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header role="banner">
+      <a href="/">
+        <pre class="logo" aria-hidden="true">
+             oooo
+             `888
+    .ooooooo  888  oooo
+   888' `888  888 .8P'
+   888   888  888888.
+   `88bod8P'  888 `88b.
+    `Yooooo. o888o o888o
+        `Y8b
+   d8P   d88
+   `Y88888P'
+        </pre>
+        <pre class="logo"><span class="wide">greenkeeper.io</span></pre>
+      </a>
+      <span>Your software, up to date, all&nbsp;the&nbsp;time.</span>
+    </header>
+    <div class="main" role="main">
+      <a id="top"></a>
+      <!-- content starts here -->
+      <h1>Frequently Asked Questions</h1>
+
+      <ul class="links compact">
+        <li><a href="#renamed-repo">I can't enable a repo that was recently renamed</a></li>
+        <li><a href="#renamed-repo">I get <span class="red">ERR!</span> <span class="purple">enable</span> Couldn’t enable a project with this slug</a></li>
+        <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
+        <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
+        <li><a href="#github-activity">I enabled a repo, but nothing's happening</a></li>
+      </ul>
+
+      <a id="renamed-repo"></a>
+      <h2><a href="#renamed-repo">I can't enable a repo that was recently renamed / Couldn’t enable a project with this slug</a></h2>
+      <p>Greenkeeper tries to get the package from the configured git origin, which is probably using an old slug, from before renaming the repo, for example. Github will forward that internally, but we have no way of finding out the repo's new name.</p>
+      <div class="solution">
+        <h3>Solution 1: explicitly pass the repo slug to greenkeeper</h3>
+        <pre>greenkeeper --slug=user/repo enable </pre>
+        <h3>Solution 2: Update the git config</h3>
+        <p>Update the repo name in .git/config</p>
+      </div>
+      <a href="#top">Back to top</a>
+
+      <a id="branches"></a>
+      <h2><a href="#branches">Can I enable Greenkeeper on a different branch?</a></h2>
+      <p><strong>At this point, there is no configuration setting for the branch</strong>, but Greenkeeper picks the default branch that is set up on GitHub for Pull Requests, so that’s a place where you can change it.</p>
+      <p>We are planning to introduce a more flexible configuration setting in the future and we’ll let you know when it is available.</p>
+      <a href="#top">Back to top</a>
+
+      <a id="owners-only"></a>
+      <h2><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></h2>
+      <p>Greenkeeper creates branches on your repository to send you PRs, and we need push access to the repository. On top of that we need to create webhooks so we can keep your `package.json` content in sync, which requires admin access.</p>
+      <p><strong>So no, unfortunately being a collaborator currently isn't sufficient.</strong></p>
+      <a href="#top">Back to top</a>
+
+      <a id="github-activity"></a>
+      <h2><a href="#github-activity">I enabled a repo, but nothing's happening</a></h2>
+      <p>This might be because the dependency updates are within your specified ranges, and not breaking your tests. So there's no point in bothering you with a PR, since everything still works.</p>
+      <p>You'll only see GitHub activity when an in-range dependency breaks your build, or when a dependency updates outside your specified range.</p>
+      <a href="#top">Back to top</a>
+
+      <!-- content ends here -->
+      <span class="hr"></span>
+      <nav role="navigation">
+        <ul class="nav">
+          <li><a href="https://medium.com/greenkeeper-blog">Blog</a></li>
+          <li class="active">FAQ</li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+      <span class="hr"></span>
+      <footer role='contentinfo'>
+        <p>greenkeeper.io is best used together with our open source library <a href="http://git.io/semantic-release">semantic-release: fully automated package publishing</a>.</p>
+        <p>Brought to you by the people behind <a href="http://hood.ie">Hoodie</a>. We're re-inventing web app development. Take a look!</p>
+        <p>.io domain? — <a href="http://www.chagossupport.org.uk" title="chagos-support">Yes, we support Chagos!</a></p>
+        <p>&copy; 2015 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
+      </footer>
+    </div>
+  </div>
+
+<script type="text/javascript" src="js/smoothscroll.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66627085-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
