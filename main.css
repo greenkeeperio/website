@@ -39,6 +39,7 @@ h1, h2, h3, h4{
   font-size: 1rem;
   color: #FF0;
   margin: 2em 0 1em 1em;
+  box-sizing: border-box;
 }
 
 h1:before,
@@ -245,7 +246,7 @@ ul:not(.nav) li:before{
 }
 
 .hr{
-  margin: 1.75em 0 2em 0;
+  margin: 1.5em 0 2em 0;
   display: block;
   overflow: hidden;
 }
@@ -308,7 +309,8 @@ pre:not(.logo):before {
   margin-bottom: 3em;
 }
 
-.pricing > h2{
+.pricing > h2,
+.value > h2{
   padding: 1em;
   width: 100%;
   text-align: center;
@@ -316,6 +318,7 @@ pre:not(.logo):before {
   font-size: 1.5rem;
 }
 
+.value > h2:before,
 .pricing h2:before{
   display: none;
 }
