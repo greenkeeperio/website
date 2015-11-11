@@ -58,12 +58,6 @@
       <h2>Greenkeeper saves you time and money by automating&nbsp;dependency&nbsp;updates and&nbsp;notifying&nbsp;you&nbsp;of&nbsp;failed&nbsp;builds<!-- so you can spend&nbsp;your&nbsp;development&nbsp;time actually&nbsp;making&nbsp;things--></h2>
     </section>
 
-    <a id="how-it-works"></a>
-    <section class="flowchart">
-      <h2>The Greenkeeper Workflow</h2>
-      <img class="horizontal" src="workflow_horizontal.png" alt="Horizontal visual explanation of the Greenkeeper workflow">
-      <img class="vertical" src="workflow_vertical.png" alt="Vertical visual explanation of the Greenkeeper workflow">
-    </section>
 
     <div class="double-flex">
       <section class="description">
@@ -72,51 +66,66 @@
         <p><strong>It knows when your dependencies got updated and simply sends you a pull request with the new package.json</strong>.</p>
         <p>Should a new version inside your existing version range cause your build to fail, we’ll let you know immediately.</p>
         <p>If you’ve got continuous integration tests, they’ll run, and you can keep your software up to date with a single click on GitHub’s merge button.</p>
+      </section>
+      <section>
+        <h1>Automate your dependency management</h1>
         <p><strong>Spend less time with maintenance chores and more time actually making things!</strong></p>
         <h2>Free for Open Source</h2>
         <p>Greenkeeper is free for public repositories on GitHub, but if you want to use it with private repos, there's a monthly charge. <a href="#plans">Check out our plans and pricing below!</a></p>
       </section>
+    </div>
 
-      <section class="social-proof">
-        <h1>Who’s using Greenkeeper?</h1>
-        <div class="modules">
-          <p>Over <strong>1500 repos</strong> on GitHub, among them a few well-known Open Source-projects:
-          <ul class="links compact">
-            <li>
-              <a href="https://github.com/lodash/lodash">lodash</a>
-            </li>
-            <li>
-              <a href="https://github.com/pouchdb/pouchdb">PouchDB</a>
-            </li>
-            <li>
-              <a href="https://github.com/request/request">Request</a>
-            </li>
-            <li>
-              <a href="https:/github.com/Modernizr/Modernizr">Modernizr</a>
-            </li>
-            <li>
-              <a href="https:/github.com/karma-runner/karma">Karma</a>
-            </li>
-            <!--li>
-              <a href="https://github.com/remy/nodemon">nodemon</a>
-            </li-->
-            <li>
-              <a href="https://github.com/ampproject/amphtml">Google’s AMP</a>
-            </li>
+    <a id="how-it-works"></a>
+    <section class="flowchart">
+      <h2>The Greenkeeper Workflow</h2>
+      <img class="horizontal" src="workflow_horizontal.png" alt="Horizontal visual explanation of the Greenkeeper workflow">
+      <img class="vertical" src="workflow_vertical.png" alt="Vertical visual explanation of the Greenkeeper workflow">
+    </section>
+
+    <div class="double-flex">
+        <section class="social-proof">
+          <h1>Who’s using Greenkeeper?</h1>
+          <div class="modules">
+            <p>Over <strong>1500 repos</strong> on GitHub, among them a few well-known Open Source-projects:</p>
+            <ul class="links compact">
+              <li>
+                <a href="https://github.com/lodash/lodash">lodash</a>
+              </li>
+              <li>
+                <a href="https://github.com/pouchdb/pouchdb">PouchDB</a>
+              </li>
+              <li>
+                <a href="https://github.com/request/request">Request</a>
+              </li>
+              <li>
+                <a href="https:/github.com/Modernizr/Modernizr">Modernizr</a>
+              </li>
+              <li>
+                <a href="https:/github.com/karma-runner/karma">Karma</a>
+              </li>
+              <!--li>
+                <a href="https://github.com/remy/nodemon">nodemon</a>
+              </li-->
+              <li>
+                <a href="https://github.com/ampproject/amphtml">Google’s AMP</a>
+              </li>
+            </ul>
+            <p>We use it ourselves for <a href="https://github.com/hoodiehq/hoodie-server">Hoodie</a>, and naturally, Greenkeeper keeps itself up to date, too.</p>
+          </div>
+        </section>
+        <section>
+          <h1>What Our Users Say</h1>
+          <ul class="tweets spaced">
+            <!--li>greenkeeper.io makes our lives easier: Thank you!<a href="https://twitter.com/pushrockscode/status/650982642834407424">@pushrockscode</a></li-->
+            <!--li>Heh, @greenkeeperio just became @pouchdb's 170th contributor and it already has 3 more PR's open […], this is awesome<a href="https://twitter.com/daleharvey/status/648910948657446913">@daleharvey</a></li-->
+            <!--li>Just gave greenkeeper.io a try and it really rocks!<a href="https://twitter.com/chrkhl/status/648086178890170369">@chrkhl</a></li-->
+            <!--li>The Mighty Internet is automating our dev workflow. Serious cool service for keeping npm dependencies up to date: http://greenkeeper.io/<a href="https://twitter.com/kaplas/status/648388001844871168">@kaplas</a></li-->
+            <!--li>"@greenkeeperio Is My Co-Pilot"<a href="https://twitter.com/EINS78/status/649604334121021442">@EINS78</a></li-->
+            <li>A fan of how http://greenkeeper.io  tackles @npmjs deps: as an unobtrusive bot that sends PRs when upstreams update.<a href="https://twitter.com/jedschmidt/status/647451940457193472">@jedschmidt</a></li>
+            <li>I am so into this project<a href="https://twitter.com/ag_dubs/status/649942468155318272">@ag_dubs</a></li>
           </ul>
-          <p>We use it ourselves for <a href="https://github.com/hoodiehq/hoodie-server">Hoodie</a>, and naturally, Greenkeeper keeps itself up to date, too.</p>
-        </div>
-        <ul class="tweets spaced">
-          <!--li>greenkeeper.io makes our lives easier: Thank you!<a href="https://twitter.com/pushrockscode/status/650982642834407424">@pushrockscode</a></li-->
-          <!--li>Heh, @greenkeeperio just became @pouchdb's 170th contributor and it already has 3 more PR's open […], this is awesome<a href="https://twitter.com/daleharvey/status/648910948657446913">@daleharvey</a></li-->
-          <!--li>Just gave greenkeeper.io a try and it really rocks!<a href="https://twitter.com/chrkhl/status/648086178890170369">@chrkhl</a></li-->
-          <!--li>The Mighty Internet is automating our dev workflow. Serious cool service for keeping npm dependencies up to date: http://greenkeeper.io/<a href="https://twitter.com/kaplas/status/648388001844871168">@kaplas</a></li-->
-          <!--li>"@greenkeeperio Is My Co-Pilot"<a href="https://twitter.com/EINS78/status/649604334121021442">@EINS78</a></li-->
-          <li>A fan of how http://greenkeeper.io  tackles @npmjs deps: as an unobtrusive bot that sends PRs when upstreams update.<a href="https://twitter.com/jedschmidt/status/647451940457193472">@jedschmidt</a></li>
-          <li>I am so into this project<a href="https://twitter.com/ag_dubs/status/649942468155318272">@ag_dubs</a></li>
-        </ul>
-        <p>In general, <a href="https://twitter.com/search?q=greenkeeper.io%20OR%20greenkeeperio">people really seem to like Greenkeeper</a>.</p>
-      </section>
+          <p>In general, <a href="https://twitter.com/search?q=greenkeeper.io%20OR%20greenkeeperio">people really seem to like Greenkeeper</a>.</p>
+        </section>
     </div>
 
     <section class="value">
@@ -140,7 +149,7 @@
         <h2>Open Source</h2>
         <ul class="spaced">
           <li>Unlimited public repos</li>
-          <li>1 free private repo</li>
+          <li><strong>1 free private repo</strong></li>
           <li>Public queue, jobs might take a while</li>
           <li>For individuals or organisations</li>
         </ul>
