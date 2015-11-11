@@ -166,6 +166,10 @@ a:hover:before, a:focus:before{
   margin: 0 auto;
 }
 
+header nav ul{
+  margin-bottom: 4em;
+}
+
 .billboard{
   margin: 0 auto;
   max-width: 95%;
@@ -255,10 +259,6 @@ ul:not(.nav) li:before{
   content: ".................................................................................................................................";
 }
 
-header{
-  margin-top: 4rem;
-}
-
 header span:not(.wide){
   text-align: center;
   display: block;
@@ -280,7 +280,7 @@ header span:not(.wide){
   line-height: 1;
 }
 
-.logo:nth-child(2){
+.logo:nth-of-type(2){
   margin-bottom: 1em;
 }
 
@@ -408,6 +408,15 @@ pre:not(.logo):before {
 }
 
 @media screen and (min-width: 600px) {
+  header nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+  }
+  header ul li {
+    margin-right: 2em;
+  }
   .billboard{
     max-width: 80%;
   }
