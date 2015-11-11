@@ -298,6 +298,19 @@ pre:not(.logo):before {
   margin-right: 0.5em;
 }
 
+.flowchart img{
+  max-width: 100%;
+  height: auto;
+}
+
+.flowchart .vertical{
+  display: block;
+}
+
+.flowchart .horizontal{
+  display: none;
+}
+
 .pricing{
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -309,6 +322,7 @@ pre:not(.logo):before {
   margin-bottom: 3em;
 }
 
+.flowchart > h2,
 .pricing > h2,
 .value > h2{
   padding: 1em;
@@ -318,6 +332,7 @@ pre:not(.logo):before {
   font-size: 1.5rem;
 }
 
+.flowchart > h2:before,
 .value > h2:before,
 .pricing h2:before{
   display: none;
@@ -350,7 +365,8 @@ pre:not(.logo):before {
   border-color: #FF0;
 }
 
-.plan:hover h2{
+.plan:hover h2,
+.plan:hover strong{
   color: #26292C;
 }
 
@@ -403,6 +419,13 @@ pre:not(.logo):before {
   .plan:nth-child(2n+1){
     margin-right: 0;
   }*/
+  .flowchart .vertical{
+    display: none;
+  }
+
+  .flowchart .horizontal{
+    display: block;
+  }
   .pricing .notes{
     max-width: 700px;
     margin: 0 auto;
