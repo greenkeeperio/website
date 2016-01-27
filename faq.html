@@ -52,13 +52,19 @@
       <h1>Frequently Asked Questions</h1>
 
       <ul class="links compact">
+        <li><a href="#github-activity">I enabled a repo, but nothing’s happening</a></li>
+        <li><a href="#github-activity">Greenkeeper is creating branches and immediately deleting them again</a></li>
         <li><a href="#renamed-repo">I can’t enable a repo that was recently renamed</a></li>
         <li><a href="#renamed-repo">I get <span class="red">ERR!</span> <span class="purple">enable</span> Couldn’t enable a project with this slug</a></li>
         <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
         <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
-        <li><a href="#github-activity">I enabled a repo, but nothing’s happening</a></li>
-        <li><a href="#github-activity">Greenkeeper is submitting PRs and immediately deleting them again</a></li>
       </ul>
+
+      <a id="github-activity"></a>
+      <h2><a href="#github-activity">I enabled a repo, but nothing’s happening / Deleted branches</a></h2>
+      <p>This might be because the dependency updates are within your specified ranges, and not breaking your tests. So there’s no point in bothering you with a PR, since everything still works.</p>
+      <p>You’ll only receive pull requests when an in-range dependency breaks your build, or when a dependency updates outside your specified range.</p>
+      <a href="#top">Back to top</a>
 
       <a id="renamed-repo"></a>
       <h2><a href="#renamed-repo">I can’t enable a repo that was recently renamed / Couldn’t enable a project with this slug</a></h2>
@@ -81,12 +87,6 @@
       <h2><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></h2>
       <p>Greenkeeper creates branches on your repository to send you PRs, and we need push access to the repository. On top of that we need to create webhooks so we can keep your `package.json` content in sync, which requires admin access.</p>
       <p><strong>So no, unfortunately being a collaborator currently isn’t sufficient.</strong></p>
-      <a href="#top">Back to top</a>
-
-      <a id="github-activity"></a>
-      <h2><a href="#github-activity">I enabled a repo, but nothing’s happening / Deleted PRs</a></h2>
-      <p>This might be because the dependency updates are within your specified ranges, and not breaking your tests. So there’s no point in bothering you with a PR, since everything still works.</p>
-      <p>You’ll only see GitHub activity when an in-range dependency breaks your build, or when a dependency updates outside your specified range.</p>
       <a href="#top">Back to top</a>
 
       <!-- content ends here -->

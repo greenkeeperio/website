@@ -85,7 +85,7 @@ a:not([href]):before{
   display: none;
 }
 
-.links a[href^="#"]:before{
+.links a[href]:before{
   display: inherit;
 }
 
