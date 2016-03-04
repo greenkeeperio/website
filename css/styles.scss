@@ -102,7 +102,7 @@ header{
   /*margin-top: 2rem;*/
 }
 
-body.preloading h1{
+body.preloading header h1{
   text-shadow: 0 0 500px #000;
   opacity: 0;
 }
@@ -119,7 +119,7 @@ header h1{
   text-transform: uppercase;
 }
 
-body.preloading span{
+body.preloading header span{
   opacity: 0;
 }
 
@@ -254,6 +254,7 @@ section h2:after {
   background-color: transparent;
   padding: 0;
   justify-content: center;
+  max-width: 48rem;
 }
 
 .pricing h2{
