@@ -1,0 +1,172 @@
+<header role="banner">
+  <div>
+    <h1>greenkeeper.io</h1>
+    <span>Your software, up-to-date, all the time</span>
+  </div>
+</header>
+<section class="billboard">
+  <h1>Managing dependencies is annoying&nbsp;and&nbsp;dull</h1>
+  <h2>Greenkeeper makes your software better <span class="green">automatically</span></h2>
+</section>
+
+<div class="double-flex">
+  <section class="description">
+    <h2>Always up-to-date npm dependencies, zero&nbsp;hassle</h2>
+    <p>Not motivated to keep all your dependencies up to date, all the time? Uncomfortable with using loose version ranges? Yup, so are we. So we made Greenkeeper:</p>
+    <p><strong>It knows when your dependencies got updated and simply sends you a pull request with the new package.json</strong>.</p>
+    <p>Should a new version inside your existing version range cause your build to fail, we’ll let you know immediately.</p>
+    <p>If you’ve got continuous integration tests, they’ll run, and you can <strong>keep your software up to date with a single click</strong> on GitHub’s merge button.</p>
+  </section>
+  <section>
+    <h2>Automate your dependency management</h2>
+    <p>It's a chore nobody wants to do, and that often ends up not getting done at all. Greenkeeper makes it easy to keep your software shiny and functional, and leaves you more time to build interesting things.</p>
+    <h3>Free for Open Source</h3>
+    <p>Greenkeeper is free for public repositories on GitHub, but if you want to use it with private repos, there's a monthly charge. <a href="#plans">Check out our plans and pricing below!</a></p>
+  </section>
+</div>
+
+<div class="double-flex">
+  <section class="social-proof">
+    <h2>Who’s using Greenkeeper?</h2>
+    <div class="modules">
+      <p>Over <strong>2000 repos</strong> on GitHub, among them a few well-known Open Source-projects:</p>
+      <ul class="links compact">
+        <li>
+          <a href="https://github.com/lodash/lodash">lodash</a>
+        </li>
+        <li>
+          <a href="https://github.com/pouchdb/pouchdb">PouchDB</a>
+        </li>
+        <li>
+          <a href="https://github.com/request/request">Request</a>
+        </li>
+        <li>
+          <a href="https:/github.com/Modernizr/Modernizr">Modernizr</a>
+        </li>
+        <li>
+          <a href="https:/github.com/karma-runner/karma">Karma</a>
+        </li>
+        <li>
+          <a href="https://github.com/ampproject/amphtml">Google’s AMP</a>
+        </li>
+      </ul>
+      <p>We use it ourselves for <a href="https://github.com/hoodiehq/hoodie-server">Hoodie</a>, and naturally, Greenkeeper keeps itself up to date, too.</p>
+    </div>
+  </section>
+  <section class="they-really-seem-to-like-us">
+    <h2>What Our <br>Users Say</h2>
+    <ul class="tweets spaced">
+      <!--li>greenkeeper.io makes our lives easier: Thank you!<a href="https://twitter.com/pushrockscode/status/650982642834407424">@pushrockscode</a></li-->
+      <!--li>Heh, @greenkeeperio just became @pouchdb's 170th contributor and it already has 3 more PR's open […], this is awesome<a href="https://twitter.com/daleharvey/status/648910948657446913">@daleharvey</a></li-->
+      <!--li>Just gave greenkeeper.io a try and it really rocks!<a href="https://twitter.com/chrkhl/status/648086178890170369">@chrkhl</a></li-->
+      <!--li>The Mighty Internet is automating our dev workflow. Serious cool service for keeping npm dependencies up to date: http://greenkeeper.io/<a href="https://twitter.com/kaplas/status/648388001844871168">@kaplas</a></li-->
+      <!--li>"@greenkeeperio Is My Co-Pilot"<a href="https://twitter.com/EINS78/status/649604334121021442">@EINS78</a></li-->
+      <li><a href="https://twitter.com/jedschmidt/status/647451940457193472">@jedschmidt is</a> a fan of how http://greenkeeper.io  tackles @npmjs deps: as an unobtrusive bot that sends PRs when upstreams update</li>
+      <!--li><a href="https://twitter.com/ag_dubs/status/649942468155318272">@ag_dubs confesses:</a> I am so into this project</li-->
+      <li><a href="https://twitter.com/ceejbot/status/665207874650578945">@ceejbot says:</a>I am 100% loving @greenkeeperio btw. Next up: using <a href="http://git.io/semantic-release">semantic release</a> for all the projects I have 100% test coverage for.
+      </li>
+      <li><a href="https://twitter.com/TalAter/status/688950232801886208">@talater</a> just updated all the dependencies on 5 open source projects with @greenkeeperio in 10 minutes. 👍</li>
+      <li><a href="https://twitter.com/gloddy/status/674662257150791681">@gloddy thinks </a>.@greenkeeperio is solid. It's now on all our public repos and we're getting a private account in the new year. The time saved is worth it.</li>
+      <li><a href="https://twitter.com/lmprht/status/685844298026319873">And @lmprht implores:</a> You have to try out @greenkeeperio! It's such an awesome and easy way to keep your package's dependencies updated. 💕</li>
+    </ul>
+    <p>In general, <a href="https://twitter.com/search?q=greenkeeper.io%20OR%20greenkeeperio">people really seem to like Greenkeeper</a>.</p>
+  </section>
+</div>
+
+<a id="how-it-works"></a>
+<div class="double-flex full-height">
+  <section>
+    <h2><span class="green">01</span> How it works</h2>
+    <p>Greenkeeper sits between npm and GitHub, observing all of the modules you depend on. When they get updated, your project gets a pull request with that update. Your CI tests kick in, and Greenkeeper watches them to see whether they pass. If they do, you can just click the <strong>merge</strong> button, and we'll even auto-close branches for older versions for you. If not, you can use the branch to fix things.</p>
+    <p>Trust us, you’ll be amazed at how many dependency updates you’ve been missing.</p>
+    <p>Let the friendly Greenkeeper robot take all the dull work of keeping your dependencies up to date off your shoulders and, optimally, boil it all down to a single click. <strong>This is as close to fully automatic as we could possibly make it.</strong></p>
+  </section>
+  <section>
+    <h2>Why it’s so great</h2>
+    <ul>
+      <li>Staying on top of dependency updates is a lot of cognitive overhead: your code depends on modules that depend on modules. It's modules all the way down. Stuff gets updated all the time. It’ll either annoy you, or you’ll miss it.</li>
+      <li><strong>Version pinning</strong> would save you the hassle, but you’ll miss bugfixes and new features, and when you do have to update everything in the future, it’ll probably be a huge mess. So let’s not pin.</li>
+      <li><strong>Version ranges</strong> would be nice, but suffer from the fact that SemVer has… room for interpretation, and module authors simply make mistakes from time to time.</li>
+      <li>You could do all the updates by hand, all the time. But that’s dull, repetetive work, which is why, let’s be honest, barely anyone actually does it.</li>
+    </ul>
+  </section>
+</div>
+
+<a id="pricing"></a>
+<div class="full-height">
+
+<section class="pricing">
+  <h2><span class="green">02</span> Pricing and Plans</h2>
+  <a href="#" class="plan free">
+    <h2>Open Source</h2>
+    <ul class="spaced">
+      <li>Unlimited public repos</li>
+      <li><strong>1 free private repo</strong></li>
+      <li>Public queue, jobs might take a while</li>
+      <li>For individuals or organisations</li>
+    </ul>
+    <span class="price">Totally free!</span>
+  </a>
+  <a href="#" class="plan paid">
+    <h2>Individual</h2>
+    <ul class="spaced">
+      <li><strong>Unlimited private repos</strong></li>
+      <li>Faster private queue</li>
+      <li>Live online support</li>
+    </ul>
+    <span class="price">$14/month</span>
+  </a>
+  <a href="#" class="plan paid">
+    <h2>Organisation</h2>
+    <ul class="spaced">
+      <li><strong>25 or 50 private repos</strong> (you choose which repos you want us to watch)</li>
+      <li>Super speedy, fastest queue</li>
+      <li>Live online support</li>
+    </ul>
+    <span class="price">25 <span class="normal">private repos:</span> $50/month<br>
+      50 <span class="normal">private repos:</span> $90/month</span>
+  </a>
+  <section class="risk">
+    <p><strong>We're the uncomplicated type of company</strong>: If you're unhappy during the first 30 days, you'll get your money back. And of course you can always cancel to the end of each month.</p>
+  </section>
+</section>
+</div>
+
+<a id="getting-started"></a>
+<div class="full-height">
+  <div class="triple-flex">
+    <section>
+      <h2><span class="green">03</span> Getting <br>started</h2>
+      <p>Three simple commands: Open your terminal, and</p>
+      <pre>$ npm install -g greenkeeper<br>$ greenkeeper login</pre>
+      <p>Your browser will open and ask you to log in to GitHub. Please do that.</p>
+      <p>Then, inside the repo you want to keep up to date, do</p>
+      <pre>$ greenkeeper enable</pre>
+      <p>and you’re done! Your first greenkeeper PR will arrive shortly!</p>
+    </section>
+    <section>
+      <a id="signup"></a>
+      <h2>Signing up for a paid plan</h2>
+      <p>You sign up via the terminal, see <span class="if-narrow">above</span><span class="if-wide">to the left</span>. Enabling public repos is free, and you’ll be prompted to sign up for a paid plan when you try to enable more than one private repo.</p>
+      <p>If you want to sign up for any paid plan, just do</p>
+      <pre>$ greenkeeper upgrade</pre>
+      <p>and it will display all available options.</p>
+    </section>
+    <section>
+      <h2>I’ve got more questions!</h2>
+      <p>No problem, we’re here. <a href="mailto:support@greenkeeper.io">Send us an email</a> or get in touch via twitter <a href="http://twitter.com/greenkeeperio" title="Please don’t say this with Mario’s voice…">@greenkeeperio</a>.</p>
+      <p>Once you’ve installed Greenkeeper, you can always reach us via</p>
+      <pre>$ greenkeeper support</pre>
+      <p>There's also an <a href="faq.html">FAQ</a>.</p>
+    </section>
+  </div>
+</div>
+
+<a id="enterprise"></a>
+<div class="single full-height enterprise">
+  <section>
+    <h2><span class="green">05</span> Enterprise plan</h2>
+    <p>You’re using <a href="https://enterprise.github.com/home">GitHub Enterprise</a>? No problem, we support that too.</p>
+    <p><a href="mailto:enterprise@greenkeeper.io">Please get in touch with us</a> for an individual offer.</p>
+  </section>
+</div>
