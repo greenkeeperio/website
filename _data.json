@@ -1,5 +1,30 @@
 {
   "index": {
-    "pageTitle": "Home"
+    "pageTitle": "Index",
+    "bodyClass": "index"
+  },
+  "faq": {
+    "pageTitle": "FAQ",
+    "bodyClass": "faq"
+  },
+  "impressum": {
+    "pageTitle": "Impressum",
+    "bodyClass": "impressum"
+  },
+  "terms-of-service": {
+    "pageTitle": "Terms of Service",
+    "bodyClass": "terms-of-service"
+  },
+  "privacy-policy": {
+    "pageTitle": "Privacy Policy",
+    "bodyClass": "privacy-policy"
+  },
+  "thanks-for-confirming-your-payment": {
+    "pageTitle": "Thank you!",
+    "bodyClass": "thanks-for-confirming-your-payment"
+  },
+  "thanks-for-signing-up": {
+    "pageTitle": "Thank you!",
+    "bodyClass": "thanks-for-signing-up"
   }
 }

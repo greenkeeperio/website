@@ -10,6 +10,14 @@ html{
   color: #00c775;
 }
 
+.red {
+  color: #B4270F;
+}
+
+.purple {
+  color: #A52A9A;
+}
+
 body{
   font-family: sans-serif;
   color: #333;
@@ -41,7 +49,7 @@ nav ul {
   flex-wrap: wrap;
 }
 
-body.preloading nav ul li{
+body.preloading nav.header ul li{
   transform: translateY(-100px);
 }
 
@@ -50,6 +58,11 @@ nav ul li {
   margin: 0.5em 1em;
   transition: transform 750ms cubic-bezier(0.26,1.48,.47,.96);
   transform: translateY(0px);
+  &.active a {
+    color: #000;
+    pointer-events: none;
+    border-bottom: none;
+  }
 }
 
 nav ul li:nth-child(1){
@@ -76,6 +89,18 @@ nav ul li a{
   margin-left: 0.25em;
 }
 
+body:not(.index) nav.footer {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  ul{
+    justify-content: flex-start;
+    li{
+      margin: 0.5em 1em 0.5em 0;
+    }
+  }
+}
+
 body.preloading header{
   background-size: 0;
 }
@@ -99,7 +124,6 @@ header{
   justify-content: center;
   align-items: center;
   text-align: center;
-  /*margin-top: 2rem;*/
 }
 
 body.preloading header h1{
@@ -117,6 +141,7 @@ header h1{
   font-size: 10vw;
   font-weight: bold;
   text-transform: uppercase;
+
 }
 
 body.preloading header span{
@@ -135,10 +160,22 @@ header span{
 }
 
 h1, h2, h3, h4, h5, h6{
-  font-family: "futura-pt";
+  font-family: "futura-pt", Futura, sans-serif;
   color: #000;
   text-transform: uppercase;
   text-align: center;
+}
+
+.wf-loading {
+  h1, h2, h3, h4, h5, h6 {
+    visibility: hidden;
+  }
+}
+
+.wf-active {
+  h1, h2, h3, h4, h5, h6 {
+    visibility: visible;
+  }
 }
 
 a{
@@ -153,6 +190,12 @@ a:not(.plan):hover,
 a:not(.plan):focus{
   color: #000;
   border-bottom: 2px solid #000;
+}
+
+h2 a:not(.plan),
+h2 a:not(.plan):hover,
+h2 a:not(.plan):focus{
+  border-bottom: none;
 }
 
 a:not([href]) {
@@ -400,6 +443,58 @@ footer a{
   border-bottom: 2px solid rgba(255,255,255,0.5);
 }
 
+body:not(.index) h1,
+body:not(.index) h3,
+body:not(.index) h2{
+  text-align: left;
+}
+
+.faq-questions{
+  margin-bottom: 3em;
+  padding: 0 1em;
+  li{
+    margin-bottom: 1em;
+    &:before{
+      color: #00C775;
+    }
+  }
+}
+
+.faq-answers{
+  padding: 0;
+  li{
+    padding: 0;
+    margin: 0 0 3em 0;
+    &:before{
+      display: none;
+    }
+  }
+}
+
+// Non-Index pages
+.container{
+  font-size: 0.75rem;
+  header{
+    background: none;
+    height: 100px;
+    font-size: 0.75rem;
+    h1 a{
+      border-bottom: none;
+      color: transparent;
+      &:hover,
+      &:focus{
+        border-bottom: none;
+      }
+    }
+  }
+  .main{
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+}
+
 @media screen and (min-width: 400px) {
   html{
     font-size: 20px;
@@ -439,10 +534,10 @@ footer a{
 }
 
 @media screen and (min-width: 800px) {
-  nav{
+  .index nav.header{
     position: fixed;
   }
-  header{
+  .index header{
     margin-top: 2rem;
   }
   .risk{

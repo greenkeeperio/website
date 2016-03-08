@@ -1,4 +1,6 @@
-<nav>
+<% if (pageTitle === "Index"){ %>
+
+<nav class="header">
   <ul role="navigation" aria-label="main navigation">
     <li>01<a href="#how-it-works">How it works</a></li>
     <li>02<a href="#pricing">Pricing</a></li>
@@ -7,3 +9,25 @@
     <li>05<a href="#enterprise" class="enterprise">Enterprise Solutions</a></li>
   </ul>
 </nav>
+
+<% } else { %>
+
+<nav class="header" role="navigation">
+  <ul class="nav">
+    <li><a href="https://medium.com/greenkeeper-blog">Blog</a></li>
+    <li class="<%= current.source=='faq'?'active':'' %>">
+      <a href="faq.html">FAQ</a>
+    </li>
+    <li class="<%= current.source=='impressum'?'active':'' %>">
+      <a href="impressum.html">Impressum</a>
+    </li>
+    <li class="<%= current.source=='terms-of-service'?'active':'' %>">
+      <a href="terms-of-service.html">Terms of Service</a>
+    </li>
+    <li class="<%= current.source=='privacy-policy'?'active':'' %>">
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </li>
+  </ul>
+</nav>
+
+<% } %>

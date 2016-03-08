@@ -1,3 +1,21 @@
+<nav class="footer" role="navigation">
+  <ul class="nav">
+    <li><a href="https://medium.com/greenkeeper-blog">Blog</a></li>
+    <li class="<%= current.source=='faq'?'active':'' %>">
+      <a href="faq.html">FAQ</a>
+    </li>
+    <li class="<%= current.source=='impressum'?'active':'' %>">
+      <a href="impressum.html">Impressum</a>
+    </li>
+    <li class="<%= current.source=='terms-of-service'?'active':'' %>">
+      <a href="terms-of-service.html">Terms of Service</a>
+    </li>
+    <li class="<%= current.source=='privacy-policy'?'active':'' %>">
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </li>
+  </ul>
+</nav>
+
 <footer role="contentinfo">
   <p>greenkeeper.io is best used together with our open source library <a href="http://git.io/semantic-release">semantic-release: fully automated package publishing</a>.</p>
   <p><a href="https://github.com/greenkeeperio/greenkeeper">The Greenkeeper CLI is Open Source on GitHub</a>. Thank you for your future contributions!</p>
