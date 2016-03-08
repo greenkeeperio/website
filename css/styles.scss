@@ -85,6 +85,14 @@ nav ul li:nth-child(5){
   transition-delay: 2200ms;
 }
 
+nav ul li:nth-child(6){
+  transition-delay: 2250ms;
+}
+
+nav ul li:nth-child(7){
+  transition-delay: 2300ms;
+}
+
 nav ul li a{
   margin-left: 0.25em;
 }
@@ -126,7 +134,7 @@ header{
   text-align: center;
 }
 
-body.preloading header h1{
+body.index.preloading header h1{
   text-shadow: 0 0 500px #000;
   opacity: 0;
 }
@@ -141,7 +149,6 @@ header h1{
   font-size: 10vw;
   font-weight: bold;
   text-transform: uppercase;
-
 }
 
 body.preloading header span{
