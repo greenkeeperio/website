@@ -1,0 +1,16 @@
+{
+  "name": "greenkeeper-website",
+  "description": "The Greenkeeper Website",
+  "private": true,
+  "scripts": {
+    "start": "harp server ./www",
+    "build": "harp compile ./app ./www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christophwitzko/greenkeeper-website.git"
+  },
+  "devDependencies": {
+    "harp": "^0.20.1"
+  }
+}
