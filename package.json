@@ -8,7 +8,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/greenkeeperio/greenkeeper-website.git"
+    "url": "https://github.com/greenkeeperio/website.git"
   },
   "scripts": {
     "build": "harp compile ./app ./www",
