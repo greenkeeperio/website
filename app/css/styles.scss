@@ -510,6 +510,11 @@ body:not(.index) h2{
   }
 }
 
+.verify img {
+  display: block;
+  max-width: 100%;
+}
+
 @media screen and (min-width: 400px) {
   html{
     font-size: 20px;

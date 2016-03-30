@@ -26,5 +26,9 @@
   "thanks-for-signing-up": {
     "pageTitle": "Thank you!",
     "bodyClass": "thanks-for-signing-up"
+  },
+  "verify": {
+    "pageTitle": "Verify",
+    "bodyClass": "verify"
   }
 }
