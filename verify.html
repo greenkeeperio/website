@@ -95,15 +95,24 @@
     </figure>
 
     <p>
-      <strong>Whenever we’re opening a pull request on your repository we will now also attach a “greenkeeper/verify” status flag to it</strong>. It is not possible to send such a status without access to the repository. This is another signal – highly visible – that will help you to verify a pull request is coming from us at a glance. <strong>If this status is not present on a Greenkeeper pull request sent after March 31st 2016 do not merge it</strong>. We think this will help you to safely use Greenkeeper and to further fulfill our promise of keeping dependencies up to date with a single click.
+      <strong>Whenever we’re opening a pull request on your repository we will now also attach a “greenkeeper/verify” status flag to it</strong>. It is not possible to send such a status without access to the repository. This is another signal – highly visible – that will help you to verify a pull request is coming from us at a glance. <strong>If this status is not present on a Greenkeeper pull request sent after March 31st 2016 do not merge it</strong>.
     </p>
 
     <figure>
-      <img alt="A screenshot of the new status hook" src="/images/signals_new.png">
+      <img alt="A screenshot of the status hook" src="/images/signals_new.png">
     </figure>
 
     <p>
-      <em>If you aren’t 100% sure: Generally it’s safest to closely look at diffs before merging something into your project – no matter if it’s coming from Greenkeeper or not.</em>
+      <strong>Along with the status we’re attaching the “greenkeeper” label to the pull request.</strong> Again: This is not possible without access to the repository. <strong>If this label is not present on a Greenkeeper pull request sent after April 1st 2016 do not merge it</strong>.
+      You may change the name of the label by adding <code>"greenkeeper": {"label": "the-name"}</code> to your <code>package.json</code> file. Even though we don’t recommend doing this, setting the label property to <code>false</code> will disable this feature.
+    </p>
+
+    <figure>
+      <img alt="A screenshot of the label" src="/images/signals_label.png">
+    </figure>
+
+    <p>
+      We think this will help you to safely use Greenkeeper and to further fulfill our promise of keeping dependencies up to date with a single click. <em>If you aren’t 100% sure: Generally it’s safest to closely look at diffs before merging something into your project – no matter if it’s coming from Greenkeeper or not.</em>
     </p>
 
     <h2>Any questions or feedback?</h2>
