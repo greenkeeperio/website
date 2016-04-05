@@ -79,7 +79,7 @@
     </p>
 
     <p>
-      The same is true for Greenkeeper. As users suggested we could sign our commits using GPG and then tell you to verify that locally for every single pull request we’re going to send.
+      The same is true for Greenkeeper. As users suggested we could sign our commits using GPG and then tell you to verify that locally for every single pull request we’re going to send<a href="#gpg">*</a>.
     </p>
 
     <p>
@@ -121,9 +121,16 @@
       We think this will help you to safely use Greenkeeper and to further fulfill our promise of keeping dependencies up to date with a single click. <em>If you aren’t 100% sure: Generally it’s safest to closely look at diffs before merging something into your project – no matter if it’s coming from Greenkeeper or not.</em>
     </p>
 
+    <h2 id="gpg">GPG signatures wouldn’t even help</h2>
+
+    <p>
+      Just hours after we announced “Greenkeeper Verify” GitHub launched <a href="https://github.com/blog/2144-gpg-signature-verification">GPG signature verification</a>. We are happy that this feature is now available for the community. However we don’t think it is helpful in this specific case. It might even be harmful. The problem with this attack vector is that people overlook small variations in the pull request author’s username. An attacker could still use such a fake account and sign the commit with an entirely different GPG key that they set up just for this. The green “Verified” badge would look exactly the same and could even give a false sense of security.
+    </p>
+
     <h2>Any questions or feedback?</h2>
-    If there is anything unclear about this, or if you have other ideas for signals we could be sending please
-    <a href="mailto:support@greenkeeper.io">send us an email</a> or get in touch via <a href="http://twitter.com/greenkeeperio">Twitter</a>.
+    <p>
+      If there is anything unclear about this, or if you have other ideas for signals we could be sending please <a href="mailto:support@greenkeeper.io">send us an email</a> or get in touch via <a href="http://twitter.com/greenkeeperio">Twitter</a>.
+    </p>
   </div>
 </div>
 
