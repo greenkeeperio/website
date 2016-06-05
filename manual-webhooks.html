@@ -64,7 +64,7 @@
       <!-- content starts here -->
 
       <p>
-        Using Greenkeeper with an out of the box setup  requires you to grant the service admin access to your GitHub repositories. We require this soley so we can setup webhooks for you – an integral part of what makes Greenkeeper work the way it does.
+        Using Greenkeeper with an out of the box setup requires you to grant the service admin access to your GitHub repositories. We require this soley so we can setup webhooks for you – an integral part of what makes Greenkeeper work the way it does.
       </p>
       <p>
         Granting access and letting us do the setup for you has some clear advantages.
@@ -86,13 +86,13 @@
       <p>
         If you want Greenkeeper to operate on private and public repositories this is how it works. <em>Requires greenkeeper@2.13.0 or later.</em>
       </p>
-      <code>greenkeeper signup --force --no-admin --private</code>
+      <code>greenkeeper login --force --no-admin --private</code>
       <p>
         If you only need Greenkeeper for public repositories you can further reduce the scope.
       </p>
-      <code>greenkeeper signup --force --no-admin</code>
+      <code>greenkeeper login --force --no-admin</code>
       <p>
-        Once the signup is completed you can enable repositories as usual. Detailed instructions on how to setup the hooks will follow after you have enabled a repository.
+        Once the login is completed you can enable repositories as usual. Detailed instructions on how to setup the hooks will follow after you have enabled a repository.
       </p>
       <code>greenkeeper enable --slug user/repo</code>
       <p>
