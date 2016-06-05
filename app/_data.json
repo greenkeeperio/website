@@ -30,5 +30,9 @@
   "verify": {
     "pageTitle": "Verify",
     "bodyClass": "verify"
+  },
+  "manual-webhooks": {
+    "pageTitle": "Manual Webhooks",
+    "bodyClass": "manual-webhooks"
   }
 }
