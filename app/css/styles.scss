@@ -52,7 +52,9 @@ nav ul {
 body.index.preloading nav.header ul li{
   transform: translateY(-100px);
 }
-
+nav.header {
+  will-change: transform;
+}
 nav ul li {
   display: inline-block;
   margin: 0.5em 1em;
