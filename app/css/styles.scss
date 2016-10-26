@@ -184,6 +184,7 @@ header .get-started .button{
   border: 3px solid #00c775;
   font-weight: normal;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 header .get-started .button:hover,
@@ -191,11 +192,6 @@ header .get-started .button:focus{
   background: #fff;
   color: #00c775;
   border-bottom: 3px solid #00c775;
-}
-
-header .get-started small{
-  background: rgba(255,255,255,0.75);
-  font-size: 0.75rem;
 }
 
 h1, h2, h3, h4, h5, h6{

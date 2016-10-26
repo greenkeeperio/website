@@ -1,39 +1,33 @@
 <header role="banner">
   <div>
-    <h1>greenkeeper.io</h1>
-    <!--span>Your software, up-to-date, all the time</span-->
+    <h1>Greenkeeper.io</h1>
     <div class="get-started">
-      <!-- Plan A: app only -->
-      <a class="button" href="https://app.greenkeeper.io">Try it now!</a>
-      <!-- Plan B: integration and app -->
-      <!--a class="button" href="https://github.com/integration/greenkeeper">Try our GitHub integration now!</a>
-      <small>Our <a href="https://app.greenkeeper.io">old management interface</a> is still around, too.</small-->
+      <a class="button" href="https://github.com/integration/greenkeeper">Try the all new GitHub Integration</a>
     </div>
   </div>
 </header>
 <section class="billboard">
-  <h1>Writing Software is Embracing Change</h1>
-  <h2>Greenkeeper Makes That Change Visible</h2>
-  <h2>Because You Can Only <span class="green">Manage</span> What You <span class="green">Measure</span></h2>
+  <h1>Get safety &amp; consistency<br>
+  with <span class="green">real-time monitoring</span> and<br>
+  <span class="green">automatic updates</span> for npm dependencies.</h1>
 </section>
 
 <div class="double-flex">
   <section class="description">
-    <h2>Always up-to-date npm dependencies, zero&nbsp;hassle</h2>
-    <p>The npm ecosystem with its 240,000+ modules is a great foundation to build your software on.</p>
+    <h2>Use <a href="http://semver.org">SemVer</a>. We’ll have your back.</h2>
+    <p>The npm ecosystem with its 360,000+ modules is a great foundation to build your software on.</p>
     <p>Using this many modules quickly leads to <strong>a constantly changing platform</strong> and <strong>no way of knowing</strong> what changes and when.</p>
 
-    <p>Until you use <em>Greenkeeper</em>: it tracks your dependencies and applies an update to a branch for every new version coming in. Your test suite runs <strong>behind the scenes</strong>, and only if a dependency update breaks your software, we let you know in a Pull Request, including all the information you need to <strong>make an informed decision</strong>.
-    </p>
+    <p>Until you use <em>Greenkeeper</em>: we track your dependencies and trigger your test suite with every new version coming in. <strong>If a dependency version you’re relying on breaks your software, we open an Issue</strong>. Find the source of the problem in the attached release notes and commits, or downgrade quickly. <strong>For major upgrades we will send you a Pull Request</strong> directly.</p>
   </section>
 
   <section>
-    <h2>Automate your dependency management</h2>
-    <p>You could manually track updates of your dependencies, and test whether things continue to work, but that takes a lot of time and is rarely done. Most of the time, <strong>your software is in a Schrödinger state of being potentially broken</strong>, and you have no idea until you look.</p>
-    <p>Greenkeeper <strong>takes away the chores</strong> of dependency updates, while <strong>leaving you in charge for any important decisions</strong>.</p>
+    <h2>Automated dependency management</h2>
+    <p>You <em>could</em> manually track updates of your dependencies and test whether things continue to work. This takes <em>a lot of time</em> however and it’s rarely ever done. So most of the time, <strong>your software is in a Schrödinger state of being potentially broken</strong>, and you have no idea until you run <code>npm install</code> and try the next time.</p>
+    <p>Greenkeeper <strong>takes away these chores</strong> of dependency management. <code>npm install</code> and <code>npm test</code> is called immediately after an update. There is no doubt about the state of your software.</p>
 
-    <h3>Free for Open Source</h3>
-    <p>Greenkeeper is free for public repositories on GitHub. If you want to use it with private repos, there's a monthly charge. <a href="#pricing">Check out our plans and pricing below.</a> Greenkeeper works with npm, GitHub and any CI service. If you want to run Greenkeeper on your own hardware, behind your firewall, <a href="#enterprise">we support that too!</a>
+    <h3>Free during Beta</h3>
+    <p>Greenkeeper is currently free for all repositories on GitHub. It will always stay that way for Open Source Projects. Once GitHub Integrations are out of beta there will be a monthly charge for private repos. Greenkeeper works with npm, GitHub and any CI service. If you want to run Greenkeeper on your own hardware, behind your firewall, <a href="#enterprise">we support that too!</a>
     </p>
   </section>
 </div>
@@ -42,7 +36,7 @@
   <section class="social-proof">
     <h2>Who’s using Greenkeeper?</h2>
     <div class="modules">
-      <p>Over <strong>3000 repos</strong> on GitHub, among them a few well-known Open Source-projects:</p>
+      <p>About <strong>10000 projects</strong> on GitHub, among them a few well-known Open Source-projects:</p>
       <ul class="links compact">
         <li>
           <a href="https://lodash.com">lodash</a>
@@ -106,23 +100,32 @@
 <a id="how-it-works"></a>
 <div class="double-flex full-height">
   <section>
-    <h2><span class="green">01</span> How it works</h2>
-    <p>Greenkeeper sits between npm and GitHub, observing all of the modules you depend on. When they get updated, your project gets a pull request with that update. Your CI tests kick in, and Greenkeeper watches them to see whether they pass. If they do, you can just click the <strong>merge</strong> button, and we'll even auto-close branches for older versions for you. If not, you can use the branch to fix things.</p>
-    <p>You’ll be amazed at how many dependency updates you’ve been missing.</p>
-    <p>Let the friendly Greenkeeper robot take all the dull work of keeping your dependencies up to date off your shoulders and, optimally, boil it all down to a single click. <strong>This is as close to fully automatic as we could possibly make it.</strong></p>
+    <h2>How it works</h2>
+    <p>Greenkeeper sits between npm and GitHub, observing all of the modules you depend on. When they get updated, your project gets a new branch with that update. Your CI tests kick in, and we watch them to see whether they pass.</p>
+    <p>Based on the test results and your current version definition we will send you Pull Requests or open Issues.</p>
+    <p>Let the friendly Greenkeeper bot take all the dull work of keeping your dependencies up to date off your shoulders and, optimally, boil it all down to a few clicks. <strong>This is as close to fully automatic as we could possibly make it.</strong></p>
   </section>
   <section>
     <h2>Why it’s so great</h2>
     <ul>
-      <li>Staying on top of dependency updates is a lot of cognitive overhead: your code depends on modules that depend on modules. It's modules all the way down. Stuff gets updated all the time. It’ll either annoy you, or you’ll miss it.</li>
+      <li>Staying on top of dependency updates is a lot of cognitive overhead: your code depends on modules that depend on modules. It’s modules all the way down. Stuff gets updated all the time. It’ll either annoy you, or you’ll miss it.</li>
       <li><strong>Version pinning</strong> would save you the hassle, but you’ll miss bugfixes and new features, and when you do have to update everything in the future, it’ll probably be a huge mess. So let’s not pin.</li>
-      <li><strong>Version ranges</strong> would be nice, but suffer from the fact that SemVer has… room for interpretation, and module authors simply make mistakes from time to time.</li>
-      <li>You could do all the updates by hand, all the time. But that’s dull, repetetive work, which is why, let’s be honest, barely anyone actually does it.</li>
+      <li><strong>Version ranges</strong> would be nice, but suffer from the fact that SemVer has … room for interpretation. Module authors simply make mistakes from time to time.</li>
+      <li>You could do all the updates and testing by hand, all the time. But that’s dull, repetetive work, which is why, let’s be honest, barely anyone actually does it.</li>
     </ul>
   </section>
 </div>
 
-<a id="pricing"></a>
+<header role="banner">
+  <div>
+    <h1>Greenkeeper.io</h1>
+    <div class="get-started">
+      <a class="button" href="https://github.com/integration/greenkeeper">Get started on GitHub now</a>
+    </div>
+  </div>
+</header>
+
+<!-- <a id="pricing"></a>
 <div class="full-height">
 
 <section class="pricing">
@@ -160,9 +163,9 @@
     <p><strong>We're the uncomplicated type of company</strong>: If you're unhappy during the first 30 days, you'll get your money back. And of course you can always cancel to the end of each month.</p>
   </section>
 </section>
-</div>
+</div> -->
 
-<a id="getting-started"></a>
+<!-- <a id="getting-started"></a>
 <div class="full-height">
   <div class="triple-flex">
     <section>
@@ -190,13 +193,13 @@
       <p>There's also an <a href="faq.html">FAQ</a>.</p>
     </section>
   </div>
-</div>
+</div> -->
 
 <a id="enterprise"></a>
 <div class="single full-height enterprise">
   <section>
-    <h2><span class="green">05</span> Enterprise plan</h2>
-    <p>You’re using <a href="https://enterprise.github.com/home">GitHub Enterprise</a> and/or <a href="https://www.npmjs.com/enterprise">npm Enterprise</a>? No problem, we support those too.</p>
+    <h2>Enterprise plan</h2>
+    <p>You’re using <a href="https://enterprise.github.com/home">GitHub Enterprise</a> or <a href="https://www.npmjs.com/enterprise">npm Enterprise</a>? No problem, we support those too.</p>
     <p><a href="mailto:enterprise@greenkeeper.io">Please get in touch with us</a> we’ll get you set up in no time.</p>
   </section>
 </div>
