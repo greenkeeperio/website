@@ -168,6 +168,34 @@ header span{
   font-size: 0.75rem;
 }
 
+body.preloading header .get-started{
+  opacity: 0;
+}
+
+header .get-started{
+  transition: opacity 500ms ease-out 1850ms;
+}
+
+header .get-started .button{
+  background-color: #00c775;
+  color: #FFF;
+  padding: 0.4em;
+  display: block;
+  margin: 0 1em 0.25em 1em;
+  transition: color 0.25s, background-color 0.25s;
+  border: 3px solid #00c775;
+  font-weight: normal;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+header .get-started .button:hover,
+header .get-started .button:focus{
+  background: #fff;
+  color: #00c775;
+  border-bottom: 3px solid #00c775;
+}
+
 h1, h2, h3, h4, h5, h6{
   font-family: "futura-pt", Futura, sans-serif;
   color: #000;
