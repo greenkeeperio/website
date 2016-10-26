@@ -4,7 +4,7 @@
   "devDependencies": {
     "browserify": "^13.0.1",
     "gh-pages": "^0.11.0",
-    "harp": "^0.20.1",
+    "harp": "^0.21.0",
     "uglifyify": "^3.0.1"
   },
   "private": true,
@@ -20,6 +20,6 @@
     "test": "npm run build"
   },
   "dependencies": {
-    "jquery": "^2.2.4"
+    "jquery": "^3.1.1"
   }
 }
