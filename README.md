@@ -12,3 +12,5 @@ To compile the site into `www/`:
 ```
 npm run build
 ```
+
+You’ll have to build the site before you start the server for the first time.
