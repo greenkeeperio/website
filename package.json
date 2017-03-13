@@ -17,7 +17,8 @@
     "postbuild": "browserify -g uglifyify ./app/js/manual-webhooks.js > ./www/js/manual-webhooks.js",
     "deploy": "node deploy.js",
     "start": "harp server ./www",
-    "test": "npm run build"
+    "test": "npm run build",
+    "server": "harp server ./app & browser-sync start --proxy 'localhost:9000' --files 'app/**/*.ejs, app/*.ejs, app/**/*.md, app/**/*.scss, app/**/_data.json'"
   },
   "dependencies": {
     "jquery": "^3.1.1"

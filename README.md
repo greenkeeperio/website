@@ -1,10 +1,10 @@
 # greenkeeper-website
 [![Build Status](https://travis-ci.org/greenkeeperio/website.svg?branch=master)](https://travis-ci.org/greenkeeperio/website)
 
-This is a [harp.js](http://harpjs.com/) project. To run the server,
+This is a [harp.js](http://harpjs.com/) project. To run the server with livereload:
 
 ```
-npm start
+npm run server
 ```
 
 To compile the site into `www/`:
@@ -13,4 +13,8 @@ To compile the site into `www/`:
 npm run build
 ```
 
-You’ll have to build the site before you start the server for the first time.
+and to host the built version of the site:
+
+```
+npm start
+```
