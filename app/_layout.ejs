@@ -24,6 +24,7 @@
   <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=pgg4Lp23wR">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
   <script src="https://use.typekit.net/pve4wdk.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
@@ -35,12 +36,18 @@
   <%- partial("partials/_footer") %>
 
   <script type="text/javascript" src="js/smoothscroll.min.js"></script>
+  <script type="text/javascript" src="js/jquery.slim.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   <script>
     var domReady = function(callback) {
         document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
     };
     domReady(function() {
-
+      $('.tweets').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 7000
+      });
       var plans = document.getElementsByClassName('plan');
 
       for (var i = 0; i < plans.length; i++) {

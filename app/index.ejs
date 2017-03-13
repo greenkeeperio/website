@@ -2,7 +2,7 @@
   <div>
     <h1>Greenkeeper.io</h1>
     <div class="get-started">
-      <a class="button" href="https://github.com/integration/greenkeeper">Try the all new GitHub Integration</a>
+      <a class="button" href="https://github.com/integration/greenkeeper">Upgarde to Greenkeeper 2 now!</a>
     </div>
   </div>
 </header>
@@ -13,92 +13,131 @@
 </section>
 
 <div class="double-flex">
+  <h2><span class="green">Greenkeeper 2</span> is out <i>now</i>, with new features:</h2>
+  <section>
+    <ul>
+      <li><strong>GitHub Integrations API</strong>, with 1<span class="super">st</span> class bot support</li>
+      <li><strong>Less noise</strong>: One threaded issue per package instead of multiple PRs with one version update each</li>
+      <li>Out-of-the-box support for <strong>scoped packages</strong></li>
+      <li><strong>Private packages</strong> and registry support via webhooks</li>
+      <li>npm <strong>Shrinkwrap</strong> support</li>
+    </ul>
+  </section>
+  <section>
+    <ul>
+      <li>More convenient and flexible dependency update handling</li>
+      <li>Built-in dependency pinning, for when you just don’t have time to deal with a breaking change</li>
+      <li>Comfortably manage your billing on the web</li>
+      <li>Open product roadmap</li>
+      <li>And a <strong>new pricing</strong> structure which probably makes Greenkeeper cheaper for you :)</li>
+    </ul>
+  </section>
+  <a href="#">Read our release notes, describing all features in full length.</a>
+</div>
+
+<div class="double-flex">
   <section class="description">
     <h2>Use <a href="http://semver.org">SemVer</a>. We’ll have your back.</h2>
-    <p>The npm ecosystem with its 360,000+ modules is a great foundation to build your software on.</p>
-    <p>Using this many modules quickly leads to <strong>a constantly changing platform</strong> and <strong>no way of knowing</strong> what changes and when.</p>
-
-    <p>Until you use <em>Greenkeeper:</em> we track your dependencies and trigger your test suite with every new version coming in. <strong>If a dependency version you’re relying on breaks your software, we open an Issue</strong>. Find the source of the problem in the attached release notes and commits, or downgrade quickly. <strong>For major upgrades we will send you a Pull Request</strong> directly.</p>
+    <p>The npm ecosystem with its 360,000+ modules is a great foundation to build your software on, and Greenkeeper makes it more reliable. You’ll also spend less time with dull chores, and more time with the fun parts of software development.</p>
+    <p>Greenkeeper is a friendly bot that tells you when updates to your dependencies break your software. It automatically detects the latest working version and you can then choose to either immediately fix the issue or just pin the dependency so you can get back to it once you have the time. Either way: no more broken software.</p>
   </section>
 
   <section>
     <h2>Automated dependency management</h2>
-    <p>You <em>could</em> manually track updates of your dependencies and test whether things continue to work. This takes <em>a lot of time</em> however and it’s rarely ever done. So most of the time, <strong>your software is in a Schrödinger state of being potentially broken</strong>, and you have no idea until you run <code>npm install</code> and try the next time.</p>
-    <p>Greenkeeper <strong>takes away these chores</strong> of dependency management. <code>npm install</code> and <code>npm test</code> is called immediately after an update. There is no doubt about the state of your software.</p>
-
-    <h3>Free during Beta</h3>
-    <p>Greenkeeper is currently free for all repositories on GitHub. It will always stay that way for Open Source Projects. Once GitHub Integrations are out of beta there will be a monthly charge for private repos. Greenkeeper works with npm, GitHub and any CI service. If you want to run Greenkeeper on your own hardware, behind your firewall, <a href="#enterprise">we support that too!</a>
-    </p>
+    <p>You <em>could</em> manually track updates of your dependencies and test whether things still work. This takes <em>a lot of time</em> however and it’s rarely ever done. So most of the time, <strong>your software is in a Schrödinger state of being potentially broken</strong>, and you have no idea until you (or your users) run <code>npm install</code> and try it out.</p>
+    <p>Greenkeeper <strong>takes away these chores</strong> of dependency management: For each update to any of your dependencies, our bot immediately runs <code>npm install</code> and <code>npm test</code>. There is no more doubt about the state of your software, you’ll always know when it breaks.</p>
   </section>
 </div>
 
-<div class="double-flex">
-  <section class="social-proof">
-    <h2>Who’s using Greenkeeper?</h2>
-    <div class="modules">
-      <p>About <strong>10000 projects</strong> on GitHub, among them a few well-known Open Source-projects:</p>
-      <ul class="links compact">
-        <li>
-          <a href="https://lodash.com">lodash</a>
-        </li>
-        <li>
-          <a href="https://pouchdb.com/">PouchDB</a>
-        </li>
-        <li>
-          <a href="https://freecodecamp.com">FreeCodeCamp</a>
-        </li>
-        <li>
-          <a href="https:/github.com/karma-runner/karma">Karma</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/package/request">request</a>
-        </li>
-        <li>
-          <a href="https://modernizr.com">Modernizr</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/package/standard">standard</a>
-        </li>
-        <li>
-          <a href="https://www.npmjs.com/package/webtorrent">webtorrent</a>
-        </li>
-        <li>
-           <a href="https://github.com/janl/mustache.js">mustache.js</a>
-        </li>
-        <li>
-          <a href="https://github.com/ampproject/amphtml">Google’s AMP</a>
-        </li>
-        <li>
-           <a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a>
-         </li>
-      </ul>
-      <p>We use it ourselves for <a href="https://github.com/hoodiehq/hoodie-server">Hoodie</a>, and naturally, Greenkeeper keeps itself up to date, too. If you're still on the fence: <strong>Greenkeeper is officially recommended by npm!</strong></p>
-    </div>
-  </section>
-  <section class="they-really-seem-to-like-us">
-    <h2>What Our <br>Users Say</h2>
-    <ul class="tweets spaced">
-      <!--li>greenkeeper.io makes our lives easier: Thank you!<a href="https://twitter.com/pushrockscode/status/650982642834407424">@pushrockscode</a></li-->
-      <!--li>Heh, @greenkeeperio just became @pouchdb's 170th contributor and it already has 3 more PR's open […], this is awesome<a href="https://twitter.com/daleharvey/status/648910948657446913">@daleharvey</a></li-->
-      <!--li>Just gave greenkeeper.io a try and it really rocks!<a href="https://twitter.com/chrkhl/status/648086178890170369">@chrkhl</a></li-->
-      <!--li>The Mighty Internet is automating our dev workflow. Serious cool service for keeping npm dependencies up to date: http://greenkeeper.io/<a href="https://twitter.com/kaplas/status/648388001844871168">@kaplas</a></li-->
-      <!--li>"@greenkeeperio Is My Co-Pilot"<a href="https://twitter.com/EINS78/status/649604334121021442">@EINS78</a></li-->
-      <li><em>“I am 100% loving @greenkeeperio btw. Next up: using <a href="http://git.io/semantic-release">semantic release</a> for all the projects I have 100% test coverage for.”</em> — <a href="https://twitter.com/ceejbot/status/665207874650578945">CJ Silverio</a>, CTO, <a href="https://www.npmjs.com">npm Inc.</a></li>
+<figure class="wide-img">
+  <img src="images/dependency_pinning.png" alt="">
+  <figcaption>When a dependency update breaks your build, Greenkeeper lets you pin the last working version right there in the GitHub issue.</figcaption>
+</figure>
 
-      <li><em>“@greenkeeperio is solid. It's now on all our public repos and we're getting a private account in the new year. The time saved is worth it.”</em> — <a href="https://twitter.com/gloddy/status/674650926620278785">Christian Gloddy</a>, Director of Web development, <a href="http://nymag.com" title="NYMag - Politics, Entertainment, Fashion, Restaurants & NY">New York Magazine</a>.</li>
+<section class="single">
+  <h2>Who’s using Greenkeeper?</h2>
+  <p>About <strong>10000 projects</strong> on GitHub, among them a few well-known Open Source-projects:</p>
+  <ul class="oss-users">
+    <li>
+      <a href="https://github.com/ampproject/amphtml">
+        <img src="images/logo_amp.svg" alt="">
+        <span>Google AMP</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://freecodecamp.com">
+        <img src="images/logo_freecodecamp.svg" alt="">
+        <span>FreeCodeCamp</span>
+      </a>
+    </li>
+    <li>
+      <a href="https:/github.com/karma-runner/karma">
+        <img src="images/logo_karma.png" alt="">
+        <span>Karma</span>
+      </a>
+    </li>
+    <li class="smaller">
+      <a href="https://lodash.com">
+        <img src="images/logo_lodash.svg" alt="">
+        <span>lodash</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://modernizr.com">
+        <img src="images/logo_modernizr.svg" alt="">
+        <span>Modernizr</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://pouchdb.com/">
+        <img src="images/logo_pouchdb.svg" alt="">
+        <span>PouchDB</span>
+      </a>
+    </li>
+    <li class="smaller">
+      <a href="https://www.npmjs.com/package/standard">
+        <img src="images/logo_standard.svg" alt="">
+        <span>standard</span>
+      </a>
+    </li>
+    <li class="smaller">
+      <a href="https://www.npmjs.com/package/webtorrent">
+        <img src="images/logo_webtorrent.png" alt="">
+        <span>webtorrent</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="oss-users no-logos">
+    <li><a href="https://www.npmjs.com/package/request">request</a></li>
+    <li><a href="https://github.com/janl/mustache.js">mustache.js</a></li>
+    <li><a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a></li>
+  </ul>
+  <p>We use it ourselves for <a href="https://github.com/hoodiehq/hoodie-server">Hoodie</a>, and naturally, Greenkeeper keeps itself up to date, too. If you're still on the fence: <strong>Greenkeeper is officially recommended by npm!</strong></p>
+</section>
 
-      <li><em>“[I’m] a fan of how Greenkeeper tackles @npmjs deps: as an unobtrusive bot that sends PRs when upstreams update. <a href="https://www.youtube.com/watch?v=XbQvxCLkBbw">https://www.youtube.com/watch?v=XbQvxCLkBbw</a>”</em> — <a href="https://twitter.com/jedschmidt/status/647451940457193472">Jed Schmidt</a>, JavaScript celebrity.</li>
+<section class="single they-really-seem-to-like-us">
+  <h2>What Our <br>Users Say</h2>
+  <ul class="tweets spaced">
+    <!--li>greenkeeper.io makes our lives easier: Thank you!<a href="https://twitter.com/pushrockscode/status/650982642834407424">@pushrockscode</a></li-->
+    <!--li>Heh, @greenkeeperio just became @pouchdb's 170th contributor and it already has 3 more PR's open […], this is awesome<a href="https://twitter.com/daleharvey/status/648910948657446913">@daleharvey</a></li-->
+    <!--li>Just gave greenkeeper.io a try and it really rocks!<a href="https://twitter.com/chrkhl/status/648086178890170369">@chrkhl</a></li-->
+    <!--li>The Mighty Internet is automating our dev workflow. Serious cool service for keeping npm dependencies up to date: http://greenkeeper.io/<a href="https://twitter.com/kaplas/status/648388001844871168">@kaplas</a></li-->
+    <!--li>"@greenkeeperio Is My Co-Pilot"<a href="https://twitter.com/EINS78/status/649604334121021442">@EINS78</a></li-->
+    <li><em>I am 100% loving @greenkeeperio btw. Next up: using <a href="http://git.io/semantic-release">semantic release</a> for all the projects I have 100% test coverage for.</em> — <a href="https://twitter.com/ceejbot/status/665207874650578945">CJ Silverio</a>, CTO, <a href="https://www.npmjs.com">npm Inc.</a></li>
 
-      <li><em>“I now have greenkeeper enabled on 6 of my bigger open source projects, and it would be a no brainer to pay for to use on private projects.”</em> — <a href="http://lukecod.es/2016/03/07/greenkeeper/" title="Greenkeeper &middot; Luke Codes">Luke Karrys</a>, developer at <a href="https://andyet.com/">&amp;yet</a>.</li>
+    <li><em>@greenkeeperio is solid. It's now on all our public repos and we're getting a private account in the new year. The time saved is worth it.</em> — <a href="https://twitter.com/gloddy/status/674650926620278785">Christian Gloddy</a>, Director of Web development, <a href="http://nymag.com" title="NYMag - Politics, Entertainment, Fashion, Restaurants & NY">New York Magazine</a>.</li>
 
-      <li><em>“Just updated all the dependencies on 5 open source projects with @greenkeeperio in 10 minutes. 👍”</em> — <a href="https://twitter.com/TalAter/status/688950232801886208">Tal Ater</a>, developer, UpUp.</li>
+    <li><em>[I’m] a fan of how Greenkeeper tackles @npmjs deps: as an unobtrusive bot that sends PRs when upstreams update. <a href="https://www.youtube.com/watch?v=XbQvxCLkBbw">https://www.youtube.com/watch?v=XbQvxCLkBbw</a></em> — <a href="https://twitter.com/jedschmidt/status/647451940457193472">Jed Schmidt</a>, JavaScript celebrity.</li>
 
-      <li><em>“You have to try them! It's such an awesome and easy way to keep your dependencies updated. 💕”</em> — <a href="https://twitter.com/notquiteleo">Leo</a> from <a href="https://zeit.co">ZEIT</a></li>
-    </ul>
+    <li><em>I now have greenkeeper enabled on 6 of my bigger open source projects, and it would be a no brainer to pay for to use on private projects.</em> — <a href="http://lukecod.es/2016/03/07/greenkeeper/" title="Greenkeeper &middot; Luke Codes">Luke Karrys</a>, developer at <a href="https://andyet.com/">&amp;yet</a>.</li>
 
-    <p>In general, <a href="https://twitter.com/search?q=greenkeeper.io%20OR%20greenkeeperio">people really seem to like Greenkeeper</a>.</p>
-  </section>
-</div>
+    <li><em>Just updated all the dependencies on 5 open source projects with @greenkeeperio in 10 minutes. 👍</em> — <a href="https://twitter.com/TalAter/status/688950232801886208">Tal Ater</a>, developer, UpUp.</li>
+
+    <li><em>You have to try them! It's such an awesome and easy way to keep your dependencies updated. 💕</em> — <a href="https://twitter.com/notquiteleo">Leo</a> from <a href="https://zeit.co">ZEIT</a></li>
+  </ul>
+
+  <p>In general, <a href="https://twitter.com/search?q=greenkeeper.io%20OR%20greenkeeperio">people really seem to like Greenkeeper</a>.</p>
+</section>
 
 <a id="how-it-works"></a>
 <div class="double-flex full-height">
@@ -199,7 +238,7 @@
 </div> -->
 
 <a id="enterprise"></a>
-<div class="single full-height enterprise">
+<div class="centered full-height enterprise">
   <section>
     <h2>Enterprise plan</h2>
     <p>You’re using <a href="https://enterprise.github.com/home">GitHub Enterprise</a> or <a href="https://www.npmjs.com/enterprise">npm Enterprise</a>? No problem, we support those too.</p>
