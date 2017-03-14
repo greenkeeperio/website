@@ -110,6 +110,16 @@ nav ul li:nth-child(7){
 
 nav ul li a{
   margin-left: 0.25em;
+  position: relative;
+  // Embiggen touch targets
+  &:before{
+    content: "";
+    padding: 1.6em 1em;
+    width: 100%;
+    position: absolute;
+    left: -1em;
+    top: -1em;
+  }
 }
 
 body:not(.index) nav.footer {
@@ -240,12 +250,14 @@ a:not(.plan):hover,
 a:not(.plan):focus{
   color: #000;
   border-bottom: 2px solid #000;
+  outline: none;
 }
 
 h2 a:not(.plan),
 h2 a:not(.plan):hover,
 h2 a:not(.plan):focus{
   border-bottom: none;
+  outline: none;
 }
 
 a:not([href]) {
@@ -287,6 +299,7 @@ pre{
 
 ul{
   list-style: none;
+  padding-left: 1em;
 }
 
 ul li {
@@ -313,6 +326,20 @@ section{
   font-size: 0.75rem;
   padding: 0.5em 1em;
   margin: 1em 0;
+  &.split-item-top{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    ul {
+      margin-bottom: 0;
+    }
+  }
+  &.split-item-bottom{
+    margin-top: 0;
+    padding-top: 0;
+    ul {
+      margin-top: 0;
+    }
+  }
 }
 
 section h2 {
@@ -337,6 +364,12 @@ section h2:after {
   text-align: center;
 }
 
+.double-flex {
+  &> h2 {
+    margin: 0 1em;
+  }
+}
+
 .double-flex .social-proof{
   width: 100%;
 }
@@ -346,7 +379,8 @@ section h2:after {
   width: 100%;
 }
 .they-really-seem-to-like-us ul{
-  padding-left: 0.5em;
+  padding-left: 0;
+  max-width: 90vw;
 }
 
 .pricing{
@@ -602,7 +636,7 @@ figure.wide-img {
       align-items: center;
       flex-wrap: wrap;
       position: relative;
-      font-size: 0.75em;
+      font-size: 1em;
       &:hover img, &:focus img{
         transform: scale(1.05);
       }
@@ -619,11 +653,17 @@ figure.wide-img {
       text-align: center;
     }
   }
-  &.no-logos li {
-    text-align: center;
-    span {
-      position: relative;
-      bottom: 0;
+  &.no-logos {
+    margin-top: 1em;
+    li {
+      text-align: center;
+      a{
+        height: 30px;
+        span {
+          position: relative;
+          bottom: 0;
+        }
+      }
     }
   }
   img {
@@ -680,6 +720,7 @@ figure.wide-img {
 }
 
 .slick-arrow {
+  // because slick adds an element style
   display: none !important;
 }
 
@@ -710,7 +751,7 @@ figure.wide-img {
     transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
     &:hover, &:focus{
       border-color: #00c775;
-      background-color: #00c775;
+      background-color: #FFF;
     }
   }
   &.slick-active button {
@@ -753,6 +794,48 @@ figure.wide-img {
   .double-flex .they-really-seem-to-like-us{
     width: 65%;
     padding: 0.5em 1em;
+  }
+  section{
+    &.split-item-top,
+    &.split-item-bottom{
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      ul {
+        margin: inherit;
+      }
+    }
+  }
+  .slick-arrow{
+    display: block !important;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    top: -0.3em;
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0;
+    line-height: 46px;
+    background-color: #e6faf1;
+    color: #00c775;
+    box-shadow: 0 0 0 5px transparent;
+    transition: box-shadow 0.25s ease-in-out;
+    &.slick-prev{
+      left: -4em;
+    }
+    &.slick-next{
+      right: -4em;
+    }
+    &:hover, &:focus{
+      outline: none;
+      background-color: #e6faf1;
+      color: #00c775;
+      box-shadow: 0 0 0 5px #00c775;
+    }
+  }
+  .oss-users li a{
+    font-size: 0.75em;
   }
 }
 
