@@ -38,17 +38,15 @@ body{
   margin: 0;
   padding: 0;
   line-height: 1.35;
-  /*
-  background-image: url(../images/bg.svg);
+  background-image: url(../images/bg_nodes.svg);
   background-repeat: repeat-y;
   background-size: 100%;
-  */
 }
 
 nav {
   padding: 1rem 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.65);
   height: auto;
   top: 0;
   z-index: 100;
