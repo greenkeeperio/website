@@ -38,6 +38,11 @@ body{
   margin: 0;
   padding: 0;
   line-height: 1.35;
+  /*
+  background-image: url(../images/bg.svg);
+  background-repeat: repeat-y;
+  background-size: 100%;
+  */
 }
 
 nav {
@@ -51,7 +56,7 @@ nav {
 
 nav ul {
   list-style: none;
-  margin: 0;
+  margin: 0 1rem;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -60,6 +65,17 @@ nav ul {
   text-transform: uppercase;
   font-weight: bold;
   flex-wrap: wrap;
+  li{
+    &.left {
+      margin-right: auto;
+    }
+    &.right {
+      margin-left: auto;
+    }
+    &.invisible{
+      color: transparent;
+    }
+  }
 }
 
 body.index.preloading nav.header ul li{
@@ -80,32 +96,28 @@ nav ul li {
   }
 }
 
-nav ul li:nth-child(1){
-  transition-delay: 2000ms;
-}
-
 nav ul li:nth-child(2){
-  transition-delay: 2050ms;
+  transition-delay: 50ms;
 }
 
 nav ul li:nth-child(3){
-  transition-delay: 2100ms;
+  transition-delay: 100ms;
 }
 
 nav ul li:nth-child(4){
-  transition-delay: 2150ms;
+  transition-delay: 150ms;
 }
 
 nav ul li:nth-child(5){
-  transition-delay: 2200ms;
+  transition-delay: 200ms;
 }
 
 nav ul li:nth-child(6){
-  transition-delay: 2250ms;
+  transition-delay: 250ms;
 }
 
 nav ul li:nth-child(7){
-  transition-delay: 2300ms;
+  transition-delay: 300ms;
 }
 
 nav ul li a{
@@ -146,7 +158,7 @@ a.enterprise,
 
 header{
   transition: background-size 750ms cubic-bezier(0.26,1.48,.47,.96);
-  background-image: url(../images/darker_nodes.png);
+  background-image: url(../images/nodes.svg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 90vw;
@@ -293,17 +305,20 @@ pre{
   white-space: normal;
 }
 
+p{
+  line-height: 1.4;
+}
+
 .no-select {
   user-select: none;
 }
-
 ul{
   list-style: none;
   padding-left: 1em;
 }
 
 ul li {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
 }
 
 ul li:before {
@@ -362,6 +377,9 @@ section h2:after {
   margin: 3em auto 3em;
   max-width: 30rem;
   text-align: center;
+  .left-aligned{
+    text-align: left;
+  }
 }
 
 .double-flex {
@@ -654,7 +672,7 @@ figure.wide-img {
     }
   }
   &.no-logos {
-    margin-top: 1em;
+    margin: 1em auto 3em;
     li {
       text-align: center;
       a{
@@ -805,35 +823,6 @@ figure.wide-img {
       }
     }
   }
-  .slick-arrow{
-    display: block !important;
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    top: -0.3em;
-    position: absolute;
-    vertical-align: middle;
-    text-align: center;
-    padding: 0;
-    line-height: 46px;
-    background-color: #e6faf1;
-    color: #00c775;
-    box-shadow: 0 0 0 5px transparent;
-    transition: box-shadow 0.25s ease-in-out;
-    &.slick-prev{
-      left: -4em;
-    }
-    &.slick-next{
-      right: -4em;
-    }
-    &:hover, &:focus{
-      outline: none;
-      background-color: #e6faf1;
-      color: #00c775;
-      box-shadow: 0 0 0 5px #00c775;
-    }
-  }
   .oss-users li a{
     font-size: 0.75em;
   }
@@ -844,7 +833,7 @@ figure.wide-img {
     position: fixed;
   }
   .index header{
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .risk{
     max-width: 33%;
@@ -882,6 +871,35 @@ figure.wide-img {
     font-size: 1rem;
     padding-top: 0.5em;
   }
+  .slick-arrow{
+    display: block !important;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    top: -0.3em;
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0;
+    line-height: 46px;
+    background-color: #e6faf1;
+    color: #00c775;
+    box-shadow: 0 0 0 5px transparent;
+    transition: box-shadow 0.25s ease-in-out;
+    &.slick-prev{
+      left: -3em;
+    }
+    &.slick-next{
+      right: -3em;
+    }
+    &:hover, &:focus{
+      outline: none;
+      background-color: #e6faf1;
+      color: #00c775;
+      box-shadow: 0 0 0 5px #00c775;
+    }
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -891,10 +909,11 @@ figure.wide-img {
   .full-height{
     height: 100vh;
     align-items: center;
+    margin: 0 auto;
   }
 
   div.enterprise{
-    background: url(../images/enterprise_nodes.png), url(../images/enterprise_nodes.png);
+    background: url(../images/enterprise_nodes.svg), url(../images/enterprise_nodes.svg);
     background-size: 450px, 450px;
     background-repeat: no-repeat;
     background-position-x: -225px, calc(100% + 225px);
