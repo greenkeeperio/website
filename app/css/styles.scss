@@ -66,20 +66,24 @@ nav ul {
   font-weight: bold;
   flex-wrap: wrap;
   li{
-    &.left {
-      margin-right: auto;
-    }
-    &.right {
-      margin-left: auto;
-    }
-    &.invisible{
-      color: transparent;
+    &.account {
+      order: -1;
+      width: 100%;
+      text-align: right;
+      margin-bottom: 1.5em;
+      @media screen and (min-width: 600px) {
+        order: inherit;
+        width: auto;
+        text-align: inherit;
+        margin-bottom: 0;
+        margin-left: auto;
+      }
     }
   }
 }
 
 body.index.preloading nav.header ul li{
-  transform: translateY(-100px);
+  transform: translateY(-200px);
 }
 nav.header {
   will-change: transform;
@@ -169,6 +173,7 @@ header{
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 1em;
 }
 
 body.index.preloading header h1{
