@@ -677,7 +677,8 @@ figure.wide-img {
       flex-wrap: wrap;
       position: relative;
       font-size: 1em;
-      &:hover img, &:focus img{
+      &:hover img, &:focus img,
+      &:hover svg, &:focus svg{
         transform: scale(1.05);
       }
     }
@@ -708,7 +709,7 @@ figure.wide-img {
       }
     }
   }
-  img {
+  img, svg {
     max-width: 100%;
     width: auto;
     height: auto;
