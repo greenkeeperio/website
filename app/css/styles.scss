@@ -1,3 +1,5 @@
+@import 'slick';
+
 * {
   box-sizing: border-box;
 }
@@ -80,17 +82,21 @@ nav ul {
   }
 }
 
-body.index.preloading nav.header ul li{
-  transform: translateY(-200px);
-}
 nav.header {
   will-change: transform;
 }
+
+@for $i from 1 to 10 {
+  nav.header ul li:nth-child(#{$i}) {
+    transform: translateY(-200px);
+    animation: from-top 0.75s cubic-bezier(0.26,1.48,.47,.96) 1 - $i * 0.05s forwards 1;
+  }
+}
+
+
 nav ul li {
   display: inline-block;
   margin: 0.5em 1em;
-  transition: transform 750ms cubic-bezier(0.26,1.48,.47,.96);
-  transform: translateY(0px);
   &.active a {
     color: #000;
     pointer-events: none;
@@ -98,28 +104,13 @@ nav ul li {
   }
 }
 
-nav ul li:nth-child(2){
-  transition-delay: 50ms;
-}
-
-nav ul li:nth-child(3){
-  transition-delay: 100ms;
-}
-
-nav ul li:nth-child(4){
-  transition-delay: 150ms;
-}
-
-nav ul li:nth-child(5){
-  transition-delay: 200ms;
-}
-
-nav ul li:nth-child(6){
-  transition-delay: 250ms;
-}
-
-nav ul li:nth-child(7){
-  transition-delay: 300ms;
+@keyframes from-top{
+  0% {
+    transform: translateY(-200px);
+  };
+  100% {
+    transform: translateY(0);
+  };
 }
 
 nav ul li a{
@@ -148,8 +139,27 @@ body:not(.index) nav.footer {
   }
 }
 
-body.preloading header{
-  background-size: 0;
+@keyframes bounce-bg-in{
+  0% {
+    background-size: 0;
+  };
+  100% {
+    background-size: 90vw;
+    @media screen and (min-width: 600px) {
+      background-size: 450px;
+    }
+  };
+}
+
+@media screen and (min-width: 600px) {
+  @keyframes bounce-bg-in{
+    0% {
+      background-size: 0;
+    };
+    100% {
+      background-size: 450px;
+    };
+  }
 }
 
 a.enterprise,
@@ -159,11 +169,10 @@ a.enterprise,
 }
 
 header{
-  transition: background-size 750ms cubic-bezier(0.26,1.48,.47,.96);
   background-image: url(../images/nodes.svg);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 90vw;
+  background-size: 0;
   width: 100%;
   height: 450px;
   height: 80vw;
@@ -172,17 +181,24 @@ header{
   align-items: center;
   text-align: center;
   margin-top: 1em;
+  animation: bounce-bg-in 750ms cubic-bezier(0.26,1.48,.47,.96) 1s forwards 1;
 }
 
-body.index.preloading header h1{
-  text-shadow: 0 0 500px #000;
-  opacity: 0;
+@keyframes appear-from-blur{
+  0% {
+    text-shadow: 0 0 500px #000;
+    opacity: 0;
+  };
+  100% {
+    text-shadow: 0 0 0 #000;
+    opacity: 1;
+  };
 }
 
 header h1{
-  transition: text-shadow 500ms ease-out 750ms, opacity 500ms ease-out 750ms;
-  text-shadow: 0 0 0 #000;
-  opacity: 1;
+  text-shadow: 0 0 500px #000;
+  opacity: 0;
+  animation: appear-from-blur 500ms ease-out 500ms forwards 1;
   display: block;
   color: transparent;
   margin: 0;
@@ -191,13 +207,18 @@ header h1{
   text-transform: uppercase;
 }
 
-body.preloading header span{
-  opacity: 0;
+@keyframes fade-in{
+  0% {
+    opacity: 0;
+  };
+  100% {
+    opacity: 1;
+  };
 }
 
 header span{
-  transition: opacity 500ms ease-out 1750ms;
-  opacity: 1;
+  opacity: 0;
+  animation: fade-in 500ms ease-out 1750ms forwards 1;
   display: block;
   background: #00c775;
   padding: 0.5em 1em 0.55em;
@@ -206,12 +227,10 @@ header span{
   font-size: 0.75rem;
 }
 
-body.preloading header .get-started{
-  opacity: 0;
-}
 
 header .get-started{
-  transition: opacity 500ms ease-out 1850ms;
+  opacity: 0;
+  animation: fade-in 500ms ease-out 1850ms forwards 1;
 }
 
 header .get-started .button{
@@ -670,6 +689,8 @@ figure.wide-img {
     }
     span {
       position: absolute;
+      left: 0;
+      right: 0;
       bottom: -1em;
       text-align: center;
     }
@@ -794,7 +815,7 @@ figure.wide-img {
     font-size: 0.5rem;
   }
   header{
-    background-size: 450px;
+    //background-size: 450px;
     height: 450px;
   }
   header h1{
