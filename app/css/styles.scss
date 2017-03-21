@@ -243,7 +243,7 @@ header .get-started .button{
   padding: 0.4em;
   display: block;
   margin: 0 1em 0.25em 1em;
-  transition: color 0.25s, background-color 0.25s;
+  transition: all 0.25s;
   border: 3px solid #00c775;
   font-weight: normal;
   letter-spacing: 1px;
@@ -255,6 +255,11 @@ header .get-started .button:focus{
   background: #fff;
   color: #00c775;
   border-bottom: 3px solid #00c775;
+  // Override links in headlines
+  border-color: #00c775;
+  transform: scale(1.1);
+  box-shadow: 0 0 0px 10px #00c775, 0 0 90px 20px rgb(0, 199, 117);
+  z-index: 1010;
 }
 
 h1, h2, h3, h4, h5, h6{
