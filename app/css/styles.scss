@@ -258,6 +258,12 @@ h1, h2, h3, h4, h5, h6{
   color: #000;
   text-transform: uppercase;
   text-align: center;
+  a{
+    border-width: 4px;
+    &:hover, &:focus{
+      border-width: 4px;
+    }
+  }
 }
 
 .wf-loading {
@@ -283,14 +289,7 @@ a{
 a:not(.plan):hover,
 a:not(.plan):focus{
   color: #000;
-  border-bottom: 2px solid #000;
-  outline: none;
-}
-
-h2 a:not(.plan),
-h2 a:not(.plan):hover,
-h2 a:not(.plan):focus{
-  border-bottom: none;
+  border-color: #000;
   outline: none;
 }
 
