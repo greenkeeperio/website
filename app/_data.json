@@ -34,5 +34,10 @@
   "manual-webhooks": {
     "pageTitle": "Manual Webhooks",
     "bodyClass": "manual-webhooks"
+  },
+  "enterprise-setup": {
+    "pageTitle": "Enterprise Setup",
+    "bodyClass": "enterprise-setup"
   }
+
 }

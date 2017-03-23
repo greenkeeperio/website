@@ -336,7 +336,7 @@ pre{
 }
 
 p{
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .no-select {
@@ -675,7 +675,25 @@ figure.wide-img {
   max-width: 900px;
   margin: 0 auto;
   width: 100%;
-  padding: 0 1em;
+  padding: 0;
+  background: #FFF;
+  &.no-border {
+    background: none;
+    max-width: 90vw;
+    width: 100%;
+    @media screen and (min-width: 959px) {
+      transform: translateX(calc(25% - 424px));
+      max-width: none;
+      width: 959px;
+    }
+    img{
+      border: none;
+    }
+    figcaption {
+      background: none;
+      padding: 0;
+    }
+  }
   img {
     max-width: 100%;
     margin: 0;
@@ -832,6 +850,26 @@ figure.wide-img {
   }
   &.slick-active button {
     background: #000;
+  }
+}
+
+.enterprise-setup{
+  h3 {
+    margin-top: 3em;
+  }
+  ul{
+    margin: 2em 0;
+    li{
+      line-height: 1.5;
+      &:before {
+        line-height: 1.3rem;
+      }
+    }
+  }
+  .gke-bot-user-avatar {
+    max-width: 200px;
+    display: block;
+    margin: 2em auto;
   }
 }
 
