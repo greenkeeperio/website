@@ -35,32 +35,20 @@
   <%- partial("partials/_footer") %>
 
   <script type="text/javascript" src="js/smoothscroll.min.js"></script>
+  <script type="text/javascript" src="js/jquery.slim.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <script>
     var domReady = function(callback) {
         document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
     };
     domReady(function() {
-
-      var plans = document.getElementsByClassName('plan');
-
-      for (var i = 0; i < plans.length; i++) {
-        plans[i].addEventListener('click', function(event) {
-          event.preventDefault();
-          if(window.innerWidth > 1000){
-            window.smoothScroll(document.querySelector('#getting-started'))
-          } else {
-            window.smoothScroll(document.querySelector('#signup'))
-          }
-        }, false);
-      }
-
-      if(window.location.pathname === '/'){
-        setTimeout(function(){
-          document.getElementsByTagName("body")[0].classList.remove('preloading');
-        }, 1000);
-      } else {
-        document.getElementsByTagName("body")[0].classList.remove('preloading');
-      }
+      $('.tweets').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        prevArrow: '<button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button">←</button>',
+        nextArrow: '<button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Previous" role="button">→</button>'
+      });
     });
   </script>
   <script>

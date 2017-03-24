@@ -1,38 +1,43 @@
 {
   "index": {
     "pageTitle": "Index",
-    "bodyClass": "index"
+    "bodyClass": "index gk-saas"
   },
   "faq": {
     "pageTitle": "FAQ",
-    "bodyClass": "faq"
+    "bodyClass": "faq gk-saas"
   },
   "impressum": {
     "pageTitle": "Impressum",
-    "bodyClass": "impressum"
+    "bodyClass": "impressum gk-saas"
   },
   "terms-of-service": {
     "pageTitle": "Terms of Service",
-    "bodyClass": "terms-of-service"
+    "bodyClass": "terms-of-service gk-saas"
   },
   "privacy-policy": {
     "pageTitle": "Privacy Policy",
-    "bodyClass": "privacy-policy"
+    "bodyClass": "privacy-policy gk-saas"
   },
   "thanks-for-confirming-your-payment": {
     "pageTitle": "Thank you!",
-    "bodyClass": "thanks-for-confirming-your-payment"
+    "bodyClass": "thanks-for-confirming-your-payment gk-saas"
   },
   "thanks-for-signing-up": {
     "pageTitle": "Thank you!",
-    "bodyClass": "thanks-for-signing-up"
+    "bodyClass": "thanks-for-signing-up gk-saas"
   },
   "verify": {
     "pageTitle": "Verify",
-    "bodyClass": "verify"
+    "bodyClass": "verify gk-saas"
   },
   "manual-webhooks": {
     "pageTitle": "Manual Webhooks",
-    "bodyClass": "manual-webhooks"
+    "bodyClass": "manual-webhooks gk-saas"
+  },
+  "enterprise-setup": {
+    "pageTitle": "Enterprise Setup",
+    "bodyClass": "enterprise-setup gk-enterprise"
   }
+
 }
