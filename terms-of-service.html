@@ -27,7 +27,7 @@
   <script src="https://use.typekit.net/pve4wdk.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
-<body class="preloading terms-of-service">
+<body class="preloading terms-of-service gk-saas">
   
 
 <nav class="header" role="navigation">
@@ -261,37 +261,25 @@
   <p><a href="https://github.com/greenkeeperio/website">This website is Open Source on GitHub</a>. Thank you for your future contributions!</p>
   <p>Brought to you by the people behind <a href="http://hood.ie">Hoodie</a>. We’re re-inventing web app development. Take a look!</p>
   <p>.io domain? — <a href="https://twitter.com/chagosuk" title="chagos-support">Yes, we support Chagos!</a></p>
-  <p>© 2016 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
+  <p>© 2017 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
 </footer>
 
 
   <script type="text/javascript" src="js/smoothscroll.min.js"></script>
+  <script type="text/javascript" src="js/jquery.slim.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <script>
     var domReady = function(callback) {
         document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
     };
     domReady(function() {
-
-      var plans = document.getElementsByClassName('plan');
-
-      for (var i = 0; i < plans.length; i++) {
-        plans[i].addEventListener('click', function(event) {
-          event.preventDefault();
-          if(window.innerWidth > 1000){
-            window.smoothScroll(document.querySelector('#getting-started'))
-          } else {
-            window.smoothScroll(document.querySelector('#signup'))
-          }
-        }, false);
-      }
-
-      if(window.location.pathname === '/'){
-        setTimeout(function(){
-          document.getElementsByTagName("body")[0].classList.remove('preloading');
-        }, 1000);
-      } else {
-        document.getElementsByTagName("body")[0].classList.remove('preloading');
-      }
+      $('.tweets').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        prevArrow: '<button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button">←</button>',
+        nextArrow: '<button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Previous" role="button">→</button>'
+      });
     });
   </script>
   <script>
