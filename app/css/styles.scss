@@ -1,5 +1,48 @@
 @import 'slick';
 
+@mixin theme($name, $primary, $secondary) {
+  .#{$name} {
+    code {
+      background: $secondary;
+      color: $primary;
+      padding: 0.1em 0.3em;
+      border-radius: 5px;
+    }
+    .signal{
+      color: $primary;
+    }
+    a{
+      color: $primary;
+      border-bottom: 2px solid $secondary;
+    }
+    a.plan{
+      color: $primary;
+      border: 5px solid currentColor;
+    }
+    footer{
+      background: $primary;
+      color: $secondary;
+      a{
+        color: #FFF;
+        border-bottom: 2px solid rgba(255,255,255,0.5);
+      }
+    }
+    pre{
+      color: #fff;
+      background-color: $primary;
+    }
+  }
+}
+
+$green-primary: #00c775;
+$green-secondary: #e6faf1;
+
+$blue-primary: cornflowerblue;
+$blue-secondary: #e8effc;
+
+@include theme(gk-saas, $green-primary, $green-secondary);
+@include theme(gk-enterprise, $blue-primary, $blue-secondary);
+
 * {
   box-sizing: border-box;
 }
@@ -14,19 +57,8 @@ html{
   font-weight: bold;
 }
 
-code {
-  background: #e6faf1;
-  color: #00c775;
-  padding: 0.1em 0.3em;
-  border-radius: 5px;
-}
-
 .small {
   font-size: 0.8em;
-}
-
-.green{
-  color: #00c775;
 }
 
 .red {
@@ -44,9 +76,12 @@ body{
   margin: 0;
   padding: 0;
   line-height: 1.35;
-  background-image: url(../images/bg_nodes.svg);
   background-repeat: repeat-y;
   background-size: 100%;
+  background-image: url(../images/bg_nodes_gk-saas.svg);
+  &.gk-enterprise{
+    background-image: url(../images/bg_nodes_gk-enterprise.svg);
+  }
 }
 
 nav {
@@ -289,9 +324,7 @@ h1, h2, h3, h4, h5, h6{
 
 a{
   text-decoration: none;
-  color: #00c775;
   transition: all 0.25s;
-  border-bottom: 2px solid rgba(0, 199, 117, 0.1);
   font-weight: bold;
 }
 
@@ -327,8 +360,6 @@ button:focus{
 
 pre{
   display: block;
-  color: #fff;
-  background-color: #00C775;
   padding: 1em;
   margin: 0;
   line-height: 1rem;
@@ -603,15 +634,8 @@ div.enterprise section a{
 }
 
 footer{
-  background: #00C775;
-  color: #C7F2DC;
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
-}
-
-footer a{
-  color: #FFF;
-  border-bottom: 2px solid rgba(255,255,255,0.5);
 }
 
 body:not(.index) h1,
