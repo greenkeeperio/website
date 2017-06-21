@@ -897,6 +897,15 @@ figure.wide-img {
   }
 }
 
+a.anchor-icon {
+  margin: 0 0 0 -0.5em;
+  position: absolute;
+  border: none;
+  &:hover, &:focus{
+    border: none;
+  }
+}
+
 @media screen and (min-width: 400px) {
   html{
     font-size: 20px;
