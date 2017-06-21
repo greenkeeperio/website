@@ -166,6 +166,21 @@ sudo bash ./install.sh</pre>
       <img src="/images/gke_setup_github.png" alt="">
     </figure>
 
+    <h3><span class="signal">Step 4:</span> Configuring your local Greenkeeper Client</h3>
+    <ul>
+      <li>Install the Greenkeeper CLI with <code>npm install -g greenkeeper@4</code>. This will give you a <code>greenkeeper</code> command in your shell.</li>
+      <li>Tell Greenkeeper about your API endpoint with <code>greenkeeper config set https://api.gke.yourcompany.com</code>.</li>
+      <li>Next, do <code>greenkeeper login</code>. This will open a browser window and authenticate your GitHub Enterprise user with Greenkeeper Enterprise.</li>
+    </ul>
+
+    <h3><span class="signal">Step 5:</span> Enabling Your First Repository</h3>
+    <ul>
+      <li>Navigate to your package’s directory: <code>cd /path/to/your/git-repo</code></li>
+      <li>Run <code>greenkeeper enable</code> in that directory</li>
+      <li>Repeat for any other repos you’d like to enable</li>
+      <li>Done! 🌴</li>
+    </ul>
+
     <h3><span class="signal">Note:</span> Backups</h3>
     <p>All important files that should be backed up are located in the <code>/data</code> folder.</p>
 
