@@ -10,6 +10,7 @@
 
     <ul class="faq-questions">
       <li><a href="#github-activity">Greenkeeper is creating branches and immediately deleting them again</a></li>
+      <li><a href="#pinning-versions">How to get pull requests for every update</a></li>
       <li><a href="#renamed-repo">I can’t enable a repo that was recently renamed</a></li>
       <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
       <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
@@ -21,6 +22,19 @@
         <h2><a href="#github-activity">I enabled a repo, but nothing’s happening / Deleted branches</a></h2>
         <p>This might be because the dependency updates are within your specified ranges, and not breaking your tests. So there’s no point in bothering you with a PR, since everything still works.</p>
         <p>You’ll only receive pull requests when an in-range dependency breaks your build, or when a dependency updates outside your specified range.</p>
+        <a href="#top">Back to top</a>
+      </li>
+      <li>
+        <a id="pinning-versions"></a>
+        <h2><a href="#pinning-versions">I want a pull request for every dependency update</a></h2>
+        <p>If you pin your dependencies to a specific version, you will see an update for every new version that is released for that dependency.</p>
+          <p>Pin your versions like this:<br>
+          <code>{
+  "dependencies": {
+    "lodash": "4.0.0"
+  }
+}</code>
+          </p>
         <a href="#top">Back to top</a>
       </li>
       <li>
