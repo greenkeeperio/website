@@ -1,0 +1,68 @@
+<div class="container">
+  <header role="banner">
+    <div>
+      <h1>greenkeeper.io</h1>
+    </div>
+  </header>
+  <div class="main" role="main">
+    <a id="top"></a>
+    <h2><span class="signal">Greenkeeper</span> Documentation</h2>
+    <p>First off: welcome, and thanks for trying Greenkeeper!</p>
+    <h3><a class="anchor-icon" href="#documentation_overview" id="documentation_overview">&middot;</a>Documentation overview</h3>
+    <ul>
+      <li><a href="#what_greenkeeper_does">What Greenkeeper does, and why</a></li>
+      <li><a href="#differences_between_plans">Differences between plans</a></li>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#installation">Installation</a></li>
+    </ul>
+
+    <h3><a class="anchor-icon" href="#what_greenkeeper_does" id="what_greenkeeper_does">&middot;</a>What Greenkeeper does, and why</h3>
+    <p><strong>In short, Greenkeeper makes sure that you know when your project’s dependency updates break your code.</strong></p>
+    <p>Greenkeeper sits between npm and GitHub, observing all of the modules your repository depends on. Each time one of them is updated, Greenkeeper opens a new branch with that update. The repository’s CI tests kick in, and Greenkeeper watches them to see whether they pass or not.</p>
+    <p>Based on the test results and your current version definitions Greenkeeper will open up clear, actionable issues for you. If an update doesn’t break your code, nothing will happen, because everything is fine and no human intervention is required. If things do break, you’ll be informed immediately: you’ll know exactly which update to which dependecy caused the problem, and you’ll be nicely set up to fix the problem.</p>
+    <p><strong>Doesn’t semver take care of this?</strong> Not reliably, no. Versioning decisions are still often made by humans, and <a href="http://sentimentalversioning.org/">humans often version irrationally</a>. Humans are also fallible, and sometimes miscategorize a commit. Somebody else’s <code>chore</code> may break your code, because you’re using theirs in a way they haven’t forseen. The only way to be sure is to run your tests on each and every update. And if Greenkeeper weren’t around, this would be extremely tedious, which is why basically nobody makes the effort to continually stay up to date.</p>
+    <a href="#top">Back to top</a>
+
+    <h3><a class="anchor-icon" href="#differences_between_plans" id="differences_between_plans">&middot;</a>Differences between plans</h3>
+    <p>Using Greenkeeper on public repositories is free. If you intend to have it run on private repositories, you’ll need to add your payment details on in the <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a>.</p>
+    <p><a href="http://greenkeeper.io/#pricing">Pricing</a> varies depending on the type of GitHub account Greenkeeper is installed on, and how many repositories it’s enabled for.</p>
+    <a href="#top">Back to top</a>
+
+    <h3><a class="anchor-icon" href="#prerequisites" id="prerequisites">&middot;</a>Prerequisites</h3>
+    <p>Greenkeeper has a number of requirements for each repository it is meant to watch:</p>
+    <ul>
+      <li>The repo must have a <code>package.json</code></li>
+      <li>The repo must have a form of Continuous Integration (CI) that sets commit statuses on branches (like <a href="https://travis-ci.org/">Travis CI</a>, for example, but other services work too)</li>
+      <li>The CI must be active on the repo and be allowed to act on new branches</li>
+      <li>Issues must be enabled for the repo</li>
+      <li>The repo must not be a fork</li>
+      <li>If you do not have a paid subscription, the repo must be public</li>
+    </ul>
+    <a href="#top">Back to top</a>
+
+    <h3><a class="anchor-icon" href="#installation" id="installation">&middot;</a>Installation</h3>
+    <p>Setting up Greenkeeper to watch one of your repositories requries three steps:</p>
+    <ul>
+      <li>
+        <strong class="signal">First: Install Greenkeeper</strong>
+        <p>Install the Greenkeeper GitHub app on the repository’s parent organization or user account (you’ll only need to do this once per account)</p>
+        <p>To install, visit <a href='https://github.com/apps/greenkeeper'>Greenkeeper’s app page on GitHub</a> and click <code>Install</code>. If you’ve already installed it somewhere, click on <code>Configure</code> instead. You can then choose which organization or account to install the app in.</p>
+      </li>
+      <li>
+        <strong class="signal">Second: Grant repository access</strong>
+        <p>Now set up the Greenkeeper app and tell it which of the account’s repositories to try and watch</p>
+        <p>Find Greenkeeper’s settings page (this is a different URL for every account, so we can’t link to it, sorry). It’s in your organization or account settings under <code>Installed GitHub Apps</code>. Select Greenkeeper, and scroll all the way down to the section titled <code>Repository access</code>. Here, choose <code>Only select repositories</code> and add one or more repositories you want Greenkeeper to watch.</p>
+      </li>
+      <li>
+        <strong class="signal">Third: Enable Greenkeeper</strong>
+        <p>Enable Greenkeeper on that individual repository by merging the Initial Pull Request</p>
+        <p>To set itself up on a repository, Greenkeeper will open an Initial Pull Request. This will attempt to update all dependencies at once, so you’re up to date. In addition, it will add the Greenkeeper badge to your project’s <code>readme.md</code>.</p>
+        <p><strong>Important: Greenkeeper will only start watching the repository’s dependencies after this pull request has been merged.</strong> It will also remind you after a few days in case you forget.</p>
+        <p><strong>Also Important:</strong> The initial PR will not be opened if all dependencies are already up to date, and the <code>readme.md</code> already has a badge. In this case, Greenkeeper is silently enabled.</p>
+        <p>You can check the status of each repository in the <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a>.</p>
+        <p>The Initial Pull Request may take a while to appear, depending on how busy GitHub and your CI service are, and how complex your tests are.</p>
+      </li>
+    </ul>
+    <a href="#top">Back to top</a>
+  </div>
+</div>
