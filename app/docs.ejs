@@ -45,23 +45,30 @@
     <ol>
       <li>
         <strong class="signal">Install Greenkeeper</strong>
-        <p>Install the Greenkeeper GitHub app on the repository’s parent organization or user account (you’ll only need to do this once per account)</p>
+        <p>Install the Greenkeeper GitHub app on the repository’s parent organization or user account (you’ll only need to do this once per account).</p>
         <p>To install, visit <a href='https://github.com/apps/greenkeeper'>Greenkeeper’s app page on GitHub</a> and click <code>Install</code>. If you’ve already installed it somewhere, click on <code>Configure</code> instead. You can then choose which organization or account to install the app in.</p>
       </li>
       <li>
         <a id="grant_repo_access"></a>
         <strong class="signal">Grant repository access</strong>
-        <p>Now set up the Greenkeeper app and tell it which of the account’s repositories to try and watch</p>
+        <p>Now set up the Greenkeeper app and tell it which of the account’s repositories to try and watch.</p>
         <p>Find Greenkeeper’s settings page (this is a different URL for every account, so we can’t link to it, sorry). It’s in your organization or account settings under <code>Installed GitHub Apps</code>. Select Greenkeeper, and scroll all the way down to the section titled <code>Repository access</code>. Here, choose <code>Only select repositories</code> and add one or more repositories you want Greenkeeper to watch.</p>
+        <figure class="wide-img">
+          <img
+            src="/images/github_repo_access.png"
+            alt="">
+          <figcaption>The GitHub interface that lets you add and remove repository access for Greenkeeper</figcaption>
+        </figure>
+        <p>You can also find a link to these settings in the <a href="https://account.greenkeeper.io">Account Dashboard</a>, at the bottom of the corresponding account’s repository list.</p>
       </li>
       <li>
         <strong class="signal">Enable Greenkeeper</strong>
-        <p>Enable Greenkeeper on that individual repository by merging the Initial Pull Request</p>
+        <p>Enable Greenkeeper on that individual repository by merging the Initial Pull Request.</p>
         <p>To set itself up on a repository, Greenkeeper will open an Initial Pull Request. This will attempt to update all dependencies at once, so you’re up to date. In addition, it will add the Greenkeeper badge to your project’s <code>readme.md</code>.</p>
         <p><strong>Important: Greenkeeper will only start watching the repository’s dependencies after this pull request has been merged.</strong> It will also remind you after a few days in case you forget.</p>
         <p><strong>Also Important:</strong> The initial PR will not be opened if all dependencies are already up to date, and the <code>readme.md</code> already has a badge. In this case, Greenkeeper is silently enabled.</p>
         <p>You can check the status of each repository in the <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a>.</p>
-        <p>The Initial Pull Request may take a while to appear, depending on how busy GitHub and your CI service are, and how complex your tests are.</p>
+        <p>The Initial Pull Request may take a while to appear, depending on how busy GitHub and your CI service are, and how complex your tests are. See <a href="#repo_states">checking repository states</a> for details on managing Greenkeeper across multiple GitHub accounts and repositories, and find out how to <a href="#resetting_repos">reset a repository</a> when things go wrong.</p>
       </li>
     </ol>
     <a href="#top">Back to top</a>
@@ -96,7 +103,7 @@
         </li>
         <li>
           <strong class="signal">It’s an in-range update, and your tests fail:</strong>
-          <p>Greenkeeper will notify you about that breakage by opening up an issue (titled <em>"An in-range update of [dependency-name] is breaking the build"</em>) and will also let you know whether pinning the dependency to the previous version will fix the build. In addition, Greenkeeper will keep checking if any new version of that dependency fixes this version’s breakage, and will also notify you about that in the issue thread. </p>
+          <p>Greenkeeper will notify you about that breakage by opening up an issue, and it will also let you know whether pinning the dependency to the previous version will fix the build. In addition, Greenkeeper will keep checking if any new version of that dependency fixes this version’s breakage, and will also notify you about that in the issue thread. </p>
           <figure class="wide-img">
             <img
               src="/images/greenkeeper_in-range-update_fail_issue.png"
@@ -124,6 +131,16 @@
         </li>
         </ol>
       </li>
+      <li>
+        <strong class="signal">Greenkeeper verifies any pull requests</strong>
+        <p>To prevent malicious users from posing as the Greenkeeper bot, Greenkeeper will attach a status check from <code>greenkeeper/verify</code> to each pull request it opens. If this is missing, the pull request is probably not from us, and you should treat it with caution. It looks like this:</p>
+        <figure class="wide-img">
+          <img
+            src="/images/github_greenkeeper_verified_status.png"
+            alt="">
+          <figcaption>Only a pull request with a greenkeeper/verify status check is genuine. Don’t accept any fakes!</figcaption>
+        </figure>
+      </li>
     </ol>
     <a href="#top">Back to top</a>
 
@@ -134,13 +151,14 @@
         <p>If it exists, delete the <code>greenkeeper/initial</code> branch on the repo.</p>
       </li>
       <li>
-        <p>Remove the repo from the Greenkeeper integration in the app installation settings on GitHub and save. You can find a link to those settings in the <a href="https://account.greenkeeper.io">Account Dashboard</a>, at the bottom of the corresponding account’s repository list. The link is unique for every GitHub account, so we can’t link to it here.</p>
+        <p>Remove the repo from the Greenkeeper integration in the app installation settings on GitHub and save. You can find a link to those settings in the <a href="https://account.greenkeeper.io">Account Dashboard</a>, at the bottom of the corresponding account’s repository list. The link is unique for every GitHub account, so we can’t link to it here. This is the same place you do <a href="#grant_repo_access">the second Greenkeeper setup step</a>.</p>
       </li>
       <li>
         <p>On the same page, add the repo again, and save.</p>
       </li>
     </ol>
     <p>We’re working on making this more convenient by allowing you to reset repositories in the Account Dashboard.</p>
+    <p><strong>If you are working in an organization that has whitelisted all repositories</strong>, you will probably not want to touch these settings, or may not be allowed to. In this case, <a href="mailto:support@greenkeeper.io">please let us know which repo got stuck</a> and we’ll sort it out for you.</p>
     <a href="#top">Back to top</a>
 
     <h3><a class="anchor-icon" href="#pinning" id="pinning">&middot;</a>Pinning a dependency</h3>
