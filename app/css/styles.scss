@@ -32,6 +32,9 @@
       color: #fff;
       background-color: $primary;
     }
+    .logo path{
+      fill: $primary;
+    }
   }
 }
 
@@ -324,6 +327,11 @@ h1, h2, h3, h4, h5, h6{
     border-width: 4px;
     &:hover, &:focus{
       border-width: 4px;
+    }
+    &[id] {
+      color: black;
+      border: none;
+      padding-top: 0.5em;
     }
   }
 }
@@ -759,6 +767,7 @@ figure.wide-img {
     background: none;
     max-width: 90vw;
     width: 100%;
+    box-shadow: none;
     @media screen and (min-width: 959px) {
       transform: translateX(calc(25% - 424px));
       max-width: none;
@@ -951,15 +960,6 @@ figure.wide-img {
     max-width: 200px;
     display: block;
     margin: 2em auto;
-  }
-}
-
-a.anchor-icon {
-  margin: 0 0 0 -0.5em;
-  position: absolute;
-  border: none;
-  &:hover, &:focus{
-    border: none;
   }
 }
 
