@@ -1,19 +1,18 @@
 <div class="container">
-  <header role="banner">
-    <div>
-      <h1>greenkeeper.io</h1>
-    </div>
-  </header>
   <div class="main" role="main">
     <a id="top"></a>
-    <h2><span class="signal">Greenkeeper</span> Documentation</h2>
-    <p>First off: welcome, and thanks for trying Greenkeeper!</p>
+    <h2>Documentation</h2>
+    <p>First off: welcome, and thanks for trying Greenkeeper! If you can’t find what you’re looking for here, there’s also the <a href="/faq">FAQ page</a>, and if that doesn’t help, you can <a href="mailto:support@greenkeeper.io">contact us</a> directly.</p>
     <h3><a class="anchor-icon" href="#documentation_overview" id="documentation_overview">&middot;</a>Documentation overview</h3>
     <ul>
       <li><a href="#what_greenkeeper_does">What Greenkeeper does, and why</a></li>
       <li><a href="#differences_between_plans">Differences between plans</a></li>
       <li><a href="#prerequisites">Prerequisites</a></li>
       <li><a href="#installation">Installation</a></li>
+      <li><a href="#repo_states">Checking repository states</a></li>
+      <li><a href="#greenkeeper_step_by_step">How Greenkeeper works, step by step</a></li>
+      <li><a href="#resetting_repos">Resetting a repository</a></li>
+      <li><a href="#pinning">Pinning a dependency</a></li>
     </ul>
 
     <h3><a class="anchor-icon" href="#what_greenkeeper_does" id="what_greenkeeper_does">&middot;</a>What Greenkeeper does, and why</h3>
@@ -36,25 +35,27 @@
       <li>The CI must be active on the repo and be allowed to act on new branches</li>
       <li>Issues must be enabled for the repo</li>
       <li>The repo must not be a fork</li>
+      <li>Greenkeeper doesn’t support Lerna/monorepos yet</li>
       <li>If you do not have a paid subscription, the repo must be public</li>
     </ul>
     <a href="#top">Back to top</a>
 
     <h3><a class="anchor-icon" href="#installation" id="installation">&middot;</a>Installation</h3>
     <p>Setting up Greenkeeper to watch one of your repositories requries three steps:</p>
-    <ul>
+    <ol>
       <li>
-        <strong class="signal">First: Install Greenkeeper</strong>
+        <strong class="signal">Install Greenkeeper</strong>
         <p>Install the Greenkeeper GitHub app on the repository’s parent organization or user account (you’ll only need to do this once per account)</p>
         <p>To install, visit <a href='https://github.com/apps/greenkeeper'>Greenkeeper’s app page on GitHub</a> and click <code>Install</code>. If you’ve already installed it somewhere, click on <code>Configure</code> instead. You can then choose which organization or account to install the app in.</p>
       </li>
       <li>
-        <strong class="signal">Second: Grant repository access</strong>
+        <a id="grant_repo_access"></a>
+        <strong class="signal">Grant repository access</strong>
         <p>Now set up the Greenkeeper app and tell it which of the account’s repositories to try and watch</p>
         <p>Find Greenkeeper’s settings page (this is a different URL for every account, so we can’t link to it, sorry). It’s in your organization or account settings under <code>Installed GitHub Apps</code>. Select Greenkeeper, and scroll all the way down to the section titled <code>Repository access</code>. Here, choose <code>Only select repositories</code> and add one or more repositories you want Greenkeeper to watch.</p>
       </li>
       <li>
-        <strong class="signal">Third: Enable Greenkeeper</strong>
+        <strong class="signal">Enable Greenkeeper</strong>
         <p>Enable Greenkeeper on that individual repository by merging the Initial Pull Request</p>
         <p>To set itself up on a repository, Greenkeeper will open an Initial Pull Request. This will attempt to update all dependencies at once, so you’re up to date. In addition, it will add the Greenkeeper badge to your project’s <code>readme.md</code>.</p>
         <p><strong>Important: Greenkeeper will only start watching the repository’s dependencies after this pull request has been merged.</strong> It will also remind you after a few days in case you forget.</p>
@@ -62,7 +63,98 @@
         <p>You can check the status of each repository in the <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a>.</p>
         <p>The Initial Pull Request may take a while to appear, depending on how busy GitHub and your CI service are, and how complex your tests are.</p>
       </li>
-    </ul>
+    </ol>
     <a href="#top">Back to top</a>
+
+    <h3><a class="anchor-icon" href="#repo_states" id="repo_states">&middot;</a>Checking repository states</h3>
+    <p>The <a href="https://account.greenkeeper.io">Account Dashboard</a> shows you each repository’s state, indicating where Greenkeeper is installed and/or enabled. Note that this list can only show repositories <a href="#grant_repo_access">you’ve granted Greenkeeper access to</a>.</p>
+    <figure class="wide-img">
+      <img
+        src="/images/greenkeeper_account_dashboard_repolist.png"
+        alt="">
+      <figcaption>The repository list in the Greenkeeper Account Dashboard</figcaption>
+    </figure>
+    <p>A repo is marked red if the Initial Pull Request doesn’t exist (yet). This could be because one or more of the <a href="#prerequisites">prerequisites</a> isn’t met, because your CI is still running and the Initial Pull Request simply isn’t ready yet, or occasionally, because some information got lost between your CI service, GitHub and Greenkeeper. If you’re sure all prerequisites are fulfilled and your CI completed its run on the Greenkeeper branch, but no Initial Pull Request appeared, you can <a href="#resetting_repos">try resetting the offending repo</a>.</p>
+    <p>It is however entirely possible that you’re using npm in a way we’ve never seen before, or have your CI configured in an interesting way, or some other aspect of your setup works in a way that’s new to Greenkeeper. If you suspect this may be the case, we’d be very grateful if you could <a href="mailto:support@greenkeeper.io">let us know</a>, and we’ll to accomodate you.</p>
+    <a href="#top">Back to top</a>
+
+    <h3><a class="anchor-icon" href="#greenkeeper_step_by_step" id="greenkeeper_step_by_step">&middot;</a>How Greenkeeper works, step by step</h3>
+    <p>This section covers how Greenkeeper works after the <a href="#installation">three installation steps</a> above have been completed</p>
+    <ol>
+      <li>
+        <strong class="signal">Greenkeeper watches your dependencies for updates</strong>
+        <p>Greenkeeper will watch npm’s changes feed for any update to any dependency in your <code>package.json</code>, except for those you’ve explicitly disabled.</p>
+      </li>
+      <li>
+        <strong class="signal">A dependency updates occurs</strong>
+        <p>Greenkeeper will open a branch that includes a single change: bumping that dependency’s version number in your <code>package.json</code>. Your CI tests will run on that branch, and once they complete, one of three things will happen:</p>
+        <ol>
+          <li>
+          <strong class="signal">It’s an in-range update, and your tests pass:</strong>
+          <p>Greenkeeper deletes the branch and stays silent, because everything still works!</p>
+          <p><strong>In-range means:</strong> If you specify a range of <code>^1.0.0</code>, and <code>1.0.1</code> is released, that update is in-range. Users of your package would receive this update when they run <code>npm install</code>. Consult <a href="https://semver.npmjs.com">npm’s semver calculator</a> to see which updates apply to your specified ranges, per package.</p>
+        </li>
+        <li>
+          <strong class="signal">It’s an in-range update, and your tests fail:</strong>
+          <p>Greenkeeper will notify you about that breakage by opening up an issue (titled <em>"An in-range update of [dependency-name] is breaking the build"</em>) and will also let you know whether pinning the dependency to the previous version will fix the build. In addition, Greenkeeper will keep checking if any new version of that dependency fixes this version’s breakage, and will also notify you about that in the issue thread. </p>
+          <figure class="wide-img">
+            <img
+              src="/images/greenkeeper_in-range-update_fail_issue.png"
+              alt="">
+            <figcaption>An example of an issue triggered by a breaking in-range update</figcaption>
+          </figure>
+        </li>
+        <li>
+          <strong class="signal">It’s an out-of-range update:</strong>
+          <p>Greenkeeper opens a pull request, and your CI runs there. Your users would never encounter this version because it’s out of range, but if the update contains changes you want (security fixes, performance improvements, better compatibility etc.), this pull request is a good basis for work in that regard. Plus, if you trust your tests and they all pass, you could merge the pull request straight away.</p>
+          <figure class="wide-img">
+            <img
+              src="/images/greenkeeper_out-of-range_pr.png"
+              alt="">
+            <figcaption>An example of a pull request triggered by an out-of-range update</figcaption>
+          </figure>
+          <p>You’ll only get one pull request per dependency, if additional updates come in, Greenkeeper will update that pull request with the new dependency version (triggering your CI), and add a comment to let you know about the update.</p>
+          <figure class="wide-img">
+            <img
+              src="/images/greenkeeper_out-of-range_pr_update.png"
+              alt="">
+            <figcaption>A follow-up update for an out-of-range update will appear as an update to the original pull request</figcaption>
+          </figure>
+          <p><strong>Out-of-range means:</strong> If you specify a range of <code>^1.0.0</code>, and <code>2.0.0</code> is released, that update is out-of-range. Users of your package will never encounter this update unless you bump the dependency’s version number and release your package again. Consult <a href="https://semver.npmjs.com">npm’s semver calculator</a> to see which updates apply to your specified ranges, per package.</p>
+        </li>
+        </ol>
+      </li>
+    </ol>
+    <a href="#top">Back to top</a>
+
+    <h3><a class="anchor-icon" href="#resetting_repos" id="resetting_repos">&middot;</a>Resetting a repository</h3>
+    <p>Sometimes, the Initital Pull Request will never be opened. This can have many reasons, </p>
+    <ol>
+      <li>
+        <p>If it exists, delete the <code>greenkeeper/initial</code> branch on the repo.</p>
+      </li>
+      <li>
+        <p>Remove the repo from the Greenkeeper integration in the app installation settings on GitHub and save. You can find a link to those settings in the <a href="https://account.greenkeeper.io">Account Dashboard</a>, at the bottom of the corresponding account’s repository list. The link is unique for every GitHub account, so we can’t link to it here.</p>
+      </li>
+      <li>
+        <p>On the same page, add the repo again, and save.</p>
+      </li>
+    </ol>
+    <p>We’re working on making this more convenient by allowing you to reset repositories in the Account Dashboard.</p>
+    <a href="#top">Back to top</a>
+
+    <h3><a class="anchor-icon" href="#pinning" id="pinning">&middot;</a>Pinning a dependency</h3>
+    <p>Pinning a dependency is a legitimate option when you don’t have the time or resources to fix a problem introduced by a dependency update. Greenkeeper will let you know whether pinning to the dependency’s previous version (downgrading) would solve the new issue, and will then give you that option in the issue thread.</p>
+    <figure class="wide-img">
+      <img
+        src="images/dependency_pinning_800w.gif"
+        srcset="images/dependency_pinning_800w.gif 800w, images/dependency_pinning_1280w.gif 1280w"
+        sizes="(max-width: 640px) calc(100vw - 40px), 852px"
+        alt="">
+      <figcaption>When a dependency update breaks your build, Greenkeeper lets you pin the last working version right there in the GitHub issue.</figcaption>
+    </figure>
+    <p>Once you’ve pinned a package, every subsequent update to it will be considered out-of-range by Greenkeeper.</p>
+    <a href="#top">Back to top</a>
+
   </div>
 </div>

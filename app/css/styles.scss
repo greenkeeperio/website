@@ -96,10 +96,9 @@ nav {
 
 nav ul {
   list-style: none;
-  margin: 0 1rem;
+  margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
   font-size: 0.75rem;
   color: #000;
   text-transform: uppercase;
@@ -124,6 +123,9 @@ nav ul {
 
 nav.header {
   will-change: transform;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 @for $i from 1 to 10 {
@@ -136,7 +138,7 @@ nav.header {
 
 nav ul li {
   display: inline-block;
-  margin: 0.5em 1em;
+  margin: 0.5em 1em 0.5em 0;
   &.active a {
     color: #000;
     pointer-events: none;
@@ -209,6 +211,22 @@ a.enterprise,
 }
 
 header{
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  .logo {
+    width: 4rem;
+    background: white;
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
+    margin: 0.2em 1em 0 0;
+  }
+  h1{
+    font-size: 1.5rem;
+  }
+  /*
   background-image: url(../images/nodes.svg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -222,6 +240,7 @@ header{
   text-align: center;
   margin-top: 1em;
   animation: bounce-bg-in 750ms cubic-bezier(0.26,1.48,.47,.96) 1s forwards 1;
+  */
 }
 
 @keyframes appear-from-blur{
@@ -242,9 +261,7 @@ header h1{
   display: block;
   color: transparent;
   margin: 0;
-  font-size: 10vw;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 @keyframes fade-in{
@@ -301,13 +318,19 @@ header .get-started .button:focus{
 h1, h2, h3, h4, h5, h6{
   font-family: "futura-pt", Futura, sans-serif;
   color: #000;
-  text-transform: uppercase;
   text-align: center;
   a{
     border-width: 4px;
     &:hover, &:focus{
       border-width: 4px;
     }
+  }
+}
+
+img{
+  &.with-border{
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.3);
   }
 }
 
@@ -340,6 +363,11 @@ a:not([href]) {
   display: block;
   border: none;
   background: transparent;
+}
+
+a[href="#top"] {
+  margin-bottom: 3em;
+  display: inline-block;
 }
 
 button{
@@ -397,6 +425,28 @@ ul li:before {
 
 nav ul li:before{
   display: none;
+}
+
+ol {
+  counter-reset: listcounter;
+  list-style: none;
+  padding-left: 2em;
+  li {
+    position: relative;
+    &:before {
+      content: counter(listcounter);
+      counter-increment: listcounter;
+      position: absolute;
+      left: -2em;
+      background: #00c775;
+      border-radius: 100%;
+      width: 1.5em;
+      height: 1.5em;
+      line-height: 1.5em;
+      color: white;
+      text-align: center;
+    }
+  }
 }
 
 section{
@@ -698,10 +748,12 @@ body:not(.index) h2{
 
 figure.wide-img {
   max-width: 900px;
-  margin: 0 auto;
-  width: 100%;
+  margin: 2em auto;
+  width: calc(100% - 20px);
   padding: 0;
   background: #FFF;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.3);
   &.no-border {
     background: none;
     max-width: 90vw;
@@ -722,14 +774,17 @@ figure.wide-img {
   img {
     max-width: 100%;
     margin: 0;
-    border: 5px solid #f7f7f7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     display: block;
   }
   figcaption{
-    font-size: 0.75rem;
-    background: #f7f7f7;
-    padding: 5px 15px 15px 15px;
+    font-size: 0.6rem;
+    background: #eeeeee;
+    padding: 1em;
     color: #5e6269;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 }
 
@@ -919,13 +974,6 @@ a.anchor-icon {
   }
   nav ul{
     font-size: 0.5rem;
-  }
-  header{
-    //background-size: 450px;
-    height: 450px;
-  }
-  header h1{
-    font-size: 3rem;
   }
   header span{
     font-size: 1rem;
