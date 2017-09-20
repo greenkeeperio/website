@@ -125,19 +125,10 @@ nav ul {
 }
 
 nav.header {
-  will-change: transform;
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
 }
-
-@for $i from 1 to 10 {
-  nav.header ul li:nth-child(#{$i}) {
-    transform: translateY(-200px);
-    animation: from-top 0.75s cubic-bezier(0.26,1.48,.47,.96) 1 - $i * 0.05s forwards 1;
-  }
-}
-
 
 nav ul li {
   display: inline-block;
@@ -259,11 +250,7 @@ header{
 }
 
 header h1{
-  text-shadow: 0 0 500px #000;
-  opacity: 0;
-  animation: appear-from-blur 500ms ease-out 500ms forwards 1;
   display: block;
-  color: transparent;
   margin: 0;
   font-weight: bold;
 }
@@ -278,14 +265,40 @@ header h1{
 }
 
 header span{
-  opacity: 0;
-  animation: fade-in 500ms ease-out 1750ms forwards 1;
   display: block;
   background: #00c775;
   padding: 0.5em 1em 0.55em;
   color: #FFF;
   margin-top: 0.25em;
   font-size: 0.75rem;
+}
+
+.index {
+  header {
+    flex-direction: column;
+    margin: 2em auto 0;
+    .logo {
+      width: 7.5rem;
+    }
+    h1{
+      color: transparent;
+      text-shadow: 0 0 500px #000;
+      opacity: 0;
+      animation: appear-from-blur 500ms ease-out 500ms forwards 1;
+      margin: 0.75em;
+    }
+    span{
+      opacity: 0;
+      animation: fade-in 500ms ease-out 1750ms forwards 1;
+    }
+  }
+  nav.header,
+  nav.footer {
+    width: 100%;
+    display: block;
+    max-width: 100%;
+    padding: 0.5em 1em;
+  }
 }
 
 
@@ -305,6 +318,7 @@ header .get-started .button{
   font-weight: normal;
   letter-spacing: 1px;
   cursor: pointer;
+  text-align: center;
 }
 
 header .get-started .button:hover,
