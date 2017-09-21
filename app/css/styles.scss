@@ -1,5 +1,12 @@
 @import 'slick';
 
+$column-width: 760px;
+$green-primary: #00c775;
+$green-secondary: #e6faf1;
+
+$blue-primary: cornflowerblue;
+$blue-secondary: #e8effc;
+
 @mixin theme($name, $primary, $secondary) {
   .#{$name} {
     code {
@@ -37,12 +44,6 @@
     }
   }
 }
-
-$green-primary: #00c775;
-$green-secondary: #e6faf1;
-
-$blue-primary: cornflowerblue;
-$blue-secondary: #e8effc;
 
 @include theme(gk-saas, $green-primary, $green-secondary);
 @include theme(gk-enterprise, $blue-primary, $blue-secondary);
@@ -113,7 +114,7 @@ nav ul {
       width: 100%;
       text-align: right;
       margin-bottom: 1.5em;
-      @media screen and (min-width: 600px) {
+      @media screen and (min-width: $column-width) {
         order: inherit;
         width: auto;
         text-align: inherit;
@@ -126,7 +127,7 @@ nav ul {
 
 nav.header {
   width: 90%;
-  max-width: 600px;
+  max-width: $column-width;
   margin: 0 auto;
 }
 
@@ -165,7 +166,7 @@ nav ul li a{
 
 body:not(.index) nav.footer {
   width: 90%;
-  max-width: 600px;
+  max-width: $column-width;
   margin: 0 auto;
   ul{
     justify-content: flex-start;
@@ -181,13 +182,13 @@ body:not(.index) nav.footer {
   };
   100% {
     background-size: 90vw;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: $column-width) {
       background-size: 450px;
     }
   };
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: $column-width) {
   @keyframes bounce-bg-in{
     0% {
       background-size: 0;
@@ -206,7 +207,7 @@ a.enterprise,
 
 header{
   width: 90%;
-  max-width: 600px;
+  max-width: $column-width;
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
@@ -729,6 +730,30 @@ body:not(.index) h2{
   }
 }
 
+.m-zooming {
+  background: #6fd3a1;
+  &:after {
+    content: "Swipe image to pan. Tap to close";
+    color: white;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 0.875rem;
+    padding: 1em 0 0.7em;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.m-magnifikCanvas {
+  border: 5px solid #6fd3a1;
+  background: #6fd3a1;
+  height: calc(100vh - 40px) !important;
+  img {
+    border-radius: 20px;
+  }
+}
+
 // Non-Index pages
 .container{
   font-size: 0.75rem;
@@ -747,7 +772,7 @@ body:not(.index) h2{
   }
   .main{
     width: 90%;
-    max-width: 600px;
+    max-width: $column-width;
     margin: 0 auto;
     padding-bottom: 2em;
   }
@@ -798,6 +823,11 @@ figure.wide-img {
     color: #5e6269;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    &:after {
+      @media screen and (max-width: $column-width) {
+        content: " (Tap image to enlarge)";
+      }
+    }
   }
 }
 
@@ -809,7 +839,7 @@ figure.wide-img {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 600px;
+  max-width: $column-width;
   li{
     a {
       width: 100px;
@@ -972,7 +1002,7 @@ figure.wide-img {
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: $column-width) {
   html{
     font-size: 22px;
   }
