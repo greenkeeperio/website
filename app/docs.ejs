@@ -12,6 +12,9 @@
       <li><a href="#greenkeeper-step-by-step">How Greenkeeper works, step by step</a></li>
       <li><a href="#resetting-repos">Resetting a repository</a></li>
       <li><a href="#pinning">Pinning a dependency</a></li>
+      <li><a href="#private-scoped-packages">Enabling private scoped packages</a></li>
+      <li><a href="#lockfiles">Using Greenkeeper with lockfiles</a></li>
+      <li><a href="#ignoring-dependencies">Ignoring certain dependency’s updates</a></li>
     </ul>
 
     <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">What Greenkeeper does, and why</a></h2>
@@ -170,6 +173,31 @@
       <figcaption>When a dependency update breaks your build, Greenkeeper lets you pin the last working version right there in the GitHub issue.</figcaption>
     </figure>
     <p>Once you’ve pinned a package, every subsequent update to it will be considered out-of-range by Greenkeeper.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#private-scoped-packages" id="private-scoped-packages">Enabling private scoped packages</a></h2>
+    <p>Private scoped packages require an extra setup step that is detailed in each Initial Pull Request. It involves URLs and tokens that are unique to each account and repository, and which are only created when each Initial Pull Request is generated. Please consult your repository’s Initial Pull Request for instructions specific to that repository.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#lockfiles" id="lockfiles">Using Greenkeeper with lockfiles</a></h2>
+    <p>Greenkeeper supports lockfiles via an additional package called <a href="https://github.com/greenkeeperio/greenkeeper-lockfile">greenkeeper-lockfile</a>. Please consult that package’s readme for details.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#ignoring-dependencies" id="ignoring-dependencies">Ignoring certain dependency’s updates</a></h2>
+    <p>You may have good reasons for not wanting to update to a certain dependency right now. In this case, you can change the dependency’s version string in the <code>package.json</code> file back to whatever you prefer.</p>
+    <p>To make sure Greenkeeper doesn’t nag you again on the next update, add a <code>greenkeeper.ignore</code> field to your <code>package.json</code>, containing a list of dependencies you don’t want to update.</p>
+    <p>
+        <code>// package.json
+{
+  …
+  "greenkeeper": {
+    "ignore": [
+      "package-names",
+      "you-want-me-to-ignore"
+    ]
+  }
+}</code>
+    </p>
     <a href="#top">Back to top</a>
 
   </div>
