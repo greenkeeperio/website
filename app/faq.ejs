@@ -1,62 +1,63 @@
 <div class="container">
   <div class="main" role="main">
     <h1>Frequently Asked Questions</h1>
-
+    <p>Welcome to Greenkeeper’s FAQ. Since you’re here, we’ll assume that you’re having trouble with something, and we’re sorry things didnt work out smoothly for you. Hopefully the FAQ will help. If you can’t find what you’re looking for here, there’s also the <a href="/docs">documentation page</a>, and if that doesn’t help, you can <a href="mailto:support@greenkeeper.io">contact us</a> directly.</p>
     <ul>
-      <li><a href="#github-activity">Greenkeeper is creating branches and immediately deleting them again</a></li>
-      <li><a href="#pinning-versions">How to get pull requests for every update</a></li>
+      <li><a href="#no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></li>
+      <li><a href="#branch-deletions">Greenkeeper is creating branches and immediately deleting them again</a></li>
+      <li><a href="#pinning-versions">I would like to get pull requests for every dependency update</a></li>
       <li><a href="#renamed-repo">I can’t enable a repo that was recently renamed</a></li>
       <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
       <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
+      <li><a href="#yearly-payment">Can I pay for a whole year instead of by month?</a></li>
     </ul>
 
-    <ul class="faq-answers">
-      <li>
-        <a id="github-activity"></a>
-        <h2><a href="#github-activity">I enabled a repo, but nothing’s happening / Deleted branches</a></h2>
-        <p>This might be because the dependency updates are within your specified ranges, and not breaking your tests. So there’s no point in bothering you with a PR, since everything still works.</p>
-        <p>You’ll only receive pull requests when an in-range dependency breaks your build, or when a dependency updates outside your specified range.</p>
-        <a href="#top">Back to top</a>
-      </li>
-      <li>
-        <a id="pinning-versions"></a>
-        <h2><a href="#pinning-versions">I want a pull request for every dependency update</a></h2>
-        <p>If you pin your dependencies to a specific version, you will see an update for every new version that is released for that dependency.</p>
-          <p>Pin your versions like this:<br>
-          <code>{
+    <h2><a href="#no-initial-pr" id="no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></h2>
+    <p>The first thing to note: <strong>the Initial Pull Request can take up to 30 minutes to arrive.</strong> It’s usually much faster, but the time it takes depends on the complexity of your tests and the state of your CI service. If nothing happens after 30 minutes, something probably went wrong.</p>
+    <p><strong>Basic troubleshooting:</strong> make sure you’ve completed the <a href="/docs/#installation">installation</a> correctly. Then please read the <a href="/docs/#prerequisites">requirements Greenkeeper has for each repo</a>. If you’ve missed one or more and fixed them, please <a href="/docs/#resetting-repos">reset the repo</a> and check if it works now.</p>
+    <p><strong>Here are all known possible causes and their fixes:</strong></p>
+    <ul>
+      <li>There is <strong>no CI</strong> configured. Set up a CI integration for your repo and <a href="/docs/#resetting-repos">reset it</a>.</li>
+      <li>You’re using a CI service that does not report statuses to branches. Greenkeeper cannot work without these statuses, so there is no solution to this.</li>
+      <li>The <strong>CI service cannot work</strong> on the branches Greenkeeper creates, it might be limited to <code>master</code> only, for example. Give the CI permission to access all branches, or whitelist branches with <code>greenkeeper</code> in their name. <a href="/docs/#resetting-repos">Then reset</a>.</li>
+      <li>Your repo is in a <strong>Lerna/monorepo</strong> setup. We don’t support that at the moment, sorry.</li>
+      <li>Your dependencies are all up to date and your repo’s <code>readme</code> already has a Greenkeeper badge for some reason. Greenkeeper will not send a PR in this case (because there are no changes for it to make), and instead begin its work silently. If it turns out not to be doing anything even when you know one of your dependencies has updated, remove the badge from the <code>readme</code> and <a href="/docs/#resetting-repos">reset the repo</a>.</li>
+      <li><strong>Issues are not enabled</strong> on your repo. Greenkeeper will inform you about updates through both pull requests and issues, so it can’t work without them. Enable issues in the repo settings and <a href="/docs/#resetting-repos">reset the repo</a>.</li>
+      <li><strong>The repo is a fork.</strong> Issues are disabled on forks by default, which makes it impossible for Greenkeeper to work. See the previous point for details and the solution.</li>
+      <li>The <strong>default branch of the repo was changed</strong> while Greenkeeper was waiting for your CI to complete. You’ll have to trigger Greenkeeper again by <a href="/docs/#resetting-repos">resetting the repo</a>.</li>
+      <li><a id="renamed-repo"></a><strong>The repo was moved or renamed.</strong> This is impossible for us to detect, since GitHub doesn’t inform Greenkeeper about these events. In both cases, the repo’s ID is not changed by GitHub, so Greenkeeper could be forgiven for thinking it’s already activated. The only solution is to contact <a href="mailto:support@greenkeeper.io">support</a> and let us reset the offending repo for you.</li>
+    </ul>
+    <a href="#top">Back to top</a>
+
+    <h2><a id="github-activity"></a><!-- <- that’s a legacy anchor --><a href="#branch-deletions" id="branch-deletions">Greenkeeper is creating branches and immediately deleting them again</a></h2>
+    <p>This is intentional. Greenkeeper creates the branches so your CI can run on them, and if the dependency updates are within your specified ranges and not breaking your tests, there’s no need to keep the branch around. Also, there’s no point in bothering you with issues or a PR, since everything still works as you intended.</p>
+    <p>You’ll only receive pull requests when an in-range dependency breaks your build, or when a dependency updates outside your specified range. Read up on <a href="/docs/#greenkeeper-step-by-step">how Greenkeeper works step-by-step</a> for a more detailed explanation.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#pinning-versions" id="pinning-versions">I would like to get pull requests for every dependency update</a></h2>
+    <p>If you pin your dependencies to a specific version, you will see an update for every new version that is released for that dependency.</p>
+    <p>Pin your versions like this, with <strong>one specific version number</strong> instead of a range (no caret, tilde, comparisons or ranges):</p>
+    <p>
+      <code>{
   "dependencies": {
     "lodash": "4.0.0"
   }
 }</code>
-          </p>
-        <a href="#top">Back to top</a>
-      </li>
-      <li>
-        <a id="branches"></a>
-        <h2><a href="#branches">Can I enable Greenkeeper on a different branch?</a></h2>
-        <p><strong>At this point, there is no configuration setting for the branch</strong>, but Greenkeeper picks the default branch that is set up on GitHub for Pull Requests, so that’s a place where you can change it.</p>
-        <p>We are planning to introduce a more flexible configuration setting in the future and we’ll let you know when it is available.</p>
-        <a href="#top">Back to top</a>
-      </li>
-      <li>
-        <a id="owners-only"></a>
-        <h2><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></h2>
-        <p>Greenkeeper creates branches on your repository to send you PRs, and we need push access to the repository. On top of that we need to create webhooks so we can keep your `package.json` content in sync, which requires admin access.</p>
-        <p><strong>So no, unfortunately being a collaborator currently isn’t sufficient.</strong></p>
-        <a href="#top">Back to top</a>
-      </li>
-    </ul>
+    </p>
+    <a href="#top">Back to top</a>
 
-    <!-- content ends here -->
-    <span class="hr"></span>
-    <!--nav role="navigation">
-      <ul class="nav">
-        <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
-        <li class="active">FAQ</li>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="terms-of-service.html">Terms of Service</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-      </ul>
-    </nav-->
+    <h2><a href="#branches" id="branches">Can I enable Greenkeeper on a different branch?</a></h2>
+    <p><strong>At this point, there is no configuration setting for the branch</strong>, but Greenkeeper picks the default branch that is set up on GitHub as the source for Pull Requests, so that’s a place where you can change it.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#owners-only" id="owners-only">Can collaborators enable Greenkeeper too?</a></h2>
+    <p>Greenkeeper creates branches on your repository to send you PRs, and we need push access to the repository. On top of that we need to create webhooks so we can keep your `package.json` content in sync, which requires admin access.</p>
+    <p><strong>So no, unfortunately being a collaborator currently isn’t sufficient.</strong></p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#yearly-payment" id="yearly-payment">Can I pay for a whole year instead of by month?</a></h2>
+    <p>Not yet, sorry. We’re interested in this too, though.</p>
+    <a href="#top">Back to top</a>
+
   </div>
 </div>

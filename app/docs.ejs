@@ -2,26 +2,26 @@
   <div class="main" role="main">
     <h1>Documentation</h1>
     <p>First off: welcome, and thanks for trying Greenkeeper! If you can’t find what you’re looking for here, there’s also the <a href="/faq">FAQ page</a>, and if that doesn’t help, you can <a href="mailto:support@greenkeeper.io">contact us</a> directly.</p>
-    <h2><a href="#documentation_overview" id="documentation_overview">Documentation overview</a></h2>
+    <h2><a href="#documentation-overview" id="documentation-overview">Documentation overview</a></h2>
     <ul>
-      <li><a href="#what_greenkeeper_does">What Greenkeeper does, and why</a></li>
-      <li><a href="#differences_between_plans">Differences between plans</a></li>
+      <li><a href="#what-greenkeeper-does">What Greenkeeper does, and why</a></li>
+      <li><a href="#differences-between-plans">Differences between plans</a></li>
       <li><a href="#prerequisites">Prerequisites</a></li>
       <li><a href="#installation">Installation</a></li>
-      <li><a href="#repo_states">Checking repository states</a></li>
-      <li><a href="#greenkeeper_step_by_step">How Greenkeeper works, step by step</a></li>
-      <li><a href="#resetting_repos">Resetting a repository</a></li>
+      <li><a href="#repo-states">Checking repository states</a></li>
+      <li><a href="#greenkeeper-step-by-step">How Greenkeeper works, step by step</a></li>
+      <li><a href="#resetting-repos">Resetting a repository</a></li>
       <li><a href="#pinning">Pinning a dependency</a></li>
     </ul>
 
-    <h2><a href="#what_greenkeeper_does" id="what_greenkeeper_does">What Greenkeeper does, and why</a></h2>
+    <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">What Greenkeeper does, and why</a></h2>
     <p><strong>In short, Greenkeeper makes sure that you know when your project’s dependency updates break your code.</strong></p>
     <p>Greenkeeper sits between npm and GitHub, observing all of the modules your repository depends on. Each time one of them is updated, Greenkeeper opens a new branch with that update. The repository’s CI tests kick in, and Greenkeeper watches them to see whether they pass or not.</p>
     <p>Based on the test results and your current version definitions Greenkeeper will open up clear, actionable issues for you. If an update doesn’t break your code, nothing will happen, because everything is fine and no human intervention is required. If things do break, you’ll be informed immediately: you’ll know exactly which update to which dependecy caused the problem, and you’ll be nicely set up to fix the problem.</p>
     <p><strong>Doesn’t semver take care of this?</strong> Not reliably, no. Versioning decisions are still often made by humans, and <a href="http://sentimentalversioning.org/">humans often version irrationally</a>. Humans are also fallible, and sometimes miscategorize a commit. Somebody else’s <code>chore</code> may break your code, because you’re using theirs in a way they haven’t forseen. The only way to be sure is to run your tests on each and every update. And if Greenkeeper weren’t around, this would be extremely tedious, which is why basically nobody makes the effort to continually stay up to date.</p>
     <a href="#top">Back to top</a>
 
-    <h2><a href="#differences_between_plans" id="differences_between_plans">Differences between plans</a></h2>
+    <h2><a href="#differences-between-plans" id="differences-between-plans">Differences between plans</a></h2>
     <p>Using Greenkeeper on public repositories is free. If you intend to have it run on private repositories, you’ll need to add your payment details on in the <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a>.</p>
     <p><a href="/#pricing">Pricing</a> varies depending on the type of GitHub account Greenkeeper is installed on, and how many repositories it’s enabled for.</p>
     <a href="#top">Back to top</a>
@@ -32,8 +32,7 @@
       <li>The repo must have a <code>package.json</code></li>
       <li>The repo must have a form of Continuous Integration (CI) that sets commit statuses on branches (like <a href="https://travis-ci.org/">Travis CI</a>, for example, but other services work too)</li>
       <li>The CI must be active on the repo and be allowed to act on new branches</li>
-      <li>Issues must be enabled for the repo</li>
-      <li>The repo must not be a fork</li>
+      <li>Issues must be enabled for the repo (careful: issues are disabled by default on forked repositories)</li>
       <li>Greenkeeper doesn’t support Lerna/monorepos yet</li>
       <li>If you do not have a paid subscription, the repo must be public</li>
     </ul>
@@ -67,12 +66,12 @@
         <p><strong>Important: Greenkeeper will only start watching the repository’s dependencies after this pull request has been merged.</strong> It will also remind you after a few days in case you forget.</p>
         <p><strong>Also Important:</strong> The initial PR will not be opened if all dependencies are already up to date, and the <code>readme.md</code> already has a badge. In this case, Greenkeeper is silently enabled.</p>
         <p>You can check the status of each repository in the <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a>.</p>
-        <p>The Initial Pull Request may take a while to appear, depending on how busy GitHub and your CI service are, and how complex your tests are. See <a href="#repo_states">checking repository states</a> for details on managing Greenkeeper across multiple GitHub accounts and repositories, and find out how to <a href="#resetting_repos">reset a repository</a> when things go wrong.</p>
+        <p>The Initial Pull Request may take a while to appear, depending on how busy GitHub and your CI service are, and how complex your tests are. See <a href="#repo-states">checking repository states</a> for details on managing Greenkeeper across multiple GitHub accounts and repositories, and find out how to <a href="#resetting-repos">reset a repository</a> when things go wrong.</p>
       </li>
     </ol>
     <a href="#top">Back to top</a>
 
-    <h2><a href="#repo_states" id="repo_states">Checking repository states</a></h2>
+    <h2><a href="#repo-states" id="repo-states">Checking repository states</a></h2>
     <p>The <a href="https://account.greenkeeper.io">Account Dashboard</a> shows you each repository’s state, indicating where Greenkeeper is installed and/or enabled. Note that this list can only show repositories <a href="#grant_repo_access">you’ve granted Greenkeeper access to</a>.</p>
     <figure class="wide-img">
       <img
@@ -80,11 +79,11 @@
         alt="">
       <figcaption>The repository list in the Greenkeeper Account Dashboard</figcaption>
     </figure>
-    <p>A repo is marked red if the Initial Pull Request doesn’t exist (yet). This could be because one or more of the <a href="#prerequisites">prerequisites</a> isn’t met, because your CI is still running and the Initial Pull Request simply isn’t ready yet, or occasionally, because some information got lost between your CI service, GitHub and Greenkeeper. If you’re sure all prerequisites are fulfilled and your CI completed its run on the Greenkeeper branch, but no Initial Pull Request appeared, you can <a href="#resetting_repos">try resetting the offending repo</a>.</p>
+    <p>A repo is marked red if the Initial Pull Request doesn’t exist (yet). This could be because one or more of the <a href="#prerequisites">prerequisites</a> isn’t met, because your CI is still running and the Initial Pull Request simply isn’t ready yet, or occasionally, because some information got lost between your CI service, GitHub and Greenkeeper. If you’re sure all prerequisites are fulfilled and your CI completed its run on the Greenkeeper branch, but no Initial Pull Request appeared, you can <a href="#resetting-repos">try resetting the offending repo</a>.</p>
     <p>It is however entirely possible that you’re using npm in a way we’ve never seen before, or have your CI configured in an interesting way, or some other aspect of your setup works in a way that’s new to Greenkeeper. If you suspect this may be the case, we’d be very grateful if you could <a href="mailto:support@greenkeeper.io">let us know</a>, and we’ll try to accomodate you.</p>
     <a href="#top">Back to top</a>
 
-    <h2><a href="#greenkeeper_step_by_step" id="greenkeeper_step_by_step">How Greenkeeper works, step by step</a></h2>
+    <h2><a href="#greenkeeper-step-by-step" id="greenkeeper-step-by-step">How Greenkeeper works, step by step</a></h2>
     <p>This section covers how Greenkeeper works after the <a href="#installation">three installation steps</a> above have been completed</p>
     <ol>
       <li>
@@ -143,7 +142,7 @@
     </ol>
     <a href="#top">Back to top</a>
 
-    <h2><a href="#resetting_repos" id="resetting_repos">Resetting a repository</a></h2>
+    <h2><a href="#resetting-repos" id="resetting-repos">Resetting a repository</a></h2>
     <p>Sometimes, the Initital Pull Request will never be opened. This can have many reasons: you may have forgotten to allow your CI to work on Greenkeeper branches, or issues may be disabled on the target repo, the CI service may have timed out… in any case, you may want to start over. Here’s how:</p>
     <ol>
       <li>
