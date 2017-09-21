@@ -2,12 +2,14 @@
 
 $column-width: 760px;
 $green-primary: #00c775;
+$green-intermediary: #6fd3a1;
 $green-secondary: #e6faf1;
 
 $blue-primary: cornflowerblue;
+$blue-intermediary: #a4c0f4;
 $blue-secondary: #e8effc;
 
-@mixin theme($name, $primary, $secondary) {
+@mixin theme($name, $primary, $secondary, $intermediary) {
   .#{$name} {
     code {
       background: $secondary;
@@ -42,11 +44,37 @@ $blue-secondary: #e8effc;
     .logo path{
       fill: $primary;
     }
+    &.m-zooming {
+      background: $intermediary;
+      &:after {
+        content: "Swipe image to pan. Tap to close";
+        color: white;
+        text-align: center;
+        width: 100%;
+        display: block;
+        font-size: 0.875rem;
+        padding: 1em 0 0.7em;
+        position: relative;
+        background: $intermediary;
+      }
+    }
+
+    .m-magnifikCanvas {
+      border: 5px solid $intermediary;
+      background: $intermediary;
+      // height: calc(100vh - 105px) !important;
+      img {
+        border-radius: 20px;
+        padding: 50px;
+        background: white;
+        margin-top: 45px;
+      }
+    }
   }
 }
 
-@include theme(gk-saas, $green-primary, $green-secondary);
-@include theme(gk-enterprise, $blue-primary, $blue-secondary);
+@include theme(gk-saas, $green-primary, $green-secondary, $green-intermediary);
+@include theme(gk-enterprise, $blue-primary, $blue-secondary, $blue-intermediary);
 
 * {
   box-sizing: border-box;
@@ -727,30 +755,6 @@ body:not(.index) h2{
     &:before{
       display: none;
     }
-  }
-}
-
-.m-zooming {
-  background: #6fd3a1;
-  &:after {
-    content: "Swipe image to pan. Tap to close";
-    color: white;
-    text-align: center;
-    width: 100%;
-    display: block;
-    font-size: 0.875rem;
-    padding: 1em 0 0.7em;
-    position: absolute;
-    bottom: 0;
-  }
-}
-
-.m-magnifikCanvas {
-  border: 5px solid #6fd3a1;
-  background: #6fd3a1;
-  height: calc(100vh - 40px) !important;
-  img {
-    border-radius: 20px;
   }
 }
 
