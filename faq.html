@@ -4,24 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
   <title>FAQ | Greenkeeper</title>
-  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=pgg4Lp23wR">
-  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=pgg4Lp23wR">
-  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=pgg4Lp23wR">
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=pgg4Lp23wR">
-  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=pgg4Lp23wR">
-  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=pgg4Lp23wR">
-  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=pgg4Lp23wR">
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=pgg4Lp23wR">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=pgg4Lp23wR">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png?v=pgg4Lp23wR" sizes="32x32">
-  <link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=pgg4Lp23wR" sizes="192x192">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=pgg4Lp23wR" sizes="96x96">
-  <link rel="icon" type="image/png" href="/favicon-16x16.png?v=pgg4Lp23wR" sizes="16x16">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=pgg4Lp23wR" color="#00c775">
-  <link rel="shortcut icon" href="/favicon.ico?v=pgg4Lp23wR">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=pgg4Lp23wR">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=kPxB0q7250">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=kPxB0q7250">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=kPxB0q7250">
+  <link rel="manifest" href="/manifest.json?v=kPxB0q7250">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=kPxB0q7250" color="#00c775">
+  <link rel="shortcut icon" href="/favicon.ico?v=kPxB0q7250">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script src="https://use.typekit.net/pve4wdk.js"></script>
@@ -30,10 +18,14 @@
 <body class="preloading faq gk-saas">
   
 
+<a id="top"></a>
 <nav class="header" role="navigation">
   <ul class="nav">
     <li><a href="/">Home</a></li>
     <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
+    <li class="">
+      <a href="docs.html">Docs</a>
+    </li>
     <li class="active">
       <a href="faq.html">FAQ</a>
     </li>
@@ -48,82 +40,85 @@
     </li>
   </ul>
 </nav>
+<header role="banner">
+  <svg class="logo" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><path class="symbol" d="M300.93 548.27a51.93 51.93 0 0 1-47.39-73.15L190 432.74a51.82 51.82 0 1 1 9.9-14.74l63.58 42.39a52.08 52.08 0 0 1 6.29-5.57L167.84 251a52 52 0 1 1 15.83-8.08L285.6 446.74a51.59 51.59 0 0 1 5.52-1.38v-97.17a51.92 51.92 0 0 1 0-102v-91.56a51.94 51.94 0 1 1 17.77.32v91a51.91 51.91 0 0 1 0 102.6V445a51.83 51.83 0 0 1 5.75 1.22l101.69-203.34a51.83 51.83 0 1 1 15.83 8.12L330.73 453.83a52.07 52.07 0 0 1 6.59 5.49l61.56-41.82a52 52 0 1 1 10.36 14.44l-61.56 41.82a51.92 51.92 0 0 1-46.75 74.51z"/><path class="ring" d="M300 582.47a282.47 282.47 0 0 1-199.74-482.21 282.47 282.47 0 1 1 399.48 399.48A280.62 280.62 0 0 1 300 582.47zm0-547.17a264.7 264.7 0 0 0-187.17 451.87 264.7 264.7 0 1 0 374.34-374.34A263 263 0 0 0 300 35.3z"/></svg>
+
+  <h1>Greenkeeper.io</h1>
+</header>
 
 
 
 
   <div class="container">
-  <header role="banner">
-    <div>
-      <h1><a href="/">greenkeeper.io</a></h1>
-    </div>
-  </header>
   <div class="main" role="main">
-    <a id="top"></a>
     <h1>Frequently Asked Questions</h1>
-
-    <ul class="faq-questions">
-      <li><a href="#github-activity">Greenkeeper is creating branches and immediately deleting them again</a></li>
-      <li><a href="#pinning-versions">How to get pull requests for every update</a></li>
+    <p>Welcome to Greenkeeper’s FAQ. Since you’re here, we’ll assume that you’re having trouble with something, and we’re sorry things didnt work out smoothly for you. Hopefully the FAQ will help. If you can’t find what you’re looking for here, there’s also the <a href="/docs">documentation page</a>, and if that doesn’t help, you can <a href="mailto:support@greenkeeper.io">contact us</a> directly.</p>
+    <ul>
+      <li><a href="#no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></li>
+      <li><a href="#branch-deletions">Greenkeeper is creating branches and immediately deleting them again</a></li>
+      <li><a href="#pinning-versions">I would like to get pull requests for every dependency update</a></li>
       <li><a href="#renamed-repo">I can’t enable a repo that was recently renamed</a></li>
       <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
       <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
+      <li><a href="#yearly-payment">Can I pay for a whole year instead of by month?</a></li>
     </ul>
 
-    <ul class="faq-answers">
-      <li>
-        <a id="github-activity"></a>
-        <h2><a href="#github-activity">I enabled a repo, but nothing’s happening / Deleted branches</a></h2>
-        <p>This might be because the dependency updates are within your specified ranges, and not breaking your tests. So there’s no point in bothering you with a PR, since everything still works.</p>
-        <p>You’ll only receive pull requests when an in-range dependency breaks your build, or when a dependency updates outside your specified range.</p>
-        <a href="#top">Back to top</a>
-      </li>
-      <li>
-        <a id="pinning-versions"></a>
-        <h2><a href="#pinning-versions">I want a pull request for every dependency update</a></h2>
-        <p>If you pin your dependencies to a specific version, you will see an update for every new version that is released for that dependency.</p>
-          <p>Pin your versions like this:<br>
-          <code>{
+    <h2><a href="#no-initial-pr" id="no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></h2>
+    <p>The first thing to note: <strong>the Initial Pull Request can take up to 30 minutes to arrive.</strong> It’s usually much faster, but the time it takes depends on the complexity of your tests and the state of your CI service. If nothing happens after 30 minutes, something probably went wrong.</p>
+    <p><strong>Basic troubleshooting:</strong> make sure you’ve completed the <a href="/docs/#installation">installation</a> correctly. Then please read the <a href="/docs/#prerequisites">requirements Greenkeeper has for each repo</a>. If you’ve missed one or more and fixed them, please <a href="/docs/#resetting-repos">reset the repo</a> and check if it works now.</p>
+    <p><strong>Here are all known possible causes and their fixes:</strong></p>
+    <ul>
+      <li>There is <strong>no CI</strong> configured. Set up a CI integration for your repo and <a href="/docs/#resetting-repos">reset it</a>.</li>
+      <li>You’re using a CI service that does not report statuses to branches. Greenkeeper cannot work without these statuses, so there is no solution to this.</li>
+      <li>The <strong>CI service cannot work</strong> on the branches Greenkeeper creates, it might be limited to <code>master</code> only, for example. Give the CI permission to access all branches, or whitelist branches with <code>greenkeeper</code> in their name. <a href="/docs/#resetting-repos">Then reset</a>.</li>
+      <li>Your repo is in a <strong>Lerna/monorepo</strong> setup. We don’t support that at the moment, sorry.</li>
+      <li>Your dependencies are all up to date and your repo’s <code>readme</code> already has a Greenkeeper badge for some reason. Greenkeeper will not send a PR in this case (because there are no changes for it to make), and instead begin its work silently. If it turns out not to be doing anything even when you know one of your dependencies has updated, remove the badge from the <code>readme</code> and <a href="/docs/#resetting-repos">reset the repo</a>.</li>
+      <li><strong>Issues are not enabled</strong> on your repo. Greenkeeper will inform you about updates through both pull requests and issues, so it can’t work without them. Enable issues in the repo settings and <a href="/docs/#resetting-repos">reset the repo</a>.</li>
+      <li><strong>The repo is a fork.</strong> Issues are disabled on forks by default, which makes it impossible for Greenkeeper to work. See the previous point for details and the solution.</li>
+      <li>The <strong>default branch of the repo was changed</strong> while Greenkeeper was waiting for your CI to complete. You’ll have to trigger Greenkeeper again by <a href="/docs/#resetting-repos">resetting the repo</a>.</li>
+      <li><a id="renamed-repo"></a><strong>The repo was moved or renamed.</strong> This is impossible for us to detect, since GitHub doesn’t inform Greenkeeper about these events. In both cases, the repo’s ID is not changed by GitHub, so Greenkeeper could be forgiven for thinking it’s already activated. The only solution is to contact <a href="mailto:support@greenkeeper.io">support</a> and let us reset the offending repo for you.</li>
+    </ul>
+    <a href="#top">Back to top</a>
+
+    <h2><a id="github-activity"></a><!-- <- that’s a legacy anchor --><a href="#branch-deletions" id="branch-deletions">Greenkeeper is creating branches and immediately deleting them again</a></h2>
+    <p>This is intentional. Greenkeeper creates the branches so your CI can run on them, and if the dependency updates are within your specified ranges and not breaking your tests, there’s no need to keep the branch around. Also, there’s no point in bothering you with issues or a PR, since everything still works as you intended.</p>
+    <p>You’ll only receive pull requests when an in-range dependency breaks your build, or when a dependency updates outside your specified range. Read up on <a href="/docs/#greenkeeper-step-by-step">how Greenkeeper works step-by-step</a> for a more detailed explanation.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#pinning-versions" id="pinning-versions">I would like to get pull requests for every dependency update</a></h2>
+    <p>If you pin your dependencies to a specific version, you will see an update for every new version that is released for that dependency.</p>
+    <p>Pin your versions like this, with <strong>one specific version number</strong> instead of a range (no caret, tilde, comparisons or ranges):</p>
+    <p>
+      <code>{
   "dependencies": {
     "lodash": "4.0.0"
   }
 }</code>
-          </p>
-        <a href="#top">Back to top</a>
-      </li>
-      <li>
-        <a id="branches"></a>
-        <h2><a href="#branches">Can I enable Greenkeeper on a different branch?</a></h2>
-        <p><strong>At this point, there is no configuration setting for the branch</strong>, but Greenkeeper picks the default branch that is set up on GitHub for Pull Requests, so that’s a place where you can change it.</p>
-        <p>We are planning to introduce a more flexible configuration setting in the future and we’ll let you know when it is available.</p>
-        <a href="#top">Back to top</a>
-      </li>
-      <li>
-        <a id="owners-only"></a>
-        <h2><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></h2>
-        <p>Greenkeeper creates branches on your repository to send you PRs, and we need push access to the repository. On top of that we need to create webhooks so we can keep your `package.json` content in sync, which requires admin access.</p>
-        <p><strong>So no, unfortunately being a collaborator currently isn’t sufficient.</strong></p>
-        <a href="#top">Back to top</a>
-      </li>
-    </ul>
+    </p>
+    <a href="#top">Back to top</a>
 
-    <!-- content ends here -->
-    <span class="hr"></span>
-    <!--nav role="navigation">
-      <ul class="nav">
-        <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
-        <li class="active">FAQ</li>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="terms-of-service.html">Terms of Service</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-      </ul>
-    </nav-->
+    <h2><a href="#branches" id="branches">Can I enable Greenkeeper on a different branch?</a></h2>
+    <p><strong>At this point, there is no configuration setting for the branch</strong>, but Greenkeeper picks the default branch that is set up on GitHub as the source for Pull Requests, so that’s a place where you can change it.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#owners-only" id="owners-only">Can collaborators enable Greenkeeper too?</a></h2>
+    <p>Greenkeeper creates branches on your repository to send you PRs, and we need push access to the repository. On top of that we need to create webhooks so we can keep your `package.json` content in sync, which requires admin access.</p>
+    <p><strong>So no, unfortunately being a collaborator currently isn’t sufficient.</strong></p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#yearly-payment" id="yearly-payment">Can I pay for a whole year instead of by month?</a></h2>
+    <p>Not yet, sorry. We’re interested in this too, though.</p>
+    <a href="#top">Back to top</a>
+
   </div>
 </div>
 
   <nav class="footer" role="navigation">
   <ul class="nav">
     <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
+    <li class="">
+        <a href="docs.html">Docs</a>
+      </li>
     <li class="active">
       <a href="faq.html">FAQ</a>
     </li>
@@ -148,8 +143,9 @@
 
 
   <script type="text/javascript" src="js/smoothscroll.min.js"></script>
-  <script type="text/javascript" src="js/jquery.slim.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/slick.min.js"></script>
+  <script type="text/javascript" src="js/magnifik.min.js"></script>
   <script>
     var domReady = function(callback) {
         document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
@@ -161,8 +157,14 @@
         autoplaySpeed: 7000,
         prevArrow: '<button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button">←</button>',
         nextArrow: '<button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Previous" role="button">→</button>'
-      });
-    });
+      })
+      const ratio = 760 / window.screen.width
+      if (ratio > 1){
+        $('.wide-img img').magnifik({
+          ratio: ratio
+        })
+      }
+    })
   </script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
