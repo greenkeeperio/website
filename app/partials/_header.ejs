@@ -3,19 +3,32 @@
 <nav class="header">
   <ul role="navigation" aria-label="main navigation">
     <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="/docs.html">Docs</a></li>
+    <li><a href="/faq.html">FAQ</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="https://github.com/greenkeeperio">GitHub</a></li>
     <li><a href="#enterprise" class="enterprise">Enterprise Solutions</a></li>
     <li class="account"><a href="https://account.greenkeeper.io">Your account</a></li>
   </ul>
 </nav>
+<header role="banner">
+    <%- partial("_gk_logo_round") %>
+    <h1>Greenkeeper.io</h1>
+    <div class="get-started">
+      <a class="button" href="https://github.com/apps/greenkeeper">Install the Greenkeeper app on GitHub now!</a>
+    </div>
+</header>
 
 <% } else { %>
 
+<a id="top"></a>
 <nav class="header" role="navigation">
   <ul class="nav">
     <li><a href="/">Home</a></li>
     <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
+    <li class="<%= current.source=='docs'?'active':'' %>">
+      <a href="docs.html">Docs</a>
+    </li>
     <li class="<%= current.source=='faq'?'active':'' %>">
       <a href="faq.html">FAQ</a>
     </li>
@@ -30,5 +43,9 @@
     </li>
   </ul>
 </nav>
+<header role="banner">
+  <%- partial("_gk_logo_round") %>
+  <h1>Greenkeeper.io</h1>
+</header>
 
 <% } %>

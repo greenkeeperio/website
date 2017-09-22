@@ -14,7 +14,6 @@
   },
   "scripts": {
     "build": "harp compile ./app ./www",
-    "postbuild": "browserify -g uglifyify ./app/js/manual-webhooks.js > ./www/js/manual-webhooks.js",
     "deploy": "node deploy.js",
     "start": "harp server ./www",
     "test": "npm run build",

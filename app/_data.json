@@ -38,6 +38,9 @@
   "enterprise-setup": {
     "pageTitle": "Enterprise Setup",
     "bodyClass": "enterprise-setup gk-enterprise"
+  },
+  "docs": {
+    "pageTitle": "Documentation",
+    "bodyClass": "docs gk-saas"
   }
-
 }
