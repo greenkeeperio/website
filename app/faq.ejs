@@ -7,6 +7,7 @@
       <li><a href="#renamed-repo">I can’t enable a repo that was recently renamed</a></li>
       <li><a href="#branch-deletions">Greenkeeper is creating branches and immediately deleting them again</a></li>
       <li><a href="#pinning-versions">I would like to get pull requests for every dependency update</a></li>
+      <li><a href="#downgrading">I downgraded a dependency to see whether Greenkeeper works, but nothing happens</a></li>
       <li><a href="#corrupted-branch">I got a broken pull request (corrupted branch), and now I can’t git pull anymore</a></li>
       <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
       <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
@@ -36,7 +37,7 @@
     <a href="#top">Back to top</a>
 
     <h2><a href="#pinning-versions" id="pinning-versions">I would like to get pull requests for every dependency update</a></h2>
-    <p>If you pin your dependencies to a specific version, you will see an update for every new version that is released for that dependency.</p>
+    <p>If you pin your dependencies to a specific version, you will see an update for every new version that is released for that dependency. You’ll get a PR per dependency, with an issue per update.</p>
     <p>Pin your versions like this, with <strong>one specific version number</strong> instead of a range (no caret, tilde, comparisons or ranges):</p>
     <p>
       <code>{
@@ -45,6 +46,13 @@
   }
 }</code>
     </p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#downgrading" id="downgrading">I downgraded a dependency to see whether Greenkeeper works, but nothing happens</a></h2>
+    <p><strong>That’s actually by design: </strong>In the Initial Pull Request, Greenkeeper updates all your depencies to the latest version. You make sure all tests pass, and merge the PR. If any of your dependencies updates past this point, Greenkeeper will run your tests against the update. If you now <em>downgrade</em> a dependency in your <code>package.json</code>, say from <code>^1.5.0</code> (latest) to <code>^1.2.0</code>, nothing actually changes: when your CI runs, it will install <code>1.5.0</code> either way. The same is true if your users run <code>npm install</code> on your package. So there’s actually no point in Greenkeeper doing anything: the outcome wouldn’t change.</p>
+    <p>Greenkeeper works when it runs your tests when a dependency updates, all it really cares about is whether your tests pass with the latest versions of your dependencies, not whether all dependencies in your <code>package.json</code> are actually <em>set</em> to their latest versions.</p>
+    <p>If you want to be explicitly notified of <em>every</em> dependency update, you can <a href="#pinning-versions">pin them</a>.</p>
+    <p>If you downgarde to a pin (say, from <code>^1.5.0</code> (latest) to <code>1.2.0</code> (notice the absence of a caret, this is not a range, but a specific version), Greenkeeper also won’t immediately spring into action to bump this up back to <code>1.5.0</code> (latest) because that would counteract what it sees as a purposeful human decision. It will however still let you know when a newer version is released.</p>
     <a href="#top">Back to top</a>
 
     <h2><a href="#corrupted-branch" id="corrupted-branch">I got a broken pull request (corrupted branch), and now I can’t git pull anymore</a></h2>
