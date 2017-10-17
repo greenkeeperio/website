@@ -112,9 +112,10 @@
         <p>You can also find a link to these settings in the <a href="https://account.greenkeeper.io">Account Dashboard</a>, at the bottom of the corresponding account’s repository list.</p>
       </li>
       <li>
+        <a id="enabling_a_repo"></a>
         <strong class="signal">Enable Greenkeeper on each repo</strong>
         <p>Enable Greenkeeper on that individual repository by merging the Initial Pull Request.</p>
-        <p>To set itself up on a repository, Greenkeeper will open an Initial Pull Request. This will attempt to update all dependencies at once, so you’re up to date. In addition, it will add the Greenkeeper badge to your project’s <code>readme.md</code>.</p>
+        <p>To set itself up on a repository, Greenkeeper will open an Initial Pull Request. This will attempt to update all dependencies at once, so you’re up to date. In addition, it will add the Greenkeeper badge to your project’s <code>readme.md</code>. Note that Greenkeeper will only be able to do this if your repository meets <a href="#prerequisites">all the prerequisites</a>.</p>
         <p><strong>Important: Greenkeeper will only start watching the repository’s dependencies after this pull request has been merged.</strong> It will also remind you after a few days in case you forget.</p>
         <p><strong>Also Important:</strong> The initial PR will not be opened if all dependencies are already up to date, and the <code>readme.md</code> already has a badge. In this case, Greenkeeper is silently enabled.</p>
         <p>You can check the status of each repository in the <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a>.</p>
