@@ -2,7 +2,7 @@
   "name": "greenkeeper-website",
   "description": "The Greenkeeper Website",
   "devDependencies": {
-    "browserify": "^13.0.1",
+    "browserify": "^14.2.0",
     "gh-pages": "^0.11.0",
     "harp": "^0.24.0",
     "uglifyify": "^3.0.1"
