@@ -32,11 +32,11 @@
     <h2><a href="#prerequisites" id="prerequisites">Prerequisites</a></h2>
     <p>Greenkeeper has a number of requirements for each repository it is meant to watch:</p>
     <ul>
-      <li>The repo must have a <code>package.json</code></li>
+      <li>The repo must have a <code>package.json</code> in the repo root</li>
       <li>The repo must have a form of Continuous Integration (CI) that sets commit statuses on branches (like <a href="https://travis-ci.org/">Travis CI</a>, for example, but other services work too)</li>
       <li>The CI must be active on the repo and be allowed to act on new branches</li>
       <li>Issues must be enabled for the repo (careful: issues are disabled by default on forked repositories)</li>
-      <li>Greenkeeper doesn’t support Lerna/monorepos yet</li>
+      <li>Greenkeeper doesn’t support multiple <code>package.json</code> files per repo yet, but it does work with <a href='https://github.com/boennemann/alle'>alle-style monorepos</a>.</li>
       <li>If you do not have a paid subscription, the repo must be public</li>
     </ul>
     <a href="#top">Back to top</a>
