@@ -306,25 +306,6 @@ header span{
   header {
     justify-content: center;
   }
-  /*
-  header {
-    flex-direction: column;
-    margin: 2em auto 0;
-    .logo {
-      width: 7.5rem;
-    }
-    h1{
-      color: transparent;
-      text-shadow: 0 0 500px #000;
-      opacity: 0;
-      animation: appear-from-blur 500ms ease-out 500ms forwards 1;
-      margin: 0.75em;
-    }
-    span{
-      opacity: 0;
-      animation: fade-in 500ms ease-out 1750ms forwards 1;
-    }
-  }*/
   nav.header,
   nav.footer {
     width: 100%;
@@ -556,6 +537,9 @@ section h2:after {
 .double-flex {
   &> h2 {
     margin: 0 1em;
+  }
+  h3 {
+    max-width: 25em;
   }
 }
 
@@ -843,74 +827,6 @@ figure.wide-img {
   }
 }
 
-.oss-users{
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: $column-width;
-  li{
-    a {
-      width: 100px;
-      margin: 1em;
-      height: 125px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-      font-size: 1em;
-      &:hover img, &:focus img,
-      &:hover svg, &:focus svg{
-        transform: scale(1.05);
-      }
-    }
-    &.smaller a{
-      padding: 0 0.8em 0 0.8em;
-    }
-    &:before{
-      display: none;
-    }
-    span {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1em;
-      text-align: center;
-    }
-  }
-  &.no-logos {
-    margin: 1em auto 3em;
-    li {
-      text-align: center;
-      a{
-        height: 30px;
-        span {
-          position: relative;
-          bottom: 0;
-        }
-      }
-    }
-  }
-  img, svg {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    display: block;
-    transition: transform 0.25s ease-in-out;
-  }
-  a {
-    border: none;
-    color: #b6b6b6;
-    &:hover, &:focus {
-      border: none;
-    }
-  }
-}
-
 .tweets{
   opacity: 0;
   transition: opacity 0.25s ease-in-out;
@@ -1027,7 +943,7 @@ figure.wide-img {
     }
     transition: all 0.25s;
     :hover{
-      transform: scale(1.1)
+      transform: scale(1.2);
     }
   }
 }
