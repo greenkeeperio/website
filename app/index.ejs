@@ -1,38 +1,46 @@
-<%- partial("partials/_logo_svgs") %>
-
 <section class="billboard">
   <h1>Get safety &amp; consistency<br>
   with <span class="signal">real-time monitoring</span> and<br>
-  <span class="signal">automatic updates</span> for npm dependencies.</h1>
+  <span class="signal">automatic updates</span> for npm dependencies</h1>
 </section>
 
+<div class="get-started">
+  <a class="button" href="https://github.com/apps/greenkeeper">Install the Greenkeeper app on GitHub now!</a>
+</div>
+
 <div class="double-flex">
-  <h2><span class="signal">Greenkeeper 2</span> is out <i>now</i>, with new features:</h2>
+  <h2>Let our friendly bot handle your dependency chores</h2>
   <section class="split-item-top">
     <ul>
-      <li><strong>GitHub Integrations API</strong>, with 1<span class="super">st</span> class bot support</li>
-      <li><strong>Less noise:</strong> One threaded issue or PR per package instead of multiple PRs with one version update each</li>
+      <li><strong>Automatic, real time</strong> dependency updates</li>
+      <li><strong>Runs your tests</strong> and alerts you when updates break your code</li>
       <li>Out-of-the-box support for <strong>scoped packages</strong></li>
-      <li><strong>Private packages</strong> and registry support via webhooks</li>
-      <li><a href="https://github.com/greenkeeperio/greenkeeper-lockfile">Lockfile</a> support, including npm5 and yarn</li>
+      <li><a href="/docs.html#private-scoped-packages">Private packages</a> and registry support via webhooks</li>
+      <li><a href="/docs.html#lockfiles">Lockfile</a> support, including shrinkwrap, npm5 and yarn</li>
     </ul>
   </section>
   <section class="split-item-bottom">
     <ul>
-      <li>More convenient and flexible dependency update handling</li>
-      <li>Built-in dependency pinning, for when you just don’t have time to deal with a breaking change</li>
-      <li>Comfortably manage your billing on the web</li>
-      <li>Open product roadmap</li>
-      <li>And a <a href="#pricing">new pricing structure</a> which probably makes Greenkeeper cheaper for you :)</li>
-      <li><a href="https://blog.greenkeeper.io/greenkeeper-2-0-release-da8f8f476c88">Read our release notes</a>, describing all features in full length.</li>
+      <li>Convenient and flexible dependency update handling</li>
+      <li><a href='/docs.html#ignoring-dependencies'>Ignore updates</a> from dependencies you don’t care about</li>
+      <li><a href='/docs.html#pinning'>One-click dependency pinning</a>, for when you just don’t have time to deal with a breaking change</li>
+      <li><strong>Less accounting:</strong> use our <a href='https://github.com/marketplace/greenkeeper'>GitHub Marketplace app</a> and get billed via your GitHub invoice</li>
+      <li><a href="#enterprise">Self-hosted enterprise version</a> available</li>
     </ul>
   </section>
 </div>
 
+<figure class="wide-img">
+    <img
+      src="images/greenkeeper_in-range-update_fail_issue.png"
+      alt="A Greenkeeper pull request for an in-range dependency update that breaks the build">
+    <figcaption>An innocuous in-range update that would have broken your build! But Greenkeeper caught it right away.</figcaption>
+  </figure>
+
 <div class="double-flex">
   <section class="description">
     <h2>Use <a href="http://semver.org">SemVer</a>. We’ll have your back.</h2>
-    <p>The npm ecosystem with almost half a million modules is a great foundation to build your software on, and Greenkeeper makes it more reliable. You’ll spend less time with dull chores, and more time with the fun parts of software development.</p>
+    <p>The npm ecosystem with around half a million modules is a great foundation to build your software on, and Greenkeeper makes it more reliable. You’ll spend less time with dull chores, and more time with the fun parts of software development.</p>
     <p>Greenkeeper is a friendly bot that tells you when updates to your dependencies break your software. It automatically detects the latest working version and you can then choose to either immediately fix the issue or just pin the dependency so you can get back to it once you have the time. Either way: no more broken software.</p>
   </section>
 
@@ -43,12 +51,11 @@
   </section>
 </div>
 
-<figure class="wide-img">
-  <img
-    src="images/pinning_passing_and_failing_updates.png"
-    alt="">
-  <figcaption>When a dependency update breaks your build, Greenkeeper lets you pin (downgrade) the last working version right there in the GitHub issue, and lets you know if further updates work again.</figcaption>
-</figure>
+<section class="single">
+  <h2>Trusted by Thousands of Projects and Companies</h2>
+  <p>We’re sure you’ve heard of some of them:</p>
+  <%- partial("partials/_customers") %>
+</section>
 
 <a id="pricing"></a>
 <div class="full-height">
@@ -79,67 +86,6 @@
   </section>
 </section>
 </div>
-
-<section class="single">
-  <h2>Who’s using Greenkeeper?</h2>
-  <p>About <strong>10000 projects</strong> on GitHub,<br>among them a few well-known Open Source-projects:</p>
-  <ul class="oss-users">
-    <li>
-      <a href="https://github.com/ampproject/amphtml">
-        <svg><use xlink:href="#svg_logo_amp" /></svg>
-        <span>Google AMP</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://freecodecamp.com">
-        <svg><use xlink:href="#svg_logo_freecodecamp" /></svg>
-        <span>FreeCodeCamp</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/karma-runner/karma">
-        <img src="images/logo_karma.png" alt="">
-        <span>Karma</span>
-      </a>
-    </li>
-    <li class="smaller">
-      <a href="https://lodash.com">
-        <svg><use xlink:href="#svg_logo_lodash" /></svg>
-        <span>lodash</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://modernizr.com">
-        <svg><use xlink:href="#svg_logo_modernizr" /></svg>
-        <span>Modernizr</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://pouchdb.com/">
-        <svg><use xlink:href="#svg_logo_pouchdb" /></svg>
-        <span>PouchDB</span>
-      </a>
-    </li>
-    <li class="smaller">
-      <a href="https://www.npmjs.com/package/standard">
-        <svg><use xlink:href="#svg_logo_standard" /></svg>
-        <span>standard</span>
-      </a>
-    </li>
-    <li class="smaller">
-      <a href="https://www.npmjs.com/package/webtorrent">
-        <img src="images/logo_webtorrent.png" alt="">
-        <span>webtorrent</span>
-      </a>
-    </li>
-  </ul>
-  <ul class="oss-users no-logos">
-    <li><a href="https://www.npmjs.com/package/request">request</a></li>
-    <li><a href="https://github.com/janl/mustache.js">mustache.js</a></li>
-    <li><a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a></li>
-  </ul>
-  <p>We use it ourselves for <a href="https://github.com/hoodiehq/hoodie-server">Hoodie</a>, and naturally, Greenkeeper keeps itself up to date, too. If you're still on the fence: <strong>Greenkeeper is officially recommended by npm!</strong></p>
-</section>
 
 <div class="full-height">
   <section class="single they-really-seem-to-like-us">
@@ -173,21 +119,22 @@
   <section>
     <h2>How it works</h2>
     <p>Greenkeeper sits between npm and GitHub, observing all of the modules you depend on. When they get updated, your project gets a new branch with that update. Your CI tests kick in, and we watch them to see whether they pass.</p>
-    <p>Based on the test results and your current version definitions we will open up clear, actionable issues for you. If there’s nothing for you to do, we won’t nag you.</p>
+    <p>Based on the test results and your current version definitions we will open up clear, actionable pull requests or issues for you. If there’s nothing for you to do, we won’t nag you.</p>
     <p>Let the friendly Greenkeeper bot take all the dull work of keeping your dependencies up to date off your shoulders and, optimally, boil it all down to a few clicks. <strong>This is as close to fully automatic as we could possibly make it.</strong></p>
-    <p>
-      <a href="https://github.com/apps/greenkeeper">Try the Greenkeeper GitHub app now!</a>
-    </p>
+    <p><a href='/docs.html#what-greenkeeper-does'>Learn more about how Greenkeeper works</a>.</p>
   </section>
   <section>
-    <h2>Why it’s so great</h2>
+    <h2>Why it’s so neat</h2>
     <ul>
-      <li>Staying on top of dependency updates is a lot of cognitive overhead: your code depends on modules that depend on modules. It’s modules all the way down. Stuff gets updated all the time. It’ll either annoy you, or you’ll miss it. Greenkeeper never misses updates, and it never gets annoyed.</li>
-      <li><strong>Version pinning now available.</strong>You’ve got stuff to do, we understand. Sometimes you simply have to make a pragmatic trade-off between fixing your build for the breaking update or just pinning the working version so you can get back to it later. Our bot can respect that.</li>
+      <li>Staying on top of dependency updates is a lot of cognitive overhead: your code depends on modules that depend on modules. It’s modules all the way down. Stuff gets updated all the time. It’ll either annoy you, or you’ll miss it. <strong>Greenkeeper never misses updates, and it never gets annoyed</strong>.</li>
+      <li><strong>Pin versions with one click:</strong> You’ve got stuff to do, we understand. Sometimes you simply have to make a pragmatic trade-off between fixing your build for the breaking update or just pinning the working version so you can get back to it later. Our bot can respect that.</li>
       <li>You could do all the updates and testing by hand, all the time. But that’s dull, repetitive work, which is why, let’s be honest, barely anyone actually does it. But Greenkeeper <em>will</em> do it, day or night, without complaining, while requiring as little of your attention as possible.</li>
-      <li>Sounds too good to be true? Don’t take our word for it, <a href="https://github.com/apps/greenkeeper">try it out now!</a></li>
     </ul>
   </section>
+</div>
+
+<div class="get-started">
+  <a class="button" href="https://github.com/apps/greenkeeper">Install the Greenkeeper app on GitHub now!</a>
 </div>
 
 <a id="enterprise"></a>
