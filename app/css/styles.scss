@@ -927,6 +927,7 @@ figure.wide-img {
         vertical-align: -0.48em;
         margin-right: 0.25em;
         line-height: 0;
+        color: #00c775;
       }
       &:after{
         content: '“';
@@ -935,6 +936,7 @@ figure.wide-img {
         vertical-align: -0.48em;
         margin-right: 0.25em;
         line-height: 0;
+        color: #00c775;
       }
     }
   }
@@ -1041,6 +1043,10 @@ figure.wide-img {
   }
   .oss-users li a{
     font-size: 0.75em;
+  }
+  .tweets {
+    font-size: 1.25rem;
+    line-height: 1.6;
   }
 }
 
