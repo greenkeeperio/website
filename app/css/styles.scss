@@ -929,6 +929,8 @@ figure.wide-img {
 .customer-list {
   list-style: none;
   padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
   li {
     display: inline-block;
     width: 90px;
