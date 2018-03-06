@@ -12,6 +12,7 @@
       <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
       <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
       <li><a href="#yearly-payment">Can I pay for a whole year instead of by month?</a></li>
+      <li><a href="#free-trial">I only have private repositories, can I try Greenkeeper for free anyway?</a></li>
     </ul>
 
     <h2><a href="#no-initial-pr" id="no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></h2>
@@ -23,6 +24,7 @@
       <li>You’re using a CI service that does not report statuses to branches. Greenkeeper cannot work without these statuses, so there is no solution to this.</li>
       <li>The <strong>CI service cannot work</strong> on the branches Greenkeeper creates, it might be limited to <code>master</code> only, for example. Give the CI permission to access all branches, or whitelist branches with <code>greenkeeper</code> in their name. <a href="/docs.html#resetting-repos">Then reset</a>.</li>
       <li>Your repo is in a <strong>Lerna/monorepo</strong> setup. We don’t support that at the moment, sorry.</li>
+      <li>Your repo has a <strong>nested package.json</strong>. We don’t support that at the moment, sorry.</li>
       <li>Your dependencies are all up to date and your repo’s <code>readme</code> already has a Greenkeeper badge for some reason. Greenkeeper will not send a PR in this case (because there are no changes for it to make), and instead begin its work silently. If it turns out not to be doing anything even when you know one of your dependencies has updated, remove the badge from the <code>readme</code> and <a href="/docs.html#resetting-repos">reset the repo</a>.</li>
       <li><strong>Issues are not enabled</strong> on your repo. Greenkeeper will inform you about updates through both pull requests and issues, so it can’t work without them. Enable issues in the repo settings and <a href="/docs.html#resetting-repos">reset the repo</a>.</li>
       <li><strong>The repo is a fork.</strong> Issues are disabled on forks by default, which makes it impossible for Greenkeeper to work. See the previous point for details and the solution.</li>
@@ -75,6 +77,11 @@
 
     <h2><a href="#yearly-payment" id="yearly-payment">Can I pay for a whole year instead of by month?</a></h2>
     <p>Not yet, sorry. We’re interested in this too, though.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#free-trial" id="free-trial">I only have private repositories, can I try Greenkeeper for free anyway?</a></h2>
+    <p><strong>Yes</strong>, in the <a href='https://github.com/marketplace/greenkeeper'>GitHub Marketplace version of Greenkeeper</a>, where all billing is handled by GitHub, we offer a 14-day free trial for all plans.</p>
+    <p>If you install Greenkeeper directly as a <a href='https://github.com/apps/greenkeeper'>GitHub App</a>, where all billing is done separately via Stripe, we don’t offer free trials. We will however refund your first month if you’re unhappy with the service, no questions asked.</p>
     <a href="#top">Back to top</a>
 
   </div>

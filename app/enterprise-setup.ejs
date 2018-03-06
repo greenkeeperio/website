@@ -52,8 +52,8 @@
 
     <h3><a href="#step_3_install_and_configure_greenkeeper_enterprise_through_the_replicated_app_manager" id="step_3_install_and_configure_greenkeeper_enterprise_through_the_replicated_app_manager"><span class="signal">Step 3:</span> Install and Configure Greenkeeper Enterprise through the Replicated App Manager</a></h3>
     <p>We’ll be using Replicated 2.0. Here’s the simplest installation option, via <code>curl</code>:</p>
-    <pre>curl -sSL -o install.sh https://get.replicated.com/docker
-sudo bash ./install.sh</pre>
+    <pre>curl -sSL -o install.sh https://get.replicated.com/docker</pre>
+    <pre>sudo bash ./install.sh</pre>
     <p><strong>Note: </strong>If you require a different installation method (airgapped, for example), or if anything goes wrong, please refer to <a href="https://www.replicated.com/docs/distributing-an-application/installing/">Replicated’s installation docs</a>.</p>
     <p>This will install the management application, which takes care of downloading and installing Greenkeeper Enterprise, as well as providing a simple web interface for setting up the platform, and for viewing runtime metrics. You may be prompted to enter the IP address of the current machine, since the installer may not be able to determine it. Once the script has run, you can navigate to <code>https://[server]:8800</code> to complete the setup. This page has a self-signed certificate which your browser will likely complain about. Ignore this warning, you can fix it
     in the first step of the installer.</p>
@@ -89,7 +89,7 @@ sudo bash ./install.sh</pre>
         alt="">
     </figure>
     <ul>
-      <li>The <strong>base domain</strong> is used to expose all Greenkeeper Enterprise services. You should set up two DNS records (<code>gke.your-company.com</code> and <code>*.gke.your-company.com</code>) that point to the server. For testing you can also use <code>http://xip.io</code>: Just set the <strong>base domain name</strong> to <code>1.2.3.4.xip.io</code> (where <code>1.2.3.4</code> is the IP address of your server).
+      <li>The <strong>base domain</strong> is used to expose all Greenkeeper Enterprise services. You <strong>must</strong> set up two DNS records (<code>gke.your-company.com</code> and <code>*.gke.your-company.com</code>) that point to the server. For testing you can also use <code>http://xip.io</code>: Just set the <strong>base domain name</strong> to <code>1.2.3.4.xip.io</code> (where <code>1.2.3.4</code> is the IP address of your server). Optional: <a href="https://gist.github.com/janl/c600583209452c6aac87fed8c774503a">Letsencrypt instructions</a>.
       </li>
       <li>The <strong>webhooks secret</strong> should be pre-filled</li>
       <li>The <strong>GitHub token</strong> is the <strong>personal access token</strong> you set up for your bot user in step 2.</li>
