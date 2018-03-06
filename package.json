@@ -6,7 +6,7 @@
     "browserify": "^16.1.0",
     "gh-pages": "^1.0.0",
     "harp": "^0.25.0",
-    "uglifyify": "^3.0.1"
+    "uglifyify": "^4.0.5"
   },
   "private": true,
   "repository": {
