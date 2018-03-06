@@ -1,6 +1,6 @@
 {
   "index": {
-    "pageTitle": "Index",
+    "pageTitle": "Automate your npm dependency management",
     "bodyClass": "index gk-saas"
   },
   "faq": {
@@ -38,6 +38,9 @@
   "enterprise-setup": {
     "pageTitle": "Enterprise Setup",
     "bodyClass": "enterprise-setup gk-enterprise"
+  },
+  "docs": {
+    "pageTitle": "Documentation",
+    "bodyClass": "docs gk-saas"
   }
-
 }

@@ -2,9 +2,10 @@
   "name": "greenkeeper-website",
   "description": "The Greenkeeper Website",
   "devDependencies": {
+    "browser-sync": "^2.23.5",
     "browserify": "^13.0.1",
     "gh-pages": "^1.0.0",
-    "harp": "^0.21.0",
+    "harp": "^0.24.0",
     "uglifyify": "^3.0.1"
   },
   "private": true,
@@ -14,7 +15,6 @@
   },
   "scripts": {
     "build": "harp compile ./app ./www",
-    "postbuild": "browserify -g uglifyify ./app/js/manual-webhooks.js > ./www/js/manual-webhooks.js",
     "deploy": "node deploy.js",
     "start": "harp server ./www",
     "test": "npm run build",
