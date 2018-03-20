@@ -66,6 +66,7 @@
       <li><a href="#private-scoped-packages">Enabling private scoped packages</a></li>
       <li><a href="#lockfiles">Using Greenkeeper with lockfiles</a></li>
       <li><a href="#ignoring-dependencies">Ignoring certain dependency’s updates</a></li>
+      <li><a href="#custom-commit-messages">Setting up custom commit messages</a></li>
     </ul>
 
     <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">What Greenkeeper does, and why</a></h2>
@@ -181,6 +182,7 @@
           <img src="/images/github_greenkeeper_verified_status.png" alt="">
           <figcaption>Only a pull request with a greenkeeper/verify status check is genuine. Don’t accept any fakes!</figcaption>
         </figure>
+        <p>Note that this status should <em>not</em> be set to <code>required</code> in your GitHub repo settings, since that requirement will apply to <em>all</em> pull requests, not only those opened by Greenkeeper. Since Greenkeeper doesn’t verify non-Greenkeeper PRs, the <code>greenkeeper/verify</code> status will never be reported, and your PRs will be stuck on <code>Some checks haven’t completed yet</code> forever.</p>
       </li>
     </ol>
     <a href="#top">Back to top</a>
@@ -221,17 +223,22 @@
     <p><code>npm-shrinkwrap.json</code> can be part of a release to npm and defines exactly which dependency versions your users get. If an update is covered by the defined range in your <code>package.json</code>, Greenkeeper does nothing if <code>npm-shrinkwrap.json</code> is present, since that guarantees that the new dependency will never be installed anyway. If there’s an out-of-range update, you get a Pull Request so you are aware of the update and can decide whether you’re interested in it.</p>
     <p><code>package-lock.json</code> and <code>yarn.lock</code> work differently, since these two are not published to npm and have no influence on which dependency versions your users get. For in-range updates, Greenkeeper will always open a branch so your CI can run and update these lockfiles. For out-of-range updates, you get a Pull Request, as usual.</p>
     <p>If you do not want in-range branches for lockfiles, you can disable them in your <code>package.json</code> file:</p>
-    <p><code>"greenkeeper": {
-  "lockfiles": {
-    "outOfRangeUpdatesOnly": true
+    <p><pre><code>// package.json
+{
+  …
+  "greenkeeper": {
+    "lockfiles": {
+      "outOfRangeUpdatesOnly": true
+    }
   }
-}</code></p>
+}</code></pre></p>
     <a href="#top">Back to top</a>
 
     <h2><a href="#ignoring-dependencies" id="ignoring-dependencies">Ignoring certain dependency’s updates</a></h2>
     <p>You may have good reasons for not wanting to update to a certain dependency right now. In this case, you can change the dependency’s version string in the <code>package.json</code> file back to whatever you prefer.</p>
     <p>To make sure Greenkeeper doesn’t nag you again on the next update, add a <code>greenkeeper.ignore</code> field to your <code>package.json</code>, containing a list of dependencies you don’t want to update.</p>
     <p>
+      <pre>
         <code>// package.json
 {
   …
@@ -242,6 +249,31 @@
     ]
   }
 }</code>
+    </pre>
+    </p>
+
+    <a href="#top">Back to top</a>
+    <h2><a href="#custom-commit-messages" id="custom-commit-messages">Setting up custom commit messages</a></h2>
+    <p>You can customise all of Greenkeeper’s commit messages by adding a <code>greenkeeper.commitMessages</code> key to your <code>package.json</code>. This is useful if you’d like Greenkeeper to adhere to a specific message style, eg. some projects prefer a change to dev dependencies to be a "Chore", for others it’s a "Fix".</p>
+    <p>These are all the commit strings and the variables you can use within them. And yes, there’s emoji support!</p>
+    <p>
+      <pre>
+        <code>// package.json
+{
+  …
+  "greenkeeper": {
+    "commitMessages": {
+      "initialBadge": ":memo: Docs: Add Greenkeeper badge",
+      "initialDependencies": ":gem: Upgrade: Update dependencies",
+      "initialBranches": ":tada: Build: Whitelist greenkeeper branches",
+      "dependencyUpdate": ":gem: Upgrade: Update ${dependency} to version ${version}",
+      "devDependencyUpdate": ":gem: Upgrade: Update ${dependency} to version ${version}",
+      "dependencyPin": ":bug: Fix: Pin ${dependency} to ${oldVersion}",
+      "devDependencyPin": ":bug: Fix: Pin ${dependency} to ${oldVersion}"
+    }
+  }
+}</code>
+    </pre>
     </p>
     <a href="#top">Back to top</a>
 

@@ -60,6 +60,7 @@
       <li><a href="#pinning-versions">I would like to get pull requests for every dependency update</a></li>
       <li><a href="#downgrading">I downgraded a dependency to see whether Greenkeeper works, but nothing happens</a></li>
       <li><a href="#corrupted-branch">I got a broken pull request (corrupted branch), and now I can’t git pull anymore</a></li>
+      <li><a href="#required-verify">Some PRs are stuck on "Some checks haven’t completed yet" because of greenkeeper/verify</a></li>
       <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
       <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
       <li><a href="#yearly-payment">Can I pay for a whole year instead of by month?</a></li>
@@ -114,6 +115,10 @@
       <figcaption>If this is what the changed files tab in a Greenkeeper PR looks like, you’ve probably got this issue</figcaption>
     </figure>
     <p>This sometimes happens when GitHub garbage collects things we still need. It’s less severe than it looks, and <strong>the fix is simple: delete the offending branch</strong>. Greenkeeper will recover and try again. We’re aware of the issue and are working to find a way to prevent it.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#required-verify" id="required-verify">Some PRs are stuck on "Some checks haven’t completed yet" because of greenkeeper/verify</a></h2>
+    <p>This happens because the <code>greenkeeper/verify</code> status was set to <code>required</code> in the repo’s branch settings. That requirement will apply to <em>all</em> pull requests, not only those opened by Greenkeeper. Since Greenkeeper doesn’t verify non-Greenkeeper PRs, the <code>greenkeeper/verify</code> status will never be reported, and your PRs will be stuck on "Some checks haven’t completed yet" forever. To fix this, go to <code>https://github.com/[user/org]/[repo]/settings/branches/master</code> and make sure that the <code>greenkeeper/verify</code> status is <em>not</em> checked.</p>
     <a href="#top">Back to top</a>
 
     <h2><a href="#branches" id="branches">Can I enable Greenkeeper on a different branch?</a></h2>
