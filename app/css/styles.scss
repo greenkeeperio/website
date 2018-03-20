@@ -16,7 +16,7 @@ $blue-secondary: #e8effc;
       color: $primary;
       padding: 0.1em 0.3em;
       border-radius: 5px;
-      white-space: pre;
+      white-space: pre-wrap;
     }
     .signal{
       color: $primary;
@@ -39,7 +39,8 @@ $blue-secondary: #e8effc;
     }
     pre{
       color: #fff;
-      background-color: $primary;
+      background-color: $secondary;
+      border-radius: 5px;
     }
     .logo path{
       fill: $primary;
