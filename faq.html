@@ -75,8 +75,6 @@
       <li>There is <strong>no CI</strong> configured. Set up a CI integration for your repo and <a href="/docs.html#resetting-repos">reset it</a>.</li>
       <li>You’re using a CI service that does not report statuses to branches. Greenkeeper cannot work without these statuses, so there is no solution to this.</li>
       <li>The <strong>CI service cannot work</strong> on the branches Greenkeeper creates, it might be limited to <code>master</code> only, for example. Give the CI permission to access all branches, or whitelist branches with <code>greenkeeper</code> in their name. <a href="/docs.html#resetting-repos">Then reset</a>.</li>
-      <li>Your repo is in a <strong>Lerna/monorepo</strong> setup. We don’t support that at the moment, sorry.</li>
-      <li>Your repo has a <strong>nested package.json</strong>. We don’t support that at the moment, sorry.</li>
       <li>Your dependencies are all up to date and your repo’s <code>readme</code> already has a Greenkeeper badge for some reason. Greenkeeper will not send a PR in this case (because there are no changes for it to make), and instead begin its work silently. If it turns out not to be doing anything even when you know one of your dependencies has updated, remove the badge from the <code>readme</code> and <a href="/docs.html#resetting-repos">reset the repo</a>.</li>
       <li><strong>Issues are not enabled</strong> on your repo. Greenkeeper will inform you about updates through both pull requests and issues, so it can’t work without them. Enable issues in the repo settings and <a href="/docs.html#resetting-repos">reset the repo</a>.</li>
       <li><strong>The repo is a fork.</strong> Issues are disabled on forks by default, which makes it impossible for Greenkeeper to work. See the previous point for details and the solution.</li>
@@ -94,13 +92,15 @@
     <p>If you pin your dependencies to a specific version, you will see an update for every new version that is released for that dependency. You’ll get a PR per dependency, with an issue per update.</p>
     <p>Pin your versions like this, with <strong>one specific version number</strong> instead of a range (no caret, tilde, comparisons or ranges):</p>
     <p>
-      <code>{
+      <pre>
+        <code>{
   "dependencies": {
     "lodash": "4.0.0"
   }
 }</code>
+      </pre>
     </p>
-    <a href="#top">Back to top</a>
+      <a href="#top">Back to top</a>
 
     <h2><a href="#downgrading" id="downgrading">I downgraded a dependency to see whether Greenkeeper works, but nothing happens</a></h2>
     <p><strong>That’s actually by design: </strong>In the Initial Pull Request, Greenkeeper updates all your depencies to the latest version. You make sure all tests pass, and merge the PR. If any of your dependencies updates past this point, Greenkeeper will run your tests against the update. If you now <em>downgrade</em> a dependency in your <code>package.json</code>, say from <code>^1.5.0</code> (latest) to <code>^1.2.0</code>, nothing actually changes: when your CI runs, it will install <code>1.5.0</code> either way. The same is true if your users run <code>npm install</code> on your package. So there’s actually no point in Greenkeeper doing anything: the outcome wouldn’t change.</p>
@@ -130,7 +130,11 @@
     <a href="#top">Back to top</a>
 
     <h2><a href="#yearly-payment" id="yearly-payment">Can I pay for a whole year instead of by month?</a></h2>
-    <p>Not yet, sorry. We’re interested in this too, though.</p>
+    <p>Yes, in both versions of Greenkeeper:</p>
+    <ul>
+      <li>If you subscribed directly via <strong>greenkeeper.io</strong>, you can switch to yearly billing in the <a href="https://account.greenkeeper.io">account dashboard</a>.</li>
+      <li>If you bought Greenkeeper in the <strong>GitHub Marketplace</strong>, you’ll be billed on the same billing cycle as your GitHub subscription, so if that’s yearly, Greenkeeper is too.</li>
+    </ul>
     <a href="#top">Back to top</a>
 
     <h2><a href="#free-trial" id="free-trial">I only have private repositories, can I try Greenkeeper for free anyway?</a></h2>
