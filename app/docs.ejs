@@ -14,6 +14,8 @@
       <li><a href="#pinning">Pinning a dependency</a></li>
       <li><a href="#private-scoped-packages">Enabling private scoped packages</a></li>
       <li><a href="#lockfiles">Using Greenkeeper with lockfiles</a></li>
+      <li><a href="#monorepo">Using Greenkeeper in a monorepo</a></li>
+      <li><a href="#monorepo-dependencies">Using Greenkeeper with monorepo dependencies</a></li>
       <li><a href="#ignoring-dependencies">Ignoring certain dependency’s updates</a></li>
       <li><a href="#custom-commit-messages">Setting up custom commit messages</a></li>
     </ul>
@@ -33,11 +35,10 @@
     <h2><a href="#prerequisites" id="prerequisites">Prerequisites</a></h2>
     <p>Greenkeeper has a number of requirements for each repository it is meant to watch:</p>
     <ul>
-      <li>The repo must have a <code>package.json</code> in the repo root</li>
+      <li>The repo must have at least one <code>package.json</code> file somewhere in the project</li>
       <li>The repo must have a form of Continuous Integration (CI) that sets commit statuses on branches (like <a href="https://travis-ci.org/">Travis CI</a>, for example, but other services work too)</li>
       <li>The CI must be active on the repo and be allowed to act on new branches</li>
       <li>Issues must be enabled for the repo (careful: issues are disabled by default on forked repositories)</li>
-      <li>Greenkeeper doesn’t support multiple <code>package.json</code> files per repo yet, but it does work with <a href='https://github.com/boennemann/alle'>alle-style monorepos</a>.</li>
       <li>If you do not have a paid subscription, the repo must be public</li>
     </ul>
     <a href="#top">Back to top</a>
@@ -93,11 +94,11 @@
     <ol>
       <li>
         <strong class="signal">Greenkeeper watches your dependencies for updates</strong>
-        <p>Greenkeeper will watch npm’s changes feed for any update to any dependency in your <code>package.json</code>, except for those you’ve explicitly disabled.</p>
+        <p>Greenkeeper will watch npm’s changes feed for any update to any dependency in your <code>package.json</code> files, except for those you’ve explicitly <a href='/docs#ignoring-dependencies'>ignored</a>.</p>
       </li>
       <li>
         <strong class="signal">A dependency updates occurs</strong>
-        <p>Greenkeeper will open a branch that includes a single change: bumping that dependency’s version number in your <code>package.json</code>. Your CI tests will run on that branch, and once they complete, one of three things will happen:</p>
+        <p>Greenkeeper will open a branch that bumps that dependency’s version number in your <code>package.json</code> files. Your CI tests will run on that branch, and once they complete, one of three things will happen:</p>
         <ol>
           <li>
           <strong class="signal">It’s an in-range update, and your tests pass:</strong>
@@ -106,7 +107,7 @@
         </li>
         <li>
           <strong class="signal">It’s an in-range update, and your tests fail:</strong>
-          <p>Greenkeeper will notify you about that breakage by opening up an issue, and it will also let you know whether pinning the dependency to the previous version will fix the build. In addition, Greenkeeper will keep checking if any new version of that dependency fixes this version’s breakage, and will also notify you about that in the issue thread. </p>
+          <p>Greenkeeper will notify you about that breakage by opening up an issue, and it will also let you know whether pinning the dependency to the previous version will fix the build. In addition, Greenkeeper will keep checking if any new version of that dependency fixes this version’s breakage, and will also notify you about that in the issue thread.</p>
           <figure class="wide-img">
             <img
               src="/images/greenkeeper_in-range-update_fail_issue.png"
@@ -136,7 +137,7 @@
       </li>
       <li>
         <strong class="signal">Greenkeeper verifies any pull requests</strong>
-        <p>To prevent malicious users from posing as the Greenkeeper bot, Greenkeeper will attach a status check from <code>greenkeeper/verify</code> to each pull request it opens. If this is missing, the pull request is probably not from us, and you should treat it with caution. It looks like this:</p>
+        <p>To prevent malicious users from impersonating the Greenkeeper bot, Greenkeeper will attach a status check from <code>greenkeeper/verify</code> to each pull request it opens. If this is missing, the pull request is probably not from us, and you should treat it with caution. It looks like this:</p>
         <figure class="wide-img">
           <img
             src="/images/github_greenkeeper_verified_status.png"
@@ -197,8 +198,42 @@
 }</code></pre></p>
     <a href="#top">Back to top</a>
 
+    <h2><a href="#monorepo" id="monorepo">Using Greenkeeper in a monorepo</a></h2>
+    <p>Greenkeeper supports repos with multiple <code>package.json</code> files (monorepos). To make updating multiple files simpler and less noisy, they can be grouped, which means that they will all receive dependency updates, pull requests and issues from Greenkeeper together.</p>
+    <p>The Initial Pull Request will add a <code>greenkeeper.json</code> to your repo. This contains the group configuration; by default, all <code>package.json</code> files will be collected in a group called <code>default</code>. You can rename, add and remove groups and freely assign each <code>package.json</code> file to whichever group you like. It’s common, for example, to have one frontend group and one backend group, each with a couple of <code>package.json</code> files. In any case, all files in a group will have their updates collected into single PRs and issues. Here’s what that would look like:</p>
+    <p><pre><code>// greenkeeper.json
+{
+  "groups": {
+    "frontend": {
+      "packages": [
+        "admin-dashboard/package.json",
+        "frontend/package.json"
+      ]
+    },
+    "backend": {
+      "packages": [
+        "stats/package.json",
+        "api-server/package.json"
+      ],
+      "ignore": ["hapi"]
+    }
+  },
+  "ignore": ["standard"]
+}</code></pre></p>
+    <p>In this example, a repository’s package files are split into two groups, <em>frontend</em> and <em>backend</em>, and the files in each group will always be updated together. In addition, the <em>backend</em> group ignores the <code>hapi</code> dependency, and the entire repo ignores the <code>standard</code> dependency.</p>
+    <p><strong>Important:</strong> If you have more than one <code>package.json</code> file, or your single <code>package.json</code> file is <em>not</em> in the root of the repo, Greenkeeper will only handle the <code>package.json</code> files you specify in <code>greenkeeper.json</code>. So if you want to ignore one, just omit it from all the <code>packages</code> arrays.</p>
+    <p>You can also ignore dependencies on group level by adding them to an array under an <code>ignore</code> key within each group object, see the <code>backend</code> group in the example above.</p>
+    <p>Greenkeeper will open an issue if you’ve accidentally changed <code>greenkeeper.json</code> in a way it doesn’t understand, and will try to explain where the problems are.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#monorepo-dependencies" id="monorepo-dependencies">Using Greenkeeper with monorepo dependencies</a></h2>
+    <p>Greenkeeper will group releases from some of the more popular monorepo dependencies together, at time of writing these are <a href="https://github.com/angular/angular">Angular</a>, <a href="https://github.com/babel/babel">Babel</a>, <a href="https://github.com/facebook/jest">Jest</a>, <a href="https://github.com/pouchdb/pouchdb">PouchDB</a>, <a href="https://github.com/facebook/react">React</a> and <a href="https://github.com/storybooks/storybook">Storybook</a>.</p>
+    <p>You can view the release groups and also submit changes and additions to the <a href="https://github.com/greenkeeperio/greenkeeper/blob/master/utils/monorepo-definitions.js">monorepo release definitions file</a> in the Greenkeeper GitHub repository.</p>
+    <p><strong>Note that we only support monorepo releases in which all modules contained in a single release have the same version number</strong>, this is what Lerna calls <a href="https://github.com/lerna/lerna#fixedlocked-mode-default">Fixed or Locked Mode</a>, which is their default.</p>
+    <a href="#top">Back to top</a>
+
     <h2><a href="#ignoring-dependencies" id="ignoring-dependencies">Ignoring certain dependency’s updates</a></h2>
-    <p>You may have good reasons for not wanting to update to a certain dependency right now. In this case, you can change the dependency’s version string in the <code>package.json</code> file back to whatever you prefer.</p>
+    <p>You may have good reasons for not wanting to update to a certain dependency right now. In this case, you can change the dependency’s version string in a <code>package.json</code> file back to whatever you prefer.</p>
     <p>To make sure Greenkeeper doesn’t nag you again on the next update, add a <code>greenkeeper.ignore</code> field to your <code>package.json</code>, containing a list of dependencies you don’t want to update.</p>
     <p>
       <pre>
@@ -214,8 +249,9 @@
 }</code>
     </pre>
     </p>
-
+    <p>You can also configure ignored dependencies in a separate <code>greenkeeper.json</code> file, see the <a href="#monorepo">monorepo documentation</a> for details. Nested ignore configurations (config file, group config, individual package file) will all be applied, but we recommend keeping global, repository-wide ignores in the <code>greenkeeper.json</code> instead of a root <code>package.json</code>.</p>
     <a href="#top">Back to top</a>
+
     <h2><a href="#custom-commit-messages" id="custom-commit-messages">Setting up custom commit messages</a></h2>
     <p>You can customise all of Greenkeeper’s commit messages by adding a <code>greenkeeper.commitMessages</code> key to your <code>package.json</code>. This is useful if you’d like Greenkeeper to adhere to a specific message style, eg. some projects prefer a change to dev dependencies to be a "Chore", for others it’s a "Fix".</p>
     <p>These are all the commit strings and the variables you can use within them. And yes, there’s emoji support!</p>

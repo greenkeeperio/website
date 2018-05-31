@@ -1,12 +1,29 @@
+<div class='hero'>
+  <header role="banner">
+    <%- partial("partials/_gk_logo_round") %>
+    <div class='text'>
+      <h1>Greenkeeper</h1>
+      <span>Automated dependency management</span>
+    </div>
+  </header>
+  <div class='scroller'></div>
+</div>
+
 <section class="billboard">
   <h1>Get safety &amp; consistency<br>
   with <span class="signal">real-time monitoring</span> and<br>
   <span class="signal">automatic updates</span> for npm dependencies</h1>
+  <div class='try'>
+    <a href='https://github.com/apps/greenkeeper'>
+      <h3>Get started!</h3>
+      <span>Install Greenkeeper on GitHub now</span>
+    </a>
+  </div>
 </section>
 
-<div class="get-started">
+<!--div class="get-started">
   <a class="button" href="https://github.com/apps/greenkeeper">Install the Greenkeeper app on GitHub now!</a>
-</div>
+</div-->
 
 <div class="double-flex">
   <h3>Join thousands of others who let our friendly bot handle their dependency chores</h3>
@@ -14,7 +31,8 @@
     <ul>
       <li><strong>Automatic, real time</strong> dependency updates</li>
       <li><strong>Runs your tests</strong> and alerts you when updates break your code</li>
-      <li>Out-of-the-box support for <strong>scoped packages</strong></li>
+      <li>Support for both <a href="/docs.html#monorepo">monorepo repositories</a> and <a href="/docs.html#monorepo-dependencies">monorepo dependencies</a></li>
+      <li>Out-of-the-box support for <a href="/docs.html#private-scoped-packages">scoped packages</a></li>
       <li><a href="/docs.html#private-scoped-packages">Private packages</a> and registry support via webhooks</li>
       <li><a href="/docs.html#lockfiles">Lockfile</a> support, including shrinkwrap, npm5 and yarn</li>
     </ul>
@@ -69,6 +87,9 @@
       <li>Online support during EU business hours</li>
     </ul>
     <span class="price">$1.5&thinsp;USD/month<br>per private repo</span>
+    <ul class="spaced">
+      <li>Get <strong>two months free</strong> with yearly payment!</li>
+    </ul>
   </a>
   <a href="https://account.greenkeeper.io" class="plan paid">
     <h2>Organisations</h2>
@@ -79,11 +100,14 @@
       <li>Online support during EU business hours</li>
     </ul>
     <span class="price">$25&thinsp;USD/month</span>
+    <ul class="spaced">
+      <li>Get <strong>two months free</strong> with yearly payment!</li>
+    </ul>
   </a>
   <section class="risk">
     <p><strong>We're the uncomplicated type of company:</strong> If you're unhappy during the first 30 days, you'll get your money back. And of course you can always cancel at any time.</p>
     <p><strong>We support Open Source Software:</strong> Greenkeeper will always be free for public repositories!</p>
-    <p><a href='https://github.com/marketplace/greenkeeper'>Greenkeeper is also available via the GitHub Marketplace</a>, for simpler billing.</p>
+    <p><a href='https://github.com/marketplace/greenkeeper'>Greenkeeper is also available via the GitHub Marketplace</a>, for simpler billing, and with <strong>free trials</strong> for all plans.</p>
     <p>Prices are excluding VAT, which will be added for EU customers. To remove it, enter your company’s VAT ID along with your billing details.</p>
   </section>
 </section>
@@ -135,8 +159,11 @@
   </section>
 </div>
 
-<div class="get-started">
-  <a class="button" href="https://github.com/apps/greenkeeper">Install the Greenkeeper app on GitHub now!</a>
+<div class='try'>
+  <a href='https://github.com/apps/greenkeeper'>
+    <h3>Try Greenkeeper now!</h3>
+    <span class='pseudo-link'>Install the app on GitHub</span>
+  </a>
 </div>
 
 <a id="enterprise"></a>
