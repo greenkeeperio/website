@@ -766,11 +766,12 @@ section h2:after {
 }
 
 .plan .price{
-  margin-top: 0.5em;
+  margin: 0em 0 1.5em 0;
   display: block;
   width: 100%;
   font-weight: bold;
   color: #000;
+  font-family: $fonts;
 }
 
 .risk{
