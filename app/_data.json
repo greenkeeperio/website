@@ -42,5 +42,9 @@
   "docs": {
     "pageTitle": "Documentation",
     "bodyClass": "docs gk-saas"
+  },
+  "styleguide": {
+    "pageTitle": "Style Guide",
+    "bodyClass": "styleguide gk-saas"
   }
 }
