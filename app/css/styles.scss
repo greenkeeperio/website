@@ -1164,6 +1164,71 @@ figure.wide-img {
   }
 }
 
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .feature {
+    min-width: 300px;
+    max-width: 40%;
+    margin: 0 1em;
+    svg {
+      width: 40px;
+      position: absolute;
+      margin-top: 1.9em;
+      fill: $blue-primary;
+    }
+    h3 {
+      font-size: 1.75em;
+      text-align: left;
+      margin-left: 50px;
+    }
+    p {
+      margin-left: 50px;
+    }
+  }
+}
+
+.image-header{
+  margin: 3rem auto;
+  max-width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  h2 {
+    width: 30%;
+    text-align: left;
+    padding-bottom: 0;
+    &:after {
+      display: none;
+    }
+  }
+  p {
+    width: 30%;
+  }
+  button {
+    width: 30%;
+  }
+  .img {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    border: 2px solid #d6d6d6;
+    border-radius: 10px;
+    padding: 1em;
+    border-top-width: 20px;
+    box-shadow: 0px 4px 20px 0px #d8d8d8;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
 @media screen and (min-width: 400px) {
   html{
     font-size: 20px;

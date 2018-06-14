@@ -39,6 +39,10 @@
     "pageTitle": "Enterprise Setup",
     "bodyClass": "enterprise-setup gk-enterprise"
   },
+  "enterprise": {
+    "pageTitle": "Greenkeeper Enterprise",
+    "bodyClass": "index enterprise gk-enterprise"
+  },
   "docs": {
     "pageTitle": "Documentation",
     "bodyClass": "docs gk-saas"
