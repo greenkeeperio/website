@@ -44,6 +44,13 @@
           ratio: ratio
         })
       }
+      $(document).on('click', '.menu-button', function(e){
+        event.preventDefault()
+        $('.menu-button').toggleClass('is-active')
+        $('body').toggleClass('no-scroll')
+        $('nav.header').toggleClass('is-active')
+        return false
+      })
     })
   </script>
   <script type="text/javascript">
