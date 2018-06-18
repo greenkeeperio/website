@@ -1308,17 +1308,25 @@ figure.wide-img {
     text-align: center;
   }
   button {
+    font-family: $fonts; // yay iOS safari
     width: auto;
     background: $blue-primary;
     color: $white;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: normal;
     border: none;
-    font-size: 1.25rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    box-shadow: 0 0 0px 0px $blue-primary;
+    transition: box-shadow 0.5s;
+    z-index: 99;
+    &:hover, &:focus {
+      box-shadow: 0 0 0 3000px $blue-primary;
+    }
   }
   .img {
     width: 100%;
-    height: 100%;
     position: relative;
     right: 0;
     top: 0;
@@ -1439,6 +1447,7 @@ figure.wide-img {
     .img {
       width: 60%;
       margin-top: 0;
+      margin-left: 1em;
     }
   }
 }
