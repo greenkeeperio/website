@@ -12,6 +12,8 @@ $blue-secondary: #e8effc;
 $text: hsla(105, 1%, 40%, 1);
 $em-text: hsla(105, 1%, 30%, 1);
 $white: #FFF;
+$black: #000;
+$off-white: #FAFAFA;
 
 $fonts: "futura-pt", Futura, sans-serif;
 
@@ -65,7 +67,6 @@ $fonts: "futura-pt", Futura, sans-serif;
         background: $intermediary;
       }
     }
-
     .m-magnifikCanvas {
       border: 5px solid $intermediary;
       background: $intermediary;
@@ -76,6 +77,9 @@ $fonts: "futura-pt", Futura, sans-serif;
         background: white;
         margin-top: 45px;
       }
+    }
+    nav.header {
+      border-top: 3px solid $primary;
     }
   }
 }
@@ -109,10 +113,14 @@ html{
   color: #A52A9A;
 }
 
+.green {
+  color: $green-primary;
+}
+
 body{
   font-family: sans-serif;
   color: $text;
-  background-color: #FFFFFF;
+  background-color: $off-white;
   margin: 0;
   padding: 0;
   line-height: 1.35;
@@ -124,6 +132,9 @@ body{
   }
   &.no-scroll {
     overflow: hidden;
+  }
+  &:not(.index) .container {
+    margin-top: 4rem;
   }
 }
 
@@ -172,10 +183,10 @@ nav ul {
 */
 
 nav.header {
-  position: absolute;
+  position: fixed;
   width: 100vw;
-  height: 100vh;
-  background: transparent;
+  height: 3.9rem;
+  background: $white;
   padding: 0;
   top: 0;
   margin: 0;
@@ -183,17 +194,17 @@ nav.header {
   flex-wrap: wrap;
   align-items: flex-end;
   z-index: 100;
-  transition: all 0.5s;
+  // transition: all 0.5s;
   &.is-active {
-    background: #fff;
+    height: 100vh;
     ul {
       transform: translateX(0);
     }
   }
   ul {
     transform: translateX(-100vw);
-    transition: all 0.5s;
-    margin: 1em 0 0 1em;
+    // transition: all 0.5s;
+    margin: 1em 0 2em 1em;
     padding: 0;
     li {
       display: block;
@@ -216,13 +227,14 @@ nav ul li {
   }
 }
 
-.menu-button {
+a.menu-button {
   display: flex;
   border: none !important;
   position: absolute;
   right: 1.25rem;
-  top: 1rem;
-  fill: $blue-primary;
+  top: 0.85rem;
+  color: $black;
+  fill: currentColor;
   font-family: $fonts;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
@@ -232,7 +244,7 @@ nav ul li {
     line-height: 2.1rem;
     position: absolute;
     right: 2.5rem;
-    color: $blue-primary;
+    color: inherit;
     transition: all .2s;
   }
   .menu {
@@ -270,7 +282,7 @@ nav ul li {
 }
 
 nav ul li a{
-  margin-left: 0.25em;
+  // margin-left: 0.25em;
   position: relative;
   // Embiggen touch targets
   &:before{
@@ -515,6 +527,7 @@ h1, h2, h3, h4, h5, h6{
   text-align: center;
   a{
     border-width: 4px;
+    font-weight: 500;
     &:hover, &:focus{
       border-width: 4px;
     }
@@ -562,6 +575,7 @@ a:not([href]) {
   display: block;
   border: none;
   background: transparent;
+  margin-bottom: 2rem;
 }
 
 a[href="#top"] {
@@ -651,7 +665,7 @@ ol {
 section{
   font-size: 0.75rem;
   padding: 0.5em 1em;
-  margin: 1em 0;
+  margin: 3em 0;
   &.split-item-top{
     margin-bottom: 0;
     padding-bottom: 0;
@@ -757,7 +771,7 @@ section h2:after {
 .pricing{
   display: flex;
   flex-wrap: wrap;
-  margin-top: 3em;
+  // margin-top: 3em;
   margin-bottom: 3em;
   background-color: transparent;
   padding: 0;
@@ -1269,26 +1283,32 @@ figure.wide-img {
 }
 
 .image-header{
-  margin: 3rem auto;
+  margin: 5rem auto 3rem;
   max-width: 80%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
   padding: 0;
+  min-height: 500px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   h2 {
-    width: 30%;
-    text-align: left;
+    width: 100%;
+    text-align: center;
     padding-bottom: 0;
+    margin-bottom: 0;
     &:after {
       display: none;
     }
   }
   p {
-    width: 30%;
+    width: 100%;
+    text-align: center;
   }
   button {
-    width: 30%;
+    width: auto;
     background: $blue-primary;
     color: $white;
     letter-spacing: 1px;
@@ -1297,19 +1317,22 @@ figure.wide-img {
     font-size: 1.25rem;
   }
   .img {
-    width: 60%;
+    width: 100%;
     height: 100%;
-    position: absolute;
+    position: relative;
     right: 0;
     top: 0;
     overflow: hidden;
-    border: 2px solid #d6d6d6;
+    border: 1px solid #f5f5f5;
     border-radius: 10px;
-    padding: 1em;
+    padding: 0.5em;
     border-top-width: 20px;
-    box-shadow: 0px 4px 20px 0px #d8d8d8;
+    box-shadow: 0 0 20px rgba(50,50,50,.1);
+    background: #fff;
+    margin-top: 2rem;
     img {
-      max-width: 100%;
+      max-height: 100%;
+      width: 100%;
     }
   }
 }
@@ -1320,21 +1343,29 @@ figure.wide-img {
   }
 }
 
+// Flip to wide layout and non-mobile nav
 @media screen and (min-width: $column-width) {
+  a:not([href]) {
+    margin-bottom: 2rem;
+  }
+  body.no-scroll {
+    overflow: visible;
+  }
   html{
     font-size: 22px;
   }
-  .menu-button {
+  a.menu-button {
     display: none;
   }
   nav.header {
     position: fixed;
-    top: 1.5rem;
-    left: 1rem;
-    height: auto;
+    height: 2.5rem;
+    background-color: $white;
+    align-items: center;
+    box-shadow: 0 0 10px 5px hsla(0, 0%, 50%, 0.1);
     ul{
       display: flex;
-      font-size: 0.5rem;
+      font-size: 0.6rem;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -1342,18 +1373,23 @@ figure.wide-img {
       font-weight: bold;
       font-family: $fonts;
       letter-spacing: 0.1em;
-      transition: none;
+      //transition: none;
       transform: translateX(0);
-      width: 100%;
+      width: 90%;
+      max-width: 760px;
+      margin: 0 auto;
       li {
         width: auto;
         margin: 0 1em 0em 0;
         &.account {
           position: absolute;
-          right: 2rem;
+          right: 0;
         }
       }
     }
+  }
+  body.index nav.header ul {
+    max-width: none;
   }
   header span{
     font-size: 1rem;
@@ -1387,6 +1423,23 @@ figure.wide-img {
   .tweets {
     font-size: 1.25rem;
     line-height: 1.6;
+  }
+  .image-header {
+    align-items: flex-start;
+    text-align: left;
+    max-height: 500px;
+    min-height: 46vw;
+    h2, p {
+      width: 30%;
+      text-align: left;
+    }
+    button {
+      width: auto;
+    }
+    .img {
+      width: 60%;
+      margin-top: 0;
+    }
   }
 }
 
@@ -1472,7 +1525,7 @@ figure.wide-img {
     font-size: 24px;
   }
   .full-height{
-    height: 100vh;
+    min-height: calc(100vh - 2.5rem);
     align-items: center;
     margin: 0 auto;
   }

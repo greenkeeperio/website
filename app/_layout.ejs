@@ -46,10 +46,13 @@
       }
       $(document).on('click', '.menu-button', function(e){
         event.preventDefault()
-        $('.menu-button').toggleClass('is-active')
+        $('.menu-button, nav.header').toggleClass('is-active')
         $('body').toggleClass('no-scroll')
-        $('nav.header').toggleClass('is-active')
         return false
+      })
+      $(document).on('click', 'body.no-scroll nav.header li a', function(e) {
+        $('.menu-button, nav.header').removeClass('is-active')
+        $('body').removeClass('no-scroll')
       })
     })
   </script>
