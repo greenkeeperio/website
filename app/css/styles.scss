@@ -37,6 +37,9 @@ $fonts: "futura-pt", Futura, sans-serif;
       color: $primary;
       border: 5px solid currentColor;
     }
+    section h2:after {
+      border-bottom-color: $primary;
+    }
     footer{
       background: $primary;
       color: $secondary;
@@ -93,6 +96,10 @@ $fonts: "futura-pt", Futura, sans-serif;
 
 html{
   font-size: 18px;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .super {
@@ -310,7 +317,7 @@ nav ul li a{
   min-height: 190px;
   // box-shadow: 0px 0px 9px 1px hsla(154, 95%, 30%, 1) inset;
   color: $white;
-  margin-top: 3.9rem;
+  margin-top: 2.5rem;
   padding: 4rem;
   header{
     margin-top: 0;
@@ -372,12 +379,21 @@ nav ul li a{
   }
 }
 
+nav.footer {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: $fonts;
+  letter-spacing: 0.1em;
+}
+
 body:not(.index) nav.footer {
   width: 90%;
   max-width: $column-width;
   margin: 0 auto;
   ul{
     justify-content: flex-start;
+    padding: 0;
     li{
       margin: 0.5em 1em 0.5em 0;
     }
@@ -620,8 +636,14 @@ ul{
   padding-left: 1em;
 }
 
-ul li {
-  margin-bottom: 0.5em;
+ul {
+  li {
+    margin-bottom: 1.25em;
+    line-height: 1.5;
+  }
+  &.compact-list li {
+    margin-bottom: 0.5em;
+  }
 }
 
 ul li:before {
@@ -633,7 +655,7 @@ ul li:before {
   left: -0.5em;
   color: currentColor;
   font-size: 2.5em;
-  line-height: 1rem;
+  line-height: 1.3rem;
 }
 
 nav ul li:before{
@@ -679,6 +701,16 @@ section{
     ul {
       margin-top: 0;
     }
+  }
+}
+.compact {
+  .split-item-top, .split-item-bottom {
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+  .split-item-top {
+    margin: 1em 0 2em;
   }
 }
 
@@ -728,7 +760,7 @@ section h2 {
 
 section h2:after {
   content: "";
-  border-bottom: 4px solid #00C775;
+  border-bottom: 4px solid transparent;
   display: block;
   width: 3rem;
   position: absolute;
@@ -752,6 +784,8 @@ section h2:after {
   }
   h3 {
     max-width: 25em;
+    min-width: 270px;
+    padding: 0 1em;
   }
 }
 
@@ -917,15 +951,15 @@ div.enterprise{
 }
 
 div.enterprise section h2:after{
-  border-color: #6495ED;
+  border-color: $blue-primary;
 }
 
 div.enterprise section .green{
-  color: #6495ED;
+  color: $blue-primary;
 }
 
 div.enterprise section a{
-  color: #6495ED;
+  color: $blue-primary;
 }
 
 .full-height{
@@ -1307,24 +1341,6 @@ figure.wide-img {
     width: 100%;
     text-align: center;
   }
-  button {
-    font-family: $fonts; // yay iOS safari
-    width: auto;
-    background: $blue-primary;
-    color: $white;
-    letter-spacing: 2px;
-    font-weight: normal;
-    border: none;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    padding: 1em 2em;
-    box-shadow: 0 0 0px 0px $blue-primary;
-    transition: box-shadow 0.5s;
-    z-index: 99;
-    &:hover, &:focus {
-      box-shadow: 0 0 0 3000px $blue-primary;
-    }
-  }
   .img {
     width: 100%;
     position: relative;
@@ -1342,6 +1358,70 @@ figure.wide-img {
       max-height: 100%;
       width: 100%;
     }
+  }
+}
+
+button.cta {
+  font-family: $fonts; // yay iOS safari
+  width: auto;
+  background: $blue-primary;
+  color: $white;
+  letter-spacing: 2px;
+  font-weight: normal;
+  border: none;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 1em 2em;
+  box-shadow: 0 0 0px 0px $blue-primary;
+  transition: box-shadow 0.5s;
+  z-index: 99;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    border: 10px solid transparent;
+    position: absolute;
+    left: 102%;
+    border-right-color: $blue-primary;
+  }
+  &:after{
+    content: "Start your risk-free 30 day trial with setup support today";
+    display: block;
+    position: absolute;
+    left: 110%;
+    width: 13em;
+    text-align: left;
+    top: 50%;
+    margin-top: -2.9em;
+    background: $blue-primary;
+    padding: 1em;
+  }
+  &:before, &:after {
+    opacity: 0;
+    transform: translateX(-1em);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  &:hover, &:focus {
+    box-shadow: 0 0 300px 300px rgba(100, 149, 237, 0.5); // $blue-primary at 0.5A
+    &:before, &:after {
+      opacity: 1;
+      transform: translateX(0)
+    }
+  }
+}
+
+.centered-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  li {
+    width: 30%;
+    min-width: 270px;
+    margin-left: 0.5rem;
+    margin-right: 1.5em;
+  }
+  @media screen and (min-width: 1224px) {
+    justify-content: flex-start;
   }
 }
 
@@ -1415,6 +1495,15 @@ figure.wide-img {
     width: 65%;
     padding: 0.5em 1em;
   }
+  .double-flex {
+    h3 {
+      min-width: 25em;
+    }
+  }
+  .limit-width {
+    max-width: 68em;
+    margin: 0 auto;
+  }
   section{
     &.split-item-top,
     &.split-item-bottom{
@@ -1424,6 +1513,9 @@ figure.wide-img {
         margin: inherit;
       }
     }
+  }
+  .compact .split-item-top {
+    margin: 0;
   }
   .oss-users li a{
     font-size: 0.75em;
@@ -1547,4 +1639,8 @@ figure.wide-img {
     background-position-y: center;
     margin-bottom: 0;
   }
+}
+
+li a:not([href]) {
+  margin-bottom: 0;
 }

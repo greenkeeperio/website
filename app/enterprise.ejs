@@ -1,7 +1,7 @@
 <section class='image-header'>
   <h2>Greenkeeper&nbsp;Enterprise: Effortlessly keep your software secure and up&nbsp;to&nbsp;date</h2>
   <p>Build better, more maintainable and more secure software while saving time and money</p>
-  <button>Request a demo</button>
+  <button class='cta'>Request a demo</button>
   <div class='img'>
     <img src='/images/greenkeeper_in-range-update_fail_issue.png' alt=''>
   </div>
@@ -16,7 +16,8 @@
   </div>
   <div class='feature'>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
-    <h3>Increase team efficiency and productivity</h3>
+    <!--h3>Increase team efficiency and productivity</h3-->
+    <h3>Keep your developers happy and productive</h3>
     <p>Greenkeeper automates away unpopular and time-consuming developer tasks: staying up to date with a never-ending stream of releases, and testing each one’s compatibility with your software. Greenkeeper integrates seamlessly into existing workflows, so there’s nothing new to learn, and you can save time and money with minimal overhead.</p>
   </div>
   <div class='feature'>
@@ -33,7 +34,7 @@
 
 
 
-<div class="double-flex">
+<!--div class="double-flex">
   <h3></h3>
   <section class="split-item-top">
     <ul>
@@ -53,5 +54,39 @@
       <li><strong>Less accounting:</strong> use our <a href='https://github.com/marketplace/greenkeeper'>GitHub Marketplace app</a> and get billed via your GitHub invoice</li>
       <li><a href="#enterprise">Self-hosted enterprise version</a> available</li>
     </ul>
+  </section>
+</div-->
+
+<section class="single">
+  <h2>Trusted by Thousands of Projects and Companies</h2>
+  <p>Some of Greenkeeper’s SaaS customers:</p>
+  <%- partial("partials/_customers") %>
+</section>
+
+<section class='limit-width'>
+  <h2>Features</h2>
+  <ul class='centered-list'>
+    <li><strong>Automated, real-time dependency updates</strong> for all JavaScript projects on your GitHub Enterprise instance</li>
+    <li>Runs your CI test suite on every dependency update and only alerts developers when something needs to be done</li>
+    <li>Support for both <a href="/docs.html#monorepo">monorepo repositories</a> and <a href="/docs.html#monorepo-dependencies">monorepo dependencies</a></li>
+    <li>Out-of-the-box support for <a href="/docs.html#private-scoped-packages">scoped packages</a></li>
+    <li><a href="/docs.html#private-scoped-packages">Private packages</a> and registry support via webhooks</li>
+    <li><a href="/docs.html#lockfiles">Lockfile</a> support, including shrinkwrap, npm5 and yarn</li>
+    <li><strong>Integrates seamlessly</strong> into your existing developer workflow, with nothing new to learn</li>
+    <li><strong>Self-host Greenkeeper Enterprise simply and securely</strong>: you receive updates, we don’t even get to see your logs if you don’t want us too. You can even run Greenkeeper Enterprise in an airgapped environment</li>
+  </ul>
+</section>
+
+<div class='double-flex compact'>
+  <h3>Try Greenkeeper Enterprise today!</h3>
+  <section class='split-item-top'>
+    <ul class='compact-list'>
+      <li>Risk free with a 30 day free trial period</li>
+      <li>Friendly setup support</li>
+      <li>Enterprise-ready contracts and service agreements</li>
+    </ul>
+  </section>
+  <section class='split-item-bottom'>
+    <button class='cta'>Request a demo</button>
   </section>
 </div>
