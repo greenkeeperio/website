@@ -124,6 +124,11 @@ a {
   color: $green-primary;
 }
 
+.align-left,
+.single.align-left{
+  text-align: left;
+}
+
 body{
   font-family: sans-serif;
   color: $text;
