@@ -599,7 +599,7 @@ a[href="#top"] {
   display: inline-block;
 }
 
-button{
+button {
   color: #979797;
   border: 5px solid currentColor;
   font-family: "futura-pt";
@@ -1302,7 +1302,7 @@ figure.wide-img {
     svg {
       width: 40px;
       position: absolute;
-      margin-top: 1.9em;
+      margin-top: 1.75em;
       fill: $blue-primary;
     }
     h3 {
@@ -1361,7 +1361,7 @@ figure.wide-img {
   }
 }
 
-button.cta {
+a.cta {
   font-family: $fonts; // yay iOS safari
   width: auto;
   background: $blue-primary;
@@ -1376,25 +1376,30 @@ button.cta {
   transition: box-shadow 0.5s;
   z-index: 99;
   position: relative;
+  outline: none;
   &:before {
     content: "";
     display: block;
     border: 10px solid transparent;
     position: absolute;
-    left: 102%;
-    border-right-color: $blue-primary;
+    right: auto;
+    left: calc(50% - 10px);
+    border-color: transparent;
+    border-top-color: $blue-primary;
+    top: -36%;
   }
   &:after{
     content: "Start your risk-free 30 day trial with setup support today";
     display: block;
     position: absolute;
-    left: 110%;
-    width: 13em;
-    text-align: left;
-    top: 50%;
-    margin-top: -2.9em;
     background: $blue-primary;
     padding: 1em;
+    right: auto;
+    left: auto;
+    top: -7.2em;
+    margin: 0 0 0 -22%;
+    text-align: center;
+    width: 100%;
   }
   &:before, &:after {
     opacity: 0;
@@ -1403,6 +1408,7 @@ button.cta {
   }
   &:hover, &:focus {
     box-shadow: 0 0 300px 300px rgba(100, 149, 237, 0.5); // $blue-primary at 0.5A
+    color: $white;
     &:before, &:after {
       opacity: 1;
       transform: translateX(0)
@@ -1617,6 +1623,34 @@ button.cta {
       background-color: #e6faf1;
       color: #00c775;
       box-shadow: 0 0 0 5px #00c775;
+    }
+  }
+  a.cta {
+    &:before {
+      left: 13.5em;
+      right: auto;
+      top: auto;
+      border-color: transparent;
+      border-right-color: $blue-primary;
+    }
+    &:after {
+      left: 17.5em;
+      width: 13em;
+      text-align: left;
+      top: 50%;
+      margin-top: -2.9em;
+    }
+  }
+  .split-item-bottom a.cta {
+    &:after {
+      right: 110%;
+      left: auto;
+    }
+    &:before {
+      right: 102%;
+      left: auto;
+      border-color: transparent;
+      border-left-color: #6495ed;
     }
   }
 }
