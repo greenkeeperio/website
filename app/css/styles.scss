@@ -1344,6 +1344,12 @@ figure.wide-img {
     &:after {
       display: none;
     }
+    strong{
+      font-size: 1.5rem;
+      color: $black;
+      margin-bottom: 0.5em;
+      display: block;
+    }
   }
   p {
     width: 100%;
