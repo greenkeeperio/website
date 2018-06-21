@@ -1385,6 +1385,8 @@ a.cta {
   z-index: 99;
   position: relative;
   outline: none;
+  min-width: 13em;
+  text-align: center;
   &:before {
     content: "";
     display: block;
@@ -1634,7 +1636,7 @@ a.cta {
   }
   a.cta {
     &:before {
-      left: 13.5em;
+      left: 13.6em;
       right: auto;
       top: auto;
       border-color: transparent;
