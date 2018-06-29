@@ -1129,6 +1129,41 @@ figure.wide-img {
   }
 }
 
+.breakout-table {
+  overflow-x: auto;
+  table{
+    width: auto;
+    text-align: left;
+    vertical-align: top;
+    border-collapse: collapse;
+    td:last-child, th:last-child {
+      border-right: none;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+    td:first-child, th:first-child {
+      border-left: none;
+    }
+    th, td {
+      vertical-align: top;
+      border: 1px solid $text;
+      padding: 1em;
+    }
+    th {
+      border-top: none;
+    }
+  }
+  @media screen and (min-width: $column-width) {
+    overflow-x: visible;
+    table {
+      margin-left: calc(-90vw / 2 + 760px / 2);
+      margin-right: calc(-90vw / 2 + 760px / 2);
+    }
+  }
+}
+
 @media screen and (min-width: 400px) {
   html{
     font-size: 20px;
