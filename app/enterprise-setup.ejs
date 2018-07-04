@@ -10,7 +10,7 @@
     <p>Please make sure you’ve got all of the following on hand before you start installing GKE.</p>
     <ul>
       <li>Your Greenkeeper Enterprise license file (<code>.rli</code>)</li>
-      <li>A Linux server with minimum 2 cores and 4GB Memory, running an operating system from <a href="https://www.replicated.com/docs/distributing-an-application/supported-operating-systems/">this list</a></li>
+      <li>A Linux server with a minimum of 2 cores and 4GB memory, running an operating system from <a href="https://www.replicated.com/docs/distributing-an-application/supported-operating-systems/">this list</a></li>
       <li>server ports <code>80</code>, <code>443</code>, and <code>8800</code> accessible from your local machine</li>
     </ul>
 
@@ -52,7 +52,7 @@
 
     <h3><a href="#step_3_install_and_configure_greenkeeper_enterprise_through_the_replicated_app_manager" id="step_3_install_and_configure_greenkeeper_enterprise_through_the_replicated_app_manager"><span class="signal">Step 3:</span> Install and Configure Greenkeeper Enterprise through the Replicated App Manager</a></h3>
     <p>We’ll be using Replicated 2.0. Here’s the simplest installation option, via <code>curl</code>:</p>
-    <pre>curl -sSL -o install.sh https://get.replicated.com/docker</pre>
+    <pre>curl -sSL -o install.sh https://get.replicated.com/docker</pre><br/>
     <pre>sudo bash ./install.sh</pre>
     <p><strong>Note: </strong>If you require a different installation method (airgapped, for example), or if anything goes wrong, please refer to <a href="https://www.replicated.com/docs/distributing-an-application/installing/">Replicated’s installation docs</a>.</p>
     <p>This will install the management application, which takes care of downloading and installing Greenkeeper Enterprise, as well as providing a simple web interface for setting up the platform, and for viewing runtime metrics. You may be prompted to enter the IP address of the current machine, since the installer may not be able to determine it. Once the script has run, you can navigate to <code>https://[server]:8800</code> to complete the setup. This page has a self-signed certificate which your browser will likely complain about. Ignore this warning, you can fix it
