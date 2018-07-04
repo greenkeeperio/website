@@ -21,13 +21,26 @@
 <nav class="header">
   <ul role="navigation" aria-label="main navigation">
     <li><a href="#how-it-works">How it works</a></li>
-    <li><a href="/docs.html">Docs</a></li>
-    <li><a href="/faq.html">FAQ</a></li>
+    <li>
+      <a class="" href="/docs.html">Docs</a>
+    </li>
+    <li>
+      <a class="" href="/faq.html">FAQ</a>
+    </li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="https://github.com/greenkeeperio">GitHub</a></li>
-    <li><a href="#enterprise" class="enterprise">Enterprise Solutions</a></li>
+    <li>
+      <a href="/enterprise.html" class="enterprise">Enterprise Solutions</a>
+    </li>
     <li class="account"><a href="https://account.greenkeeper.io">Your account</a></li>
   </ul>
+  <a href="#" class="menu-button">
+    <span class="menu">Menu</span>
+    <span class="close">Close</span>
+    <span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
+    </span>
+  </a>
 </nav>
 
 
@@ -64,7 +77,7 @@
 <div class="double-flex">
   <h3>Join thousands of others who let our friendly bot handle their dependency chores</h3>
   <section class="split-item-top">
-    <ul>
+    <ul class="compact-list">
       <li><strong>Automatic, real time</strong> dependency updates</li>
       <li><strong>Runs your tests</strong> and alerts you when updates break your code</li>
       <li>Support for both <a href="/docs.html#monorepo">monorepo repositories</a> and <a href="/docs.html#monorepo-dependencies">monorepo dependencies</a></li>
@@ -74,7 +87,7 @@
     </ul>
   </section>
   <section class="split-item-bottom">
-    <ul>
+    <ul class="compact-list">
       <li>Integrates neatly into your existing developer workflow</li>
       <li><a href="/docs.html#ignoring-dependencies">Ignore updates</a> from dependencies you don’t care about</li>
       <li><a href="/docs.html#pinning">One-click dependency pinning</a>, for when you just don’t have time to deal with a breaking change</li>
@@ -306,15 +319,6 @@
   </a>
 </div>
 
-<a id="enterprise"></a>
-<div class="centered full-height enterprise">
-  <section>
-    <h2>Enterprise plan</h2>
-    <p>You’re using <a href="https://enterprise.github.com/home">GitHub Enterprise</a> or <a href="https://www.npmjs.com/enterprise">npm Enterprise</a>?<br> No problem, we support those too.</p>
-    <p><a href="mailto:gke@greenkeeper.io">Please get in touch with us</a> and we’ll get you set up with a trial of our self-hosted enterprise solution in no time.</p>
-  </section>
-</div>
-
   <nav class="footer" role="navigation">
   <ul class="nav">
     <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
@@ -338,7 +342,6 @@
 
 <footer role="contentinfo">
   <p><a href="https://github.com/greenkeeperio">Greenkeeper is Open Source on GitHub</a>. Thank you for your future contributions!</p>
-  <p>Brought to you by the people behind <a href="http://hood.ie">Hoodie</a>. We’re re-inventing web app development. Take a look!</p>
   <p>.io domain? — <a href="https://twitter.com/chagosuk" title="chagos-support">Yes, we support Chagos!</a></p>
   <p>© 2018 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
 </footer>
@@ -366,6 +369,16 @@
           ratio: ratio
         })
       }
+      $(document).on('click', '.menu-button', function(e){
+        event.preventDefault()
+        $('.menu-button, nav.header').toggleClass('is-active')
+        $('body').toggleClass('no-scroll')
+        return false
+      })
+      $(document).on('click', 'body.no-scroll nav.header li a', function(e) {
+        $('.menu-button, nav.header').removeClass('is-active')
+        $('body').removeClass('no-scroll')
+      })
     })
   </script>
   <script type="text/javascript">
