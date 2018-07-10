@@ -138,6 +138,7 @@ body{
   line-height: 1.35;
   background-repeat: repeat-y;
   background-size: 100%;
+  overflow-x: hidden;
   // background-image: url(../images/bg_nodes_gk-saas.svg);
   &.gk-enterprise{
     // background-image: url(../images/bg_nodes_gk-enterprise.svg);
