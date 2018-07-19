@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="main" role="main">
+    <h1>Häufig gestellte Fragen</h1>
+    <p>Welcome to Greenkeeper’s FAQ. Since you’re here, we’ll assume that you’re having trouble with something, and we’re sorry things didnt work out smoothly for you. Hopefully the FAQ will help. If you can’t find what you’re looking for here, there’s also the <a href="/docs">documentation page</a>, and if that doesn’t help, you can <a href="mailto:support@greenkeeper.io">contact us</a> directly.</p>
+    <ul class="compact-list">
+      <li><a href="#no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></li>
+      <li><a href="#renamed-repo">I can’t enable a repo that was recently renamed</a></li>
+      <li><a href="#branch-deletions">Greenkeeper is creating branches and immediately deleting them again</a></li>
+      <li><a href="#pinning-versions">I would like to get pull requests for every dependency update</a></li>
+      <li><a href="#downgrading">I downgraded a dependency to see whether Greenkeeper works, but nothing happens</a></li>
+      <li><a href="#corrupted-branch">I got a broken pull request (corrupted branch), and now I can’t git pull anymore</a></li>
+      <li><a href="#required-verify">Some PRs are stuck on "Some checks haven’t completed yet" because of greenkeeper/verify</a></li>
+      <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
+      <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
+      <li><a href="#yearly-payment">Can I pay for a whole year instead of by month?</a></li>
+      <li><a href="#free-trial">I only have private repositories, can I try Greenkeeper for free anyway?</a></li>
+    </ul>
+
+    <h2><a href="#no-initial-pr" id="no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></h2>
+    <p>The first thing to note: <strong>the Initial Pull Request can take up to 30 minutes to arrive.</strong> It’s usually much faster, but the time it takes depends on the complexity of your tests and the state of your CI service. If nothing happens after 30 minutes, something probably went wrong.</p>
+    <p><strong>Basic troubleshooting:</strong> make sure you’ve completed the <a href="/docs.html#installation">installation</a> correctly. Then please read the <a href="/docs.html#prerequisites">requirements Greenkeeper has for each repo</a>. If you’ve missed one or more and fixed them, please <a href="/docs.html#resetting-repos">reset the repo</a> and check if it works now.</p>
+    <p><strong>Here are all known possible causes and their fixes:</strong></p>
+    <ul>
+      <li>There is <strong>no CI</strong> configured. Set up a CI integration for your repo and <a href="/docs.html#resetting-repos">reset it</a>.</li>
+      <li>You’re using a CI service that does not report statuses to branches. Greenkeeper cannot work without these statuses, so there is no solution to this.</li>
+      <li>The <strong>CI service cannot work</strong> on the branches Greenkeeper creates, it might be limited to <code>master</code> only, for example. Give the CI permission to access all branches, or whitelist branches with <code>greenkeeper</code> in their name. <a href="/docs.html#resetting-repos">Then reset</a>.</li>
+      <li>Your dependencies are all up to date and your repo’s <code>readme</code> already has a Greenkeeper badge for some reason. Greenkeeper will not send a PR in this case (because there are no changes for it to make), and instead begin its work silently. If it turns out not to be doing anything even when you know one of your dependencies has updated, remove the badge from the <code>readme</code> and <a href="/docs.html#resetting-repos">reset the repo</a>.</li>
+      <li><strong>Issues are not enabled</strong> on your repo. Greenkeeper will inform you about updates through both pull requests and issues, so it can’t work without them. Enable issues in the repo settings and <a href="/docs.html#resetting-repos">reset the repo</a>.</li>
+      <li><strong>The repo is a fork.</strong> Issues are disabled on forks by default, which makes it impossible for Greenkeeper to work. See the previous point for details and the solution.</li>
+      <li>The <strong>default branch of the repo was changed</strong> while Greenkeeper was waiting for your CI to complete. You’ll have to trigger Greenkeeper again by <a href="/docs.html#resetting-repos">resetting the repo</a>.</li>
+      <li><a id="renamed-repo"></a><strong>The repo was moved or renamed.</strong> This is impossible for us to detect, since GitHub doesn’t inform Greenkeeper about these events. In both cases, the repo’s ID is not changed by GitHub, so Greenkeeper could be forgiven for thinking it’s already activated. The only solution is to contact <a href="mailto:support@greenkeeper.io">support</a> and let us reset the offending repo for you.</li>
+    </ul>
+    <a href="#top">Back to top</a>
+
+    <h2><a id="github-activity"></a><!-- <- that’s a legacy anchor --><a href="#branch-deletions" id="branch-deletions">Greenkeeper is creating branches and immediately deleting them again</a></h2>
+    <p>This is intentional. Greenkeeper creates the branches so your CI can run on them, and if the dependency updates are within your specified ranges and not breaking your tests, there’s no need to keep the branch around. Also, there’s no point in bothering you with issues or a PR, since everything still works as you intended.</p>
+    <p>You’ll only receive pull requests when an in-range dependency breaks your build, or when a dependency updates outside your specified range. Read up on <a href="/docs.html#greenkeeper-step-by-step">how Greenkeeper works step-by-step</a> for a more detailed explanation.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#pinning-versions" id="pinning-versions">I would like to get pull requests for every dependency update</a></h2>
+    <p>If you pin your dependencies to a specific version, you will see an update for every new version that is released for that dependency. You’ll get a PR per dependency, with an issue per update.</p>
+    <p>Pin your versions like this, with <strong>one specific version number</strong> instead of a range (no caret, tilde, comparisons or ranges):</p>
+    <p>
+      <pre>
+        <code>{
+  "dependencies": {
+    "lodash": "4.0.0"
+  }
+}</code>
+      </pre>
+    </p>
+      <a href="#top">Back to top</a>
+
+    <h2><a href="#downgrading" id="downgrading">I downgraded a dependency to see whether Greenkeeper works, but nothing happens</a></h2>
+    <p><strong>That’s actually by design: </strong>In the Initial Pull Request, Greenkeeper updates all your depencies to the latest version. You make sure all tests pass, and merge the PR. If any of your dependencies updates past this point, Greenkeeper will run your tests against the update. If you now <em>downgrade</em> a dependency in your <code>package.json</code>, say from <code>^1.5.0</code> (latest) to <code>^1.2.0</code>, nothing actually changes: when your CI runs, it will install <code>1.5.0</code> either way. The same is true if your users run <code>npm install</code> on your package. So there’s actually no point in Greenkeeper doing anything: the outcome wouldn’t change.</p>
+    <p>Greenkeeper works when it runs your tests when a dependency updates, all it really cares about is whether your tests pass with the latest versions of your dependencies, not whether all dependencies in your <code>package.json</code> are actually <em>set</em> to their latest versions.</p>
+    <p>If you want to be explicitly notified of <em>every</em> update for a dependency, you can <a href="#pinning-versions">pin it</a>.</p>
+    <p>If you downgrade to a pin (say, from <code>^1.5.0</code> (latest) to <code>1.2.0</code> (notice the absence of a caret, this is not a range, but a specific version), Greenkeeper also won’t immediately spring into action to bump this up back to <code>1.5.0</code> (latest) because that would counteract what it sees as a purposeful human decision. It will however still let you know when a newer version is released.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#corrupted-branch" id="corrupted-branch">I got a broken pull request (corrupted branch), and now I can’t git pull anymore</a></h2>
+    <figure class="wide-img">
+      <img
+        src="/images/faq-corrupted-branch.png"
+        alt="">
+      <figcaption>If this is what the changed files tab in a Greenkeeper PR looks like, you’ve probably got this issue</figcaption>
+    </figure>
+    <p>This sometimes happens when GitHub garbage collects things we still need. It’s less severe than it looks, and <strong>the fix is simple: delete the offending branch</strong>. Greenkeeper will recover and try again. We’re aware of the issue and are working to find a way to prevent it.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#required-verify" id="required-verify">Some PRs are stuck on "Some checks haven’t completed yet" because of greenkeeper/verify</a></h2>
+    <p>This happens because the <code>greenkeeper/verify</code> status was set to <code>required</code> in the repo’s branch settings. That requirement will apply to <em>all</em> pull requests, not only those opened by Greenkeeper. Since Greenkeeper doesn’t verify non-Greenkeeper PRs, the <code>greenkeeper/verify</code> status will never be reported, and your PRs will be stuck on "Some checks haven’t completed yet" forever. To fix this, go to <code>https://github.com/[user/org]/[repo]/settings/branches/master</code> and make sure that the <code>greenkeeper/verify</code> status is <em>not</em> checked.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#branches" id="branches">Can I enable Greenkeeper on a different branch?</a></h2>
+    <p><strong>At this point, there is no configuration setting for the branch</strong>, but Greenkeeper picks the default branch that is set up on GitHub as the source for Pull Requests, so that’s a place where you can change it.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#owners-only" id="owners-only">Can collaborators install Greenkeeper too?</a></h2>
+    <p><strong>No, only admins of the organisation.</strong> Greenkeeper creates branches on your repository to send you PRs, and we need push access to the repository. On top of that we need to create webhooks so we can keep your <code>package.json</code> content in sync. Giving Greenkeeper these permissions can only be done by an admin of the <em>organisation</em>. Having admin rights to an <em>individual repo</em> in an organisation is not sufficient.</p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#yearly-payment" id="yearly-payment">Can I pay for a whole year instead of by month?</a></h2>
+    <p>Yes, in both versions of Greenkeeper:</p>
+    <ul>
+      <li>If you subscribed directly via <strong>greenkeeper.io</strong>, you can switch to yearly billing in the <a href='https://account.greenkeeper.io'>account dashboard</a>.</li>
+      <li>If you bought Greenkeeper in the <strong>GitHub Marketplace</strong>, you’ll be billed on the same billing cycle as your GitHub subscription, so if that’s yearly, Greenkeeper is too.</li>
+    </ul>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#free-trial" id="free-trial">I only have private repositories, can I try Greenkeeper for free anyway?</a></h2>
+    <p><strong>Yes</strong>, in the <a href='https://github.com/marketplace/greenkeeper'>GitHub Marketplace version of Greenkeeper</a>, where all billing is handled by GitHub, we offer a 14-day free trial for all plans.</p>
+    <p>If you install Greenkeeper directly as a <a href='https://github.com/apps/greenkeeper'>GitHub App</a>, where all billing is done separately via Stripe, we don’t offer free trials. We will however refund your first month if you’re unhappy with the service, no questions asked.</p>
+    <a href="#top">Back to top</a>
+
+  </div>
+</div>
