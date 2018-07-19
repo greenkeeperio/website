@@ -154,6 +154,15 @@ strong {
   color: $em-text;
 }
 
+.language-switch {
+  position: fixed;
+  top: 1.25rem;
+  z-index: 1000;
+  left: 1rem;
+  font-family: $fonts;
+  font-size: 0.75rem;
+}
+
 nav {
   padding: 1rem 0;
   width: 100%;
@@ -1467,6 +1476,13 @@ a.cta {
   a.menu-button {
     display: none;
   }
+  .language-switch {
+    left: auto;
+    font-size: 0.6rem;
+    top: 0.95rem;
+    display: block;
+    right: 1.5rem;
+  }
   nav.header {
     position: fixed;
     height: 2.5rem;
@@ -1493,7 +1509,7 @@ a.cta {
         margin: 0 1em 0em 0;
         &.account {
           position: absolute;
-          right: 0;
+          right: 1rem;
         }
       }
     }

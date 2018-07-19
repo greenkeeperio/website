@@ -1,0 +1,167 @@
+<div class='hero'>
+  <header role="banner">
+    <%- partial("../partials/_gk_logo_round") %>
+    <div class='text'>
+      <h1>Greenkeeper</h1>
+      <span>Automatisiertes Dependency-Management</span>
+    </div>
+  </header>
+  <div class='scroller'></div>
+</div>
+
+<section class="billboard">
+  <h1>Get safety &amp; consistency<br>
+  with <span class="signal">real-time monitoring</span> and<br>
+  <span class="signal">automatic updates</span> for npm dependencies</h1>
+  <div class='try'>
+    <a href='https://github.com/apps/greenkeeper'>
+      <h3>Get started!</h3>
+      <span>Install Greenkeeper on GitHub now</span>
+    </a>
+  </div>
+</section>
+
+<!--div class="get-started">
+  <a class="button" href="https://github.com/apps/greenkeeper">Install the Greenkeeper app on GitHub now!</a>
+</div-->
+
+<div class="double-flex">
+  <h3>Join thousands of others who let our friendly bot handle their dependency chores</h3>
+  <section class="split-item-top">
+    <ul class="compact-list">
+      <li><strong>Automatic, real time</strong> dependency updates</li>
+      <li><strong>Runs your tests</strong> and alerts you when updates break your code</li>
+      <li>Support for both <a href="/docs.html#monorepo">monorepo repositories</a> and <a href="/docs.html#monorepo-dependencies">monorepo dependencies</a></li>
+      <li>Out-of-the-box support for <a href="/docs.html#private-scoped-packages">scoped packages</a></li>
+      <li><a href="/docs.html#private-scoped-packages">Private packages</a> and registry support via webhooks</li>
+      <li><a href="/docs.html#lockfiles">Lockfile</a> support, including shrinkwrap, npm5 and yarn</li>
+    </ul>
+  </section>
+  <section class="split-item-bottom">
+    <ul class="compact-list">
+      <li>Integrates neatly into your existing developer workflow</li>
+      <li><a href='/docs.html#ignoring-dependencies'>Ignore updates</a> from dependencies you don’t care about</li>
+      <li><a href='/docs.html#pinning'>One-click dependency pinning</a>, for when you just don’t have time to deal with a breaking change</li>
+      <li><strong>Less accounting:</strong> use our <a href='https://github.com/marketplace/greenkeeper'>GitHub Marketplace app</a> and get billed via your GitHub invoice</li>
+      <li><a href="#enterprise">Self-hosted enterprise version</a> available</li>
+    </ul>
+  </section>
+</div>
+
+<figure class="wide-img">
+  <img
+    src="/images/greenkeeper_in-range-update_fail_issue.png"
+    alt="A Greenkeeper pull request for an in-range dependency update that breaks the build">
+  <figcaption>An innocuous in-range update that would have broken your build! But Greenkeeper caught it right away.</figcaption>
+</figure>
+
+<section class="single">
+  <h2>Trusted by Thousands of Projects and Companies</h2>
+  <p>We’re sure you’ve heard of some of them:</p>
+  <%- partial("../partials/_customers") %>
+</section>
+
+<div class="double-flex">
+  <section class="description">
+    <h2>Use <a href="http://semver.org">SemVer</a>. We’ll have your back.</h2>
+    <p>The npm ecosystem with around half a million modules is a great foundation to build your software on, and Greenkeeper makes it more reliable. You’ll spend less time with dull chores, and more time with the fun parts of software development.</p>
+    <p>Greenkeeper is a friendly bot that tells you when updates to your dependencies break your software. It automatically detects the latest working version and you can then choose to either immediately fix the issue or just pin the dependency so you can get back to it once you have the time. Either way: no more broken software.</p>
+  </section>
+
+  <section>
+    <h2>Automated dependency management</h2>
+    <p>You <em>could</em> manually track updates of your dependencies and test whether things still work. This takes <em>a lot of time</em> however and it’s rarely ever done. So most of the time, <strong>your software is in a Schrödinger state of being potentially broken</strong>, and you have no idea until you (or your users) run <code>npm install</code> and try it out.</p>
+    <p>Greenkeeper <strong>takes away these chores</strong> of dependency management: For each update to any of your dependencies, our bot immediately runs <code>npm install</code> and <code>npm test</code>. There is no more doubt about the state of your software, you’ll always know when it breaks.</p>
+  </section>
+</div>
+
+<a id="pricing"></a>
+<div class="full-height">
+<section class="pricing">
+  <h2>Pricing</h2>
+  <a href="https://account.greenkeeper.io" class="plan paid">
+    <h2>Personal Accounts</h2>
+    <ul class="spaced">
+      <li>No monthly base cost</li>
+      <li>You only pay per private repo</li>
+      <li>Online support during EU business hours</li>
+    </ul>
+    <span class="price">$1.5&thinsp;USD/month<br>per private repo</span>
+    <ul class="spaced">
+      <li>Get <strong>two months free</strong> with yearly payment!</li>
+    </ul>
+  </a>
+  <a href="https://account.greenkeeper.io" class="plan paid">
+    <h2>Organisations</h2>
+    <ul class="spaced">
+      <li>Includes <strong>10 private repos</strong><br><span class="small">(you choose which repos you want us to watch)</span></li>
+      <li>Each additional private repo costs <strong>$1.5&thinsp;USD/month</strong></li>
+      <li>Super speedy, fastest queue</li>
+      <li>Online support during EU business hours</li>
+    </ul>
+    <span class="price">$25&thinsp;USD/month</span>
+    <ul class="spaced">
+      <li>Get <strong>two months free</strong> with yearly payment!</li>
+    </ul>
+  </a>
+  <section class="risk">
+    <p><strong>We're the uncomplicated type of company:</strong> If you're unhappy during the first 30 days, you'll get your money back.</p>
+    <p><strong>We support Open Source Software:</strong> Greenkeeper will always be free for public repositories!</p>
+    <p><a href='https://github.com/marketplace/greenkeeper'>Greenkeeper is also available via the GitHub Marketplace</a>, for simpler billing, and with <strong>free trials</strong> for all plans.</p>
+    <p>Prices are excluding VAT, which will be added for EU customers. To remove it, enter your company’s VAT ID along with your billing details.</p>
+  </section>
+</section>
+</div>
+
+<div class="full-height">
+  <section class="single they-really-seem-to-like-us">
+    <h2>What Our Users Say</h2>
+    <ul class="tweets spaced">
+      <!--li>greenkeeper.io makes our lives easier: Thank you!<a href="https://twitter.com/pushrockscode/status/650982642834407424">@pushrockscode</a></li-->
+      <!--li>Heh, @greenkeeperio just became @pouchdb's 170th contributor and it already has 3 more PR's open […], this is awesome<a href="https://twitter.com/daleharvey/status/648910948657446913">@daleharvey</a></li-->
+      <!--li>Just gave greenkeeper.io a try and it really rocks!<a href="https://twitter.com/chrkhl/status/648086178890170369">@chrkhl</a></li-->
+      <!--li>The Mighty Internet is automating our dev workflow. Serious cool service for keeping npm dependencies up to date: http://greenkeeper.io/<a href="https://twitter.com/kaplas/status/648388001844871168">@kaplas</a></li-->
+      <!--li>"@greenkeeperio Is My Co-Pilot"<a href="https://twitter.com/EINS78/status/649604334121021442">@EINS78</a></li-->
+      <li><em>I am 100% loving @greenkeeperio btw. Next up: using <a href="http://git.io/semantic-release">semantic release</a> for all the projects I have 100% test coverage for.</em> — <a href="https://twitter.com/ceejbot/status/665207874650578945">CJ Silverio</a>, CTO, <a href="https://www.npmjs.com">npm Inc.</a></li>
+
+      <li><em>@greenkeeperio is solid. It's now on all our public repos and we're getting a private account in the new year. The time saved is worth it.</em> — <a href="https://twitter.com/gloddy/status/674650926620278785">Christian Gloddy</a>, Director of Web development, <a href="http://nymag.com" title="NYMag - Politics, Entertainment, Fashion, Restaurants & NY">New York Magazine</a>.</li>
+
+      <li><em>[I’m] a fan of how Greenkeeper tackles @npmjs deps: as an unobtrusive bot that sends PRs when upstreams update. […]</em> — <a href="https://twitter.com/jedschmidt/status/647451940457193472">Jed Schmidt</a>, JavaScript celebrity.</li>
+
+      <li><em>I now have greenkeeper enabled on 6 of my bigger open source projects, and it would be a no brainer to pay for to use on private projects.</em> — <a href="http://lukecod.es/2016/03/07/greenkeeper/" title="Greenkeeper &middot; Luke Codes">Luke Karrys</a>, developer at <a href="https://andyet.com/">&amp;yet</a>.</li>
+
+      <li><em>Just updated all the dependencies on 5 open source projects with @greenkeeperio in 10 minutes. 👍</em> — <a href="https://twitter.com/TalAter/status/688950232801886208">Tal Ater</a>, developer, UpUp.</li>
+
+      <li><em>You have to try them! It's such an awesome and easy way to keep your dependencies updated. 💕</em> — <a href="https://twitter.com/notquiteleo">Leo</a> from <a href="https://zeit.co">ZEIT</a></li>
+    </ul>
+
+    <!--p>In general, <a href="https://twitter.com/search?q=greenkeeper.io%20OR%20greenkeeperio">people really seem to like Greenkeeper</a>.</p-->
+    <p>Don’t trust any of these people? <a href="https://github.com/apps/greenkeeper">Try Greenkeeper yourself!</a></p>
+  </section>
+</div>
+
+<a id="how-it-works"></a>
+<div class="double-flex full-height">
+  <section>
+    <h2>How it works</h2>
+    <p>Greenkeeper sits between npm and GitHub, observing all of the modules you depend on. When they get updated, your project gets a new branch with that update. Your CI tests kick in, and we watch them to see whether they pass.</p>
+    <p>Based on the test results and your current version definitions we will open up clear, actionable pull requests or issues for you. If there’s nothing for you to do, we won’t nag you.</p>
+    <p>Let the friendly Greenkeeper bot take all the dull work of keeping your dependencies up to date off your shoulders and, optimally, boil it all down to a few clicks. <strong>This is as close to fully automatic as we could possibly make it.</strong></p>
+    <p><a href='/docs.html#what-greenkeeper-does'>Learn more about how Greenkeeper works</a>.</p>
+  </section>
+  <section>
+    <h2>Why it’s so neat</h2>
+    <ul>
+      <li>Staying on top of dependency updates is a lot of cognitive overhead: your code depends on modules that depend on modules. It’s modules all the way down. Stuff gets updated all the time. It’ll either annoy you, or you’ll miss it. <strong>Greenkeeper never misses updates, and it never gets annoyed</strong>.</li>
+      <li><strong>Pin versions with one click:</strong> You’ve got stuff to do, we understand. Sometimes you simply have to make a pragmatic trade-off between fixing your build for the breaking update or just pinning the working version so you can get back to it later. Our bot can respect that.</li>
+      <li>You could do all the updates and testing by hand, all the time. But that’s dull, repetitive work, which is why, let’s be honest, barely anyone actually does it. But Greenkeeper <em>will</em> do it, day or night, without complaining, while requiring as little of your attention as possible.</li>
+    </ul>
+  </section>
+</div>
+
+<div class='try'>
+  <a href='https://github.com/apps/greenkeeper'>
+    <h3>Try Greenkeeper now!</h3>
+    <span class='pseudo-link'>Install the app on GitHub</span>
+  </a>
+</div>
