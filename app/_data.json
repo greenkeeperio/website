@@ -19,21 +19,9 @@
     "pageTitle": "Privacy Policy",
     "bodyClass": "privacy-policy gk-saas"
   },
-  "thanks-for-confirming-your-payment": {
-    "pageTitle": "Thank you!",
-    "bodyClass": "thanks-for-confirming-your-payment gk-saas"
-  },
-  "thanks-for-signing-up": {
-    "pageTitle": "Thank you!",
-    "bodyClass": "thanks-for-signing-up gk-saas"
-  },
   "verify": {
     "pageTitle": "Verify",
     "bodyClass": "verify gk-saas"
-  },
-  "manual-webhooks": {
-    "pageTitle": "Manual Webhooks",
-    "bodyClass": "manual-webhooks gk-saas"
   },
   "enterprise-setup": {
     "pageTitle": "Enterprise Setup",
