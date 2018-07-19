@@ -156,11 +156,17 @@ strong {
 
 .language-switch {
   position: fixed;
-  top: 1.25rem;
+  top: 1.15rem;
   z-index: 1000;
   left: 1rem;
   font-family: $fonts;
   font-size: 0.75rem;
+  border: 3px solid currentColor !important;
+  border-radius: 50%;
+  width: 2.25em;
+  line-height: 1.9em;
+  height: 2.25em;
+  text-align: center;
 }
 
 nav {
@@ -1479,9 +1485,9 @@ a.cta {
   .language-switch {
     left: auto;
     font-size: 0.6rem;
-    top: 0.95rem;
+    top: 0.65rem;
     display: block;
-    right: 1.5rem;
+    right: 1rem;
   }
   nav.header {
     position: fixed;
