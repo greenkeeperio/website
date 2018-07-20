@@ -33,7 +33,7 @@ $fonts: "futura-pt", Futura, sans-serif;
       color: $primary;
       border-bottom: 2px solid $secondary;
     }
-    a.plan{
+    a:not(.cc-link):not(.cc-btn).plan{
       color: $primary;
       border: 5px solid currentColor;
     }
@@ -43,7 +43,7 @@ $fonts: "futura-pt", Futura, sans-serif;
     footer{
       background: $primary;
       color: $secondary;
-      a{
+      a:not(.cc-link):not(.cc-btn){
         color: #FFF;
         border-bottom: 2px solid rgba(255,255,255,0.5);
       }
@@ -443,8 +443,8 @@ body:not(.index) nav.footer {
   }
 }
 
-a.enterprise,
-.enterprise a{
+a:not(.cc-link):not(.cc-btn).enterprise,
+.enterprise a:not(.cc-link):not(.cc-btn){
   color: cornflowerblue; /* of course */
   border-bottom: 2px solid rgba(100, 149, 237, 0.1);
 }
@@ -601,8 +601,8 @@ a{
   font-weight: bold;
 }
 
-a:not(.plan):hover,
-a:not(.plan):focus{
+a:not(.cc-btn):not(.plan):hover,
+a:not(.cc-btn):not(.plan):focus{
   color: #000;
   border-color: #000;
   outline: none;
@@ -1391,7 +1391,7 @@ figure.wide-img {
   }
 }
 
-a.cta {
+a:not(.cc-link):not(.cc-btn).cta {
   font-family: $fonts; // yay iOS safari
   width: auto;
   background: $blue-primary;
@@ -1670,7 +1670,7 @@ a.cta {
       box-shadow: 0 0 0 5px #00c775;
     }
   }
-  a.cta {
+  a:not(.cc-link):not(.cc-btn).cta {
     &:before {
       left: 13.6em;
       right: auto;
@@ -1686,7 +1686,7 @@ a.cta {
       margin-top: -2.9em;
     }
   }
-  .split-item-bottom a.cta {
+  .split-item-bottom a:not(.cc-link):not(.cc-btn).cta {
     &:after {
       right: 110%;
       left: auto;
