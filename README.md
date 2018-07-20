@@ -9,13 +9,15 @@ This is a [harp.js](http://harpjs.com/) project. All assets are automatically co
 
 ### Running it locally
 
-To run the server with livereload:
+To run the server with livereload/browsersync:
 
 ```
 npm run server
 ```
 
-To compile the site into `www/` for looking at the output or serving that statically:
+⚠️ Note that browsersync causes a flash of unstyled content when refreshing, this is something weird with Typekit, which is where we get Futura from. You can ignore this as it only happens in dev.
+
+To compile the site into `www/` for looking at the output or serving that statically (without the FOUC, for example):
 
 ```
 npm run build
