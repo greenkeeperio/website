@@ -29,7 +29,7 @@ $fonts: "futura-pt", Futura, sans-serif;
     .signal{
       color: $primary;
     }
-    a{
+    a:not(.cc-link):not(.cc-btn){
       color: $primary;
       border-bottom: 2px solid $secondary;
     }
@@ -608,7 +608,7 @@ a:not(.plan):focus{
   outline: none;
 }
 
-a:not([href]) {
+a:not(.cc-btn):not([href]) {
   display: block;
   border: none;
   background: transparent;
@@ -1448,6 +1448,13 @@ a.cta {
   }
 }
 
+.cc-banner .cc-btn {
+  &:hover, &:focus{
+    color: $white;
+    border-color: currentColor;
+  }
+}
+
 .centered-list {
   display: flex;
   flex-wrap: wrap;
@@ -1471,7 +1478,7 @@ a.cta {
 
 // Flip to wide layout and non-mobile nav
 @media screen and (min-width: $column-width) {
-  a:not([href]) {
+  a:not(.cc-btn):not([href]) {
     margin-bottom: 2rem;
   }
   body.no-scroll {
@@ -1713,7 +1720,7 @@ a.cta {
   }
 }
 
-li a:not([href]) {
+li a:not(.cc-btn):not([href]) {
   margin-bottom: 0;
   transform: translateY(-4em);
 }
