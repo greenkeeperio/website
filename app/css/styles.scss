@@ -247,7 +247,7 @@ nav.header {
 nav ul li {
   display: inline-block;
   margin: 0.5em 1.4em 0.5em 0;
-  &.active a {
+  &.active a:not(.cc-link):not(.cc-btn) {
     color: #000;
     pointer-events: none;
     border-bottom: none;
