@@ -1411,7 +1411,7 @@ a:not(.cc-link):not(.cc-btn).cta {
   text-align: center;
   &:before {
     content: "";
-    display: block;
+    display: none;
     border: 10px solid transparent;
     position: absolute;
     right: auto;
@@ -1422,7 +1422,7 @@ a:not(.cc-link):not(.cc-btn).cta {
   }
   &:after{
     content: "Start your risk-free 30 day trial with setup support today";
-    display: block;
+    display: none;
     position: absolute;
     background: $blue-primary;
     padding: 1em;
@@ -1437,14 +1437,6 @@ a:not(.cc-link):not(.cc-btn).cta {
     opacity: 0;
     transform: translateX(-1em);
     transition: opacity 0.5s, transform 0.5s;
-  }
-  &:hover, &:focus {
-    box-shadow: 0 0 300px 300px rgba(100, 149, 237, 0.5); // $blue-primary at 0.5A
-    color: $white;
-    &:before, &:after {
-      opacity: 1;
-      transform: translateX(0)
-    }
   }
 }
 
@@ -1672,6 +1664,7 @@ a:not(.cc-link):not(.cc-btn).cta {
   }
   a:not(.cc-link):not(.cc-btn).cta {
     &:before {
+      display: block;
       left: 13.6em;
       right: auto;
       top: auto;
@@ -1679,11 +1672,20 @@ a:not(.cc-link):not(.cc-btn).cta {
       border-right-color: $blue-primary;
     }
     &:after {
+      display: block;
       left: 17.5em;
       width: 13em;
       text-align: left;
       top: 50%;
       margin-top: -2.9em;
+    }
+    &:hover, &:focus {
+      box-shadow: 0 0 300px 300px rgba(100, 149, 237, 0.5); // $blue-primary at 0.5A
+      color: $white;
+      &:before, &:after {
+        opacity: 1;
+        transform: translateX(0)
+      }
     }
   }
   .split-item-bottom a:not(.cc-link):not(.cc-btn).cta {
