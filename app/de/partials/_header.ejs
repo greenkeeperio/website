@@ -1,59 +1,40 @@
 <a href='<%- otherLanguageURL %>' class='language-switch'>EN</a>
-<% if (bodyClass === "index gk-saas"){ %>
-
+<% if (!bodyClass.includes('index')){ %>
+  <a id="top"></a>
+<% } %>
 <nav class="header">
   <ul role="navigation" aria-label="main navigation">
-    <li><a href="#how-it-works">Funktionsweise</a></li>
-    <li>
-      <a class="<%= current.source=='dokumentation'?'active':'' %>" href="/de/dokumentation.html">Dokumentation</a>
+    <li><a href="/">Greenkeeper</a></li>
+    <%# This is so navigating to anchors while on the index page is animated, same below for pricing #%>
+    <% if (bodyClass.includes('index')){ %>
+      <li><a href="#how-it-works">Funktionen</a></li>
+      <% } else { %>
+      <li><a href="/de/#how-it-works">Funktionen</a></li>
+    <% } %>
+    <li class="<%= current.source=='dokumentation'?'active':'' %>">
+      <a href="/de/dokumentation.html">Dokumentation</a>
     </li>
-    <li>
-      <a class="<%= current.source=='haeufige-fragen'?'active':'' %>" href="/de/haeufige-fragen.html">Häufige Fragen</a>
+    <li class="<%= current.source=='haeufige-fragen'?'active':'' %>" >
+      <a href="/de/haeufige-fragen.html">FAQ</a>
     </li>
-    <li><a href="#pricing">Preise</a></li>
-    <li><a href="https://github.com/greenkeeperio">GitHub</a></li>
-    <li>
-      <a href="/de/enterprise.html" class="<%= current.source=='enterprise'?'enterprise active':'enterprise' %>">Enterprise-Lösungen</a>
+    <li class="<%= current.source=='enterprise'?'enterprise active':'enterprise' %>">
+      <a href="/de/enterprise.html">Enterprise</a>
     </li>
-    <li class="account"><a href="https://account.greenkeeper.io">Benutzerkonto</a></li>
+    <% if (!bodyClass.includes('gk-enterprise')){ %>
+      <% if (bodyClass.includes('index')){ %>
+          <li><a href="#pricing">Preise</a></li>
+        <% } else { %>
+          <li><a href="/de/#pricing">Preise</a></li>
+        <% } %>
+    <% } %>
+    <li class="account"><a href="https://account.greenkeeper.io">Einloggen</a></li>
   </ul>
   <a href="#" class="menu-button">
-    <span class="menu">Menu</span>
-    <span class="close">Close</span>
+    <span class="menu">Menü</span>
+    <span class="close">Schließen</span>
     <span class="icon">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
     </span>
   </a>
 </nav>
 
-<% } else { %>
-
-<a id="top"></a>
-<nav class="header" role="navigation">
-  <ul class="nav">
-    <li><a href="/de">Greenkeeper</a></li>
-    <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
-    <li class="<%= current.source=='dokumentation'?'active':'' %>">
-      <a href="/de/dokumentation.html">Dokumentation</a>
-    </li>
-    <li class="<%= current.source=='haeufige-fragen'?'active':'' %>">
-      <a href="/de/haeufige-fragen.html">Häufige Fragen</a>
-    </li>
-    <li class="account">
-      <a href="https://account.greenkeeper.io">Benutzerkonto</a>
-    </li>
-  </ul>
-  <a href="#" class="menu-button">
-      <span class="menu">Menü</span>
-      <span class="close">Schließen</span>
-      <span class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
-      </span>
-    </a>
-</nav>
-<!--header role="banner">
-  <%- partial("_gk_logo_round") %>
-  <h1>Greenkeeper.io</h1>
-</header-->
-
-<% } %>
