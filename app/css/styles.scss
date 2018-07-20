@@ -100,6 +100,9 @@ html{
 
 a {
   -webkit-tap-highlight-color: transparent;
+  &:not([href]) {
+    border: none !important;
+  }
 }
 
 .super {
@@ -572,6 +575,7 @@ h1, h2, h3, h4, h5, h6{
       color: black;
       border: none;
       padding-top: 3em;
+      display: inline-block;
     }
   }
 }
@@ -613,7 +617,7 @@ a:not(.cc-btn):not([href]) {
   border: none;
   background: transparent;
   margin-bottom: 2rem;
-  padding-top: 0.1em;
+  padding-top: 0.1px;
 }
 
 a[href="#top"] {
