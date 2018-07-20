@@ -23,8 +23,8 @@
     "locale": "de",
     "otherLanguageURL": "/terms-of-service"
   },
-  "privacy-policy": {
-    "pageTitle": "Privacy Policy",
+  "datenschutzerklaerung": {
+    "pageTitle": "Datenschutzerklärung",
     "bodyClass": "privacy-policy gk-saas",
     "locale": "de",
     "otherLanguageURL": "/privacy-policy"
