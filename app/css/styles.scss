@@ -571,7 +571,7 @@ h1, h2, h3, h4, h5, h6{
     &[id] {
       color: black;
       border: none;
-      padding-top: 0.5em;
+      padding-top: 3em;
     }
   }
 }
@@ -613,6 +613,7 @@ a:not([href]) {
   border: none;
   background: transparent;
   margin-bottom: 2rem;
+  padding-top: 0.1em;
 }
 
 a[href="#top"] {
@@ -1714,4 +1715,5 @@ a.cta {
 
 li a:not([href]) {
   margin-bottom: 0;
+  transform: translateY(-4em);
 }
