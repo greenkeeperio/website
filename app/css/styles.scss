@@ -29,11 +29,11 @@ $fonts: "futura-pt", Futura, sans-serif;
     .signal{
       color: $primary;
     }
-    a:not(.cc-link):not(.cc-btn){
+    a{
       color: $primary;
       border-bottom: 2px solid $secondary;
     }
-    a:not(.cc-link):not(.cc-btn).plan{
+    a.plan{
       color: $primary;
       border: 5px solid currentColor;
     }
@@ -43,7 +43,7 @@ $fonts: "futura-pt", Futura, sans-serif;
     footer{
       background: $primary;
       color: $secondary;
-      a:not(.cc-link):not(.cc-btn){
+      a{
         color: #FFF;
         border-bottom: 2px solid rgba(255,255,255,0.5);
       }
@@ -253,7 +253,7 @@ nav.header {
 nav ul li {
   display: inline-block;
   margin: 0.5em 1.4em 0.5em 0;
-  &.active a:not(.cc-link):not(.cc-btn) {
+  &.active a {
     color: #000;
     pointer-events: none;
     border-bottom: none;
@@ -449,8 +449,8 @@ body:not(.index) nav.footer {
   }
 }
 
-a:not(.cc-link):not(.cc-btn).enterprise,
-.enterprise a:not(.cc-link):not(.cc-btn){
+a.enterprise,
+.enterprise a{
   color: cornflowerblue; /* of course */
   border-bottom: 2px solid rgba(100, 149, 237, 0.1);
 }
@@ -608,14 +608,14 @@ a{
   font-weight: bold;
 }
 
-a:not(.cc-btn):not(.plan):hover,
-a:not(.cc-btn):not(.plan):focus{
+a:not(.plan):hover,
+a:not(.plan):focus{
   color: #000;
   border-color: #000;
   outline: none;
 }
 
-a:not(.cc-btn):not([href]) {
+a:not([href]) {
   display: block;
   border: none;
   background: transparent;
@@ -1359,6 +1359,20 @@ figure.wide-img {
   }
 }
 
+.cc-banner{
+  .cc-link {
+    border: none;
+  }
+  .cc-btn {
+    margin: 0;
+    border: 3px solid $green-primary !important;
+    padding: .4em .8em;
+    &:hover {
+      border-color: $white !important;
+    }
+  }
+}
+
 .image-header{
   margin: 5rem auto 3rem;
   width: 80%;
@@ -1410,7 +1424,7 @@ figure.wide-img {
   }
 }
 
-a:not(.cc-link):not(.cc-btn).cta {
+a.cta {
   font-family: $fonts; // yay iOS safari
   width: auto;
   background: $blue-primary;
@@ -1541,7 +1555,7 @@ a:not(.cc-link):not(.cc-btn).cta {
 
 // Flip to wide layout and non-mobile nav
 @media screen and (min-width: $column-width) {
-  a:not(.cc-btn):not([href]) {
+  a:not([href]) {
     margin-bottom: 2rem;
   }
   body.no-scroll {
@@ -1733,7 +1747,7 @@ a:not(.cc-link):not(.cc-btn).cta {
       box-shadow: 0 0 0 5px #00c775;
     }
   }
-  a:not(.cc-link):not(.cc-btn).cta {
+  a.cta {
     &:before {
       display: block;
       left: 13.6em;
@@ -1759,7 +1773,7 @@ a:not(.cc-link):not(.cc-btn).cta {
       }
     }
   }
-  .split-item-bottom a:not(.cc-link):not(.cc-btn).cta {
+  .split-item-bottom a.cta {
     &:after {
       right: 110%;
       left: auto;
@@ -1793,7 +1807,7 @@ a:not(.cc-link):not(.cc-btn).cta {
   }
 }
 
-li a:not(.cc-btn):not([href]) {
+li a:not([href]) {
   margin-bottom: 0;
   transform: translateY(-4em);
 }
