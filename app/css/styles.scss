@@ -997,10 +997,11 @@ section h2:after {
   }
 }
 
-.risk{
+.centered-p{
   width: 100%;
   padding: 1rem;
   max-width: 30em;
+  margin: 0 auto;
 }
 
 .double-flex,
@@ -1719,7 +1720,7 @@ a.cta {
   .index header{
     margin-top: 3rem;
   }
-  .risk{
+  .centered-p{
     max-width: 50%;
   }
   .if-wide{
