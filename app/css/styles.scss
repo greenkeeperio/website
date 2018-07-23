@@ -40,7 +40,7 @@ $fonts: "futura-pt", Futura, sans-serif;
         border-color: $primary;
       }
     }
-    button, .button {
+    .button {
       color: $primary;
       border: 5px solid currentColor;
       font-family: $fonts;
@@ -52,9 +52,6 @@ $fonts: "futura-pt", Futura, sans-serif;
       cursor: pointer;
       display: inline-block;
       text-align: center;
-      &.with-margin {
-        margin: 2em;
-      }
     }
 
     button:hover, .button:hover,
@@ -1222,6 +1219,20 @@ figure.wide-img {
 .slick-arrow {
   // because slick adds an element style
   display: none !important;
+}
+
+.slick-arrow {
+  color: $green-primary;
+  border: 5px solid currentColor;
+  font-family: $fonts;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0.4em 1em;
+  transition: color 0.25s;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
 }
 
 .slick-dots li {
