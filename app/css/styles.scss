@@ -84,6 +84,9 @@ $fonts: "futura-pt", Futura, sans-serif;
     nav.header {
       border-top: 3px solid $primary;
     }
+    .features .feature svg {
+      fill: $primary;
+    }
   }
 }
 
@@ -160,7 +163,7 @@ strong {
 .language-switch {
   position: fixed;
   top: 1.15rem;
-  z-index: 1000;
+  z-index: 2001;
   left: 1rem;
   font-family: $fonts;
   font-size: 0.75rem;
@@ -178,7 +181,7 @@ nav {
   background: rgba(255, 255, 255, 0.65);
   height: auto;
   top: 0;
-  z-index: 100;
+  z-index: 2000;
 }
 
 /*
@@ -223,7 +226,7 @@ nav.header {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  z-index: 100;
+  z-index: 2000;
   // transition: all 0.5s;
   &.is-active {
     height: 100vh;
@@ -575,7 +578,7 @@ h1, h2, h3, h4, h5, h6{
       color: black;
       border: none;
       padding-top: 3em;
-      display: inline-block;
+      display: inline;
     }
   }
 }
@@ -625,7 +628,7 @@ a[href="#top"] {
   display: inline-block;
 }
 
-button {
+button, .button {
   color: #979797;
   border: 5px solid currentColor;
   font-family: "futura-pt";
@@ -637,8 +640,8 @@ button {
   cursor: pointer;
 }
 
-button:hover,
-button:focus{
+button:hover, .button:hover,
+button:focus, .button:focus{
   color: #B8E986;
 }
 
@@ -678,10 +681,10 @@ ul li:before {
   position: relative;
   max-width: 0;
   max-height: 0;
-  left: -0.5em;
+  left: -0.7em;
   color: currentColor;
-  font-size: 2.5em;
-  line-height: 0.65em;
+  font-size: 1.5em;
+  line-height: 1.15em;
 }
 
 nav ul li:before{
@@ -831,13 +834,12 @@ section h2:after {
 .pricing{
   display: flex;
   flex-wrap: wrap;
-  // margin-top: 3em;
   margin-bottom: 3em;
   background-color: transparent;
   padding: 0;
   justify-content: center;
   max-width: 48rem;
-  align-items: center;
+  align-items: flex-start;
   h2{
     padding: 1em 0;
     width: 100%;
@@ -883,7 +885,6 @@ section h2:after {
   color: #FFF;
 }
 
-
 .plan > h2{
   width: auto;
   margin: 0 auto 0.5em;
@@ -903,12 +904,14 @@ section h2:after {
   width: 100%;
 }
 
-
 .plan:hover h2,
 .plan:focus h2,
 .plan:hover .price,
 .plan:focus .price{
   color: #FFF;
+  small {
+    color: $white;
+  }
 }
 
 .plan ul.spaced {
@@ -925,6 +928,19 @@ section h2:after {
   font-weight: bold;
   color: #000;
   font-family: $fonts;
+  font-size: 1.5rem;
+  small {
+    color: #666;
+  }
+}
+
+.plan {
+  .monthly { display: inline; }
+  .yearly { display: none; }
+  &.yearly {
+    .monthly { display: none; }
+    .yearly { display: inline; }
+  }
 }
 
 .risk{
@@ -1331,14 +1347,13 @@ figure.wide-img {
       height: 40px;
       position: absolute;
       margin-top: 1.75em;
-      fill: $blue-primary;
     }
     h3 {
       font-size: 1.75em;
       text-align: left;
       margin-left: 50px;
     }
-    p {
+    p, ul {
       margin-left: 50px;
     }
   }
@@ -1463,6 +1478,58 @@ a:not(.cc-link):not(.cc-btn).cta {
   }
   @media screen and (min-width: 1224px) {
     justify-content: flex-start;
+  }
+}
+
+.billing-selection {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 2rem 0;
+  justify-content: center;
+  span {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75rem;
+    max-width: 8em;
+    &:nth-of-type(1) {
+      text-align: right;
+    }
+  }
+}
+
+.toggle-switch{
+  border-radius: 30px;
+  height: 40px;
+  width: 60px;
+  border: 3px solid $green-primary;
+  box-shadow: 0 0 12px 0px inset #CCC;
+  position: relative;
+  margin: 0 0.75rem;
+  outline: none;
+  &:hover, &:focus {
+    border-color: $black;
+    &:before {
+      background-color: $black;
+    }
+  }
+  &:before{
+    content: "";
+    display: block;
+    background: $green-primary;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    box-shadow: 0 0 12px 0 #CCC;
+    transition: all 0.25s;
+  }
+  &.active:before {
+    left: 23px;
   }
 }
 
@@ -1624,7 +1691,7 @@ a:not(.cc-link):not(.cc-btn).cta {
     display: initial;
   }
   .plan{
-    width: 40%;
+    width: 32%;
     margin: 0 5px;
   }
   .pricing h2{
