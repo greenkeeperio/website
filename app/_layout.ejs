@@ -55,6 +55,10 @@
         $('.menu-button, nav.header').removeClass('is-active')
         $('body').removeClass('no-scroll')
       })
+      $(document).on('click', '#billing-selector', function(e) {
+        $(e.currentTarget).toggleClass('active')
+        $('.plan').toggleClass('yearly')
+      })
     })
   </script>
   <script src="/js/cookieconsent.min.js"></script>
