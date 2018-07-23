@@ -34,9 +34,70 @@ $fonts: "futura-pt", Futura, sans-serif;
       border-bottom: 2px solid $secondary;
     }
     a.plan{
+      color: $text;
+      border: 5px solid $text;
+      &:hover, &:active {
+        border-color: $primary;
+      }
+    }
+    button, .button {
       color: $primary;
       border: 5px solid currentColor;
+      font-family: $fonts;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: rgba(0, 0, 0, 0);
+      padding: 0.4em 1em;
+      transition: color 0.25s;
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      &.with-margin {
+        margin: 2em;
+      }
     }
+
+    button:hover, .button:hover,
+    button:focus, .button:focus{
+      color: $black;
+      border-color: currentColor;
+    }
+
+    .toggle-switch{
+      border-radius: 30px;
+      height: 40px;
+      width: 60px;
+      border: 3px solid $primary;
+      box-shadow: 0 0 12px 0px inset #CCC;
+      position: relative;
+      margin: 0 0.75rem;
+      outline: none;
+      &:hover, &:focus {
+        border-color: $black;
+        &:before {
+          background-color: $black;
+        }
+      }
+      &:before{
+        content: "";
+        display: block;
+        background: $primary;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 4px;
+        left: 5px;
+        box-shadow: 0 0 12px 0 #CCC;
+        transition: all 0.25s;
+      }
+      &.active:before {
+        left: 23px;
+      }
+    }
+
     section h2:after {
       border-bottom-color: $primary;
     }
@@ -628,23 +689,6 @@ a[href="#top"] {
   display: inline-block;
 }
 
-button, .button {
-  color: #979797;
-  border: 5px solid currentColor;
-  font-family: "futura-pt";
-  font-weight: bold;
-  font-size: 24px;
-  background-color: rgba(0, 0, 0, 0);
-  padding: 0.4em 1em;
-  transition: color 0.25s;
-  cursor: pointer;
-}
-
-button:hover, .button:hover,
-button:focus, .button:focus{
-  color: #B8E986;
-}
-
 pre{
   display: block;
   padding: 1em;
@@ -861,12 +905,20 @@ section h2:after {
   box-sizing: border-box;
   position: relative;
   transition: all 0.25s;
-  padding-bottom: 2em;
   width: 90%;
   margin: 1em 5% 0;
   background-color: #FFF;
   strong{
     color: inherit;
+  }
+  .button {
+    width: 100%;
+    margin: 0.5em 0em 0;
+    color: $white;
+    background: $green-primary;
+    border: 4px solid $green-primary;
+    font-weight: normal;
+    letter-spacing: 0.025em;
   }
 }
 
@@ -876,14 +928,19 @@ section h2:after {
   color: #000;
   border-color: #00C775;
   transform: scale(1.1);
-  box-shadow: 0 0 0px 20px #00c775, 0 0 90px 20px rgb(0, 199, 117);
+  box-shadow: 0 0 0px 20px #00c775, 0 0 90px 20px rgb(0, 199, 117), 0px 0px 20px 15px $black;
   z-index: 1010;
+  .button {
+    border: 5px solid $white;
+    &:hover, &:focus {
+      color: $white;
+    }
+  }
+  ul{
+    color: $white;
+  }
 }
 
-.plan:hover ul,
-.plan:focus ul{
-  color: #FFF;
-}
 
 .plan > h2{
   width: auto;
@@ -1509,41 +1566,6 @@ a.cta {
     &:nth-of-type(1) {
       text-align: right;
     }
-  }
-}
-
-.toggle-switch{
-  border-radius: 30px;
-  height: 40px;
-  width: 60px;
-  border: 3px solid $green-primary;
-  box-shadow: 0 0 12px 0px inset #CCC;
-  position: relative;
-  margin: 0 0.75rem;
-  outline: none;
-  &:hover, &:focus {
-    border-color: $black;
-    &:before {
-      background-color: $black;
-    }
-  }
-  &:before{
-    content: "";
-    display: block;
-    background: $green-primary;
-    border-radius: 50%;
-    width: 26px;
-    height: 26px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 4px;
-    left: 5px;
-    box-shadow: 0 0 12px 0 #CCC;
-    transition: all 0.25s;
-  }
-  &.active:before {
-    left: 23px;
   }
 }
 
