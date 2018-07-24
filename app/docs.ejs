@@ -3,23 +3,24 @@
     <h1>Documentation</h1>
     <p>First off: welcome, and thanks for trying Greenkeeper! If you can’t find what you’re looking for here, there’s also the <a href="/faq">FAQ page</a>, and if that doesn’t help, you can <a href="mailto:support@greenkeeper.io">contact us</a> directly.</p>
     <h2><a href="#documentation-overview" id="documentation-overview">Documentation overview</a></h2>
-    <ul class="compact-list">
-      <li><a href="#what-greenkeeper-does">What Greenkeeper does, and why</a></li>
-      <li><a href="#differences-between-plans">Differences between plans</a></li>
-      <li><a href="#prerequisites">Prerequisites</a></li>
-      <li><a href="#installation">Installation</a></li>
-      <li><a href="#repo-states">Checking repository states</a></li>
-      <li><a href="#greenkeeper-step-by-step">How Greenkeeper works, step by step</a></li>
-      <li><a href="#resetting-repos">Resetting a repository</a></li>
-      <li><a href="#pinning">Pinning a dependency</a></li>
-      <li><a href="#private-scoped-packages">Enabling private scoped packages</a></li>
-      <li><a href="#lockfiles">Using Greenkeeper with lockfiles</a></li>
-      <li><a href="#monorepo">Using Greenkeeper in a monorepo</a></li>
-      <li><a href="#monorepo-dependencies">Using Greenkeeper with monorepo dependencies</a></li>
-      <li><a href="#ignoring-dependencies">Ignoring certain dependency’s updates</a></li>
-      <li><a href="#custom-commit-messages">Setting up custom commit messages</a></li>
-    </ul>
-
+    <div class='sidebar'>
+      <ul class="compact-list">
+        <li><a href="#what-greenkeeper-does">What Greenkeeper does, and why</a></li>
+        <li><a href="#differences-between-plans">Differences between plans</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#repo-states">Checking repository states</a></li>
+        <li><a href="#greenkeeper-step-by-step">How Greenkeeper works, step by step</a></li>
+        <li><a href="#resetting-repos">Resetting a repository</a></li>
+        <li><a href="#pinning">Pinning a dependency</a></li>
+        <li><a href="#private-scoped-packages">Enabling private scoped packages</a></li>
+        <li><a href="#lockfiles">Using Greenkeeper with lockfiles</a></li>
+        <li><a href="#monorepo">Using Greenkeeper in a monorepo</a></li>
+        <li><a href="#monorepo-dependencies">Using Greenkeeper with monorepo dependencies</a></li>
+        <li><a href="#ignoring-dependencies">Ignoring certain dependency’s updates</a></li>
+        <li><a href="#custom-commit-messages">Setting up custom commit messages</a></li>
+      </ul>
+    </div>
     <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">What Greenkeeper does, and why</a></h2>
     <p><strong>In short, Greenkeeper makes sure that you know when your project’s dependency updates break your code.</strong></p>
     <p>Greenkeeper sits between npm and GitHub, observing all of the modules your repository depends on. Each time one of them is updated, Greenkeeper opens a new branch with that update. The repository’s CI tests kick in, and Greenkeeper watches them to see whether they pass or not.</p>
