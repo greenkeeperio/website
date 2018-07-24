@@ -315,6 +315,18 @@ nav ul li {
     color: #000;
     pointer-events: none;
     border-bottom: none;
+    &:before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: calc(50% - 5px);
+      padding: 0;
+      border: 5px solid transparent;
+      border-bottom-color: #000;
+      top: 0.6rem;
+    }
   }
 }
 

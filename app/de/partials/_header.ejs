@@ -4,7 +4,9 @@
 <% } %>
 <nav class="header">
   <ul role="navigation" aria-label="main navigation">
-    <li><a href="/">Greenkeeper</a></li>
+    <li class="<%= current.source=='index'?'active':'' %>">
+      <a href="/">Greenkeeper</a>
+    </li>
     <%# This is so navigating to anchors while on the index page is animated, same below for pricing #%>
     <% if (bodyClass.includes('index')){ %>
       <li><a href="#how-it-works">Funktionen</a></li>
