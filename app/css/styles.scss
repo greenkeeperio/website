@@ -1847,6 +1847,41 @@ a.cta {
   }
 }
 
+
+@media screen and (min-width: 1200px) {
+  body.sidebar-nav{
+    .main {
+      margin: 0 0 0 auto;
+      width: 67vw;
+      max-width: none;
+      padding: 0 4rem;
+    }
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 2.5rem;
+      bottom: 0;
+      width: 33vw;
+      max-width: 25rem;
+      padding: 2em 1em 2em;
+      overflow-y: scroll;
+      box-shadow: 0 0 10px 5px rgba(128,128,128,0.1);
+    }
+    nav.footer {
+      margin: 0 0em 0 auto;
+      width: 67vw;
+      max-width: none;
+      ul {
+        text-align: center;
+      }
+    }
+    footer {
+      margin: 0 0em 0 auto;
+      width: 67vw;
+    }
+  }
+}
+
 li a:not([href]) {
   margin-bottom: 0;
   transform: translateY(-4em);

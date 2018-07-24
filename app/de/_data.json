@@ -7,7 +7,7 @@
   },
   "haeufige-fragen": {
     "pageTitle": "Häufig gestellte Fragen",
-    "bodyClass": "faq gk-saas",
+    "bodyClass": "faq gk-saas sidebar-nav",
     "locale": "de",
     "otherLanguageURL": "/faq"
   },
@@ -49,7 +49,7 @@
   },
   "dokumentation": {
     "pageTitle": "Documentation",
-    "bodyClass": "docs gk-saas",
+    "bodyClass": "docs gk-saas sidebar-nav",
     "locale": "de",
     "otherLanguageURL": "/docs"
   },

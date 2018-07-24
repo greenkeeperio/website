@@ -2,20 +2,21 @@
   <div class="main" role="main">
     <h1>Häufig gestellte Fragen</h1>
     <p>Welcome to Greenkeeper’s FAQ. Since you’re here, we’ll assume that you’re having trouble with something, and we’re sorry things didnt work out smoothly for you. Hopefully the FAQ will help. If you can’t find what you’re looking for here, there’s also the <a href="/docs">documentation page</a>, and if that doesn’t help, you can <a href="mailto:support@greenkeeper.io">contact us</a> directly.</p>
-    <ul class="compact-list">
-      <li><a href="#no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></li>
-      <li><a href="#renamed-repo">I can’t enable a repo that was recently renamed</a></li>
-      <li><a href="#branch-deletions">Greenkeeper is creating branches and immediately deleting them again</a></li>
-      <li><a href="#pinning-versions">I would like to get pull requests for every dependency update</a></li>
-      <li><a href="#downgrading">I downgraded a dependency to see whether Greenkeeper works, but nothing happens</a></li>
-      <li><a href="#corrupted-branch">I got a broken pull request (corrupted branch), and now I can’t git pull anymore</a></li>
-      <li><a href="#required-verify">Some PRs are stuck on "Some checks haven’t completed yet" because of greenkeeper/verify</a></li>
-      <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
-      <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
-      <li><a href="#yearly-payment">Can I pay for a whole year instead of by month?</a></li>
-      <li><a href="#free-trial">I only have private repositories, can I try Greenkeeper for free anyway?</a></li>
-    </ul>
-
+    <div class='sidebar'>
+      <ul class="compact-list">
+        <li><a href="#no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></li>
+        <li><a href="#renamed-repo">I can’t enable a repo that was recently renamed</a></li>
+        <li><a href="#branch-deletions">Greenkeeper is creating branches and immediately deleting them again</a></li>
+        <li><a href="#pinning-versions">I would like to get pull requests for every dependency update</a></li>
+        <li><a href="#downgrading">I downgraded a dependency to see whether Greenkeeper works, but nothing happens</a></li>
+        <li><a href="#corrupted-branch">I got a broken pull request (corrupted branch), and now I can’t git pull anymore</a></li>
+        <li><a href="#required-verify">Some PRs are stuck on "Some checks haven’t completed yet" because of greenkeeper/verify</a></li>
+        <li><a href="#branches">Can I enable Greenkeeper on a different branch?</a></li>
+        <li><a href="#owners-only">Can collaborators enable Greenkeeper too?</a></li>
+        <li><a href="#yearly-payment">Can I pay for a whole year instead of by month?</a></li>
+        <li><a href="#free-trial">I only have private repositories, can I try Greenkeeper for free anyway?</a></li>
+      </ul>
+    </div>
     <h2><a href="#no-initial-pr" id="no-initial-pr">Greenkeeper isn’t creating the Inital Pull Request</a></h2>
     <p>The first thing to note: <strong>the Initial Pull Request can take up to 30 minutes to arrive.</strong> It’s usually much faster, but the time it takes depends on the complexity of your tests and the state of your CI service. If nothing happens after 30 minutes, something probably went wrong.</p>
     <p><strong>Basic troubleshooting:</strong> make sure you’ve completed the <a href="/docs.html#installation">installation</a> correctly. Then please read the <a href="/docs.html#prerequisites">requirements Greenkeeper has for each repo</a>. If you’ve missed one or more and fixed them, please <a href="/docs.html#resetting-repos">reset the repo</a> and check if it works now.</p>
