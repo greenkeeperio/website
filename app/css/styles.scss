@@ -69,6 +69,7 @@ $fonts: "futura-pt", Futura, sans-serif;
       position: relative;
       margin: 0 0.75rem;
       outline: none;
+      cursor: pointer;
       &:hover, &:focus {
         border-color: $black;
         &:before {
@@ -415,7 +416,7 @@ nav ul li a{
   // box-shadow: 0px 0px 9px 1px hsla(154, 95%, 30%, 1) inset;
   color: $white;
   margin-top: 2.5rem;
-  padding: 4rem 0;
+  padding: 3rem 0;
   header{
     margin-top: 0;
     svg {
@@ -460,12 +461,10 @@ nav ul li a{
   max-width: 400px;
   display: flex;
   flex-wrap: wrap;
-  margin-top: -3rem;
   background: white;
   z-index: 5;
-  margin: -3em auto 3em;
+  margin: -3.5em auto 3em;
   box-shadow: 0px 2px 5px 0px RGBA(0,0,0,0.3);
-  border-radius: 5px;
   padding: 0.25em 1.5em 0.5em;
   align-items: center;
   h1 {
@@ -1141,7 +1140,6 @@ figure.wide-img {
   width: calc(100% - 20px);
   padding: 0;
   background: #FFF;
-  border-radius: 10px;
   box-shadow: 0 2px 5px 2px rgba(0,0,0,0.2);
   &.no-border {
     background: none;
@@ -1171,8 +1169,6 @@ figure.wide-img {
     max-width: 100%;
     margin: 0;
     padding: 1em 1em 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     display: block;
   }
   figcaption{
@@ -1180,8 +1176,6 @@ figure.wide-img {
     background: #eeeeee;
     padding: 1em;
     color: #5e6269;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     &:after {
       @media screen and (max-width: $column-width) {
         content: " (Tap image to enlarge)";
@@ -1677,7 +1671,7 @@ a.cta {
   }
   .limit-width {
     max-width: 68em;
-    margin: 0 auto;
+    margin: 0 auto 4rem;
   }
   section{
     &.split-item-top,
@@ -1844,8 +1838,8 @@ a.cta {
     font-size: 24px;
   }
   .full-height{
-    min-height: calc(100vh - 2.5rem);
-    align-items: center;
+    min-height: calc(100vh - 15rem);
+    align-items: flex-start;
     margin: 0 auto;
   }
 
