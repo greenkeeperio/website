@@ -133,6 +133,36 @@ $fonts: "futura-pt", Futura, sans-serif;
       }
     }
 
+    .save-with-yearly-billing {
+      left: 50%;
+      text-align: center;
+      position: absolute;
+      top: 5.9rem;
+      margin-left: 1rem;
+      font-size: 0.75rem;
+      transform: rotateZ(-5deg);
+      background: #00c775;
+      color: #fff;
+      border-radius: 5px;
+      width: 8em;
+      height: 2em;
+      padding: 0.2em 0em;
+      text-transform: uppercase;
+      border: 3px dotted #fff;
+      @media screen and (min-width: 400px) {
+        top: 2.5rem;
+        margin-left: 6rem;
+        transform: rotateZ(7deg);
+        border-radius: 50%;
+        width: 5em;
+        height: 5em;
+        padding: 1em 0em;
+      }
+      @media screen and (min-width: $column-width) {
+        top: 4rem;
+      }
+    }
+
     section h2:after {
       border-bottom-color: $primary;
     }
@@ -456,9 +486,6 @@ nav ul li a{
   padding: 3rem 0;
   header{
     margin-top: 0;
-    svg {
-      box-shadow: 0px 0px 10px hsla(154, 95%, 25%, 1);
-    }
   }
   h1{
     color: $white;
@@ -561,20 +588,22 @@ a.enterprise,
   border-bottom: 2px solid rgba(100, 149, 237, 0.1);
 }
 
-header{
+.hero header{
   width: 90%;
   max-width: $column-width;
   margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   .logo {
-    width: 4rem;
-    height: 4rem;
-    background: white;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: $green-primary;
     border-radius: 100%;
-    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
     margin: 0.2em 1em 0 0;
     padding: 0.1em;
+    path {
+      fill: $white
+    }
   }
   h1{
     font-size: 1.5rem;
@@ -806,6 +835,8 @@ section{
   font-size: 0.75rem;
   padding: 0.5em 1em;
   margin: 3em 0;
+  position: relative;
+  max-width: 100vw;
   &.split-item-top{
     margin-bottom: 0;
     padding-bottom: 0;
