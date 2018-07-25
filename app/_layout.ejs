@@ -81,25 +81,38 @@
   </script>
   <script src="/js/cookieconsent.min.js"></script>
   <script>
-  window.addEventListener("load", function(){
-  window.cookieconsent.initialise({
-    "palette": {
-      "popup": {
-        "background": "#333333",
-        "text": "#ffffff"
-      },
-      "button": {
-        "background": "transparent",
-        "text": "#00c775",
-        "border": "#00c775"
-      }
-    },
-    "content": {
-      "message": "This website uses cookies under",
-      "link": "these terms.",
-      "href": "https://greenkeeper.io/privacy-policy.html"
-    }
-  })});
+   window.addEventListener("load", function(){
+     var message;
+     var link;
+     var dismiss;
+     if (window.location.pathname.split('/')[1] === 'de') {
+       message = "Diese Website benutzt Cookies unter"
+       link = "diesen Bedingungen."
+       dismiss = "Alles klar!"
+     } else {
+       message = "This website uses cookies under"
+       link = "these terms."
+       dismiss = "Got it!"
+     }
+     window.cookieconsent.initialise({
+       "palette": {
+         "popup": {
+           "background": "#333333",
+           "text": "#ffffff"
+         },
+         "button": {
+           "background": "transparent",
+           "text": "#00c775",
+           "border": "#00c775"
+         }
+       },
+       "content": {
+         "message": message,
+         "link": link,
+         "dismiss": dismiss,
+         "href": "https://greenkeeper.io/privacy-policy.html"
+       }
+     })});
   </script>
 </body>
 </html>
