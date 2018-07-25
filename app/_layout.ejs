@@ -55,9 +55,20 @@
         $('.menu-button, nav.header').removeClass('is-active')
         $('body').removeClass('no-scroll')
       })
-      $(document).on('click', '#billing-selector', function(e) {
-        $(e.currentTarget).toggleClass('active')
+      $(document).on('click', '#billing-selector .toggle-switch', function(e) {
+        $('#billing-selector').toggleClass('active')
         $('.plan').toggleClass('yearly')
+      })
+      $(document).on('click', '#billing-selector .toggle-option', function(e) {
+        event.preventDefault()
+        if ($(e.currentTarget).hasClass('toggle-option-active')) {
+          $('#billing-selector').addClass('active')
+          $('.plan').addClass('yearly')
+        } else {
+          $('#billing-selector').removeClass('active')
+          $('.plan').removeClass('yearly')
+        }
+        return false
       })
     })
   </script>
