@@ -70,6 +70,13 @@
         }
         return false
       })
+      window.addEventListener('popstate', function(e){
+        $('.active-hash').removeClass('active-hash')
+        $('[href="' + window.location.hash + '"]').addClass('active-hash')
+      })
+      if (window.location.hash) {
+        $('[href="' + window.location.hash + '"]').addClass('active-hash')
+      }
     })
   </script>
   <script src="/js/cookieconsent.min.js"></script>

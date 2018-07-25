@@ -32,6 +32,10 @@ $fonts: "futura-pt", Futura, sans-serif;
     a{
       color: $primary;
       border-bottom: 2px solid $secondary;
+      &.active-hash {
+        color: $black;
+        border: none;
+      }
     }
     a.plan{
       color: $text;
