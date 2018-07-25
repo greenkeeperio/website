@@ -60,39 +60,76 @@ $fonts: "futura-pt", Futura, sans-serif;
       border-color: currentColor;
     }
 
-    .toggle-switch{
-      border-radius: 30px;
-      height: 40px;
-      width: 60px;
-      border: 3px solid $primary;
-      box-shadow: 0 0 12px 0px inset #CCC;
-      position: relative;
-      margin: 0 0.75rem;
-      outline: none;
-      cursor: pointer;
-      &:hover, &:focus {
-        border-color: $black;
-        &:before {
-          background-color: $black;
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 0 0 2rem 0;
+      justify-content: center;
+      .toggle-option {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.75rem;
+        max-width: 8em;
+        border: none;
+        &:nth-of-type(1) {
+          text-align: right;
         }
       }
-      &:before{
-        content: "";
-        display: block;
-        background: $primary;
-        border-radius: 50%;
-        width: 26px;
-        height: 26px;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        top: 4px;
-        left: 5px;
-        box-shadow: 0 0 12px 0 #CCC;
-        transition: all 0.25s;
+      .toggle-switch{
+        border-radius: 30px;
+        height: 40px;
+        width: 60px;
+        border: 3px solid $primary;
+        box-shadow: 0 0 12px 0px inset #CCC;
+        position: relative;
+        margin: 0 0.75rem;
+        outline: none;
+        cursor: pointer;
+        &:hover, &:focus {
+          border-color: $black;
+          &:before {
+            background-color: $black;
+          }
+        }
+        &:before{
+          content: "";
+          display: block;
+          background: $primary;
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          top: 4px;
+          left: 5px;
+          box-shadow: 0 0 12px 0 #CCC;
+          transition: all 0.25s;
+        }
       }
-      &.active:before {
-        left: 23px;
+      .toggle-option-active {
+        color: $text;
+      }
+      .toggle-option-inactive {
+        color: $green-primary;
+        pointer-events: none;
+        cursor: default;
+      }
+      &.active {
+        .toggle-option-active {
+          color: $green-primary;
+          pointer-events: none;
+          cursor: default;
+        }
+        .toggle-option-inactive {
+          color: $text;
+          pointer-events: all;
+          cursor: pointer;
+        }
+        .toggle-switch:before {
+          left: 23px;
+        }
       }
     }
 
@@ -1567,23 +1604,6 @@ a.cta {
   }
   @media screen and (min-width: 1224px) {
     justify-content: flex-start;
-  }
-}
-
-.billing-selection {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin: 0 0 2rem 0;
-  justify-content: center;
-  span {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.75rem;
-    max-width: 8em;
-    &:nth-of-type(1) {
-      text-align: right;
-    }
   }
 }
 
