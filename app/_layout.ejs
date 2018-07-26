@@ -89,10 +89,12 @@
        message = "Diese Website benutzt Cookies unter"
        link = "diesen Bedingungen."
        dismiss = "Alles klar!"
+       href="/de/datenschutzerklaerung"
      } else {
        message = "This website uses cookies under"
        link = "these terms."
        dismiss = "Got it!"
+       href="/privacy-policy"
      }
      window.cookieconsent.initialise({
        "palette": {
@@ -110,7 +112,7 @@
          "message": message,
          "link": link,
          "dismiss": dismiss,
-         "href": "https://greenkeeper.io/privacy-policy.html"
+         "href": href
        }
      })});
   </script>
