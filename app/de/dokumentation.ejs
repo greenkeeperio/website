@@ -1,193 +1,195 @@
 <div class="container">
   <div class="main" role="main">
     <h1>Dokumentation</h1>
-    <p>First off: welcome, and thanks for trying Greenkeeper! If you can’t find what you’re looking for here, there’s also the <a href="/faq">FAQ page</a>, and if that doesn’t help, you can <a href="mailto:support@greenkeeper.io">contact us</a> directly.</p>
-    <h2><a href="#documentation-overview" id="documentation-overview">Documentation overview</a></h2>
+    <p>Zuerst einmal: Willkommen, und danke, dass Sie Greenkeeper benutzen! Falls Sie nicht finden können, wonach Sie suchen, gibt es auch eine <a href="/faq">FAQ-Seite</a>, und wenn das auch nicht weiterhilft, können Sie uns <a href="mailto:support@greenkeeper.io">direkt kontaktieren</a>.</p>
+    <h2><a href="#documentation-overview" id="documentation-overview">Übersicht</a></h2>
     <div class='sidebar'>
       <ul class="compact-list">
-        <li><a href="#what-greenkeeper-does">What Greenkeeper does, and why</a></li>
-        <li><a href="#differences-between-plans">Differences between plans</a></li>
-        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#what-greenkeeper-does">Wie und warum Greenkeeper funktioniert</a></li>
+        <li><a href="#differences-between-plans">Unterschiede zwischen den verschiedenen Plänen</a></li>
+        <li><a href="#prerequisites">Voraussetzungen</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#repo-states">Checking repository states</a></li>
-        <li><a href="#greenkeeper-step-by-step">How Greenkeeper works, step by step</a></li>
-        <li><a href="#resetting-repos">Resetting a repository</a></li>
-        <li><a href="#pinning">Pinning a dependency</a></li>
-        <li><a href="#private-scoped-packages">Enabling private scoped packages</a></li>
-        <li><a href="#lockfiles">Using Greenkeeper with lockfiles</a></li>
-        <li><a href="#monorepo">Using Greenkeeper in a monorepo</a></li>
-        <li><a href="#monorepo-dependencies">Using Greenkeeper with monorepo dependencies</a></li>
-        <li><a href="#ignoring-dependencies">Ignoring certain dependency’s updates</a></li>
-        <li><a href="#custom-commit-messages">Setting up custom commit messages</a></li>
+        <li><a href="#repo-states">Den Status eines Repository überprüfen</a></li>
+        <li><a href="#greenkeeper-step-by-step">Wie Greenkeeper funktioniert (Schritt für Schritt)</a></li>
+        <li><a href="#resetting-repos">Ein Repository zurücksetzen</a></li>
+        <li><a href="#pinning">Eine Dependency pinnen</a></li>
+        <li><a href="#private-scoped-packages">Private Scoped Packages aktivieren</a></li>
+        <li><a href="#lockfiles">Verwendung von Greenkeeper mit Lockfiles</a></li>
+        <li><a href="#monorepo">Greenkeeper in einer Monorepo verwenden</a></li>
+        <li><a href="#monorepo-dependencies">Greenkeeper mit Monorepo-Dependencies verwenden</a></li>
+        <li><a href="#ignoring-dependencies">Einzelne Dependency Updates ignorieren</a></li>
+        <li><a href="#custom-commit-messages">Benutzerdefinierte Commit Messages einstellen</a></li>
       </ul>
     </div>
-    <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">What Greenkeeper does, and why</a></h2>
-    <p><strong>In short, Greenkeeper makes sure that you know when your project’s dependency updates break your code.</strong></p>
-    <p>Greenkeeper sits between npm and GitHub, observing all of the modules your repository depends on. Each time one of them is updated, Greenkeeper opens a new branch with that update. The repository’s CI tests kick in, and Greenkeeper watches them to see whether they pass or not.</p>
-    <p>Based on the test results and your current version definitions Greenkeeper will open up clear, actionable issues for you. If an update doesn’t break your code, nothing will happen, because everything is fine and no human intervention is required. If things do break, you’ll be informed immediately: you’ll know exactly which update to which dependecy caused the problem, and you’ll be nicely set up to fix the problem.</p>
-    <p><strong>Doesn’t semver take care of this?</strong> Not reliably, no. Versioning decisions are still often made by humans, and <a href="http://sentimentalversioning.org/">humans often version irrationally</a>. Humans are also fallible, and sometimes miscategorize a commit. Somebody else’s <code>chore</code> may break your code, because you’re using theirs in a way they haven’t forseen. The only way to be sure is to run your tests on each and every update. And if Greenkeeper weren’t around, this would be extremely tedious, which is why basically nobody makes the effort to continually stay up to date.</p>
-    <a href="#top">Back to top</a>
+    <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">Wie und warum Greenkeeper funktioniert</a></h2>
+    <p><strong>Kurz gefasst: Greenkeeper informiert Sie, wenn ein Dependency-Update ihren Code kaputt macht.</strong></p>
+    <p>Greenkeeper befindet sich zwischen npm und GitHub und überwacht alle Module, von denen Ihr Projekt abhängig ist. Wenn eines aktualisiert wird, öffnet Greenkeeper einen neuen Branch mit diesem Update. Die CI-Tests der Repository laufen durch und Greenkeeper überprüft, ob sie durchlaufen oder nicht.</p>
+    <p>Basierend auf den Testergebnissen und Ihren Versionsdefinitionen öffnet Greenkeeper klare, einfach umzusetzende Pull Requests und Issues in Ihrem Projekt. Wenn alles im grünen Bereich ist, dann macht Greenkeeper nichts. Andernfalls kriegen Sie eine Benachrichtigung: Sie wissen somit sofort, welche Aktualisierung von welchem Modul das Problem verursacht hat, damit Sie es schnell beheben können.</p>
+    <p><strong>Macht das nicht SemVer?</strong> Nicht zuverlässig. Versionierungsentscheidungen werden immer noch meistens von Menschen gemacht, und Menschen treffen manchmal <a href="http://sentimentalversioning.org/">irrationale Versionierungsentscheidungen</a>. Der einzige Weg, sicher zu gehen, dass Ihr Code nicht kaputt geht, ist, die Tests bei jedem Dependency-Update durchlaufen zu lassen. Ohne Greenkeeper wäre das sehr unhandlich und fehleranfällig.</p>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#differences-between-plans" id="differences-between-plans">Differences between plans</a></h2>
-    <p>Using Greenkeeper on public repositories is free. If you intend to have it run on private repositories, you’ll need to add your payment details on in the <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a>.</p>
-    <p><a href="/#pricing">Pricing</a> varies depending on the type of GitHub account Greenkeeper is installed on, and how many repositories it’s enabled for.</p>
-    <a href="#top">Back to top</a>
+    <h2><a href="#differences-between-plans" id="differences-between-plans">Unterschiede zwischen den verschiedenen Plänen</a></h2>
+    <p>Greenkeeper auf öffentlichen Repositories zu benutzen ist immer kostenlos. Falls Sie vorhaben, es auf privaten Repositories zu installieren, müssen Sie ihre Zahlungsinformationen in dem <a href="https://account.greenkeeper.io">Account-Dashboard</a> hinzufügen.</a></p>
+    <p><a href="/#pricing">Die Preise</a> variieren basierend darauf, auf welchem GitHub-Account Greenkeeper installiert wurde, und für wie viele Repositories es aktiviert ist.</p>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#prerequisites" id="prerequisites">Prerequisites</a></h2>
-    <p>Greenkeeper has a number of requirements for each repository it is meant to watch:</p>
+    <h2><a href="#prerequisites" id="prerequisites">Voraussetzungen</a></h2>
+    <p>Das Repository, auf dem Greenkeeper laufen soll, muss ein paar Anforderungen erfüllen: </p>
     <ul>
-      <li>The repo must have at least one <code>package.json</code> file somewhere in the project</li>
-      <li>The repo must have a form of Continuous Integration (CI) that sets commit statuses on branches (like <a href="https://travis-ci.org/">Travis CI</a>, for example, but other services work too)</li>
-      <li>The CI must be active on the repo and be allowed to act on new branches</li>
-      <li>Issues must be enabled for the repo (careful: issues are disabled by default on forked repositories)</li>
-      <li>If you do not have a paid subscription, the repo must be public</li>
+      <li>Das Repository muss mindestens eine <code>package.json</code> Datei beinhalten</li>
+      <li>Das Repository muss irgendeine Form von Continuous Integration (CI) haben (z.B. <a href="https://travis-ci.org">Travis CI</a>)</li>
+      <li>Die CI muss auf dem Repository aktiv sein und die Erlaubnis haben, auf einem neuen Branch zu laufen</li>
+      <li>Issues müssen für das Repository aktiv sein (automatisch deaktiviert bei forked Repositories)</li>
+      <li>Um Greenkeeper kostenlos nutzen zu können, muss das Repository öffentlich sein</li>
     </ul>
-    <a href="#top">Back to top</a>
+    <a href="#top">Zum Seitenanfang</a>
 
     <h2><a href="#installation" id="installation">Installation</a></h2>
-    <p>Setting up Greenkeeper to watch one of your repositories requries three steps:</p>
+    <p>Greenkeeper lässt sich in nur drei Schritten auf einem Repository aktivieren: </p>
     <ol>
       <li>
-        <strong class="signal">Install Greenkeeper</strong>
-        <p>Install the Greenkeeper GitHub app on the repository’s parent organization or user account (you’ll only need to do this once per account).</p>
-        <p>To install, visit <a href='https://github.com/apps/greenkeeper'>Greenkeeper’s app page on GitHub</a> and click <code>Install</code>. If you’ve already installed it somewhere, click on <code>Configure</code> instead. You can then choose which organization or account to install the app in.</p>
+        <strong class="signal">Installieren Sie Greenkeeper</strong>
+        <p>Greenkeeper muss nur einmal pro Organisation oder User-Account installiert werden. Danach kann festgelegt werden, auf welche Repos Greenkeeper Zugriff hat. </p>
+        <p>Sie können Greenkeeper über GitHub Apps installieren. Gehen sie auf die <a href="https://github.com/apps/greenkeeper">Greenkeeper-Seite</a> und klicken Sie “Install”. Wenn Sie Greenkeeper bereits irgendwo anders installiert haben, dann klicken Sie auf “Configure”.</p>
+        <p>Alternativ können Sie Greenkeeper auch über <a href="https://github.com/marketplace/greenkeeper">GitHub Marketplace</a> installieren. In diesem Fall wird die Bezahlung komplett von GitHub abgewickelt, und es gibt eine 14-tägige kostenlose Testphase.</p>
       </li>
       <li>
         <a id="grant_repo_access"></a>
-        <strong class="signal">Grant repository access</strong>
-        <p>Now set up the Greenkeeper app and tell it which of the account’s repositories to try and watch.</p>
-        <p>Find Greenkeeper’s settings page (this is a different URL for every account, so we can’t link to it, sorry). It’s in your organization or account settings under <code>Installed GitHub Apps</code>. Select Greenkeeper, and scroll all the way down to the section titled <code>Repository access</code>. Here, choose <code>Only select repositories</code> (we really don’t recommend <code>All repositories</code>) and add one or more repositories you want Greenkeeper to watch.</p>
+        <strong class="signal">Greenkeeper Zugriff auf Repos erteilen</strong>
+        <p>Gehen Sie auf die Einstellungsseite für Greenkeeper. Die URL zu dieser Seite ist bei jedem Account unterschiedlich. Sie finden sie auf Repository-Ebene in dem Bereich Einstellungen (Integration & services) unter <code>Installed GitHub Apps</code>. Wählen Sie Greenkeeper aus und scrollen Sie zum Abschnitt <code>Repository Access</code>. Hier wählen Sie <code>only selected repositories</code> (wir empfehlen, nicht <code>All repositories</code> auszuwählen) und fügen dann die Repositories hinzu, für die Greenkeeper aktiv sein soll. 
+        </p>
         <figure class="wide-img">
           <img
             src="/images/github_repo_access.png"
             alt="">
-          <figcaption>The GitHub interface that lets you add and remove repository access for Greenkeeper</figcaption>
+          <figcaption>Das GitHub-Interface, das Sie Greenkeeper's Zugriffsrechte setzen lässt</figcaption>
         </figure>
-        <p>You can also find a link to these settings in the <a href="https://account.greenkeeper.io">Account Dashboard</a>, at the bottom of the corresponding account’s repository list.</p>
+        <p>Einen Link zu diesen Einstellungen finden Sie auch im <a href="https://account.greenkeeper.io">Account Dashboard</a> am Ende der jeweiligen Repository-Liste </p>
       </li>
       <li>
         <a id="enabling_a_repo"></a>
-        <strong class="signal">Enable Greenkeeper on each repo</strong>
-        <p>Enable Greenkeeper on that individual repository by merging the Initial Pull Request.</p>
-        <p>To set itself up on a repository, Greenkeeper will open an Initial Pull Request. This will attempt to update all dependencies at once, so you’re up to date. In addition, it will add the Greenkeeper badge to your project’s <code>readme.md</code>. Note that Greenkeeper will only be able to do this if your repository meets <a href="#prerequisites">all the prerequisites</a>.</p>
-        <p><strong>Important: Greenkeeper will only start watching the repository’s dependencies after this pull request has been merged.</strong> It will also remind you after a few days in case you forget.</p>
-        <p><strong>Also Important:</strong> The initial PR will not be opened if all dependencies are already up to date, and the <code>readme.md</code> already has a badge. In this case, Greenkeeper is silently enabled.</p>
-        <p>You can check the status of each repository in the <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a>.</p>
-        <p>The Initial Pull Request may take a while to appear, depending on how busy GitHub and your CI service are, and how complex your tests are. See <a href="#repo-states">checking repository states</a> for details on managing Greenkeeper across multiple GitHub accounts and repositories, and find out how to <a href="#resetting-repos">reset a repository</a> when things go wrong.</p>
+        <strong class="signal">Aktivieren Sie Greenkeeper in den jeweiligen Repositories</strong>
+        <p>Sie aktivieren Greenkeeper in einem Repo, indem sie den initialen Pull Request mergen.</p>
+        <p>Dieser erste Pull Request hat zum Ziel, alle Abhängigkeiten auf einmal zu aktualisieren, damit Sie auf dem neuesten Stand sind. Zusätzlich wird er das Greenkeeper Badge zur readme.md der Projekts hinzufügen. Beachten Sie, dass Greenkeeper den ersten Pull Request nur senden kann, wenn das Repository alle obigen <a href="#requirements">Voraussetzungen</a> erfüllt.</p>
+        <p><strong>Wichtig: Greenkeeper wird erst aktiv, nachdem der erste initiale Greenkeeper Pull Request gemerged wurde. Falls dies nicht geschieht, wird Greenkeeper Sie nach einer Weile daran erinnern.</p>
+        <p><strong>Wichtig:</strong> Wenn alle Dependencies auf dem neuesten Stand sind und die readme.md ein Greenkeeper Badge hat, dann wird Greenkeeper ohne einen Pull Request aktiviert.</p>
+        <p>Der Status eines Repositories kann im <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a> überprüft werden. </p>
+        <p>Es kann einige Zeit dauern, bis der erste Pull Request gesendet wird. Das hängt davon ab, wie lange es dauert, die einzelnen Abhängigkeiten zu überprüfen und zu testen. Wenn Sie mehrere GitHub Accounts und Repos mit Greenkeeper verknüpft haben, dann können sie den Status der einzelnen Verzeichnisse überprüfen.</p>
       </li>
     </ol>
-    <a href="#top">Back to top</a>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#repo-states" id="repo-states">Checking repository states</a></h2>
-    <p>The <a href="https://account.greenkeeper.io">Account Dashboard</a> shows you each repository’s state, indicating where Greenkeeper is installed and/or enabled. Note that this list can only show repositories <a href="#grant_repo_access">you’ve granted Greenkeeper access to</a>.</p>
+    <h2><a href="#repo-states" id="repo-states">Den Status eines Repository überprüfen</a></h2>
+    <p>Das <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a> zeigt den Status aller Repositories an die mit Greenkeeper verknüpft sind.</p>
     <figure class="wide-img">
       <img
         src="/images/greenkeeper_account_dashboard_repolist.png"
         alt="">
-      <figcaption>The repository list in the Greenkeeper Account Dashboard</figcaption>
+      <figcaption>Die Repository-Liste im Account Dashboard</figcaption>
     </figure>
-    <p>A repo is marked red if the Initial Pull Request doesn’t exist (yet). This could be because one or more of the <a href="#prerequisites">prerequisites</a> isn’t met, because your CI is still running and the Initial Pull Request simply isn’t ready yet, or occasionally, because some information got lost between your CI service, GitHub and Greenkeeper. If you’re sure all prerequisites are fulfilled and your CI completed its run on the Greenkeeper branch, but no Initial Pull Request appeared, you can <a href="#resetting-repos">try resetting the offending repo</a>.</p>
-    <p>It is however entirely possible that you’re using npm in a way we’ve never seen before, or have your CI configured in an interesting way, or some other aspect of your setup works in a way that’s new to Greenkeeper. If you suspect this may be the case, we’d be very grateful if you could <a href="mailto:support@greenkeeper.io">let us know</a>, and we’ll try to accomodate you.</p>
-    <a href="#top">Back to top</a>
+    <p>Eine Repo ist rot markiert, wenn der initiale Pull Request (noch) nicht existiert. Wichtig: es kann bis zu 30 Minuten dauern, bis der erste Pull Request erscheint. Falls nach einer halben Stunde noch nichts passiert ist, kann es sein, dass eine oder mehrere Voraussetzungen noch nicht erfüllt worden sind, oder dass Ihr CI einfach noch beschäftigt ist. Falls Sie sich sicher sind, dass alle Voraussetzungen erfüllt sind und ihr CI fertig ist, aber trotzdem kein Pull Request geöffnet wurde, können sie das Repository <a href="#resetting-repos">zurücksetzen</a>.</p>
+    <p>Es kann in Ausnahmefällen auch sein, dass Sie npm oder Ihre CI auf eine Weise verwenden oder konfiguriert haben, die Greenkeeper noch nicht kennt. Wenn Sie denken, dass ihr individuelles Setup dazu führen könnte, dass Greenkeeper nicht funktioniert, dann freuen wir uns, wenn Sie mit uns <a href="mailto:support@greenkeeper.io">in Kontakt treten</a>. Wir helfen Ihnen gern.</p>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#greenkeeper-step-by-step" id="greenkeeper-step-by-step">How Greenkeeper works, step by step</a></h2>
-    <p>This section covers how Greenkeeper works after the <a href="#installation">three installation steps</a> above have been completed</p>
+    <h2><a href="#greenkeeper-step-by-step" id="greenkeeper-step-by-step">Wie Greenkeeper funktioniert (Schritt für Schritt)</a></h2>
+    <p>Nachdem Greenkeeper installiert wurde, automatisiert Greenkeeper die folgenden Arbeitsschritte:</p>
     <ol>
       <li>
-        <strong class="signal">Greenkeeper watches your dependencies for updates</strong>
-        <p>Greenkeeper will watch npm’s changes feed for any update to any dependency in your <code>package.json</code> files, except for those you’ve explicitly <a href='/docs#ignoring-dependencies'>ignored</a>.</p>
+        <strong class="signal">Greenkeeper überprüft Ihre Dependencies auf Updates</strong>
+        <p>Greenkeeper überwacht den Feed von npm auf Updates, die eine der Abhängigkeiten in Ihren <code>package.json</code>-Dateien betreffen. Sie können definieren, welche Dependencies <a href="#ignoring-dependencies">ignoriert werden sollen</a>.</p>
       </li>
       <li>
-        <strong class="signal">A dependency updates occurs</strong>
-        <p>Greenkeeper will open a branch that bumps that dependency’s version number in your <code>package.json</code> files. Your CI tests will run on that branch, and once they complete, one of three things will happen:</p>
+        <strong class="signal">Ein Dependency-Update ist verfügbar</strong>
+        <p>Greenkeeper erstellt einen Branch, in dem Versionsnummer der Dependency in Ihren <code>package.json</code>-Dateien aktualisiert wird. Ihre CI-Tests laufen auf dem Branch und sobald diese fertig sind, passiert eines der folgenden Dinge:</p>
         <ol>
           <li>
-          <strong class="signal">It’s an in-range update, and your tests pass:</strong>
-          <p>Greenkeeper deletes the branch and stays silent, because everything still works!</p>
-          <p><strong>In-range means:</strong> If you specify a range of <code>^1.0.0</code>, and <code>1.0.1</code> is released, that update is in-range. Users of your package would receive this update when they run <code>npm install</code>. Consult <a href="https://semver.npmjs.com">npm’s semver calculator</a> to see which updates apply to your specified ranges, per package.</p>
+          <strong class="signal">Es ist ein in-range Update und die Testdurchläufe sind erfolgreich:</strong>
+          <p>Greenkeeper löscht den Branch und wird keinen Pull Request schicken. Es passiert also nichts, weil alles in Ordnung ist.</p>
+          <p><strong>In-range heißt,</strong> dass Sie eine Range (eine Versions-Spanne) für die Dependency spezifiziert haben (z.B. ^1.0.0), und die neue Version innerhalb dieser range liegt (z.B. 1.0.1). Um herauszufinden, welche Updates zu Ihren spezifizierten ranges pro Paket passen, können Sie den <a href="https://semver.npmjs.com/">npm semver calculator</a> nutzen.</p>
         </li>
         <li>
-          <strong class="signal">It’s an in-range update, and your tests fail:</strong>
-          <p>Greenkeeper will notify you about that breakage by opening up an issue, and it will also let you know whether pinning the dependency to the previous version will fix the build. In addition, Greenkeeper will keep checking if any new version of that dependency fixes this version’s breakage, and will also notify you about that in the issue thread.</p>
+          <strong class="signal">Es ist ein in-range Update und die Tests sind fehlgeschlagen:</strong>
+          <p>Greenkeeper benachrichtigt Sie über das Problem, indem es eine Issue öffnet. Es wird Sie außerdem wissen lassen, ob das Pinnen der Dependency an die vorherige Version das Problem beheben könnte. Greenkeeper wird außerdem bei jeder neuen Version der Dependency prüfen, ob sie das  Problem beheben würde und benachrichtigt Sie darüber in dieser Issue.</p>
           <figure class="wide-img">
             <img
               src="/images/greenkeeper_in-range-update_fail_issue.png"
               alt="">
-            <figcaption>An example of an issue triggered by a breaking in-range update</figcaption>
+            <figcaption>Beispiel für eine Issue, das geöffnet wird, wenn die Tests mit der neuen Version fehlschlagen. </figcaption>
           </figure>
         </li>
         <li>
-          <strong class="signal">It’s an out-of-range update:</strong>
-          <p>Greenkeeper opens a pull request, and your CI runs there. Your users would never encounter this version because it’s out of range, but if the update contains changes you want (security fixes, performance improvements, better compatibility etc.), this pull request is a good basis for work in that regard. Plus, if you trust your tests and they all pass, you could merge the pull request straight away.</p>
+          <strong class="signal">Das Update ist out-of-range:</strong>
+          <p>Greenkeeper öffnet einen Pull Request. Out-of-range bedeutet, dass Nutzer Ihres Projekts dieses Update nie bekommen würden, weil es mit `npm install` nicht installiert würde. Aber es könnte sein, dass die Version Änderungen enthält, die für Sie von Interesse sein können (Sicherheitsupdates, Leistungsverbesserung, bessere Kompatibilität etc.). Der Pull Request eignet sich als Basis für die Weiterarbeit an dem Projekt. Falls die Tests alle positiv verlaufen sind und Sie ihnen vertrauen, können Sie den Pull Request natürlich auch gleich mergen.</p>
           <figure class="wide-img">
             <img
               src="/images/greenkeeper_out-of-range_pr.png"
               alt="">
-            <figcaption>An example of a pull request triggered by an out-of-range update</figcaption>
+            <figcaption>Beispiel für einen Pull Request, der durch ein out-of-range Update erstellt wurde</figcaption>
           </figure>
-          <p>You’ll only get one pull request per dependency, if additional updates come in, Greenkeeper will update that pull request with the new dependency version (triggering your CI), and add a comment to let you know about the update.</p>
+          <p>Sie bekommen immer nur einen Pull Request pro Dependency. Gibt es weitere Updates für die Dependency und es ist bereits ein offener Pull Request vorhanden, wird dieser mit einem Kommentar aktualisiert.</p>
           <figure class="wide-img">
             <img
               src="/images/greenkeeper_out-of-range_pr_update.png"
               alt="">
-            <figcaption>A follow-up update for an out-of-range update will appear as an update to the original pull request</figcaption>
+            <figcaption>Ein follow-up Update für einen noch offenen PR erscheint als Kommentar</figcaption>
           </figure>
-          <p><strong>Out-of-range means:</strong> If you specify a range of <code>^1.0.0</code>, and <code>2.0.0</code> is released, that update is out-of-range. Users of your package will never encounter this update unless you bump the dependency’s version number and release your package again. Consult <a href="https://semver.npmjs.com">npm’s semver calculator</a> to see which updates apply to your specified ranges, per package.</p>
+          <p><strong>Out-of-range heißt:</strong> Wenn Sie eine range von ^1.0.0 spezifizieren und ein Update auf 2.0.0 veröffentlicht wird, dann ist dieses Update out-of-range. Das heißt, die Versionsnummer ist höher als in der Spezifikation angegeben und das neu veröffentlichte Update würde normalerweise ignoriert werden. Mit dem <a href="https://semver.npmjs.com">npm semver calculator</a> kann überprüft werden, welche Updates zu den spezifischen ranges passen.
+          </p>
         </li>
         </ol>
       </li>
       <li>
-        <strong class="signal">Greenkeeper verifies any pull requests</strong>
-        <p>To prevent malicious users from impersonating the Greenkeeper bot, Greenkeeper will attach a status check from <code>greenkeeper/verify</code> to each pull request it opens. If this is missing, the pull request is probably not from us, and you should treat it with caution. It looks like this:</p>
+        <strong class="signal">Greenkeeper überprüft den Pull Request</strong>
+        <p>Um zu verhindern, dass Schadsoftware sich als der Greenkeeper-Bot ausgeben kann, wird jedem Pull Request, der von Greenkeeper erstellt wird, ein Status Check (<code>greenkeeper/verify</code>) hinzugefügt. Wenn der Status nicht von Greenkeeper verifiziert wurde, dann ist der Pull Request nicht von uns.</p>
         <figure class="wide-img">
           <img
             src="/images/github_greenkeeper_verified_status.png"
             alt="">
-          <figcaption>Only a pull request with a greenkeeper/verify status check is genuine. Don’t accept any fakes!</figcaption>
+          <figcaption>Pull Requests von Greenkeeper sind verifiziert</figcaption>
         </figure>
-        <p>Note that this status should <em>not</em> be set to <code>required</code> in your GitHub repo settings, since that requirement will apply to <em>all</em> pull requests, not only those opened by Greenkeeper. Since Greenkeeper doesn’t verify non-Greenkeeper PRs, the <code>greenkeeper/verify</code> status will never be reported, and your PRs will be stuck on <code>Some checks haven’t completed yet</code> forever.</p>
+        <p>Dieser Status sollte nicht als <code>required</code> in den Repository-Einstellungen markiert werden, da dieser Status bei jedem Pull Request mit dabei ist, auch bei denen, die Greenkeeper nicht erstellt hat. Bei Pull Requests wird der Status dann für immer als <code>pending</code> angezeigt werden, da Greenkeeper damit nichts zu tun hat. Dies ist leider eine Limitation von GitHub.</p>
       </li>
     </ol>
-    <a href="#top">Back to top</a>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#resetting-repos" id="resetting-repos">Resetting a repository</a></h2>
-    <p>Sometimes, the Initital Pull Request will never be opened. This can have many reasons: you may have forgotten to allow your CI to work on Greenkeeper branches, or issues may be disabled on the target repo, the CI service may have timed out… in any case, you may want to start over. Here’s how:</p>
+    <h2><a href="#resetting-repos" id="resetting-repos">Ein Repository zurücksetzen</a></h2>
+    <p>Manchmal muss ein Repository neu gestartet werden, zum Beispiel wenn der initiale Pull Request <a href="#repo-states">nicht geöffnet wird</a>. Wenn das der Fall ist, dann gehen Sie wie folgt vor:</p>
     <ol>
       <li>
-        <p>If it exists, delete the <code>greenkeeper/initial</code> branch on the repo.</p>
+        <p>Falls vorhanden, löschen sie den <code>greenkeeper/initial</code> Branch auf ihrem Repo</p>
       </li>
       <li>
-        <p>Remove the repo from the Greenkeeper integration in the app installation settings on GitHub and save. You can find a link to those settings in the <a href="https://account.greenkeeper.io">Account Dashboard</a>, at the bottom of the corresponding account’s repository list. The link is unique for every GitHub account, so we can’t link to it here. This is the same place you do <a href="#grant_repo_access">the second Greenkeeper setup step</a>.</p>
+        <p>Entfernen Sie das Repo aus der Greenkeeper Integration in den App-Einstellungen auf GitHub. Sie finden diese Einstellungen im <a href="https://account.greenkeeper.io">Account Dashboard</a> am Ende der dem Account zugehörigen Repository-Liste (jeder GitHub Account hat einen individuellen Link, siehe <a href="#grant-repo-access">Schritt 2 der Greenkeeper Installation</a>)</p>
       </li>
       <li>
-        <p>On the same page, add the repo again, and save.</p>
+        <p>Auf derselben Seite können Sie das Repo erneut hinzufügen und den Vorgang speichern.</p>
       </li>
     </ol>
     <p>We’re working on making this more convenient by allowing you to reset repositories in the Account Dashboard.</p>
-    <p><strong>If you are working in an organization that has whitelisted all repositories</strong>, you will probably not want to touch these settings, or may not be allowed to. In this case, <a href="mailto:support@greenkeeper.io">please let us know which repo got stuck</a> and we’ll sort it out for you.</p>
-    <a href="#top">Back to top</a>
+    <p><strong>Falls Sie in einer GitHub-Organisation arbeiten, in der alle Repositories freigegeben (whitelisted) sind</strong>, dann haben Sie möglicherweise nicht die Berechtigungen diesen Vorgang durchzuführen oder möchten nicht eigenständig Änderungen an den Einstellungen vornehmen. In diesem Fall nehmen Sie bitte Kontakt mit uns auf über <a href="mailto:support@greenkeeper.io">support@greenkeeper.io</a> und lassen Sie uns wissen, um welche Repository es sich handelt. Wir helfen gern. </p>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#pinning" id="pinning">Pinning a dependency</a></h2>
-    <p>Pinning a dependency is a legitimate option when you don’t have the time or resources to fix a problem introduced by a dependency update. Greenkeeper will let you know whether pinning to the dependency’s previous version (downgrading) would solve the new issue, and will then give you that option in the issue thread.</p>
+    <h2><a href="#pinning" id="pinning">Eine Dependency pinnen</a></h2>
+    <p>Wenn Ihnen Zeit und Ressourcen fehlen um ein Problem zu lösen, das durch ein Dependency Update aufkommen würde, ist das kein Problem. Greenkeeper bietet Ihnen die Möglichkeit eine früherer Version zu pinnen wenn das Problem in dieser Version noch nicht auftritt. Diese Option wird Ihnen im jeweiligen Issue angeboten.</p>
     <figure class="wide-img">
       <img
-        src="images/pinning_passing_and_failing_updates.png"
+        src="/images/pinning_passing_and_failing_updates.png"
         alt="">
-      <figcaption>When a dependency update breaks your build, Greenkeeper lets you pin (downgrade) the last working version right there in the GitHub issue.</figcaption>
+      <figcaption>Wenn nach einem Dependency Update Ihre Tests nicht mehr durchlaufen, lässt Greenkeeper Sie die letzte funktionierende Version im GitHub Issue pinnen</figcaption>
     </figure>
-    <p>Once you’ve pinned a package, every subsequent update to it will be considered out-of-range by Greenkeeper.</p>
-    <a href="#top">Back to top</a>
+    <p>Sobald ein Paket gepinnt wurde, behandelt Greenkeeper jedes nachfolgende Update als out-of-range Update.</p>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#private-scoped-packages" id="private-scoped-packages">Enabling private scoped packages</a></h2>
-    <p>Private scoped packages require an extra setup step that is detailed in each Initial Pull Request. It involves URLs and tokens that are unique to each account and repository, and which are only created when each Initial Pull Request is generated. Please consult your repository’s Initial Pull Request for instructions specific to that repository.</p>
-    <a href="#top">Back to top</a>
+    <h2><a href="#private-scoped-packages" id="private-scoped-packages">Private Scoped Packages aktivieren</a></h2>
+    <p>Um Private Scoped Packages zu aktivieren benötigt es einen weiteren Schritt, der im initialen Pull Request ausführlich beschrieben ist. Die dafür benötigten URLs und Tokens sind für jeden Account und jedes Repo anders. Sie werden nur erstellt, wenn der initiale Pull Request generiert wird. Bitte sehen Sie sich die Anweisungen im initialen Pull Request an um hierzu weitere Informationen zu erhalten.</p>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#lockfiles" id="lockfiles">Using Greenkeeper with lockfiles</a></h2>
-    <p>Greenkeeper supports lockfiles via an additional package called <a href="https://github.com/greenkeeperio/greenkeeper-lockfile">greenkeeper-lockfile</a>. Please consult that package’s readme for details.</p>
-    <p>If you have <code>greenkeeper-lockfile</code> set up, this is how the different lockfiles are treated:</p>
-    <p><code>npm-shrinkwrap.json</code> can be part of a release to npm and defines exactly which dependency versions your users get. If an update is covered by the defined range in your <code>package.json</code>, Greenkeeper does nothing if <code>npm-shrinkwrap.json</code> is present, since that guarantees that the new dependency will never be installed anyway. If there’s an out-of-range update, you get a Pull Request so you are aware of the update and can decide whether you’re interested in it.</p>
-    <p><code>package-lock.json</code> and <code>yarn.lock</code> work differently, since these two are not published to npm and have no influence on which dependency versions your users get. For in-range updates, Greenkeeper will always open a branch so your CI can run and update these lockfiles. For out-of-range updates, you get a Pull Request, as usual.</p>
-    <p>If you do not want in-range branches for lockfiles, you can disable them in your <code>package.json</code> file:</p>
+    <h2><a href="#lockfiles" id="lockfiles">Verwendung von Greenkeeper mit Lockfiles</a></h2>
+    <p>Greenkeeper unterstützt Lockfiles (package-lock.json, yarn.lock und shrinkwrap.json) durch ein zusätzliches Paket namens <a href="https://github.com/greenkeeperio/greenkeeper-lockfile">greenkeeper-lockfile</a>. Details hierzu finden Sie in dessen Dokumentation. </p>
+    <p>Wenn Sie <code>greenkeeper-lockfile</code> eingerichtet haben, werden die verschiedenen Lockfiles wie folgt behandelt: </p>
+    <p>Die <code>npm-shrinkwrap.json</code> kann Teil von dem sein, was bei npm in der Registry veröffentlicht wird, und definiert exakt, welche Dependency Versionen Ihre User bekommen. Wenn ein Update von der bereits in der <code>package.json</code> definierten Range abgedeckt wird, macht Greenkeeper nichts falls auch eine <code>npm-shrinkwrap.json</code> präsent ist, weil dessen Existenz garantiert, dass eine potentielle neue Version sowieso nie installiert wird. Wenn es ein out-of-range Update gibt, erhalten Sie einen Pull Request.</p>
+    <p><code>package-lock.json</code> und <code>yarn.lock</code> funktionieren jeweils anders, da sie nie in die npm Registry hochgeladen werden und nicht beinflussen, welche Dependency-Versionen ihre User installieren. Für in-range Updates wird Greenkeeper immer einen Branch öffnen, damit der CI laufen und die Lockfiles aktualisieren kann. Für out-of-range updates bekommen Sie wie immer einen Pull Request.</p>
+    <p>Wenn Sie keine in-range Updates für Lockfiles bekommen wollen, können sie die bequem in der <code>>package.json</code> ausschalten:</p>
     <p><pre><code>// package.json
 {
   …
@@ -197,11 +199,11 @@
     }
   }
 }</code></pre></p>
-    <a href="#top">Back to top</a>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#monorepo" id="monorepo">Using Greenkeeper in a monorepo</a></h2>
-    <p>Greenkeeper supports repos with multiple <code>package.json</code> files (monorepos). To make updating multiple files simpler and less noisy, they can be grouped, which means that they will all receive dependency updates, pull requests and issues from Greenkeeper together.</p>
-    <p>The Initial Pull Request will add a <code>greenkeeper.json</code> to your repo. This contains the group configuration; by default, all <code>package.json</code> files will be collected in a group called <code>default</code>. You can rename, add and remove groups and freely assign each <code>package.json</code> file to whichever group you like. It’s common, for example, to have one frontend group and one backend group, each with a couple of <code>package.json</code> files. In any case, all files in a group will have their updates collected into single PRs and issues. Here’s what that would look like:</p>
+    <h2><a href="#monorepo" id="monorepo">Greenkeeper in einer Monorepo verwenden</a></h2>
+    <p>Greenkeeper unterstützt Repositories mit mehreren <code>package.json</code>-Dateien (auch Monorepos genannt). Damit das Updaten mehrerer Dateien einfacher wird, können diese gruppiert werden. Alle Module/Dependencies innerhalb einer Gruppe werden in einer Issue/einem Pull Request behandelt.</p>
+    <p>Der initiale Pull Request wird eine <code>greenkeeper.json</code>-Datei in Ihr Repository hinzufügen. Diese Datei beinhaltet die Konfiguration für diese Gruppierungen; normalerweise werden alle <code>package.json</code>-Dateien in eine Gruppe namens “default” gesammelt. Sie können jedoch Dateien völlig frei in ihre eigenen Gruppen umverteilen. Oft ist es üblich, jeweils eine Gruppe für  Frontend- und Backend-Packages einzurichten. Jede Gruppe bekommt ihre Updates gesammelt in einem Pull Request oder Issue. Die Konfiguration hierfür sieht dann so aus:</p>
     <p><pre><code>// greenkeeper.json
 {
   "groups": {
@@ -221,21 +223,20 @@
   },
   "ignore": ["standard"]
 }</code></pre></p>
-    <p>In this example, a repository’s package files are split into two groups, <em>frontend</em> and <em>backend</em>, and the files in each group will always be updated together. In addition, the <em>backend</em> group ignores the <code>hapi</code> dependency, and the entire repo ignores the <code>standard</code> dependency.</p>
-    <p><strong>Important:</strong> If you have more than one <code>package.json</code> file, or your single <code>package.json</code> file is <em>not</em> in the root of the repo, Greenkeeper will only handle the <code>package.json</code> files you specify in <code>greenkeeper.json</code>. So if you want to ignore one, just omit it from all the <code>packages</code> arrays.</p>
-    <p>You can also ignore dependencies on group level by adding them to an array under an <code>ignore</code> key within each group object, see the <code>backend</code> group in the example above.</p>
-    <p>Greenkeeper will open an issue if you’ve accidentally changed <code>greenkeeper.json</code> in a way it doesn’t understand, and will try to explain where the problems are.</p>
-    <a href="#top">Back to top</a>
+    <p>In diesem Fall sind die package.json-Dateien des Projekts auf zwei Gruppen verteilt: eine <em>frontend</em>-Gruppe und eine <em>backend</em>-Gruppe. Die Dateien in jeder Gruppe werden immer zusammen aktualisiert. In diesem Beispiel ignoriert die <em>backend</em>-Gruppe die <code>hapi</code>-Dependency, und das gesamte Projekt ignoriert die <code>standard</code>-Dependency.</p>
+    <p><strong>Wichtig:</strong> Wenn es in dem Repo mehrere <code>package.json</code>-Dateien gibt, oder nur eine einzige, diese aber <em>nicht</em> im root-Verzeichnis des Repository ist, wird Greenkeeper nur jene aktualisieren, die auch in der <code>greenkeeper.json</code>-Datei eingetragen sind. Möchten Sie eine bestimmte <code>package.json</code>-Datei ignorieren, löschen Sie sie einfach aus dieser Datei.</p>
+    <p>Sie können auch einzelne Dependencies in bestimmten Gruppen ignorieren, indem Sie sie in der <code>greenkeeper.json</code>-Datei unter dem <code>ignore</code>-Feld eintragen.</p>
+    <p>Falls Ihnen beim Ändern dieser Konfigurationsdatei ein Fehler unterläuft, wird Greenkeeper eine Issue öffnen und versuchen zu erklären, was genau schiefgelaufen ist.</p>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#monorepo-dependencies" id="monorepo-dependencies">Using Greenkeeper with monorepo dependencies</a></h2>
-    <p>Greenkeeper will group releases from some of the more popular monorepo dependencies together, at time of writing these are <a href="https://github.com/angular/angular">Angular</a>, <a href="https://github.com/babel/babel">Babel</a>, <a href="https://github.com/Igmat/baset">BaseT</a>, <a href="https://github.com/facebook/jest">Jest</a>, <a href="https://github.com/pouchdb/pouchdb">PouchDB</a>, <a href="https://github.com/facebook/react">React</a> and <a href="https://github.com/storybooks/storybook">Storybook</a>.</p>
-    <p>You can view the release groups and also submit changes and additions to the <a href="https://github.com/greenkeeperio/monorepo-definitions">monorepo release definitions module</a> on GitHub.</p>
-    <p><strong>Note that we only support monorepo releases in which all modules contained in a single release have the same version number</strong>, this is what Lerna calls <a href="https://github.com/lerna/lerna#fixedlocked-mode-default">Fixed or Locked Mode</a>, which is their default.</p>
-    <a href="#top">Back to top</a>
+    <h2><a href="#monorepo-dependencies" id="monorepo-dependencies">Greenkeeper mit Monorepo-Dependencies verwenden</a></h2>
+    <p>Greenkeeper wird Versionsaktualisierungen von Modulen aus populären Dependencies, die selber die Monorepos sind, in Pull Requests und Issues gruppieren. Dies sind zum Beispiel <a href="https://github.com/angular/angular">Angular</a>, <a href="https://github.com/babel/babel">Babel</a>, <a href="https://github.com/Igmat/baset">BaseT</a>, <a href="https://github.com/facebook/jest">Jest</a>, <a href="https://github.com/pouchdb/pouchdb">PouchDB</a>, <a href="https://github.com/facebook/react">React</a> und <a href="https://github.com/storybooks/storybook">Storybook</a>.</p>
+    <p>Sie können die existierenden Gruppierungen in dem <a href="https://github.com/greenkeeperio/monorepo-definitions">monorepo release definitions-Modul</a> einsehen. Dort können Sie auch neue Gruppierungen hinzufügen oder die bestehenden verändern.</p>
+    <p><strong>Wir unterstützen nur Monorepo-Releases, bei denen alle beinhalteten Module in einem Release die gleiche Versionsnummer haben.</strong>. Bei Lerna ist dies der Normfall und wird <a href="https://github.com/lerna/lerna#fixedlocked-mode-default">Fixed or Locked Mode</a> genannt.</p>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#ignoring-dependencies" id="ignoring-dependencies">Ignoring certain dependency’s updates</a></h2>
-    <p>You may have good reasons for not wanting to update to a certain dependency right now. In this case, you can change the dependency’s version string in a <code>package.json</code> file back to whatever you prefer.</p>
-    <p>To make sure Greenkeeper doesn’t nag you again on the next update, add a <code>greenkeeper.ignore</code> field to your <code>package.json</code>, containing a list of dependencies you don’t want to update.</p>
+    <h2><a href="#ignoring-dependencies" id="ignoring-dependencies">Einzelne Dependency Updates ignorieren</a></h2>
+    <p>Es könnte sein, dass Sie gute Gründe dafür haben, warum eine bestimmte Dependency nicht geupdated werden soll. Sie bekommen keine Aktualisierungen für Module die Sie in das <code>`greenkeeper.ignore</code> Feld schreiben:</p>
     <p>
       <pre>
         <code>// package.json
@@ -250,12 +251,12 @@
 }</code>
     </pre>
     </p>
-    <p>You can also configure ignored dependencies in a separate <code>greenkeeper.json</code> file, see the <a href="#monorepo">monorepo documentation</a> for details. Nested ignore configurations (config file, group config, individual package file) will all be applied, but we recommend keeping global, repository-wide ignores in the <code>greenkeeper.json</code> instead of a root <code>package.json</code>.</p>
-    <a href="#top">Back to top</a>
+    <p>Sie können auch ignorierte Dependencies in einer separaten <code>greenkeeper.json</code>-Datei konfigurieren, wie es in der <a href="#monorepo">Monorepo-Dokumentation</a> beschrieben ist.</p>
+    <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#custom-commit-messages" id="custom-commit-messages">Setting up custom commit messages</a></h2>
-    <p>You can customise all of Greenkeeper’s commit messages by adding a <code>greenkeeper.commitMessages</code> key to your <code>package.json</code>. This is useful if you’d like Greenkeeper to adhere to a specific message style, eg. some projects prefer a change to dev dependencies to be a "Chore", for others it’s a "Fix".</p>
-    <p>These are all the commit strings and the variables you can use within them. And yes, there’s emoji support!</p>
+    <h2><a href="#custom-commit-messages" id="custom-commit-messages">Benutzerdefinierte Commit Messages einstellen</a></h2>
+    <p>Greenkeepers Commit-Nachrichten können konfiguriert werden, indem Sie ein <code>greenkeeper.commitMessages</code>-Feld in ihre <code>package.json</code> hinzufügen. Das ist nützlich, wenn ihr Projekt spezifische Commit-Regeln hat, und Sie sichergehen wollen, dass Greenkeeper diesen auch folgt.</p>
+    <p>Im Folgenden sind alle unterstützten Commit-Strings aufgelistet, sowie alle Variablen, die darin benutzt werden können. Und ja, es gibt Emoji-Unterstützung!</p>
     <p>
       <pre>
         <code>// package.json
@@ -275,7 +276,7 @@
 }</code>
     </pre>
     </p>
-    <a href="#top">Back to top</a>
+    <a href="#top">Zum Seitenanfang</a>
 
   </div>
 </div>
