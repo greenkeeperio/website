@@ -23,8 +23,8 @@
     <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">What Greenkeeper does, and why</a></h2>
     <p><strong>In short, Greenkeeper makes sure that you know when your project’s dependency updates break your code.</strong></p>
     <p>Greenkeeper sits between npm and GitHub, observing all of the modules your repository depends on. Each time one of them is updated, Greenkeeper opens a new branch with that update. The repository’s CI tests kick in, and Greenkeeper watches them to see whether they pass or not.</p>
-    <p>Based on the test results and your current version definitions Greenkeeper will open up clear, actionable issues for you. If an update doesn’t break your code, nothing will happen, because everything is fine and no human intervention is required. If things do break, you’ll be informed immediately: you’ll know exactly which update to which dependecy caused the problem, and you’ll be nicely set up to fix the problem.</p>
-    <p><strong>Doesn’t semver take care of this?</strong> Not reliably, no. Versioning decisions are still often made by humans, and <a href="http://sentimentalversioning.org/">humans often version irrationally</a>. Humans are also fallible, and sometimes miscategorize a commit. Somebody else’s <code>chore</code> may break your code, because you’re using theirs in a way they haven’t forseen. The only way to be sure is to run your tests on each and every update. And if Greenkeeper weren’t around, this would be extremely tedious, which is why basically nobody makes the effort to continually stay up to date.</p>
+    <p>Based on the test results and your current version definitions Greenkeeper will open up clear, actionable issues for you. If an update doesn’t break your code, nothing will happen, because everything is fine and no human intervention is required. If things do break, you’ll be informed immediately: you’ll know exactly which update to which dependency caused the problem, and you’ll be nicely set up to fix the problem.</p>
+    <p><strong>Doesn’t semver take care of this?</strong> Not reliably, no. Versioning decisions are still often made by humans, and <a href="http://sentimentalversioning.org/">humans often version irrationally</a>. Humans are also fallible, and sometimes mis-categorize a commit. Somebody elses <code>chore</code> may break your code, because you’re using theirs in a way they haven’t forseen. The only way to be sure is to run your tests on each and every update. And if Greenkeeper weren’t around, this would be extremely tedious, which is why basically nobody makes the effort to continually stay up to date.</p>
     <a href="#top">Back to top</a>
 
     <h2><a href="#differences-between-plans" id="differences-between-plans">Differences between plans</a></h2>
@@ -44,7 +44,7 @@
     <a href="#top">Back to top</a>
 
     <h2><a href="#installation" id="installation">Installation</a></h2>
-    <p>Setting up Greenkeeper to watch one of your repositories requries three steps:</p>
+    <p>Setting up Greenkeeper to watch one of your repositories requires three steps:</p>
     <ol>
       <li>
         <strong class="signal">Install Greenkeeper</strong>
@@ -86,7 +86,7 @@
       <figcaption>The repository list in the Greenkeeper Account Dashboard</figcaption>
     </figure>
     <p>A repo is marked red if the Initial Pull Request doesn’t exist (yet). This could be because one or more of the <a href="#prerequisites">prerequisites</a> isn’t met, because your CI is still running and the Initial Pull Request simply isn’t ready yet, or occasionally, because some information got lost between your CI service, GitHub and Greenkeeper. If you’re sure all prerequisites are fulfilled and your CI completed its run on the Greenkeeper branch, but no Initial Pull Request appeared, you can <a href="#resetting-repos">try resetting the offending repo</a>.</p>
-    <p>It is however entirely possible that you’re using npm in a way we’ve never seen before, or have your CI configured in an interesting way, or some other aspect of your setup works in a way that’s new to Greenkeeper. If you suspect this may be the case, we’d be very grateful if you could <a href="mailto:support@greenkeeper.io">let us know</a>, and we’ll try to accomodate you.</p>
+    <p>It is however entirely possible that you’re using npm in a way we’ve never seen before, or have your CI configured in an interesting way, or some other aspect of your setup works in a way that’s new to Greenkeeper. If you suspect this may be the case, we’d be very grateful if you could <a href="mailto:support@greenkeeper.io">let us know</a>, and we’ll try to accommodate you.</p>
     <a href="#top">Back to top</a>
 
     <h2><a href="#greenkeeper-step-by-step" id="greenkeeper-step-by-step">How Greenkeeper works, step by step</a></h2>
@@ -150,7 +150,7 @@
     <a href="#top">Back to top</a>
 
     <h2><a href="#resetting-repos" id="resetting-repos">Resetting a repository</a></h2>
-    <p>Sometimes, the Initital Pull Request will never be opened. This can have many reasons: you may have forgotten to allow your CI to work on Greenkeeper branches, or issues may be disabled on the target repo, the CI service may have timed out… in any case, you may want to start over. Here’s how:</p>
+    <p>Sometimes, the Initial Pull Request will never be opened. This can have many reasons: you may have forgotten to allow your CI to work on Greenkeeper branches, or issues may be disabled on the target repo, the CI service may have timed out… in any case, you may want to start over. Here’s how:</p>
     <ol>
       <li>
         <p>If it exists, delete the <code>greenkeeper/initial</code> branch on the repo.</p>
@@ -253,7 +253,7 @@
     <a href="#top">Back to top</a>
 
     <h2><a href="#custom-commit-messages" id="custom-commit-messages">Setting up custom commit messages</a></h2>
-    <p>You can customise all of Greenkeeper’s commit messages by adding a <code>greenkeeper.commitMessages</code> key to your <code>package.json</code>. This is useful if you’d like Greenkeeper to adhere to a specific message style, eg. some projects prefer a change to dev dependencies to be a "Chore", for others it’s a "Fix".</p>
+    <p>You can customize all of Greenkeeper’s commit messages by adding a <code>greenkeeper.commitMessages</code> key to your <code>package.json</code>. This is useful if you’d like Greenkeeper to adhere to a specific message style, eg. some projects prefer a change to dev dependencies to be a "Chore", for others it’s a "Fix".</p>
     <p>These are all the commit strings and the variables you can use within them. And yes, there’s emoji support!</p>
     <p>
       <pre>
