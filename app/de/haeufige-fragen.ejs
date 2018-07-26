@@ -4,10 +4,10 @@
     <p>Willkommen bei den Greenkeeper-FAQ. Da Sie hier sind, nehmen wir an, dass sie Probleme bei der Einrichtung oder Benutzung von Greenkeeper haben. Dafür entschuldigen wir uns. Falls Sie nicht das finden, wonach Sie suchen, haben wir auch eine <a href="/de/dokumentation">Dokumentationsseite</a>. Zögern Sie nicht, uns jederzeit direkt zu <a href="mailto:support@greenkeeper.io">kontaktieren.</a></p>
     <div class='sidebar'>
       <ul class="compact-list">
-        <li><a href="#no-initial-pr">Greenkeeper öffnet keinen initial-Pull-Request</a></li>
+        <li><a href="#no-initial-pr">Greenkeeper öffnet den initial-Pull-Request nicht</a></li>
         <li><a href="#renamed-repo">Ich kann kein Repo aktivieren, dass ich umbenannt habe</a></li>
         <li><a href="#branch-deletions">Greenkeeper erstellt Branches und löscht sie gleich wieder</a></li>
-        <li><a href="#pinning-versions">Ich möchte Pull Requests für jedes Dependency-Update kriegen</a></li>
+        <li><a href="#pinning-versions">Ich möchte Pull Requests für jedes einzelne Dependency-Update kriegen</a></li>
         <li><a href="#downgrading">Ich habe eine Dependency heruntergesetzt, um zu sehen ob Greenkeeper funktioniert, aber nichts passiert</a></li>
         <li><a href="#corrupted-branch">Ich habe einen kaputten Pull Request (beschädigter Branch) erhalten, und kann nun nicht mehr git pull ausführen</a></li>
         <li><a href="#required-verify">Manche Pull Requests stecken wegen greenkeeper/verify bei “Some checks haven’t completed yet” fest</a></li>
@@ -17,10 +17,10 @@
         <li><a href="#free-trial">Ich habe nur private Repositories, kann ich Greenkeeper trotzdem kostenlos ausprobieren?</a></li>
       </ul>
     </div>
-    <h2><a href="#no-initial-pr" id="no-initial-pr">Greenkeeper öffnet keinen initial-Pull-Request</a></h2>
-    <p><strong>Wichtig:</strong> Die Erstellung eines initial-Pull-Requests kann bis zu 30 Minuten dauern. Normalerweise geht es viel schneller, hängt aber von der Komplexität ihrer Tests und der Verfügbarkeit ihres CI-Dienstes ab. Falls nach 30 Minuten nichts passiert, ist wahrscheinlich irgendetwas falsch gelaufen.</p>
-    <p><strong>Basic troubleshooting:</strong> Stellen Sie sicher, dass Sie die <a href="/de/dokumentation#installation">Installation</a> korrekt durchgeführt haben. Lesen Sie bitte die Voraussetzungen, die Greenkeeper an jede Repository stellt. Falls eine oder mehrere fehlen und sie diese behoben haben, überprüfen sie bitte, ob es jetzt funktioniert.</p>
-    <p><strong>Hier sind alle bekannten Gründe und deren Behebungen aufgelistet:</strong></p>
+    <h2><a href="#no-initial-pr" id="no-initial-pr">Greenkeeper öffnet den initial-Pull-Request nicht</a></h2>
+    <p><strong>Wichtig:</strong> Die Erstellung eines initialen Pull-Requests kann bis zu 30 Minuten dauern. Normalerweise geht es viel schneller, hängt aber von der Komplexität ihrer Tests und der Verfügbarkeit ihres CI-Dienstes ab. Falls nach 30 Minuten nichts passiert, ist wahrscheinlich irgendetwas falsch gelaufen.</p>
+    <p><strong>Fehlerbehebung:</strong> Stellen Sie sicher, dass Sie die <a href="/de/dokumentation#installation">Installation</a> korrekt durchgeführt haben. Lesen Sie bitte die Voraussetzungen, die Greenkeeper an jede Repository stellt. Falls eine oder mehrere fehlen und sie diese behoben haben, überprüfen sie bitte, ob es jetzt funktioniert.</p>
+    <p><strong>Hier sind alle bekannten Fehler und deren Lösungen aufgelistet:</strong></p>
     <ul>
       <li>Es ist <strong>kein CI</strong> konfiguriert. Setzen Sie eine CI-Integration in ihrem Repository auf und <a href="/de/dokumentation#resetting-repos">setzen Sie Greenkeeper auf diesem Repo zurück.</a></li>
       <li>Sie benutzen einen CI-Service, der nicht den Branch-Status aktualisiert. In diesem Fall kann Greenkeeper nicht funktionieren.</li>
@@ -35,11 +35,11 @@
 
     <h2><a id="github-activity"></a><!-- <- that’s a legacy anchor --><a href="#branch-deletions" id="branch-deletions">Greenkeeper erstellt Branches und löscht sie gleich wieder</a></h2>
     <p>Das soll so sein. Greenkeeper erstellt diese Branches, damit die CI-Tests darauf laufen können, die prüfen ob Ihr Code nach dem Update weiterhin funktioniert. Falls dem so ist, gibt es keinen Grund den Branch weiter existieren zu lassen.</p>
-    <p>Pull Requests werden nur von Greenkeeper geöffnet, wenn ein in-range Dependency-Update den CI-Build bricht, oder wenn ein Dependency-Update außerhalb der spezifizierten Range ist. Für mehr Informationen darüber haben wir eine <a href="/de/dokumentation#greenkeeper-step-by-step">Schritt-für-Schritt-Anleitung</a>.</p>
+    <p>Pull Requests werden von Greenkeeper nur dann geöffnet, wenn ein in-range Dependency-Update den CI-Build bricht, oder wenn ein Dependency-Update außerhalb der spezifizierten Range ist. Für mehr Informationen darüber haben wir eine <a href="/de/dokumentation#greenkeeper-step-by-step">Schritt-für-Schritt-Anleitung</a>.</p>
     <a href="#top">Zum Seitenanfang</a>
 
-    <h2><a href="#pinning-versions" id="pinning-versions">Ich möchte Pull Requests für jedes Dependency-Update kriegen</a></h2>
-    <p>Wenn Dependencies gepinnt werden, wird Greenkeeper für jedes Update einen Pull Request oder eine Issue stellen. Versionen pinnen funktioniert, indem man die Versionsnummer in der package.json ohne Vorzeichen (wie z.B. das Caret-Zeichen <code>^</code>) angibt:</p>
+    <h2><a href="#pinning-versions" id="pinning-versions">Ich möchte Pull Requests für jedes einzelne Dependency-Update kriegen</a></h2>
+    <p>Wenn Dependencies gepinnt werden, wird Greenkeeper für jedes Update einen Pull Request oder eine Issue öffnen. Falls es für eine Dependency schon einen offenen PR oder eine offene Issue gibt, wird Greenkeeper dort kommentieren. Versionen pinnen funktioniert, indem man die Versionsnummer in der package.json ohne Vorzeichen (wie z.B. das Caret-Zeichen <code>^</code>) angibt:</p>
     <p>
       <pre>
         <code>{
@@ -53,11 +53,11 @@
       <a href="#top">Zum Seitenanfang</a>
 
     <h2><a href="#downgrading" id="downgrading">Ich habe eine Dependency heruntergesetzt, um zu sehen ob Greenkeeper funktioniert, aber nichts passiert</a></h2>
-    <p><strong>Das ist absichtlich so: </strong>In dem Initial Pull Request updated Greenkeeper alle Dependencies zur neuesten Version. Sie stellen sicher, dass alle Tests durchlaufen und mergen dann den Pull Request. Wenn irgendeine Dependency danach eine neue Version veröffentlicht, wird Greenkeeper die Tests gegen dieses Update laufen lassen.</p>
-    <p>Wenn Sie eine Dependency <em>heruntersetzen</em>, zum Beispiel von ^1.5.0 (neueste) auf ^1.2.0, passiert nichts: wenn der CI-Dienst läuft, wird trotzdem die Version 1.5.0 installiert. Das gleiche passiert, wenn Ihre BenutzerInnen <code>npm install</code> in Ihrem Paket ausführen. Es bringt also gar nichts, wenn Greenkeeper in diesen Situationen irgendetwas machen würde: das Endergebnis wäre dasselbe.</p>
+    <p><strong>Das ist absichtlich so: </strong>In dem initialen Pull Request aktualisiert Greenkeeper alle Dependencies auf die neuesten Versionen. Sie stellen sicher, dass alle Tests durchlaufen und mergen dann den Pull Request. Wenn irgendeine Dependency danach eine neue Version veröffentlicht, wird Greenkeeper die Tests gegen dieses Update laufen lassen.</p>
+    <p>Wenn Sie eine Dependency <em>heruntersetzen</em>, zum Beispiel von <code>^1.5.0</code> (neueste) auf <code>^1.2.0</code>, passiert nichts: wenn der CI-Dienst läuft, wird trotzdem die Version <code>1.5.0</code> installiert. Das gleiche passiert, wenn Ihre BenutzerInnen <code>npm install</code> in Ihrem Paket ausführen. Es bringt also gar nichts, wenn Greenkeeper in diesen Situationen irgendetwas machen würde: das Endergebnis wäre dasselbe.</p>
     <p>Sie wissen dass Greenkeeper funktioniert, wenn eine Dependency eine neue Version erhält und die Tests laufen. Alles, worum sich Greenkeeper eigentlich kümmert, ist dass die Tests für Ihren Code mit den neuesten Versionen der Dependencies durchlaufen, und nicht, ob alle Dependencies explizit auf die neuesten Versionen <em>gesetzt sind</em>.</p>
     <p>Wenn Sie explizit auf jedes einzelne Update für eine Dependency hingewiesen werden wollen, können Sie diese <a href="#pinning-versions">pinnen</a>.</p>
-    <p>Wenn Sie eine Version zu einem Pin heruntersetzen, sagen wir mal von <code>^1.5.0</code> zu <code>1.2.0</code> (hier fehlt das Caret-Zeichen (^), die Version ist also gepinnt), wird Greenkeeper auch nicht intervenieren und die Version wieder hochsetzen. Es wird Sie jedoch trotzdem wissen lassen, wenn es eine neue Version dieser Dependency gibt.</p>
+    <p>Wenn Sie eine Version zu einem Pin heruntersetzen, sagen wir mal von <code>^1.5.0</code> zu <code>1.2.0</code> (hier fehlt das Caret-Zeichen <code>^</code>, die Version ist also gepinnt), wird Greenkeeper auch nicht intervenieren und die Version wieder hochsetzen. Es wird Sie jedoch trotzdem wissen lassen, wenn es eine neue Version dieser Dependency gibt.</p>
     <a href="#top">Zum Seitenanfang</a>
 
     <h2><a href="#corrupted-branch" id="corrupted-branch">Ich habe einen kaputten Pull Request (beschädigter Branch) erhalten, und kann nun nicht mehr git pull ausführen</a></h2>
@@ -86,13 +86,13 @@
     <p>Ja, bei beiden Greenkeeper-Versionen:</p>
     <ul>
       <li>Auf <strong>greenkeeper.io</strong> können sie im <a href="https://account.greenkeeper.io">Account Dashboard</a> einstellen, ob Sie monatlich oder jährlich bezahlen möchten.</li>
-      <li>Auf <strong>GitHub Marketplace</strong> wird Greenkeeper automatisch über Ihre GitHub-Rechnung abgerechnet.</li>
+      <li>Auf <strong>GitHub Marketplace</strong> wird Greenkeeper automatisch über Ihre GitHub-Rechnung abgerechnet. Wenn Sie für GitHub jährlich bezahlen, dann auch für Greenkeeper.</li>
     </ul>
     <a href="#top">Zum Seitenanfang</a>
 
     <h2><a href="#free-trial" id="free-trial">Ich habe nur private Repositories, kann ich Greenkeeper trotzdem kostenlos ausprobieren?</a></h2>
     <p><strong>Ja</strong>, in der <a href="https://github.com/marketplace/greenkeeper">GitHub Marketplace-Version</a> von Greenkeeper wird die Bezahlung gänzlich von GitHub abgewickelt. Dort bieten wir eine 14-tägige kostenlose Testversion für alle Pläne an.</p>
-    <p>Wurde Greenkeeper direkt als <a href="https://github.com/apps/greenkeeper">GitHub App</a> installiert (wenn also die Zahlung über Stripe abgewickelt wird) ist keine Testversion verfügbar. Wir bieten jedoch eine komplette Rückerstattung des gezahlten Preises an, falls Sie nach einem Monat nicht mit Greenkeeper zufrieden sind.
+    <p>Wurde Greenkeeper direkt als <a href="https://github.com/apps/greenkeeper">GitHub App</a> installiert (wenn also die Zahlung über Stripe abgewickelt wird) ist keine Testversion verfügbar. Wir bieten jedoch eine komplette Rückerstattung des gezahlten Preises an, falls Sie nach einem Monat feststellen, dass Sie mit Greenkeeper nicht zufrieden sind.
     </p>
     <a href="#top">Zum Seitenanfang</a>
   </div>
