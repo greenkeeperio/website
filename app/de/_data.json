@@ -53,6 +53,12 @@
     "locale": "de",
     "otherLanguageURL": "/docs"
   },
+  "ueber-uns": {
+    "pageTitle": "Über uns",
+    "bodyClass": "about gk-saas",
+    "locale": "de",
+    "otherLanguageURL": "/about"
+  },
   "styleguide": {
     "pageTitle": "Style Guide",
     "bodyClass": "styleguide gk-saas",
