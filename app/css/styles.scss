@@ -1637,8 +1637,15 @@ a.cta {
     margin-left: 0.5rem;
     margin-right: 1.5em;
   }
+  &.two-column li {
+    width: 40%;
+  }
   @media screen and (min-width: 1224px) {
     justify-content: flex-start;
+
+    &.two-column {
+      justify-content: center;
+    }
   }
 }
 
