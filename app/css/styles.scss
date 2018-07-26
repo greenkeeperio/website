@@ -143,7 +143,7 @@ $fonts: "futura-pt", Futura, sans-serif;
       position: absolute;
       top: 5.9rem;
       margin-left: 1rem;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       transform: rotateZ(-5deg);
       background: #00c775;
       color: #fff;
@@ -153,14 +153,14 @@ $fonts: "futura-pt", Futura, sans-serif;
       padding: 0.2em 0em;
       text-transform: uppercase;
       border: 3px dotted #fff;
-      @media screen and (min-width: 400px) {
+      @media screen and (min-width: 450px) {
         top: 2.5rem;
-        margin-left: 6rem;
+        margin-left: 7.5rem;
         transform: rotateZ(7deg);
         border-radius: 50%;
-        width: 5em;
-        height: 5em;
-        padding: 1em 0em;
+        width: 5.5em;
+        height: 5.5em;
+        padding: 1.25em 0.25em;
       }
       @media screen and (min-width: $column-width) {
         top: 4rem;
