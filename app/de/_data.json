@@ -1,0 +1,68 @@
+{
+  "index": {
+    "pageTitle": "Automate your npm dependency management",
+    "bodyClass": "index gk-saas",
+    "locale": "de",
+    "otherLanguageURL": "/"
+  },
+  "haeufige-fragen": {
+    "pageTitle": "Häufig gestellte Fragen",
+    "bodyClass": "faq gk-saas sidebar-nav",
+    "locale": "de",
+    "otherLanguageURL": "/faq"
+  },
+  "impressum": {
+    "pageTitle": "Impressum",
+    "bodyClass": "impressum gk-saas",
+    "locale": "de",
+    "otherLanguageURL": "/impressum"
+  },
+  "nutzungsbedingungen": {
+    "pageTitle": "Nutzungsbedingungen",
+    "bodyClass": "terms-of-service gk-saas",
+    "locale": "de",
+    "otherLanguageURL": "/terms-of-service"
+  },
+  "datenschutzerklaerung": {
+    "pageTitle": "Datenschutzerklärung",
+    "bodyClass": "privacy-policy gk-saas",
+    "locale": "de",
+    "otherLanguageURL": "/privacy-policy"
+  },
+  "verify": {
+    "pageTitle": "Verify",
+    "bodyClass": "verify gk-saas",
+    "locale": "de",
+    "otherLanguageURL": "/privacy-policy"
+  },
+  "enterprise-setup": {
+    "pageTitle": "Enterprise Setup",
+    "bodyClass": "enterprise-setup gk-enterprise",
+    "locale": "de",
+    "otherLanguageURL": "/enterprise-setup"
+  },
+  "enterprise": {
+    "pageTitle": "Greenkeeper Enterprise",
+    "bodyClass": "index enterprise gk-enterprise",
+    "locale": "de",
+    "otherLanguageURL": "/enterprise"
+  },
+  "dokumentation": {
+    "pageTitle": "Documentation",
+    "bodyClass": "docs gk-saas sidebar-nav",
+    "locale": "de",
+    "otherLanguageURL": "/docs"
+  },
+  "ueber-uns": {
+    "pageTitle": "Über uns",
+    "bodyClass": "about gk-saas",
+    "locale": "de",
+    "otherLanguageURL": "/about"
+  },
+  "styleguide": {
+    "pageTitle": "Style Guide",
+    "bodyClass": "styleguide gk-saas",
+    "locale": "de",
+    "otherLanguageURL": "/styleguide"
+  }
+}

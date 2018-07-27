@@ -1,0 +1,152 @@
+<div class="container">
+  <div class="main" role="main">
+    <h2>Setting up <span class="signal">Greenkeeper Enterprise</span></h2>
+    <p>These are the full instructions for installing and authorising Greenkeeper Enterprise (GKE) on your own hardware. </p>
+    <h3><a href="#whats_going_to_happen" id="whats_going_to_happen">What’s going to happen?</a></h3>
+    <p>GKE is installed via a tool called <a href="https://replicated.com">Replicated</a>, which requires some information from and setup in your GitHub Enterprise instance. Once the GitHub setup is complete, Replicated can do its job of downloading and installing GKE.</p>
+    <p>This entire installation process will probably take about <strong>15-30 minutes</strong> if everything goes smoothly.</p>
+    <p><strong>If you run into trouble</strong> or have any suggestions, <a href="mailto:enterprise@greenkeeper.io">please get in touch</a> and we’ll help you as quickly as we can.</p>
+    <h3><a href="#prerequisites" id="prerequisites">Prerequisites</a></h3>
+    <p>Please make sure you’ve got all of the following on hand before you start installing GKE.</p>
+    <ul>
+      <li>Your Greenkeeper Enterprise license file (<code>.rli</code>)</li>
+      <li>A Linux server with a minimum of 2 cores and 4GB memory, running an operating system from <a href="https://www.replicated.com/docs/distributing-an-application/supported-operating-systems/">this list</a></li>
+      <li>server ports <code>80</code>, <code>443</code>, and <code>8800</code> accessible from your local machine</li>
+    </ul>
+
+    <h3><a href="#step_1_register_a_github_oauth_application" id="step_1_register_a_github_oauth_application"><span class="signal">Step 1:</span> Register a GitHub OAuth Application</a></h3>
+    <p>Greenkeeper Enterprise talks to GitHub Enterprise via OAuth. You will need to create an OAuth app on your GitHub Enterprise that Greenkeeper Enterprise can connect to. To do this, open your user’s <strong>settings page</strong> on your GitHub Enterprise instance, and find the <strong>OAuth applications</strong> page, under <strong>Developer settings</strong>. Here, click the <strong>Register a new application</strong> button at the top of the page.</p>
+    <p>
+    You’ll need to know the URL where your instance of Greenkeeper Enterprise will be running, but this only needs to be accessible from the machine your GitHub Enterprise instance is running on, it doesn’t have to be a public URL reachable from the internet. Let’s use <code>http://gke.your-company.com</code> as an example. Use it to fill the following fields like so:</p>
+    <ul>
+      <li><strong>Homepage URL:</strong><code>http://gke.your-company.com</code></li>
+      <li><strong>Authorization callback URL:</strong> Append <code>/login</code> to the Hompage URL for this one: <code>http://gke.your-company.com/login</code></li>
+    </ul>
+    <figure class="wide-img">
+      <img
+        src="/images/gke_setup_oauth_app.png"
+        alt="">
+      <figcaption>Your GitHub OAuth application should look something like this</figcaption>
+    </figure>
+    <p>Make a note of the <strong>Client ID</strong> and the <strong>Client secret</strong> keys that are displayed once you‘ve set up the OAuth application, you’ll need them in step 3.</p>
+
+    <h3><a href="#step_2_create_a_greenkeeper_bot_user_and_access_token" id="step_2_create_a_greenkeeper_bot_user_and_access_token"><span class="signal">Step 2:</span> Create a Greenkeeper Bot User and access token</a></h3>
+    <p>Greenkeeper will have its own bot user on your GitHub Enterprise instance, which will open issues and pull requests and be the primary interface for your developers. You’ll need to sign up a new user on your GitHub Enterprise instance, with an explanatory name like <code>your-company-greenkeeper-bot</code>, for example. Here’s an icon you can use as the bot’s profile image:</p>
+    <img class="gke-bot-user-avatar" src="/images/gke_user_icon.png" alt="">
+    <p>Next, you’ll need a personal access token for this bot user. To set this up, go to the <strong>Personal access tokens</strong> page, under <strong>Developer settings</strong>, on the bot user’s <strong>settings page</strong> on your GitHub Enterprise instance. Click the <strong>Generate new token</strong> button at the top of the page, and then generate a personal access token with the <strong>repo</strong> scope.</p>
+    <figure class="wide-img">
+      <img
+        src="/images/gke_setup_bot_user.png"
+        alt="">
+      <figcaption>Setting up the personal access token for the GKE bot user</figcaption>
+    </figure>
+    <p>You’ll receive a personal access token, which you must copy now, you’ll never be able to see this again (but you can generate a new one whenever you like).</p>
+    <p>Finally, your Greenkeeper bot must have access to all repositories and organizations that should work with Greenkeeper Enterprise. You can make this happen by inviting the bot as a collaborator, just like you would any other user.</p>
+    <strong>You should now have:</strong>
+    <ul>
+      <li>A new user that’s identifiable as your company’s Greenkeeper Enterprise bot</li>
+      <li>A personal access token for that bot user</li>
+      <li>Invited the bot user to all organisations and repos you want Greenkeeper to work on (optional, you can do this later)</li>
+    </ul>
+    <p>With that sorted, we can install Greenkeeper Enterprise itself!</p>
+
+    <h3><a href="#step_3_install_and_configure_greenkeeper_enterprise_through_the_replicated_app_manager" id="step_3_install_and_configure_greenkeeper_enterprise_through_the_replicated_app_manager"><span class="signal">Step 3:</span> Install and Configure Greenkeeper Enterprise through the Replicated App Manager</a></h3>
+    <p>We’ll be using Replicated 2.0. Here’s the simplest installation option, via <code>curl</code>:</p>
+    <pre>curl -sSL -o install.sh https://get.replicated.com/docker</pre><br/>
+    <pre>sudo bash ./install.sh</pre>
+    <p><strong>Note: </strong>If you require a different installation method (airgapped, for example), or if anything goes wrong, please refer to <a href="https://www.replicated.com/docs/distributing-an-application/installing/">Replicated’s installation docs</a>.</p>
+    <p>This will install the management application, which takes care of downloading and installing Greenkeeper Enterprise, as well as providing a simple web interface for setting up the platform, and for viewing runtime metrics. You may be prompted to enter the IP address of the current machine, since the installer may not be able to determine it. Once the script has run, you can navigate to <code>https://[server]:8800</code> to complete the setup. This page has a self-signed certificate which your browser will likely complain about. Ignore this warning, you can fix it
+    in the first step of the installer.</p>
+    <h3><a href="#step_3.1_ssl_setup_for_the_admin_console" id="step_3.1_ssl_setup_for_the_admin_console"><span class="signal">Step 3.1:</span> SSL Setup for the Admin Console</a></h3>
+    <p>You have the option of providing an SSL certificate so you won’t get an invalid cert warning every time you open the management console.</p>
+    <figure class="wide-img no-border">
+      <img
+        src="/images/gke_setup_ssl.png"
+        alt="">
+
+    </figure>
+    <h3><a href="#step_3.2_upload_your_license_file" id="step_3.2_upload_your_license_file"><span class="signal">Step 3.2:</span> Upload your license file</a></h3>
+    <p>Upload your Greenkeeper Enterprise license file (<code>.rli</code>)</p>
+    <figure class="wide-img no-border">
+      <img
+        src="/images/gke_license_upload.png"
+        alt="">
+
+    </figure>
+    <h3><a href="#step_3.3_secure_the_admin_console" id="step_3.3_secure_the_admin_console"><span class="signal">Step 3.3:</span> Secure the Admin Console</a></h3>
+    <p>Set a username and password for the admin user.</p>
+    <figure class="wide-img no-border">
+      <img
+        src="/images/gke_admin_password.png"
+        alt="">
+
+    </figure>
+    <h3><a href="#step_3.4_connect_with_github_enterprise" id="step_3.4_connect_with_github_enterprise"><span class="signal">Step 3.4:</span> Connect with GitHub Enterprise</a></h3>
+    <p>Now we connect Greenkeeper Enterprise with your GitHub Enterprise instance:</p>
+    <figure class="wide-img no-border">
+      <img
+        src="/images/gke_setup_general_couchdb.png"
+        alt="">
+    </figure>
+    <ul>
+      <li>The <strong>base domain</strong> is used to expose all Greenkeeper Enterprise services. You <strong>must</strong> set up two DNS records (<code>gke.your-company.com</code> and <code>*.gke.your-company.com</code>) that point to the server. For testing you can also use <code>http://xip.io</code>: Just set the <strong>base domain name</strong> to <code>1.2.3.4.xip.io</code> (where <code>1.2.3.4</code> is the IP address of your server). Optional: <a href="https://gist.github.com/janl/c600583209452c6aac87fed8c774503a">Letsencrypt instructions</a>.
+      </li>
+      <li>The <strong>webhooks secret</strong> should be pre-filled</li>
+      <li>The <strong>GitHub token</strong> is the <strong>personal access token</strong> you set up for your bot user in step 2.</li>
+    </ul>
+    <p>Optionally, you can choose to expose the CouchDB used by Greenkeeper Enterprise to store data.</p>
+
+    <h3><a href="#step_3.5_ssl_for_the_greenkeeper_services" id="step_3.5_ssl_for_the_greenkeeper_services"><span class="signal">Step 3.5:</span> SSL for the Greenkeeper Services</a></h3>
+    <p>Add your certificate and private key to the <code>/data/cert/</code> folder on the server/VM.</p>
+    <ul>
+      <li><code>/data/cert/gke.my-domain.crt</code></li>
+      <li><code>/data/cert/gke.my-domain.key</code></li>
+    </ul>
+    <p>Don’t forget to set the API Endpoint here, and the GitHub OAuth app’s authorizsation callback URL (all the way back in step 1) to <code>https</code>.</p>
+    <figure class="wide-img no-border">
+      <img
+        src="/images/gke_setup_api.png"
+        alt="">
+    </figure>
+
+    <h3><a href="#step_3.6_connect_with_your_npm_on-site_registry" id="step_3.6_connect_with_your_npm_on-site_registry"><span class="signal">Step 3.6:</span> Connect with your npm On-Site registry</a></h3>
+    <p>If you have access to your own On-Site npm registry, you can add that URL here. To obtain your <code>sharedFetchSecret</code> please ask the sysadmin that set up npm On-Site, or npm directly.</p>
+    <figure class="wide-img no-border">
+      <img
+        src="/images/gke_setup_npm.png"
+        alt="">
+    </figure>
+
+    <h3><a href="#step_3.7_github_integration" id="step_3.7_github_integration"><span class="signal">Step 3.7:</span> GitHub Integration</a></h3>
+    <p>Select which GitHub you’re using and enter the Client ID and Client secret from step 1.</p>
+    <figure class="wide-img no-border">
+      <img
+        src="/images/gke_setup_github.png"
+        alt="">
+    </figure>
+
+    <h3><a href="#step_4_configuring_your_local_greenkeeper_client" id="step_4_configuring_your_local_greenkeeper_client"><span class="signal">Step 4:</span> Configuring your local Greenkeeper Client</a></h3>
+    <ul>
+      <li>Install the Greenkeeper CLI with <code>npm install -g greenkeeper@4</code>. This will give you a <code>greenkeeper</code> command in your shell.</li>
+      <li>Tell Greenkeeper about your API endpoint with <code>greenkeeper config set api https://api.gke.yourcompany.com</code>.</li>
+      <li>Next, do <code>greenkeeper login</code>. This will open a browser window and authenticate your GitHub Enterprise user with Greenkeeper Enterprise.</li>
+    </ul>
+
+    <h3><a href="#step_5_enabling_your_first_repository" id="step_5_enabling_your_first_repository"><span class="signal">Step 5:</span> Enabling Your First Repository</a></h3>
+    <ul>
+      <li>Navigate to your package’s directory: <code>cd /path/to/your/git-repo</code></li>
+      <li>Run <code>greenkeeper enable</code> in that directory</li>
+      <li>Repeat for any other repos you’d like to enable</li>
+      <li>Done! 🌴</li>
+    </ul>
+
+    <h3><a href="#note_backups" id="note_backups"><span class="signal">Note:</span> Backups</a></h3>
+    <p>All important files that should be backed up are located in the <code>/data</code> folder.</p>
+
+    <h3><a href="#congratulations" id="congratulations"><span class="signal">Congratulations!</span> You’re done!</a></h3>
+    <p>You should be all set now. Remember that you have to invite your Greenkeeper bot user to the organisations and repositories you‘d like Greenkeeper to watch, otherwise nothing will happen.</p>
+    <p>Again, if you run into trouble or have any suggestions, <a href="mailto:enterprise@greenkeeper.io">please get in touch</a> and we’ll help you as quickly as we can.</p>
+    <p>We hope everything went well!</p>
+    <p>All the best from the <span class="signal">Greenkeeper team</span> 🌴</p>
+  </div>
+</div>

@@ -11,21 +11,22 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg?v=kPxB0q7250" color="#00c775">
   <link rel="shortcut icon" href="/favicon.ico?v=kPxB0q7250">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" type="text/css" href="css/styles.css?v=917263871">
+  <link rel="stylesheet" type="text/css" href="/css/cookieconsent.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/styles.css?v=917263871">
   <script src="https://use.typekit.net/pve4wdk.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body class="preloading <%- bodyClass %>">
-  <%- partial("partials/_header") %>
+  <%- partial(locale + "/partials/_header") %>
 
   <%- yield %>
 
-  <%- partial("partials/_footer") %>
+  <%- partial(locale + "/partials/_footer") %>
 
-  <script type="text/javascript" src="js/smoothscroll.min.js"></script>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/slick.min.js"></script>
-  <script type="text/javascript" src="js/magnifik.min.js"></script>
+  <script type="text/javascript" src="/js/smoothscroll.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/slick.min.js"></script>
+  <script type="text/javascript" src="/js/magnifik.min.js"></script>
   <script>
     var domReady = function(callback) {
         document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
@@ -40,7 +41,7 @@
       })
       const ratio = 760 / window.screen.width
       if (ratio > 1){
-        $('.wide-img img').magnifik({
+        $('.img img, .wide-img img').magnifik({
           ratio: ratio
         })
       }
@@ -54,13 +55,66 @@
         $('.menu-button, nav.header').removeClass('is-active')
         $('body').removeClass('no-scroll')
       })
+      $(document).on('click', '#billing-selector .toggle-switch', function(e) {
+        $('#billing-selector').toggleClass('active')
+        $('.plan').toggleClass('yearly')
+      })
+      $(document).on('click', '#billing-selector .toggle-option', function(e) {
+        event.preventDefault()
+        if ($(e.currentTarget).hasClass('toggle-option-active')) {
+          $('#billing-selector').addClass('active')
+          $('.plan').addClass('yearly')
+        } else {
+          $('#billing-selector').removeClass('active')
+          $('.plan').removeClass('yearly')
+        }
+        return false
+      })
+      window.addEventListener('popstate', function(e){
+        $('.active-hash').removeClass('active-hash')
+        $('[href="' + window.location.hash + '"]').addClass('active-hash')
+      })
+      if (window.location.hash) {
+        $('[href="' + window.location.hash + '"]').addClass('active-hash')
+      }
     })
   </script>
-  <script type="text/javascript">
-      window.cookieconsent_options = {"message":"This website uses cookies under","dismiss":"Got it!","learnMore":"these terms.","link":"https://greenkeeper.io/privacy-policy.html","theme":"dark-top"};
+  <script src="/js/cookieconsent.min.js"></script>
+  <script>
+   window.addEventListener("load", function(){
+     var message;
+     var link;
+     var dismiss;
+     if (window.location.pathname.split('/')[1] === 'de') {
+       message = "Diese Website benutzt Cookies unter"
+       link = "diesen Bedingungen."
+       dismiss = "Alles klar!"
+       href="/de/datenschutzerklaerung"
+     } else {
+       message = "This website uses cookies under"
+       link = "these terms."
+       dismiss = "Got it!"
+       href="/privacy-policy"
+     }
+     window.cookieconsent.initialise({
+       "palette": {
+         "popup": {
+           "background": "#333333",
+           "text": "#ffffff"
+         },
+         "button": {
+           "background": "transparent",
+           "text": "#00c775",
+           "border": "#00c775"
+         }
+       },
+       "content": {
+         "message": message,
+         "link": link,
+         "dismiss": dismiss,
+         "href": href
+       }
+     })});
   </script>
-
-  <script type="text/javascript" src="js/cookieconsent.min.js"></script>
-
 </body>
 </html>

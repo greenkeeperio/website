@@ -1,54 +1,68 @@
 {
   "index": {
     "pageTitle": "Automate your npm dependency management",
-    "bodyClass": "index gk-saas"
+    "bodyClass": "index gk-saas",
+    "locale": "en",
+    "otherLanguageURL": "/de/index.html"
   },
   "faq": {
     "pageTitle": "FAQ",
-    "bodyClass": "faq gk-saas"
+    "bodyClass": "faq gk-saas sidebar-nav",
+    "locale": "en",
+    "otherLanguageURL": "/de/haeufige-fragen.html"
   },
   "impressum": {
-    "pageTitle": "Impressum",
-    "bodyClass": "impressum gk-saas"
+    "pageTitle": "Legal Information",
+    "bodyClass": "impressum gk-saas",
+    "locale": "en",
+    "otherLanguageURL": "/de/impressum.html"
   },
   "terms-of-service": {
     "pageTitle": "Terms of Service",
-    "bodyClass": "terms-of-service gk-saas"
+    "bodyClass": "terms-of-service gk-saas",
+    "locale": "en",
+    "otherLanguageURL": "/de/nutzungsbedingungen.html"
   },
   "privacy-policy": {
     "pageTitle": "Privacy Policy",
-    "bodyClass": "privacy-policy gk-saas"
-  },
-  "thanks-for-confirming-your-payment": {
-    "pageTitle": "Thank you!",
-    "bodyClass": "thanks-for-confirming-your-payment gk-saas"
-  },
-  "thanks-for-signing-up": {
-    "pageTitle": "Thank you!",
-    "bodyClass": "thanks-for-signing-up gk-saas"
+    "bodyClass": "privacy-policy gk-saas",
+    "locale": "en",
+    "otherLanguageURL": "/de/privacy-policy.html"
   },
   "verify": {
     "pageTitle": "Verify",
-    "bodyClass": "verify gk-saas"
-  },
-  "manual-webhooks": {
-    "pageTitle": "Manual Webhooks",
-    "bodyClass": "manual-webhooks gk-saas"
+    "bodyClass": "verify gk-saas",
+    "locale": "en",
+    "otherLanguageURL": "/de/verify.html"
   },
   "enterprise-setup": {
     "pageTitle": "Enterprise Setup",
-    "bodyClass": "enterprise-setup gk-enterprise"
+    "bodyClass": "enterprise-setup gk-enterprise",
+    "locale": "en",
+    "otherLanguageURL": "/de/enterprise-setup.html"
   },
   "enterprise": {
     "pageTitle": "Greenkeeper Enterprise",
-    "bodyClass": "index enterprise gk-enterprise"
+    "bodyClass": "index enterprise gk-enterprise",
+    "locale": "en",
+    "otherLanguageURL": "/de/enterprise.html"
   },
   "docs": {
     "pageTitle": "Documentation",
-    "bodyClass": "docs gk-saas"
+    "bodyClass": "docs gk-saas sidebar-nav",
+    "locale": "en",
+    "otherLanguageURL": "/de/dokumentation.html"
+  },
+  "about": {
+    "pageTitle": "About Us",
+    "bodyClass": "about gk-saas",
+    "locale": "en",
+    "otherLanguageURL": "/de/ueber-uns.html"
   },
   "styleguide": {
     "pageTitle": "Style Guide",
-    "bodyClass": "styleguide gk-saas"
+    "bodyClass": "styleguide gk-saas",
+    "locale": "en",
+    "otherLanguageURL": "/de/styleguide.html"
   }
 }
