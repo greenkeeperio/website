@@ -1858,26 +1858,28 @@ a.cta {
   a.cta {
     &:before {
       display: block;
-      left: 13.6em;
+      left: calc(100% + 0.2rem);
       right: auto;
-      top: auto;
+      top: 50%;
       border-color: transparent;
       border-right-color: $blue-primary;
+      transform: translate(-1em, -50%)
     }
     &:after {
       display: block;
-      left: 17.5em;
-      width: 13em;
       text-align: left;
       top: 50%;
-      margin-top: -2.9em;
+      left: calc(100% + 1rem);
+      right: auto;
+      margin: 0;
+      transform: translate(-1em, -50%)
     }
     &:hover, &:focus {
       box-shadow: 0 0 300px 300px rgba(100, 149, 237, 0.5); // $blue-primary at 0.5A
       color: $white;
       &:before, &:after {
         opacity: 1;
-        transform: translateX(0)
+        transform: translate(0, -50%)
       }
     }
   }
@@ -1887,7 +1889,7 @@ a.cta {
       left: auto;
     }
     &:before {
-      right: 102%;
+      right: calc(100% + 0.5em);
       left: auto;
       border-color: transparent;
       border-left-color: #6495ed;
