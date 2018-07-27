@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+  <title>Greenkeeper | Häufig gestellte Fragen</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=kPxB0q7250">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=kPxB0q7250">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=kPxB0q7250">
+  <link rel="manifest" href="/manifest.json?v=kPxB0q7250">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=kPxB0q7250" color="#00c775">
+  <link rel="shortcut icon" href="/favicon.ico?v=kPxB0q7250">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="/css/cookieconsent.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/styles.css?v=917263871">
+  <script src="https://use.typekit.net/pve4wdk.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body class="preloading faq gk-saas sidebar-nav">
+  <a href='/faq' class='language-switch'>EN</a>
+
+  <a id="top"></a>
+
+<nav class="header">
+  <ul role="navigation" aria-label="main navigation">
+    <li class="">
+      <a href="/de">Greenkeeper</a>
+    </li>
+    
+    
+      <li><a href="/de/#how-it-works">Funktionen</a></li>
+    
+    <li class="">
+      <a href="/de/dokumentation.html">Dokumentation</a>
+    </li>
+    <li class="active" >
+      <a href="/de/haeufige-fragen.html">FAQ</a>
+    </li>
+    <li class="enterprise">
+      <a href="/de/enterprise.html">Enterprise</a>
+    </li>
+    
+      
+          <li><a href="/de/#pricing">Preise</a></li>
+        
+    
+    <li class="account"><a href="https://account.greenkeeper.io">Einloggen</a></li>
+  </ul>
+  <a href="#" class="menu-button">
+    <span class="menu">Menü</span>
+    <span class="close">Schließen</span>
+    <span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
+    </span>
+  </a>
+</nav>
+
+
+
+  <div class="container">
+  <div class="main" role="main">
+    <h1>Häufig gestellte Fragen</h1>
+    <p>Willkommen bei den Greenkeeper-FAQ. Da Sie hier sind, nehmen wir an, dass sie Probleme bei der Einrichtung oder Benutzung von Greenkeeper haben. Dafür entschuldigen wir uns. Falls Sie nicht das finden, wonach Sie suchen, haben wir auch eine <a href="/de/dokumentation">Dokumentationsseite</a>. Zögern Sie nicht, uns jederzeit direkt zu <a href="mailto:support@greenkeeper.io">kontaktieren.</a></p>
+    <div class="sidebar">
+      <ul class="compact-list">
+        <li><a href="#no-initial-pr">Greenkeeper öffnet den initial-Pull-Request nicht</a></li>
+        <li><a href="#renamed-repo">Ich kann kein Repo aktivieren, dass ich umbenannt habe</a></li>
+        <li><a href="#branch-deletions">Greenkeeper erstellt Branches und löscht sie gleich wieder</a></li>
+        <li><a href="#pinning-versions">Ich möchte Pull Requests für jedes einzelne Dependency-Update kriegen</a></li>
+        <li><a href="#downgrading">Ich habe eine Dependency heruntergesetzt, um zu sehen ob Greenkeeper funktioniert, aber nichts passiert</a></li>
+        <li><a href="#corrupted-branch">Ich habe einen kaputten Pull Request (beschädigter Branch) erhalten, und kann nun nicht mehr git pull ausführen</a></li>
+        <li><a href="#required-verify">Manche Pull Requests stecken wegen greenkeeper/verify bei “Some checks haven’t completed yet” fest</a></li>
+        <li><a href="#branches">Kann ich Greenkeeper auf einem anderen Branch aktivieren?</a></li>
+        <li><a href="#owners-only">Können alle NutzerInnen einer Organisation Greenkeeper installieren?</a></li>
+        <li><a href="#yearly-payment">Kann ich jährlich statt monatlich zahlen?</a></li>
+        <li><a href="#free-trial">Ich habe nur private Repositories, kann ich Greenkeeper trotzdem kostenlos ausprobieren?</a></li>
+      </ul>
+    </div>
+    <h2><a href="#no-initial-pr" id="no-initial-pr">Greenkeeper öffnet den initial-Pull-Request nicht</a></h2>
+    <p><strong>Wichtig:</strong> Die Erstellung eines initialen Pull-Requests kann bis zu 30 Minuten dauern. Normalerweise geht es viel schneller, hängt aber von der Komplexität ihrer Tests und der Verfügbarkeit ihres CI-Dienstes ab. Falls nach 30 Minuten nichts passiert, ist wahrscheinlich irgendetwas falsch gelaufen.</p>
+    <p><strong>Fehlerbehebung:</strong> Stellen Sie sicher, dass Sie die <a href="/de/dokumentation#installation">Installation</a> korrekt durchgeführt haben. Lesen Sie bitte die Voraussetzungen, die Greenkeeper an jede Repository stellt. Falls eine oder mehrere fehlen und sie diese behoben haben, überprüfen sie bitte, ob es jetzt funktioniert.</p>
+    <p><strong>Hier sind alle bekannten Fehler und deren Lösungen aufgelistet:</strong></p>
+    <ul>
+      <li>Es ist <strong>kein CI</strong> konfiguriert. Setzen Sie eine CI-Integration in ihrem Repository auf und <a href="/de/dokumentation#resetting-repos">setzen Sie Greenkeeper auf diesem Repo zurück.</a></li>
+      <li>Sie benutzen einen CI-Service, der nicht den Branch-Status aktualisiert. In diesem Fall kann Greenkeeper nicht funktionieren.</li>
+      <li>Der CI-Service <strong>funktioniert nicht</strong> mit den Branches, die Greenkeeper erstellt. Zum Beispiel kann er nur auf den <code>master</code>-Branch limitiert sein. Der Service braucht mindestens Zugriff auf alle Branches, die <code>greenkeeper</code> in ihrem Namen haben.</li>
+      <li>Alle Dependencies sind auf dem neuesten Stand und die Readme-Datei in dem Repository hat schon ein Greenkeeper-Badge. Da in diesem Fall keine Änderungen vorgenommen werden müssen, wird Greenkeeper auch keinen Pull Request senden. Stattdessen wird Greenkeeper einfach ohne Benachrichtigung anfangen zu arbeiten. Falls doch nichts passiert wenn eine Dependency aktualisiert wurde, muss die Badge aus der Readme-Datei entfernt und das Projekt <a href="/de/dokumentation#resetting-repos">zurückgesetzt werden.</a></li>
+      <li><strong>Issues sind nicht aktiviert.</strong> Issues sind normalerweise bei Forks deaktiviert, was es für Greenkeeper unmöglich macht, korrekt zu funktionieren. Aktivieren Sie Issues in dem Repository und <a href="/de/dokumentation#resetting-repos">setzen sie das Projekt zurück.</a></li>
+      <li><strong>Das Repository ist ein Fork.</strong> Wie oben beschrieben, sind Issues bei Forks normalerweise deaktiviert. Greenkeeper kann nicht funktionieren wenn Issues nicht aktiviert sind.</li>
+      <li>Der <strong>default-Branch</strong> des Repositories wurde geändert während Greenkeeper auf CI-Ergebnisse gewartet hat. In diesem Fall muss Greenkeeper <a href="/de/dokumentation#resetting-repos">neu gestartet werden.</a></li>
+      <li><a id="renamed-repo"></a>Das Repository wurde bewegt oder umbenannt. Es ist für uns unmöglich diese Änderungen festzustellen, da GitHub uns nicht über solche Aktionen informiert. In beiden Fällen wird die ID der Repository nicht geändert, weswegen Greenkeeper es fälschlicherweise verwechselt. Die einzige Lösung ist, unseren <a href="mailto:support@greenkeeper.io">Support zu kontaktieren</a> und das Repository zurücksetzen zu lassen.</li>
+    </ul>
+    <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a id="github-activity"></a><!-- <- that’s a legacy anchor --><a href="#branch-deletions" id="branch-deletions">Greenkeeper erstellt Branches und löscht sie gleich wieder</a></h2>
+    <p>Das soll so sein. Greenkeeper erstellt diese Branches, damit die CI-Tests darauf laufen können, die prüfen ob Ihr Code nach dem Update weiterhin funktioniert. Falls dem so ist, gibt es keinen Grund den Branch weiter existieren zu lassen.</p>
+    <p>Pull Requests werden von Greenkeeper nur dann geöffnet, wenn ein in-range Dependency-Update den CI-Build bricht, oder wenn ein Dependency-Update außerhalb der spezifizierten Range ist. Für mehr Informationen darüber haben wir eine <a href="/de/dokumentation#greenkeeper-step-by-step">Schritt-für-Schritt-Anleitung</a>.</p>
+    <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a href="#pinning-versions" id="pinning-versions">Ich möchte Pull Requests für jedes einzelne Dependency-Update kriegen</a></h2>
+    <p>Wenn Dependencies gepinnt werden, wird Greenkeeper für jedes Update einen Pull Request oder eine Issue öffnen. Falls es für eine Dependency schon einen offenen PR oder eine offene Issue gibt, wird Greenkeeper dort kommentieren. Versionen pinnen funktioniert, indem man die Versionsnummer in der package.json ohne Vorzeichen (wie z.B. das Caret-Zeichen <code>^</code>) angibt:</p>
+    <p>
+      <pre>
+        <code>{
+  "dependencies": {
+    "lodash": "4.0.0"
+  }
+}</code>
+      </pre>
+    </p>
+    <p>Beachten Sie, dass kein ‘^’ oder ‘~’ vor der Versionsnummer steht.</p>
+      <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a href="#downgrading" id="downgrading">Ich habe eine Dependency heruntergesetzt, um zu sehen ob Greenkeeper funktioniert, aber nichts passiert</a></h2>
+    <p><strong>Das ist absichtlich so: </strong>In dem initialen Pull Request aktualisiert Greenkeeper alle Dependencies auf die neuesten Versionen. Sie stellen sicher, dass alle Tests durchlaufen und mergen dann den Pull Request. Wenn irgendeine Dependency danach eine neue Version veröffentlicht, wird Greenkeeper die Tests gegen dieses Update laufen lassen.</p>
+    <p>Wenn Sie eine Dependency <em>heruntersetzen</em>, zum Beispiel von <code>^1.5.0</code> (neueste) auf <code>^1.2.0</code>, passiert nichts: wenn der CI-Dienst läuft, wird trotzdem die Version <code>1.5.0</code> installiert. Das gleiche passiert, wenn Ihre BenutzerInnen <code>npm install</code> in Ihrem Paket ausführen. Es bringt also gar nichts, wenn Greenkeeper in diesen Situationen irgendetwas machen würde: das Endergebnis wäre dasselbe.</p>
+    <p>Sie wissen dass Greenkeeper funktioniert, wenn eine Dependency eine neue Version erhält und die Tests laufen. Alles, worum sich Greenkeeper eigentlich kümmert, ist dass die Tests für Ihren Code mit den neuesten Versionen der Dependencies durchlaufen, und nicht, ob alle Dependencies explizit auf die neuesten Versionen <em>gesetzt sind</em>.</p>
+    <p>Wenn Sie explizit auf jedes einzelne Update für eine Dependency hingewiesen werden wollen, können Sie diese <a href="#pinning-versions">pinnen</a>.</p>
+    <p>Wenn Sie eine Version zu einem Pin heruntersetzen, sagen wir mal von <code>^1.5.0</code> zu <code>1.2.0</code> (hier fehlt das Caret-Zeichen <code>^</code>, die Version ist also gepinnt), wird Greenkeeper auch nicht intervenieren und die Version wieder hochsetzen. Es wird Sie jedoch trotzdem wissen lassen, wenn es eine neue Version dieser Dependency gibt.</p>
+    <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a href="#corrupted-branch" id="corrupted-branch">Ich habe einen kaputten Pull Request (beschädigter Branch) erhalten, und kann nun nicht mehr git pull ausführen</a></h2>
+    <figure class="wide-img">
+      <img src="/images/faq-corrupted-branch.png" alt="">
+      <figcaption>If this is what the changed files tab in a Greenkeeper PR looks like, you’ve probably got this issue</figcaption>
+    </figure>
+    <p>Wenn der Greenkeeper Pull Request so aussieht, dann liegt wahrscheinlich dieses Problem vor. Das passiert manchmal wenn GitHub Informationen löscht, die Greenkeeper noch benötigt. Es ist aber nicht so schlimm wie es aussieht, und die Lösung ist einfach: <strong>Löschen Sie den Branch</strong>. Greenkeeper wird es nochmal versuchen. Wir sind uns diesen Problems bewusst und arbeiten an einer Lösung.</p>
+    <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a href="#required-verify" id="required-verify">Manche Pull Requests stecken wegen greenkeeper/verify bei “Some checks haven’t completed yet” fest </a></h2>
+    <p>Das passiert, weil der <code>greenkeeper/verify</code>-Status in den GitHub-Einstellungen auf “required” gesetzt ist. Diese Voraussetzung ist dann bei allen Pull Requests gültig, nicht nur bei denen von Greenkeeper. Da Greenkeeper diesen Check aber nur bei den eigenen Pull Requests durchführt, bleibt der Check und somit der Pull Request überall anders bei “Some checks haven’t completed yet” stecken. Um das zu beheben, navigieren Sie zu <code>https://github.com/[username oder org]/[repository]/settings/branches/master</code> und stellen Sie sicher, dass <code>greenkeeper/verify</code> ausgeschaltet ist.</p>
+    <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a href="#branches" id="branches">Kann ich Greenkeeper auf einem anderen Branch aktivieren?</a></h2>
+    <p><strong>Zu dieser Zeit gibt es keine Einstellung für andere Branches</strong>, aber Greenkeeper nimmt den Default Branch auf GitHub als Quelle für Pull Requests. Das ist also der Ort, an dem dies geändert werden kann.</p>
+    <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a href="#owners-only" id="owners-only">Können alle NutzerInnen einer Organisation Greenkeeper installieren?</a></h2>
+    <p><strong>Nein, das können nur die Admins der Organisation.</strong> Greenkeeper erstellt Branches, um Pull Requests zu schicken und braucht deswegen den Push-Zugriff auf das Repository. Darüber hinaus benötigen wir die Berechtigung, Webhooks zu erstellen, damit wir die <code>package.json</code>-Datei auf dem neuestem Stand halten können. Damit Greenkeeper diese Berechtigungen erhalten kann, muss es von BenutzerInnen mit Admin-Rechten für die Organisation installiert werden. Es reicht nicht, Admin-Rechte auf einem einzelnen Repository zu haben.</p>
+    <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a href="#yearly-payment" id="yearly-payment">Kann ich jährlich statt monatlich zahlen?</a></h2>
+    <p>Ja, bei beiden Greenkeeper-Versionen:</p>
+    <ul>
+      <li>Auf <strong>greenkeeper.io</strong> können sie im <a href="https://account.greenkeeper.io">Account Dashboard</a> einstellen, ob Sie monatlich oder jährlich bezahlen möchten.</li>
+      <li>Auf <strong>GitHub Marketplace</strong> wird Greenkeeper automatisch über Ihre GitHub-Rechnung abgerechnet. Wenn Sie für GitHub jährlich bezahlen, dann auch für Greenkeeper.</li>
+    </ul>
+    <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a href="#free-trial" id="free-trial">Ich habe nur private Repositories, kann ich Greenkeeper trotzdem kostenlos ausprobieren?</a></h2>
+    <p><strong>Ja</strong>, in der <a href="https://github.com/marketplace/greenkeeper">GitHub Marketplace-Version</a> von Greenkeeper wird die Bezahlung gänzlich von GitHub abgewickelt. Dort bieten wir eine 14-tägige kostenlose Testversion für alle Pläne an.</p>
+    <p>Wurde Greenkeeper direkt als <a href="https://github.com/apps/greenkeeper">GitHub App</a> installiert (wenn also die Zahlung über Stripe abgewickelt wird) ist keine Testversion verfügbar. Wir bieten jedoch eine komplette Rückerstattung des gezahlten Preises an, falls Sie nach einem Monat feststellen, dass Sie mit Greenkeeper nicht zufrieden sind.
+    </p>
+    <a href="#top">Zum Seitenanfang</a>
+  </div>
+</div>
+
+  <nav class="footer" role="navigation">
+  <ul class="nav">
+    <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
+    <li class="">
+        <a href="/de/dokumentation.html">Dokumentation</a>
+      </li>
+    <li class="active">
+      <a href="/de/haeufige-fragen.html">Häufige Fragen</a>
+    </li>
+    <li class="">
+        <a href="/de/ueber-uns.html">Über uns</a>
+      </li>
+    <li><a href="https://github.com/greenkeeperio">GitHub</a></li>
+    <li class="">
+      <a href="/de/impressum.html">Impressum</a>
+    </li>
+    <li class="">
+      <a href="/de/nutzungsbedingungen.html">Nutzungsbedingungen</a>
+    </li>
+    <li class="">
+      <a href="/de/datenschutzerklaerung.html">Datenschutzerklärung</a>
+    </li>
+  </ul>
+</nav>
+
+<footer role="contentinfo">
+  <p><a href="https://github.com/greenkeeperio">Greenkeeper ist Open Source und auf GitHub</a>.</p>
+  <p>.io-Domain? — <a href="https://twitter.com/chagosuk" title="chagos-support">Ja, wir unterstützen Chagos!</a></p>
+  <p>© 2018 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
+</footer>
+
+
+  <script type="text/javascript" src="/js/smoothscroll.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/slick.min.js"></script>
+  <script type="text/javascript" src="/js/magnifik.min.js"></script>
+  <script>
+    var domReady = function(callback) {
+        document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
+    };
+    domReady(function() {
+      $('.tweets').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        prevArrow: '<button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button">←</button>',
+        nextArrow: '<button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Previous" role="button">→</button>'
+      })
+      const ratio = 760 / window.screen.width
+      if (ratio > 1){
+        $('.img img, .wide-img img').magnifik({
+          ratio: ratio
+        })
+      }
+      $(document).on('click', '.menu-button', function(e){
+        event.preventDefault()
+        $('.menu-button, nav.header').toggleClass('is-active')
+        $('body').toggleClass('no-scroll')
+        return false
+      })
+      $(document).on('click', 'body.no-scroll nav.header li a', function(e) {
+        $('.menu-button, nav.header').removeClass('is-active')
+        $('body').removeClass('no-scroll')
+      })
+      $(document).on('click', '#billing-selector .toggle-switch', function(e) {
+        $('#billing-selector').toggleClass('active')
+        $('.plan').toggleClass('yearly')
+      })
+      $(document).on('click', '#billing-selector .toggle-option', function(e) {
+        event.preventDefault()
+        if ($(e.currentTarget).hasClass('toggle-option-active')) {
+          $('#billing-selector').addClass('active')
+          $('.plan').addClass('yearly')
+        } else {
+          $('#billing-selector').removeClass('active')
+          $('.plan').removeClass('yearly')
+        }
+        return false
+      })
+      window.addEventListener('popstate', function(e){
+        $('.active-hash').removeClass('active-hash')
+        $('[href="' + window.location.hash + '"]').addClass('active-hash')
+      })
+      if (window.location.hash) {
+        $('[href="' + window.location.hash + '"]').addClass('active-hash')
+      }
+    })
+  </script>
+  <script src="/js/cookieconsent.min.js"></script>
+  <script>
+   window.addEventListener("load", function(){
+     var message;
+     var link;
+     var dismiss;
+     if (window.location.pathname.split('/')[1] === 'de') {
+       message = "Diese Website benutzt Cookies unter"
+       link = "diesen Bedingungen."
+       dismiss = "Alles klar!"
+       href="/de/datenschutzerklaerung"
+     } else {
+       message = "This website uses cookies under"
+       link = "these terms."
+       dismiss = "Got it!"
+       href="/privacy-policy"
+     }
+     window.cookieconsent.initialise({
+       "palette": {
+         "popup": {
+           "background": "#333333",
+           "text": "#ffffff"
+         },
+         "button": {
+           "background": "transparent",
+           "text": "#00c775",
+           "border": "#00c775"
+         }
+       },
+       "content": {
+         "message": message,
+         "link": link,
+         "dismiss": dismiss,
+         "href": href
+       }
+     })});
+  </script>
+</body>
+</html>

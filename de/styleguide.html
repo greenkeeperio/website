@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-  <title>Greenkeeper | Verify</title>
+  <title>Greenkeeper | Style Guide</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=kPxB0q7250">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=kPxB0q7250">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=kPxB0q7250">
@@ -16,39 +16,39 @@
   <script src="https://use.typekit.net/pve4wdk.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
-<body class="preloading verify gk-saas">
-  <a href='/de/verify.html' class='language-switch'>DE</a>
+<body class="preloading styleguide gk-saas">
+  <a href='/styleguide' class='language-switch'>EN</a>
 
   <a id="top"></a>
 
 <nav class="header">
   <ul role="navigation" aria-label="main navigation">
     <li class="">
-      <a href="/">Greenkeeper</a>
+      <a href="/de">Greenkeeper</a>
     </li>
     
     
-      <li><a href="/#how-it-works">How it works</a></li>
+      <li><a href="/de/#how-it-works">Funktionen</a></li>
     
     <li class="">
-      <a href="/docs.html">Docs</a>
+      <a href="/de/dokumentation.html">Dokumentation</a>
     </li>
     <li class="" >
-      <a href="/faq.html">FAQ</a>
+      <a href="/de/haeufige-fragen.html">FAQ</a>
     </li>
     <li class="enterprise">
-      <a href="/enterprise.html">Enterprise</a>
+      <a href="/de/enterprise.html">Enterprise</a>
     </li>
     
       
-          <li><a href="/#pricing">Pricing</a></li>
-      
+          <li><a href="/de/#pricing">Preise</a></li>
+        
     
-    <li class="account"><a href="https://account.greenkeeper.io">Your account</a></li>
+    <li class="account"><a href="https://account.greenkeeper.io">Einloggen</a></li>
   </ul>
   <a href="#" class="menu-button">
-    <span class="menu">Menu</span>
-    <span class="close">Close</span>
+    <span class="menu">Menü</span>
+    <span class="close">Schließen</span>
     <span class="icon">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
     </span>
@@ -56,33 +56,53 @@
 </nav>
 
 
+
   <div class="container">
   <div class="main" role="main">
-    <h1>How to verify pull requests are coming from us</h1>
-    <p>In the past, we saw an attack performed against Greenkeeper and its users in which pull requests were sent by an from a fake account. It was called <em>“greenkeeper<strong>l</strong>o-bot”</em>, rather than <em>“greenkeeper<strong>i</strong>o-bot”</em>, and so the whole experience closely resembled the Greenkeeper look and feel. We added a verification feature to our service which adds a status check to each Greenkeeper pull request. With this, there are now three indicators that the pull request is genuine:
-    </p>
-    <ol>
-      <li>
-        <p>The pull request author is <code>greenkeeper [bot]</code>, from <a href="https://github.com/apps/greenkeeper">the Greenkeeper GitHub app</a></p>
-      </li>
-      <li>
-        <p>The pull request origin is a different branch of the <em>same</em> repo, not an external repo</p>
-      </li>
-      <li>
-        <p>The pull request has a status check from <code>greenkeeper/verify</code></p>
-      </li>
-    </ol>
-    <figure class="wide-img">
-      <img src="/images/github_greenkeeper_verified_status.png" alt="">
-      <figcaption>Only a pull request with a greenkeeper/verify status check is genuine. Don’t accept any fakes!</figcaption>
-    </figure>
-
-    <h2>Any questions or feedback?</h2>
-    <p>
-      If there is anything unclear about this, or if you have other ideas for signals we could be sending please <a href="mailto:support@greenkeeper.io">send us an email</a> or get in touch via <a href="http://twitter.com/greenkeeperio">Twitter</a>.
-    </p>
-
-    <p>Happy developing!</p>
+  <h1>Greenkeeper Style Guide</h1>
+  <p>These are the design guidelines and resources for Greenkeeper.</p>
+  <h2>Basics</h2>
+  <h3>Colours</h3>
+  <p>Greenkeeper has two basic colours, green for the hosted SaaS product, blue for the self-hosted enterprise product.</p>
+  <ul class="swatch-list">
+    <li>
+      <span class="swatch" style="background: #00c775"></span><strong>#00C775</strong>Use for the brand mark and logo type, emphasis, box backgrounds, or links.
+    </li>
+    <li>
+      <span class="swatch" style="background: cornflowerblue"></span><strong>#6495ED</strong>Use for the brand mark and logo type, emphasis, box backgrounds, or links, but only in the enterprise context.
+    </li>
+    <li>
+      <span class="swatch" style="background: hsla(105, 1%, 40%, 1)"></span><strong>#656765</strong>Standard text colour for pararaphs.
+    </li>
+    <li>
+      <span class="swatch" style="background: hsla(105, 1%, 30%, 1)"></span><strong>#4c4d4c</strong>Emphasised text in pararaphs.
+    </li>
+    <li>
+      <span class="swatch" style="background: #000"></span><strong>#000000</strong>For headlines.
+    </li>
+    <li>
+      <span class="swatch bordered" style="background: #FFF"></span><strong>#FFFFFF</strong>Our standard background colour is plain white.
+    </li>
+  </ul>
+  <h3>Fonts</h3>
+  <p>Our headline and logotype font is <strong>Futura</strong>. For headlines on the website we use Futura PT in 500 weight from TypeKit. The body text font stack is <code>Helvetica, Arial, sans-serif</code>, and for monospaced type, such as in code examples, we simply rely on <code>font-family: monospaced;</code>.</p>
+  <h3>Logo</h3>
+  <p>The Greenkeeper logo is a set of connected nodes in the shape of an abstract plant. In a sense, it’s a very small but healthy dependency tree. The node pattern is also used to make coloured backgrounds more interesting, for example in banners. You can use it in green or blue on white, and also inverted. </p>
+  <div class="logo-collection">
+    <div class="logo-container">
+      
+      <p>Green SVG logo, transparent background, no outer border.</p>
+    </div>
+    <div class="logo-container">
+      
+      <p>Blue SVG logo, transparent background, no outer border.</p>
+    </div>
+  </div>
+  <h2>Tone and Voice</h2>
+  <h3>Emoji</h3>
+  <p>Yes, especially in direct communication with people, such as on Twitter, in emails, on GitHub etc. On the website and on printed goods: not so much.</p>
+  <p>On GitHub, we like to use emoji to label and structure content, such as marking bugs with 🐛 or 🐞, warnings with ⚠️ or 🚨, and alerts with 🔊 or 🔔, for example.</p>
+  <p>Occasionally, we end messages with 🌴 🤖, especially if they’re automated. The 🌴 is our emoji logo replacement.</p>
   </div>
 </div>
 
@@ -90,30 +110,30 @@
   <ul class="nav">
     <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
     <li class="">
-        <a href="/docs.html">Docs</a>
+        <a href="/de/dokumentation.html">Dokumentation</a>
       </li>
     <li class="">
-      <a href="/faq.html">FAQ</a>
+      <a href="/de/haeufige-fragen.html">Häufige Fragen</a>
     </li>
     <li class="">
-        <a href="/about.html">About</a>
+        <a href="/de/ueber-uns.html">Über uns</a>
       </li>
     <li><a href="https://github.com/greenkeeperio">GitHub</a></li>
     <li class="">
-      <a href="/impressum.html">Legal</a>
+      <a href="/de/impressum.html">Impressum</a>
     </li>
     <li class="">
-      <a href="/terms-of-service.html">Terms of Service</a>
+      <a href="/de/nutzungsbedingungen.html">Nutzungsbedingungen</a>
     </li>
     <li class="">
-      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/de/datenschutzerklaerung.html">Datenschutzerklärung</a>
     </li>
   </ul>
 </nav>
 
 <footer role="contentinfo">
-  <p><a href="https://github.com/greenkeeperio">Greenkeeper is Open Source on GitHub</a></p>
-  <p>.io domain? — <a href="https://twitter.com/chagosuk" title="chagos-support">Yes, we support Chagos!</a></p>
+  <p><a href="https://github.com/greenkeeperio">Greenkeeper ist Open Source und auf GitHub</a>.</p>
+  <p>.io-Domain? — <a href="https://twitter.com/chagosuk" title="chagos-support">Ja, wir unterstützen Chagos!</a></p>
   <p>© 2018 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
 </footer>
 

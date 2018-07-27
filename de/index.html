@@ -17,41 +17,42 @@
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body class="preloading index gk-saas">
-  <a href='/de/index.html' class='language-switch'>DE</a>
+  <a href='/' class='language-switch'>EN</a>
 
 <nav class="header">
   <ul role="navigation" aria-label="main navigation">
     <li class="active">
-      <a href="/">Greenkeeper</a>
+      <a href="/de">Greenkeeper</a>
     </li>
     
     
-      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="#how-it-works">Funktionen</a></li>
       
     <li class="">
-      <a href="/docs.html">Docs</a>
+      <a href="/de/dokumentation.html">Dokumentation</a>
     </li>
     <li class="" >
-      <a href="/faq.html">FAQ</a>
+      <a href="/de/haeufige-fragen.html">FAQ</a>
     </li>
     <li class="enterprise">
-      <a href="/enterprise.html">Enterprise</a>
+      <a href="/de/enterprise.html">Enterprise</a>
     </li>
     
       
-          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#pricing">Preise</a></li>
         
     
-    <li class="account"><a href="https://account.greenkeeper.io">Your account</a></li>
+    <li class="account"><a href="https://account.greenkeeper.io">Einloggen</a></li>
   </ul>
   <a href="#" class="menu-button">
-    <span class="menu">Menu</span>
-    <span class="close">Close</span>
+    <span class="menu">Menü</span>
+    <span class="close">Schließen</span>
     <span class="icon">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
     </span>
   </a>
 </nav>
+
 
 
   <div class="hero">
@@ -60,49 +61,55 @@
 
     <div class="text">
       <h1>Greenkeeper</h1>
-      <span>Automated dependency management</span>
+      <span>Automatisiertes Dependency-Management</span>
     </div>
   </header>
   <div class="scroller"></div>
 </div>
 
 <section class="billboard">
-  <h1>Get safety &amp; consistency with <span class="signal">real-time monitoring</span> and <span class="signal">automatic updates</span> for npm dependencies</h1>
+  <h1>Sorgen Sie für Sicherheit &amp; Konsistenz
+  mit <span class="signal">Echtzeit-Monitoring</span> und
+  <span class="signal">automatischen Updates</span> für npm-Dependencies</h1>
 </section>
 
-<h3>Join thousands of others who let our friendly bot handle their dependency chores</h3>
+<!--div class="get-started">
+  <a class="button" href="https://github.com/apps/greenkeeper">Install the Greenkeeper app on GitHub now!</a>
+</div-->
+
+<h3>Schließen Sie sich Tausenden anderen an, die Greenkeeper Ihre Dependency-Arbeiten überlassen</h3>
 
 <section class="features">
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M20.59 12l-3.3-3.3a1 1 0 1 1 1.42-1.4l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-1.42-1.4l3.3-3.3zM3.4 12l3.3 3.3a1 1 0 0 1-1.42 1.4l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 0 1 1.42 1.4L3.4 12zm7.56 8.24a1 1 0 0 1-1.94-.48l4-16a1 1 0 1 1 1.94.48l-4 16z"/></svg>
-    <h3>Improves your code quality</h3>
-    <p><strong>Greenkeeper helps keep your software up to date.</strong> This eliminates many security concerns and compatibility issues, and also keeps your projects fresh and maintainable. It provides a constant drip of small, isolated updates that can be easily understood, tackled and tested.</p>
+    <h3>Verbessert ihre Code-Qualität</h3>
+    <p><strong>Greenkeeper hilft dabei, Ihre Software auf dem neuesten Stand zu halten.</strong> Dadurch werden Sicherheits- und Kompatibilitäts-Bedenken eliminiert, und Ihr Projekt bleibt frisch und einfach zu warten. Greenkeeper liefert einen konstanten Fluss an kleinen und isolierten Updates, die einfach zu verstehen und integrieren sind.</p>
   </div>
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path class="heroicon-ui" d="M17.56 17.66a8 8 0 0 1-11.32 0L1.3 12.7a1 1 0 0 1 0-1.42l4.95-4.95a8 8 0 0 1 11.32 0l4.95 4.95a1 1 0 0 1 0 1.42l-4.95 4.95zm-9.9-1.42a6 6 0 0 0 8.48 0L20.38 12l-4.24-4.24a6 6 0 0 0-8.48 0L3.4 12l4.25 4.24zM11.9 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-    <h3>Catches problems you would have missed</h3>
-    <p>Versioning isn’t perfect or reliable: you’d expect a patch update to a dependency, for example <code>1.0.1</code> to <code>1.0.2</code>, to be unproblematic, but unless you actually try it, you won’t know until it’s too late. <strong>We found that around 15% of all minor and patch updates break their dependant code</strong>, even though semantically they shouldn’t. Greenkeeper tests every single update for you, day or night, workday or weekend, so you don’t have to.</p>
-  </div>
+    <h3>Erkennt Probleme, die sonst leicht übersehen werden</h3>
+    <p>Versionierungen sind nicht perfekt oder verlässlich: man würde erwarten, dass ein Patch-Update für eine Dependency, zum Beispiel <code>1.0.1</code> nach <code>1.0.2</code>,  unproblematisch ist, aber wenn man es nicht ausprobiert, weiß man es nicht genau. <strong>Wir haben herausgefunden, dass ca. 15% aller Minor- und Patch-Updates Probleme verursachen</strong>, obwohl sie es semantisch gesehen nicht sollten. Greenkeeper testet jedes einzelne Update für Sie, Tag und Nacht, ob Wochenende oder Wochentag, damit Sie es nicht müssen.
+  </p></div>
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
-    <h3>Keeps developers happy and productive</h3>
-    <p><strong>Greenkeeper automates away unpopular and time-consuming developer tasks</strong>: staying up to date with a never-ending stream of releases, and testing each one’s compatibility with your software. Greenkeeper integrates seamlessly into existing workflows, so there’s nothing new to learn, and you can save time and money with minimal overhead.</p>
+    <h3>Hält Entwickler produktiv und glücklich</h3>
+    <p><strong>Greenkeeper automatisiert unliebsame und zeitraubende Entwickler-Pflichten</strong>: mit dem niemals endendem Strom an Releases auf dem neuesten Stand zu bleiben, und jedes einzelne Update mit Ihrer Software zu testen. Greenkeeper integriert sich nahtlos in existierende Prozesse, es muss nichts dazugelernt werden, und Sie können mit minimalem Aufwand Zeit und Geld sparen.</p>
   </div>
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12.76 3.76a6 6 0 0 1 8.48 8.48l-8.53 8.54a1 1 0 0 1-1.42 0l-8.53-8.54a6 6 0 0 1 8.48-8.48l.76.75.76-.75zm7.07 7.07a4 4 0 1 0-5.66-5.66l-1.46 1.47a1 1 0 0 1-1.42 0L9.83 5.17a4 4 0 1 0-5.66 5.66L12 18.66l7.83-7.83z"/></svg>
-    <h3>Friendly and Reliable</h3>
-    <p>Greenkeeper has been around since 2015 and has thousands of satisfied users, including many well-known projects and companies. We’re an independent German SMB without external shareholder interests, so we’re in it for the long haul. If there are problems, the developers themselves provide competent and friendly support.</p>
+    <h3>Freundlich und zuverlässig</h3>
+    <p>Greenkeeper gibt es seit 2015, und hat seitdem Tausende zufriedene Kunden, darunter auch bekannte Projekte und Firmen. Wir sind als unabhängige GmbH mit Sitz in Berlin und ohne externe Gesellschafterinteressen auf langfristige Stabilität fokussiert. Falls es doch Probleme mit Greenkeeper geben sollte, haben Sie bei dem technischen Support die Entwickler selbst am Draht.</p>
   </div>
 </section>
 
 <figure class="wide-img">
-  <img src="images/greenkeeper_in-range-update_fail_issue.png" alt="A Greenkeeper pull request for an in-range dependency update that breaks the build">
-  <figcaption>A tiny in-range patch update that would have broken your build, even though it shouldn’t have! But Greenkeeper caught it right away.</figcaption>
+  <img src="/images/greenkeeper_in-range-update_fail_issue.png" alt="Ein Greenkeeper-Pull Request für ein Dependency-Update, das den CI-Build fehlschlagen lässt">
+  <figcaption>Ein unscheinbares Update, wegen dem unerwarteterweise Ihr Build fehlgeschlagen wäre! Greenkeeper hat das Problem jedoch sofort erkannt.</figcaption>
 </figure>
 
 <section class="single">
-  <h2>Trusted by Thousands of Projects and Companies</h2>
-  <p>We’re sure you’ve heard of some of them:</p>
+  <h2>Greenkeeper hat Tausende zufriedene Benutzer</h2>
+  <p>Ein paar davon kennen Sie vielleicht:</p>
   <div class="full-width-breakout">
   <ul class="customer-list">
     <li>
@@ -214,98 +221,99 @@
 
 <a id="pricing"></a>
 <div class="full-height">
-<section class="pricing">
-  <h2>Plans and Pricing</h2>
+  <section class="pricing">
+    <h2>Preise</h2>
 <div class="toggle-container billing-selection active" id="billing-selector">
-  <a href="" class="toggle-option toggle-option-inactive">Monthly billing</a>
+  <a href="" class="toggle-option toggle-option-inactive">Monatliche Abrechnung</a>
   <button class="toggle-switch"></button>
-  <a href="" class="toggle-option toggle-option-active">Yearly billing</a>
+  <a href="" class="toggle-option toggle-option-active" style="margin-right: 25px">Jährliche Abrechnung</a>
 </div>
 
-<div class="save-with-yearly-billing">Save 16%!</div>
+<div class="save-with-yearly-billing">16% sparen!</div>
 
 <a class="plan yearly" href="https://github.com/apps/greenkeeper">
-  <h2>Free Plan</h2>
-  <span class="price">Totally free!</span>
+  <h2>Kostenloser Plan</h2>
+  <span class="price">Völlig kostenlos!</span>
   <ul class="spaced">
-    <li>For Open-Source projects</li>
-    <li><strong>No private repos</strong></li>
+    <li>Für Open-Source-Projekte</li>
+    <li><strong>Keine privaten Repos</strong></li>
   </ul>
-  <span class="button">Install now</span></a>
-
-
-<a class="plan yearly" href="https://github.com/apps/greenkeeper">
-  <h2>Personal Plan</h2>
-  <span class="price monthly">$0&thinsp;USD<small>/month</small></span>
-  <span class="price yearly">$0&thinsp;USD<small>/year</small></span>
-  <ul class="spaced">
-    <li>For personal GitHub accounts</li>
-    <li class="monthly"><strong>+$1.5&thinsp;USD</strong> per private repo per month</li>
-    <li class="yearly"><strong>+$15&thinsp;USD</strong> per private repo per year</li>
-  </ul>
-  <span class="button">Install now</span></a>
+  <span class="button">Jetzt installieren</span></a>
 
 
 <a class="plan yearly" href="https://github.com/apps/greenkeeper">
-  <h2>Organisation Plan</h2>
-  <span class="price monthly">$25&thinsp;USD<small>/month</small></span>
-  <span class="price yearly">$250&thinsp;USD<small>/year</small></span>
+  <h2>Persönlicher Plan</h2>
+  <span class="price monthly">0€<small>/Monat</small></span>
+  <span class="price yearly">0€<small>/Jahr</small></span>
   <ul class="spaced">
-    <li>For GitHub organisations</li>
-    <li>Includes 10 private repos</li>
-    <li class="monthly"><strong>+$1.5&thinsp;USD</strong> per additional private repo per month</li>
-    <li class="yearly"><strong>+$15&thinsp;USD</strong> per additional private repo per year</li>
+    <li>Für persönliche GitHub-Accounts</li>
+    <li class="monthly"><strong>+1,5€</strong> pro private Repo pro Monat</li>
+    <li class="yearly"><strong>+15€</strong> pro private Repo pro Jahr</li>
   </ul>
-  <span class="button">Install now</span></a>
+  <span class="button">Jetzt installieren</span></a>
+
+
+<a class="plan yearly" href="https://github.com/apps/greenkeeper">
+  <h2>Organisations-Plan</h2>
+  <span class="price monthly">25€<small>/Monat</small></span>
+  <span class="price yearly">250€<small>/Jahr</small></span>
+  <ul class="spaced">
+    <li>Für GitHub-Organisationen</li>
+    <li>10 private Repos inklusive</li>
+    <li class="monthly"><strong>+1,5€</strong> pro zusätzliche private Repo pro Monat</li>
+    <li class="yearly"><strong>+15€</strong> pro zusätzliche private Repo pro Jahr</li>
+  </ul>
+  <span class="button">Jetzt installieren</span></a>
 
 
 <section>
-  <p class="centered-p">Need more? Using GitHub Enterprise? Want to self-host Greenkeeper? No problem: <a href="/enterprise" class="enterprise">Check out Greenkeeper Enterprise</a>.</p>
+  <p class="centered-p">Sie wollen viel mehr Repos, oder benutzen GitHub Enterprise? Wollen Sie Greenkeeper selbst hosten? Mit Artifactory statt npm? Kein Problem: <a href="/de/enterprise" class="enterprise">Dafür gibt es Greenkeeper Enterprise</a>.</p>
 </section>
 
 <section class="features">
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12.76 3.76a6 6 0 0 1 8.48 8.48l-8.53 8.54a1 1 0 0 1-1.42 0l-8.53-8.54a6 6 0 0 1 8.48-8.48l.76.75.76-.75zm7.07 7.07a4 4 0 1 0-5.66-5.66l-1.46 1.47a1 1 0 0 1-1.42 0L9.83 5.17a4 4 0 1 0-5.66 5.66L12 18.66l7.83-7.83z"/></svg>
-    <h3>Free for Open-Source</h3>
+    <h3>Für Open-Source kostenlos</h3>
     <ul>
-      <li>Public GitHub repos are always free, regardless of which plan you have.</li>
+      <li>Öffentliche GitHub-Repos sind immer kostenlos, unabhängig von ihrem Plan.</li>
     </ul>
   </div>
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-11v2h1a3 3 0 0 1 0 6h-1v1a1 1 0 0 1-2 0v-1H8a1 1 0 0 1 0-2h3v-2h-1a3 3 0 0 1 0-6h1V6a1 1 0 0 1 2 0v1h3a1 1 0 0 1 0 2h-3zm-2 0h-1a1 1 0 1 0 0 2h1V9zm2 6h1a1 1 0 0 0 0-2h-1v2z"/></svg>
-    <h3>Save with yearly billing</h3>
+    <h3>Sparen Sie, indem Sie jährlich bezahlen</h3>
     <ul>
-      <li>Choose yearly billing and get 12 months of Greenkeeper for the price of 10!</li>
+      <li>Wählen Sie jährliche Abrechnung, dann bekommen Sie 12 Monate Greenkeeper zum Preis von 10!</li>
     </ul>
   </div>
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.54-4.46a1 1 0 0 1 1.42-1.42 3 3 0 0 0 4.24 0 1 1 0 0 1 1.42 1.42 5 5 0 0 1-7.08 0zM9 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
-    <h3>Risk-free use</h3>
+    <h3>Risikofreie Benutzung</h3>
     <ul>
-      <li>If you're unhappy during the first 30 days, you'll get your <strong>money back, no questions asked</strong>.</li>
-      <li>Greenkeeper only works on its own branches and <strong>doesn’t modify your code</strong>.</li>
-      <li><strong>Friendly and competent online support</strong> by the developers (during EU business hours)</li>
+      <li>Falls Sie während der ersten 30 Tage merken, dass Greenkeeper doch nichts für Sie ist, <strong>bekommen Sie Ihr Geld zurück</strong>.</li>
+      <li>Greenkeeper funktioniert nur auf dessen eigenen Branches und <strong>macht keine Änderungen an ihrem Code</strong>.</li>
+      <li><strong>Freundlicher und kompetenter Online-Support von den Entwicklern selbst</strong> (zu EU-Geschäftszeiten).</li>
     </ul>
   </div>
   <div class="feature">
     <svg aria-labelledby="simpleicons-github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#000" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-    <h3>Also on GitHub Marketplace</h3>
+    <h3>Auch im GitHub Marketplace zu finden</h3>
     <ul>
-      <li>Different pricing structure including an unlimited plan for large businesses</li>
-      <li>Simpler billing via your GitHub invoice</li>
-      <li>14-day free trial for all plans</li>
+      <li>Andere Preisstruktur, z.B. und ein unlimitierter Plan für große Unternehmen</li>
+      <li>Einfachere Bezahlung über Ihre GitHub-Rechnung</li>
+      <li>14-tägiger kostenloser Testzeitraum für alle Pläne</li>
       <li>
-        <a href="https://github.com/marketplace/greenkeeper">Get Greenkeeper from GitHub Marketplace
-      </a></li>
+        <a href="https://github.com/marketplace/greenkeeper">Greenkeeper vom GitHub Marketplace installieren</a>
+      </li>
     </ul>
   </div>
 </section>
 
-</section></div>
+  </section>
+</div>
 
 <div class="full-height">
   <section class="single they-really-seem-to-like-us">
-    <h2>What Our Users Say</h2>
+    <h2>Was unsere Kunden sagen</h2>
     <ul class="tweets spaced">
       <!--li>greenkeeper.io makes our lives easier: Thank you!<a href="https://twitter.com/pushrockscode/status/650982642834407424">@pushrockscode</a></li-->
       <!--li>Heh, @greenkeeperio just became @pouchdb's 170th contributor and it already has 3 more PR's open […], this is awesome<a href="https://twitter.com/daleharvey/status/648910948657446913">@daleharvey</a></li-->
@@ -326,25 +334,25 @@
     </ul>
 
     <!--p>In general, <a href="https://twitter.com/search?q=greenkeeper.io%20OR%20greenkeeperio">people really seem to like Greenkeeper</a>.</p-->
-    <p>Don’t trust any of these people? <a href="https://github.com/apps/greenkeeper">Try Greenkeeper yourself!</a></p>
+    <p>Vertrauen Sie diesen Leuten nicht? <a href="https://github.com/apps/greenkeeper">Probieren Sie Greenkeeper einfach selbst aus!</a></p>
   </section>
 </div>
 
 <a id="how-it-works"></a>
 <div class="double-flex full-height">
   <section>
-    <h2>How it works</h2>
-    <p>Greenkeeper sits between npm and GitHub, observing all of the modules you depend on. When they get updated, your project gets a new branch with that update. Your CI tests kick in, and we watch them to see whether they pass.</p>
-    <p>Based on the test results and your current version definitions we will open up clear, actionable pull requests or issues for you. If there’s nothing for you to do, we won’t nag you.</p>
-    <p>Let the friendly Greenkeeper bot take all the dull work of keeping your dependencies up to date off your shoulders and, optimally, boil it all down to a few clicks. <strong>This is as close to fully automatic as we could possibly make it.</strong></p>
-    <p><a href="/docs.html#what-greenkeeper-does">Learn more about how Greenkeeper works</a>.</p>
+    <h2>Wie es funktioniert</h2>
+    <p>Nachdem Greenkeeper installiert wurde, befindet es sich zwischen npm und GitHub. Hier beobachtet es alle npm-Module, von denen das Projekt, für das Greenkeeper installiert wurde, abhängig ist. Sobald eines der Module ein Update bekommt, wird ein neuer Branch in GitHub erstellt. Ihre Continuous Integration-Tests (CI) laufen durch und Greenkeeper überprüft deren Ergebnisse.</p>
+    <p>Basierend auf dem Ausgang der CI-Tests und der projektspezifischen Versionsdefinitionen öffnet Greenkeeper verständliche und nützliche Pull Requests oder Issues.</p>
+    <p>Lassen Sie sich die Arbeit von dem freundlichen Greenkeeper-Bot abnehmen und im besten Falle auf wenige Klicks minimieren.</p>
+    <p><a href="/de/dokumentation#what-greenkeeper-does">Erfahren Sie mehr darüber, wie Greenkeeper funktioniert</a>.</p>
   </section>
   <section>
-    <h2>Why it’s so neat</h2>
+    <h2>Warum Greenkeeper so hilfreich ist</h2>
     <ul>
-      <li>Staying on top of dependency updates is a lot of cognitive overhead: your code depends on modules that depend on modules. It’s modules all the way down. Stuff gets updated all the time. It’ll either annoy you, or you’ll miss it. <strong>Greenkeeper never misses updates, and it never gets annoyed</strong>.</li>
-      <li><strong>Pin versions with one click:</strong> You’ve got stuff to do, we understand. Sometimes you simply have to make a pragmatic trade-off between fixing your build for the breaking update or just pinning the working version so you can get back to it later. Our bot can respect that.</li>
-      <li>You could do all the updates and testing by hand, all the time. But that’s dull, repetitive work, which is why, let’s be honest, barely anyone actually does it. But Greenkeeper <em>will</em> do it, day or night, without complaining, while requiring as little of your attention as possible.</li>
+      <li>Bei Dependency-Updates einen klaren Kopf zu behalten ist nicht einfach: Ihr Code ist von Modulen abhängig, die wiederum von anderen Modulen abhängig sind. Manche Projekte sind von Dutzenden oder Hunderten Module abhängig, und für diese Module werden permanent  Aktualisierungen veröffentlich. Das ist entweder anstrengend oder vollkommen überwältigend. <strong>Greenkeeper wird weder genervt noch verpasst es Updates</strong>.</li>
+      <li><strong>Versionen mit einem Klick pinnen:</strong> Sie haben zu tun, und das verstehen wir. Manchmal müssen sie einfach eine pragmatische Entscheidung darüber treffen, ob Sie Ihr Projekt sofort an eine Aktualisierung anpassen oder erstmal die alter Version eines Moduls weiterverwenden, damit Sie sich später in Ruhe damit befassen können. Greenkeeper respektiert das und unterstützt sowohl die einen als auch die andere Vorgehensweise.</li>
+      <li>Sie könnten natürlich auch alle Versionen manuell aktualisieren. Aber das ist langweilige und repetetive Arbeit, weswegen sie, um ehrlich zu sein, fast niemand macht. Greenkeeper hingegen <em>macht sie</em>, Tag und Nacht, ohne sich zu beschweren, und das alles, ohne viel ihrer Aufmerksamkeit in Anspruch zu nehmen.</li>
     </ul>
   </section>
 </div>
@@ -352,14 +360,14 @@
 <section class="limit-width">
   <h2>Features</h2>
   <ul class="centered-list">
-    <li><strong>Automated, real-time dependency updates</strong> for all JavaScript projects on GitHub.</li>
-    <li>Runs your CI test suite on every dependency update and only alerts developers when something needs to be done.</li>
-    <li>Support for both <a href="/docs.html#monorepo">monorepo repositories</a> and <a href="/docs.html#monorepo-dependencies">monorepo dependencies</a>.</li>
-    <li>Out-of-the-box support for <a href="/docs.html#private-scoped-packages">scoped packages</a>.</li>
-    <li><a href="/docs.html#private-scoped-packages">Private packages</a> and registry support via webhooks.</li>
-    <li><a href="/docs.html#lockfiles">Lockfile</a> support, including shrinkwrap, npm5 and yarn.</li>
-    <li><strong>Integrates seamlessly</strong> into your existing developer workflow, with nothing new to learn.</li>
-    <li><strong>Self-hosted Greenkeeper Enterprise option</strong> for GitHub Enterprise users. <a href="/enterprise">Find out more about Greenkeeper Enterprise</a>.</li>
+    <li><strong>Automatisierte Updates in Echtzeit</strong> für alle JavaScript-Projekte auf GitHub.</li>
+    <li>Lässt Ihre Tests laufen und sendet Benachrichtigungen, wenn Aktualisierungen Ihre Software negativ beeinträchtigen.</li>
+    <li>Funktioniert mit <a href="/de/dokumentation#monorepo">monorepo-repositories</a> sowie mit <a href="/de/dokumentation#monorepo-dependencies">monorepo-dependencies</a>.</li>
+    <li>Eingebaute Unterstützung für <a href="/de/dokumentation#private-scoped-packages">scoped packages</a>.</li>
+    <li><a href="/de/dokumentation#private-scoped-packages">Private packages</a> und Registry-Unterstützung via webhooks.</li>
+    <li><a href="/de/dokumentation#lockfiles">Lockfile</a>-Unterstützung (funktioniert mit shrinkwrap, npm5 und yarn)</li>
+    <li><strong>Integriert sich naht- und umstandslos</strong> in bestehende Arbeitsabläufe</li>
+    <li><strong>Selbstgehostete Greenkeeper Enterprise-Version</strong> für GitHub Enterprise-Kunden. <a href="/de/enterprise">Finden Sie mehr über Greenkeeper Enterprise heraus</a>.</li>
   </ul>
 </section>
 
@@ -367,30 +375,30 @@
   <ul class="nav">
     <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
     <li class="">
-        <a href="/docs.html">Docs</a>
+        <a href="/de/dokumentation.html">Dokumentation</a>
       </li>
     <li class="">
-      <a href="/faq.html">FAQ</a>
+      <a href="/de/haeufige-fragen.html">Häufige Fragen</a>
     </li>
     <li class="">
-        <a href="/about.html">About</a>
+        <a href="/de/ueber-uns.html">Über uns</a>
       </li>
     <li><a href="https://github.com/greenkeeperio">GitHub</a></li>
     <li class="">
-      <a href="/impressum.html">Legal</a>
+      <a href="/de/impressum.html">Impressum</a>
     </li>
     <li class="">
-      <a href="/terms-of-service.html">Terms of Service</a>
+      <a href="/de/nutzungsbedingungen.html">Nutzungsbedingungen</a>
     </li>
     <li class="">
-      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/de/datenschutzerklaerung.html">Datenschutzerklärung</a>
     </li>
   </ul>
 </nav>
 
 <footer role="contentinfo">
-  <p><a href="https://github.com/greenkeeperio">Greenkeeper is Open Source on GitHub</a></p>
-  <p>.io domain? — <a href="https://twitter.com/chagosuk" title="chagos-support">Yes, we support Chagos!</a></p>
+  <p><a href="https://github.com/greenkeeperio">Greenkeeper ist Open Source und auf GitHub</a>.</p>
+  <p>.io-Domain? — <a href="https://twitter.com/chagosuk" title="chagos-support">Ja, wir unterstützen Chagos!</a></p>
   <p>© 2018 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
 </footer>
 

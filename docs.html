@@ -11,44 +11,49 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg?v=kPxB0q7250" color="#00c775">
   <link rel="shortcut icon" href="/favicon.ico?v=kPxB0q7250">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" type="text/css" href="css/styles.css?v=917263871">
+  <link rel="stylesheet" type="text/css" href="/css/cookieconsent.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/styles.css?v=917263871">
   <script src="https://use.typekit.net/pve4wdk.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
-<body class="preloading docs gk-saas">
-  
+<body class="preloading docs gk-saas sidebar-nav">
+  <a href='/de/dokumentation.html' class='language-switch'>DE</a>
 
-<a id="top"></a>
-<nav class="header" role="navigation">
-  <ul class="nav">
-    <li class="green">Greenkeeper</li>
-    <li><a href="/">Home</a></li>
-    <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
-    <li class="active">
-      <a href="docs.html">Docs</a>
-    </li>
+  <a id="top"></a>
+
+<nav class="header">
+  <ul role="navigation" aria-label="main navigation">
     <li class="">
-      <a href="faq.html">FAQ</a>
+      <a href="/">Greenkeeper</a>
     </li>
-    <li class="account">
-      <a href="https://account.greenkeeper.io">Your account</a>
+    
+    
+      <li><a href="/#how-it-works">How it works</a></li>
+    
+    <li class="active">
+      <a href="/docs.html">Docs</a>
     </li>
+    <li class="" >
+      <a href="/faq.html">FAQ</a>
+    </li>
+    <li class="enterprise">
+      <a href="/enterprise.html">Enterprise</a>
+    </li>
+    
+      
+          <li><a href="/#pricing">Pricing</a></li>
+      
+    
+    <li class="account"><a href="https://account.greenkeeper.io">Your account</a></li>
   </ul>
   <a href="#" class="menu-button">
-      <span class="menu">Menu</span>
-      <span class="close">Close</span>
-      <span class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
-      </span>
-    </a>
+    <span class="menu">Menu</span>
+    <span class="close">Close</span>
+    <span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
+    </span>
+  </a>
 </nav>
-<!--header role="banner">
-  <svg class="logo" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><path class="symbol" d="M300.93 548.27a51.93 51.93 0 0 1-47.39-73.15L190 432.74a51.82 51.82 0 1 1 9.9-14.74l63.58 42.39a52.08 52.08 0 0 1 6.29-5.57L167.84 251a52 52 0 1 1 15.83-8.08L285.6 446.74a51.59 51.59 0 0 1 5.52-1.38v-97.17a51.92 51.92 0 0 1 0-102v-91.56a51.94 51.94 0 1 1 17.77.32v91a51.91 51.91 0 0 1 0 102.6V445a51.83 51.83 0 0 1 5.75 1.22l101.69-203.34a51.83 51.83 0 1 1 15.83 8.12L330.73 453.83a52.07 52.07 0 0 1 6.59 5.49l61.56-41.82a52 52 0 1 1 10.36 14.44l-61.56 41.82a51.92 51.92 0 0 1-46.75 74.51z"/><path class="ring" d="M300 582.47a282.47 282.47 0 0 1-199.74-482.21 282.47 282.47 0 1 1 399.48 399.48A280.62 280.62 0 0 1 300 582.47zm0-547.17a264.7 264.7 0 0 0-187.17 451.87 264.7 264.7 0 1 0 374.34-374.34A263 263 0 0 0 300 35.3z"/></svg>
-
-  <h1>Greenkeeper.io</h1>
-</header-->
-
-
 
 
   <div class="container">
@@ -56,23 +61,24 @@
     <h1>Documentation</h1>
     <p>First off: welcome, and thanks for trying Greenkeeper! If you can’t find what you’re looking for here, there’s also the <a href="/faq">FAQ page</a>, and if that doesn’t help, you can <a href="mailto:support@greenkeeper.io">contact us</a> directly.</p>
     <h2><a href="#documentation-overview" id="documentation-overview">Documentation overview</a></h2>
-    <ul class="compact-list">
-      <li><a href="#what-greenkeeper-does">What Greenkeeper does, and why</a></li>
-      <li><a href="#differences-between-plans">Differences between plans</a></li>
-      <li><a href="#prerequisites">Prerequisites</a></li>
-      <li><a href="#installation">Installation</a></li>
-      <li><a href="#repo-states">Checking repository states</a></li>
-      <li><a href="#greenkeeper-step-by-step">How Greenkeeper works, step by step</a></li>
-      <li><a href="#resetting-repos">Resetting a repository</a></li>
-      <li><a href="#pinning">Pinning a dependency</a></li>
-      <li><a href="#private-scoped-packages">Enabling private scoped packages</a></li>
-      <li><a href="#lockfiles">Using Greenkeeper with lockfiles</a></li>
-      <li><a href="#monorepo">Using Greenkeeper in a monorepo</a></li>
-      <li><a href="#monorepo-dependencies">Using Greenkeeper with monorepo dependencies</a></li>
-      <li><a href="#ignoring-dependencies">Ignoring certain dependency’s updates</a></li>
-      <li><a href="#custom-commit-messages">Setting up custom commit messages</a></li>
-    </ul>
-
+    <div class="sidebar">
+      <ul class="compact-list">
+        <li><a href="#what-greenkeeper-does">What Greenkeeper does, and why</a></li>
+        <li><a href="#differences-between-plans">Differences between plans</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#repo-states">Checking repository states</a></li>
+        <li><a href="#greenkeeper-step-by-step">How Greenkeeper works, step by step</a></li>
+        <li><a href="#resetting-repos">Resetting a repository</a></li>
+        <li><a href="#pinning">Pinning a dependency</a></li>
+        <li><a href="#private-scoped-packages">Enabling private scoped packages</a></li>
+        <li><a href="#lockfiles">Using Greenkeeper with lockfiles</a></li>
+        <li><a href="#monorepo">Using Greenkeeper in a monorepo</a></li>
+        <li><a href="#monorepo-dependencies">Using Greenkeeper with monorepo dependencies</a></li>
+        <li><a href="#ignoring-dependencies">Ignoring certain dependency’s updates</a></li>
+        <li><a href="#custom-commit-messages">Setting up custom commit messages</a></li>
+      </ul>
+    </div>
     <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">What Greenkeeper does, and why</a></h2>
     <p><strong>In short, Greenkeeper makes sure that you know when your project’s dependency updates break your code.</strong></p>
     <p>Greenkeeper sits between npm and GitHub, observing all of the modules your repository depends on. Each time one of them is updated, Greenkeeper opens a new branch with that update. The repository’s CI tests kick in, and Greenkeeper watches them to see whether they pass or not.</p>
@@ -146,7 +152,7 @@
         <p>Greenkeeper will watch npm’s changes feed for any update to any dependency in your <code>package.json</code> files, except for those you’ve explicitly <a href="/docs#ignoring-dependencies">ignored</a>.</p>
       </li>
       <li>
-        <strong class="signal">A dependency updates occurs</strong>
+        <strong class="signal">A dependency update occurs</strong>
         <p>Greenkeeper will open a branch that bumps that dependency’s version number in your <code>package.json</code> files. Your CI tests will run on that branch, and once they complete, one of three things will happen:</p>
         <ol>
           <li>
@@ -322,34 +328,38 @@
   <ul class="nav">
     <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
     <li class="active">
-        <a href="docs.html">Docs</a>
+        <a href="/docs.html">Docs</a>
       </li>
     <li class="">
-      <a href="faq.html">FAQ</a>
+      <a href="/faq.html">FAQ</a>
     </li>
     <li class="">
-      <a href="impressum.html">Impressum</a>
+        <a href="/about.html">About</a>
+      </li>
+    <li><a href="https://github.com/greenkeeperio">GitHub</a></li>
+    <li class="">
+      <a href="/impressum.html">Legal</a>
     </li>
     <li class="">
-      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="/terms-of-service.html">Terms of Service</a>
     </li>
     <li class="">
-      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
     </li>
   </ul>
 </nav>
 
 <footer role="contentinfo">
-  <p><a href="https://github.com/greenkeeperio">Greenkeeper is Open Source on GitHub</a>. Thank you for your future contributions!</p>
+  <p><a href="https://github.com/greenkeeperio">Greenkeeper is Open Source on GitHub</a></p>
   <p>.io domain? — <a href="https://twitter.com/chagosuk" title="chagos-support">Yes, we support Chagos!</a></p>
   <p>© 2018 <a href="http://neighbourhood.ie">The Neighbourhoodie Software GmbH</a></p>
 </footer>
 
 
-  <script type="text/javascript" src="js/smoothscroll.min.js"></script>
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/slick.min.js"></script>
-  <script type="text/javascript" src="js/magnifik.min.js"></script>
+  <script type="text/javascript" src="/js/smoothscroll.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/slick.min.js"></script>
+  <script type="text/javascript" src="/js/magnifik.min.js"></script>
   <script>
     var domReady = function(callback) {
         document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
@@ -364,7 +374,7 @@
       })
       const ratio = 760 / window.screen.width
       if (ratio > 1){
-        $('.wide-img img').magnifik({
+        $('.img img, .wide-img img').magnifik({
           ratio: ratio
         })
       }
@@ -378,13 +388,66 @@
         $('.menu-button, nav.header').removeClass('is-active')
         $('body').removeClass('no-scroll')
       })
+      $(document).on('click', '#billing-selector .toggle-switch', function(e) {
+        $('#billing-selector').toggleClass('active')
+        $('.plan').toggleClass('yearly')
+      })
+      $(document).on('click', '#billing-selector .toggle-option', function(e) {
+        event.preventDefault()
+        if ($(e.currentTarget).hasClass('toggle-option-active')) {
+          $('#billing-selector').addClass('active')
+          $('.plan').addClass('yearly')
+        } else {
+          $('#billing-selector').removeClass('active')
+          $('.plan').removeClass('yearly')
+        }
+        return false
+      })
+      window.addEventListener('popstate', function(e){
+        $('.active-hash').removeClass('active-hash')
+        $('[href="' + window.location.hash + '"]').addClass('active-hash')
+      })
+      if (window.location.hash) {
+        $('[href="' + window.location.hash + '"]').addClass('active-hash')
+      }
     })
   </script>
-  <script type="text/javascript">
-      window.cookieconsent_options = {"message":"This website uses cookies under","dismiss":"Got it!","learnMore":"these terms.","link":"https://greenkeeper.io/privacy-policy.html","theme":"dark-top"};
+  <script src="/js/cookieconsent.min.js"></script>
+  <script>
+   window.addEventListener("load", function(){
+     var message;
+     var link;
+     var dismiss;
+     if (window.location.pathname.split('/')[1] === 'de') {
+       message = "Diese Website benutzt Cookies unter"
+       link = "diesen Bedingungen."
+       dismiss = "Alles klar!"
+       href="/de/datenschutzerklaerung"
+     } else {
+       message = "This website uses cookies under"
+       link = "these terms."
+       dismiss = "Got it!"
+       href="/privacy-policy"
+     }
+     window.cookieconsent.initialise({
+       "palette": {
+         "popup": {
+           "background": "#333333",
+           "text": "#ffffff"
+         },
+         "button": {
+           "background": "transparent",
+           "text": "#00c775",
+           "border": "#00c775"
+         }
+       },
+       "content": {
+         "message": message,
+         "link": link,
+         "dismiss": dismiss,
+         "href": href
+       }
+     })});
   </script>
-
-  <script type="text/javascript" src="js/cookieconsent.min.js"></script>
-
 </body>
 </html>
