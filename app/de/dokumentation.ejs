@@ -19,6 +19,7 @@
         <li><a href="#monorepo-dependencies">Greenkeeper mit Monorepo-Dependencies verwenden</a></li>
         <li><a href="#ignoring-dependencies">Einzelne Dependency Updates ignorieren</a></li>
         <li><a href="#custom-commit-messages">Benutzerdefinierte Commit Messages einstellen</a></li>
+        <li><a href="#custom-pr-titles">Benutzerdefinierte Pull Request Titel einstellen</a></li>
       </ul>
     </div>
     <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">Wie und warum Greenkeeper funktioniert</a></h2>
@@ -274,6 +275,28 @@
     }
   }
 }</code>
+    </pre>
+    </p>
+    <a href="#top">Zum Seitenanfang</a>
+
+    <h2><a href="#custom-pr-titles" id="custom-pr-titles">Benutzerdefinierte Pull Request Titel einstellen</a></h2>
+    <p>Pull Request Titel können konfiguriert werden, indem Sie ein <code>greenkeeper.prTitles</code>-Feld in ihre <code>package.json</code> hinzufügen.</p>
+    <p>
+      <pre>
+        <code>// package.json
+  {
+  …
+  "greenkeeper": {
+    "prTitles": {
+      "initialPR": "Update dependencies to enable Greenkeeper!!!",
+      "initialPrBadge": "Add badge to enable Greenkeeper!!!!",
+      "initialPrBadgeOnly": "Add Greenkeeper badge!!!",
+      "initialSubgroupPR": "Update dependencies for ${group}!!!",
+      "basicPR": "Update ${dependency} to the latest!!!",
+      "groupPR": "Update ${dependency} in group ${group} to the latest!!!!"
+    }
+  }
+  }</code>
     </pre>
     </p>
     <a href="#top">Zum Seitenanfang</a>
