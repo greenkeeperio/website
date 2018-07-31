@@ -77,6 +77,7 @@
         <li><a href="#monorepo-dependencies">Using Greenkeeper with monorepo dependencies</a></li>
         <li><a href="#ignoring-dependencies">Ignoring certain dependency’s updates</a></li>
         <li><a href="#custom-commit-messages">Setting up custom commit messages</a></li>
+        <li><a href="#custom-pr-titles">Setting up custom pull request titles</a></li>
       </ul>
     </div>
     <h2><a href="#what-greenkeeper-does" id="what-greenkeeper-does">What Greenkeeper does, and why</a></h2>
@@ -314,6 +315,28 @@
       "devDependencyUpdate": ":gem: Upgrade: Update ${dependency} to version ${version}",
       "dependencyPin": ":bug: Fix: Pin ${dependency} to ${oldVersion}",
       "devDependencyPin": ":bug: Fix: Pin ${dependency} to ${oldVersion}"
+    }
+  }
+}</code>
+    </pre>
+    </p>
+    <a href="#top">Back to top</a>
+
+    <h2><a href="#custom-pr-titles" id="custom-pr-titles">Setting up custom pull request titles</a></h2>
+    <p>You can customize all of Greenkeeper’s pull request titles by adding a <code>greenkeeper.prTitles</code> key to your <code>package.json</code>.</p>
+    <p>
+      <pre>
+        <code>// package.json
+{
+  …
+  "greenkeeper": {
+    "prTitles": {
+      "initialPR": "Update dependencies to enable Greenkeeper!!!",
+      "initialPrBadge": "Add badge to enable Greenkeeper!!!!",
+      "initialPrBadgeOnly": "Add Greenkeeper badge!!!",
+      "initialSubgroupPR": "Update dependencies for ${group}!!!",
+      "basicPR": "Update ${dependency} to the latest!!!",
+      "groupPR": "Update ${dependency} in group ${group} to the latest!!!!"
     }
   }
 }</code>
