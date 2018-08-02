@@ -202,19 +202,16 @@
 
     <h2><a href="#resetting-repos" id="resetting-repos">Ein Repo zurücksetzen</a></h2>
     <p>Manchmal muss Greenkeeper auf einem Repo neu gestartet werden, zum Beispiel wenn der initiale Pull Request aus irgendwelchen Gründen <a href="#repo-states">nicht geöffnet wird</a>. Wenn das der Fall ist, dann gehen Sie wie folgt vor:</p>
-    <ol>
-      <li>
-        <p>Falls vorhanden, löschen sie den <code>greenkeeper/initial</code> Branch auf ihrem Repo</p>
-      </li>
-      <li>
-        <p>Entfernen Sie das Repo aus der Greenkeeper Integration in den App-Einstellungen auf GitHub. Sie finden diese Einstellungen im <a href="https://account.greenkeeper.io">Account Dashboard</a> am Ende der dem Account zugehörigen Repository-Liste (jeder GitHub Account hat einen individuellen Link, siehe <a href="#grant-repo-access">Schritt 2 der Greenkeeper Installation</a>)</p>
-      </li>
-      <li>
-        <p>Auf derselben Seite können Sie dann das Repo erneut hinzufügen und den Vorgang speichern.</p>
-      </li>
-    </ol>
-
-    <p><strong>Falls Sie in einer GitHub-Organisation arbeiten, in der alle Repositories freigegeben (whitelisted) sind</strong>, dann haben Sie möglicherweise nicht die Berechtigungen diesen Vorgang durchzuführen oder möchten nicht eigenständig Änderungen an den Einstellungen vornehmen. In diesem Fall <a href="mailto:support@greenkeeper.io">nehmen Sie bitte Kontakt mit uns auf </a> und lassen Sie uns wissen, um welche Repository es sich handelt. Wir helfen gern. </p>
+    <figure class="wide-img">
+      <img src="/images/resetting_repository.png" alt="">
+      <figcaption>Klicke den 'fix repo' Button in https://accounts.greenkeeper.io</figcaption>
+    </figure>
+    <p>Was bei einem Reset passiert:</p>
+    <ul>
+      <li>Es werden alle Branches und Issues gelöscht, die Greenkeeper auf ihrem Repository erstellt hat.</li>
+      <li>Ein neuer initialer Greenkeeper Branch und Pull Request wird erstellt.</li>
+    </ul>
+    <p>Es kann bis zu 30 minuten dauern, bis ein neuer initialer Branch auf ihrem Repository erscheint. Sollte auch nach Ablauf dieser Zeit noch kein neuer Branch von Greenkeeper erstellt worden sein, <a href="mailto:support@greenkeeper.io">nehmen Sie bitte Kontakt mit uns auf </a> und lassen Sie uns wissen, um welche Repository es sich handelt. Wir helfen gern.</p>
     <a href="#top">Zum Seitenanfang</a>
 
     <h2><a href="#pinning" id="pinning">Eine Dependency pinnen</a></h2>
