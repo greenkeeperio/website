@@ -153,19 +153,18 @@
 
     <h2><a href="#resetting-repos" id="resetting-repos">Resetting a repository</a></h2>
     <p>Sometimes, the Initial Pull Request will never be opened. This can have many reasons: you may have forgotten to allow your CI to work on Greenkeeper branches, or issues may be disabled on the target repo, the CI service may have timed out… in any case, you may want to start over. Here’s how:</p>
-    <ol>
-      <li>
-        <p>If it exists, delete the <code>greenkeeper/initial</code> branch on the repo.</p>
-      </li>
-      <li>
-        <p>Remove the repo from the Greenkeeper integration in the app installation settings on GitHub and save. You can find a link to those settings in the <a href="https://account.greenkeeper.io">Account Dashboard</a>, at the bottom of the corresponding account’s repository list. The link is unique for every GitHub account, so we can’t link to it here. This is the same place you do <a href="#grant_repo_access">the second Greenkeeper setup step</a>.</p>
-      </li>
-      <li>
-        <p>On the same page, add the repo again, and save.</p>
-      </li>
-    </ol>
-    <p>We’re working on making this more convenient by allowing you to reset repositories in the Account Dashboard.</p>
-    <p><strong>If you are working in an organization that has whitelisted all repositories</strong>, you will probably not want to touch these settings, or may not be allowed to. In this case, <a href="mailto:support@greenkeeper.io">please let us know which repo got stuck</a> and we’ll sort it out for you.</p>
+    <figure class="wide-img">
+      <img
+        src="/images/resetting_repository.png"
+        alt="">
+      <figcaption>Click the 'fix repo' button on https://accounts.greenkeeper.io</figcaption>
+    </figure>
+    <p>Here is what the reset does to your repository:</p>
+    <ul>
+      <li>deletes all branches and issues that Greenkeeper created.</li>
+      <li>creates a new initial Greenkeeper branch & pull request</li>
+    </ul>
+    <p>Please note that the reset process can take up to 30 minutes until you see a new initial branch on your repository. If you still didn't get a branch after that time <a href="mailto:support@greenkeeper.io">please let us know which repo got stuck</a> and we’ll sort it out for you.</p>
     <a href="#top">Back to top</a>
 
     <h2><a href="#pinning" id="pinning">Pinning a dependency</a></h2>
