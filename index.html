@@ -216,15 +216,19 @@
 <div class="full-height">
 <section class="pricing">
   <h2>Plans and Pricing</h2>
-<div class="toggle-container billing-selection active" id="billing-selector">
-  <a href="" class="toggle-option toggle-option-inactive">Monthly billing</a>
+<div class="toggle-container currency-selection active" id="currency-selector">
+  <a href="" class="toggle-option toggle-option-inactive">Euro</a>
   <button class="toggle-switch"></button>
-  <a href="" class="toggle-option toggle-option-active">Yearly billing</a>
+  <a href="" class="toggle-option toggle-option-active">US Dollar</a>
+</div>
+<div class="toggle-container billing-selection active" id="billing-selector">
+  <a href="" class="toggle-option toggle-option-inactive">Monthly</a>
+  <button class="toggle-switch"></button>
+  <a href="" class="toggle-option toggle-option-active">Yearly</a>
+  <div class="save-with-yearly-billing">Save 16%!</div>
 </div>
 
-<div class="save-with-yearly-billing">Save 16%!</div>
-
-<a class="plan yearly" href="https://github.com/apps/greenkeeper">
+<a class="plan yearly usd" href="https://github.com/apps/greenkeeper">
   <h2>Free Plan</h2>
   <span class="price">Totally free!</span>
   <ul class="spaced">
@@ -234,27 +238,47 @@
   <span class="button">Install now</span></a>
 
 
-<a class="plan yearly" href="https://github.com/apps/greenkeeper">
+<a class="plan yearly usd" href="https://github.com/apps/greenkeeper">
   <h2>Personal Plan</h2>
-  <span class="price monthly">$0&thinsp;USD<small>/month</small></span>
-  <span class="price yearly">$0&thinsp;USD<small>/year</small></span>
+  <span class="price monthly">
+    <span class="usd">$0&thinsp;USD<small>/month</small></span>
+    <span class="eur">0€<small>/month</small></span>
+  </span>
+  <span class="price yearly">
+    <span class="usd">$0&thinsp;USD<small>/year</small></span>
+    <span class="eur">0€<small>/year</small></span>
+  </span>
   <ul class="spaced">
     <li>For personal GitHub accounts</li>
-    <li class="monthly"><strong>+$1.5&thinsp;USD</strong> per private repo per month</li>
-    <li class="yearly"><strong>+$15&thinsp;USD</strong> per private repo per year</li>
+    <li class="monthly">
+      Plus <strong class="usd">$1.50&thinsp;USD</strong><strong class="eur">1,30€</strong> per private repo per month
+    </li>
+    <li class="yearly">
+      Plus <strong class="usd">$15&thinsp;USD</strong><strong class="eur">13€</strong> per private repo per year
+    </li>
   </ul>
   <span class="button">Install now</span></a>
 
 
-<a class="plan yearly" href="https://github.com/apps/greenkeeper">
+<a class="plan yearly usd" href="https://github.com/apps/greenkeeper">
   <h2>Organisation Plan</h2>
-  <span class="price monthly">$25&thinsp;USD<small>/month</small></span>
-  <span class="price yearly">$250&thinsp;USD<small>/year</small></span>
+  <span class="price monthly">
+    <span class="usd">$25&thinsp;USD<small>/month</small></span>
+    <span class="eur">23€<small>/month</small></span>
+  </span>
+  <span class="price yearly">
+    <span class="usd">$250&thinsp;USD<small>/year</small></span>
+    <span class="eur">230€<small>/year</small></span>
+  </span>
   <ul class="spaced">
     <li>For GitHub organisations</li>
     <li>Includes 10 private repos</li>
-    <li class="monthly"><strong>+$1.5&thinsp;USD</strong> per additional private repo per month</li>
-    <li class="yearly"><strong>+$15&thinsp;USD</strong> per additional private repo per year</li>
+    <li class="monthly">
+      Plus <strong class="usd">$1.50&thinsp;USD</strong><strong class="eur">1,30€</strong> per additional private repo per month
+    </li>
+    <li class="yearly">
+      Plus <strong class="usd">$15&thinsp;USD</strong><strong class="eur">13€</strong> per additional private repo per year
+    </li>
   </ul>
   <span class="button">Install now</span></a>
 
@@ -439,6 +463,21 @@
         } else {
           $('#billing-selector').removeClass('active')
           $('.plan').removeClass('yearly')
+        }
+        return false
+      })
+      $(document).on('click', '#currency-selector .toggle-switch', function(e) {
+        $('#currency-selector').toggleClass('active')
+        $('.plan').toggleClass('usd')
+      })
+      $(document).on('click', '#currency-selector .toggle-option', function(e) {
+        event.preventDefault()
+        if ($(e.currentTarget).hasClass('toggle-option-active')) {
+          $('#currency-selector').addClass('active')
+          $('.plan').addClass('usd')
+        } else {
+          $('#currency-selector').removeClass('active')
+          $('.plan').removeClass('usd')
         }
         return false
       })

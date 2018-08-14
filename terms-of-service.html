@@ -327,6 +327,21 @@
         }
         return false
       })
+      $(document).on('click', '#currency-selector .toggle-switch', function(e) {
+        $('#currency-selector').toggleClass('active')
+        $('.plan').toggleClass('usd')
+      })
+      $(document).on('click', '#currency-selector .toggle-option', function(e) {
+        event.preventDefault()
+        if ($(e.currentTarget).hasClass('toggle-option-active')) {
+          $('#currency-selector').addClass('active')
+          $('.plan').addClass('usd')
+        } else {
+          $('#currency-selector').removeClass('active')
+          $('.plan').removeClass('usd')
+        }
+        return false
+      })
       window.addEventListener('popstate', function(e){
         $('.active-hash').removeClass('active-hash')
         $('[href="' + window.location.hash + '"]').addClass('active-hash')
