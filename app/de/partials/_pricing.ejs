@@ -1,11 +1,16 @@
 <h2>Preise</h2>
+<div class='toggle-container currency-selection' id="currency-selector">
+    <a href="" class='toggle-option toggle-option-inactive'>Euro</a>
+    <button class="toggle-switch"></button>
+    <a href="" class='toggle-option toggle-option-active'>US-Dollar</a>
+  </div>
 <div class='toggle-container billing-selection active' id="billing-selector">
-  <a href="" class='toggle-option toggle-option-inactive'>Monatliche Abrechnung</a>
+  <a href="" class='toggle-option toggle-option-inactive'>Monatlich</a>
   <button class="toggle-switch"></button>
-  <a href="" class='toggle-option toggle-option-active' style="margin-right: 25px;">Jährliche Abrechnung</a>
+  <a href="" class='toggle-option toggle-option-active'>Jährlich</a>
+  <div class="save-with-yearly-billing">16% sparen!</div>
 </div>
 
-<div class="save-with-yearly-billing">16% sparen!</div>
 
 <a class="plan yearly" href='https://github.com/apps/greenkeeper'>
   <h2>Kostenloser Plan</h2>
@@ -19,25 +24,45 @@
 
 <a class="plan yearly" href='https://github.com/apps/greenkeeper'>
   <h2>Persönlicher Plan</h2>
-  <span class="price monthly">0€<small>/Monat</small></span>
-  <span class="price yearly">0€<small>/Jahr</small></span>
+  <span class="price monthly">
+    <span class='usd'>$0&thinsp;USD<small>/Monat</small></span>
+    <span class='eur'>0€<small>/Monat</small></span>
+  </span>
+  <span class="price yearly">
+    <span class='usd'>$0&thinsp;USD<small>/Jahr</small></span>
+    <span class='eur'>0€<small>/Jahr</small></span>
+  </span>
   <ul class="spaced">
     <li>Für persönliche GitHub-Accounts</li>
-    <li class="monthly"><strong>+1,5€</strong> pro private Repo pro Monat</li>
-    <li class="yearly"><strong>+15€</strong> pro private Repo pro Jahr</li>
+    <li class="monthly">
+      <strong class='usd'>$1.50&thinsp;USD</strong><strong class='eur'>1,30€</strong> pro zusätzliche private Repo pro Monat
+    </li>
+    <li class="yearly">
+      <strong class='usd'>$15&thinsp;USD</strong><strong class='eur'>13€</strong> pro zusätzliche private Repo pro Jahr
+    </li>
   </ul>
   <span class="button">Jetzt installieren</a>
 </a>
 
 <a class="plan yearly" href='https://github.com/apps/greenkeeper'>
   <h2>Organisations-Plan</h2>
-  <span class="price monthly">25€<small>/Monat</small></span>
-  <span class="price yearly">250€<small>/Jahr</small></span>
+  <span class="price monthly">
+    <span class='usd'>$25&thinsp;USD<small>/Monat</small></span>
+    <span class='eur'>23€<small>/Monat</small></span>
+  </span>
+  <span class="price yearly">
+    <span class='usd'>$250&thinsp;USD<small>/Jahr</small></span>
+    <span class='eur'>230€<small>/Jahr</small></span>
+  </span>
   <ul class="spaced">
     <li>Für GitHub-Organisationen</li>
     <li>10 private Repos inklusive</li>
-    <li class="monthly"><strong>+1,5€</strong> pro zusätzliche private Repo pro Monat</li>
-    <li class="yearly"><strong>+15€</strong> pro zusätzliche private Repo pro Jahr</li>
+    <li class="monthly">
+      <strong class='usd'>$1.50&thinsp;USD</strong><strong class='eur'>1,30€</strong> pro private Repo pro Monat
+    </li>
+    <li class="yearly">
+      <strong class='usd'>$15&thinsp;USD</strong><strong class='eur'>13€</strong> pro zusätzliche private Repo pro Jahr
+    </li>
   </ul>
   <span class="button">Jetzt installieren</a>
 </a>
