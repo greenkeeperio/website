@@ -225,7 +225,8 @@
     <a href="#top">Back to top</a>
 
     <h2><a href="#lockfiles" id="lockfiles">Using Greenkeeper with lockfiles</a></h2>
-    <p>Greenkeeper supports lockfiles via an additional package called <a href="https://github.com/greenkeeperio/greenkeeper-lockfile">greenkeeper-lockfile</a>. Please consult that package’s readme for details.</p>
+    <p>Greenkeeper has built-in support for npm and yarn lockfiles that use public packages (<code>package-lock.json</code> and <code>yarn.lock</code>). These will be updated automatically whenever the corresponding package file changes. Lockfiles that include private packages will not be updated. But:</p>
+    <p>Greenkeeper supports shrinkwrap and lockfiles with private packages via an additional package called <a href="https://github.com/greenkeeperio/greenkeeper-lockfile">greenkeeper-lockfile</a>. Please consult that package’s readme for details.</p>
     <p>If you have <code>greenkeeper-lockfile</code> set up, this is how the different lockfiles are treated:</p>
     <p><code>npm-shrinkwrap.json</code> can be part of a release to npm and defines exactly which dependency versions your users get. If an update is covered by the defined range in your <code>package.json</code>, Greenkeeper does nothing if <code>npm-shrinkwrap.json</code> is present, since that guarantees that the new dependency will never be installed anyway. If there’s an out-of-range update, you get a Pull Request so you are aware of the update and can decide whether you’re interested in it.</p>
     <p><code>package-lock.json</code> and <code>yarn.lock</code> work differently, since these two are not published to npm and have no influence on which dependency versions your users get. For in-range updates, Greenkeeper will always open a branch so your CI can run and update these lockfiles. For out-of-range updates, you get a Pull Request, as usual.</p>
