@@ -304,7 +304,7 @@ strong {
 
 .language-switch {
   position: fixed;
-  top: 1.15rem;
+  top: 3.175rem;
   z-index: 2001;
   left: 1rem;
   font-family: $fonts;
@@ -332,7 +332,7 @@ nav.header {
   height: 3.9rem;
   background: $white;
   padding: 0;
-  top: 0;
+  top: 2rem;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
@@ -340,9 +340,17 @@ nav.header {
   z-index: 2000;
   // transition: all 0.5s;
   &.is-active {
-    height: 100vh;
+    height: calc(100vh - 2rem);
     ul {
       transform: translateX(0);
+      @media screen and (max-width: 759px) {
+        .active a:before {
+          border-color: transparent;
+          border-left-color: $black;
+          top: 0.4em;
+          left: -0.5em;
+        }
+      }
     }
   }
   ul {
@@ -461,13 +469,52 @@ nav ul li a{
   }
 }
 
+.companyHeader {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: $white;
+  z-index: 2000;
+  .centeringContainer {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    width: 100%;
+    margin: 0 1.35rem;
+    svg {
+      height: 1em;
+      width: 1em;
+      margin-right: 0.5em;
+    }
+    .subline {
+      font-size: 0.65rem;
+      color: $black;
+      font-family: $fonts;
+      a {
+        color: inherit;
+        font-weight: inherit;
+        border-color: #dadada;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.75em;
+        &:hover, &:focus {
+          border-color: $black;
+        }
+      }
+    }
+  }
+}
+
 .index .hero {
   overflow: hidden;
   position: relative;
   min-height: 190px;
   // box-shadow: 0px 0px 9px 1px hsla(154, 95%, 30%, 1) inset;
   color: $white;
-  margin-top: 2.5rem;
+  margin-top: 4.5rem;
   padding: 3rem 0;
   header{
     margin-top: 0;
@@ -697,7 +744,7 @@ h1, h2, h3, h4, h5, h6{
     &[id] {
       color: black;
       border: none;
-      padding-top: 3em;
+      padding-top: 5em;
       display: inline;
     }
   }
@@ -744,7 +791,7 @@ a:not([href]) {
 }
 
 a[href="#top"] {
-  margin-bottom: 3em;
+  margin-bottom: 6em;
   display: inline-block;
 }
 
@@ -1643,6 +1690,13 @@ a.cta {
   html{
     font-size: 20px;
   }
+  .companyHeader {
+    .centeringContainer {
+      .subline {
+        font-size: 0.75rem;
+      }
+    }
+  }
 }
 
 // Flip to wide layout and non-mobile nav
@@ -1656,13 +1710,19 @@ a.cta {
   html{
     font-size: 22px;
   }
+  .companyHeader {
+    .centeringContainer {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
   a.menu-button {
     display: none;
   }
   .language-switch {
     left: auto;
     font-size: 0.6rem;
-    top: 0.65rem;
+    top: 2.6rem;
     display: block;
     right: 1rem;
   }
@@ -1672,6 +1732,9 @@ a.cta {
     background-color: $white;
     align-items: center;
     box-shadow: 0 0 10px 5px hsla(0, 0%, 50%, 0.1);
+    &.is-active{
+      height: 2.5rem;
+    }
     ul{
       display: flex;
       font-size: 0.6rem;
@@ -1919,7 +1982,7 @@ a.cta {
     .sidebar {
       position: fixed;
       left: 0;
-      top: 2.5rem;
+      top: 3.75rem;
       bottom: 0;
       width: 33vw;
       max-width: 25rem;
