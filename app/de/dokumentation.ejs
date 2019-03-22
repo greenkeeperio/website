@@ -182,15 +182,15 @@
     <a href="#top">Zum Seitenanfang</a>
 
     <h2><a href="#private-packages" id="private-packages">Private Pakete aktualisieren</a></h2>
-    <p>Greenkeeper unterstützt Aktualisierungen von privaten Paketen von npm and GitHub, diese können allerdings erst efolgen, wenn die entpsrechenden Zugangs-Tokens im <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a> eingerichtet worden sind.</p>
+    <p>Greenkeeper unterstützt Aktualisierungen von privaten Paketen von npm and GitHub, die entpsrechenden Zugangs-Tokens können im <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a> eingerichtet werden.</p>
     <a href="#top">Back to top</a>
 
     <h2><a href="#private-scoped-packages" id="private-scoped-packages">Private Scoped Packages aktivieren</a></h2>
-    <p>Um Private Scoped Packages zu aktivieren ist ein weiter Schritt erforderlich, welcher im initialen Pull Request ausführlich beschrieben ist. Die dafür benötigten URLs und Tokens sind für jeden Account und jedes Repo anders. Sie werden nur erstellt, wenn der initiale Pull Request generiert wird. Bitte sehen Sie sich die Anweisungen im initialen Pull Request an um hierzu weitere Informationen zu erhalten.</p>
+    <p>Um Private Scoped Packages zu aktivieren ist ein weiterer Schritt erforderlich, welcher im initialen Pull Request ausführlich beschrieben ist. Die dafür benötigten URLs und Tokens sind für jeden Account und jedes Repository anders. Sie werden nur erstellt, wenn der initiale Pull Request generiert wird. Bitte sehen Sie sich die Anweisungen im initialen Pull Request an um hierzu weitere Informationen zu erhalten.</p>
     <a href="#top">Zum Seitenanfang</a>
 
     <h2><a href="#lockfiles" id="lockfiles">Verwendung von Greenkeeper mit Lockfiles</a></h2>
-    <p>Greenkeeper hat eingebaute Unterstützung für Lockfile-Updates mit öffentlichen und/oder privaten Paketen via npm und yarn (<code>package-lock.json</code> und <code>yarn.lock</code>). Jedes Mal, wenn eine Package-Datei aktualisiert wird, wird das dazugehörige Lockfile auch aktualisiert. Lockfiles mit privaten Paketen werden nur verarbeitet, wenn vorher die erfordelichen Zugangs-Tokens für npm oder GitHub im <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a> eingerichtet werden.</p>
+    <p>Greenkeeper hat eingebaute Unterstützung für Lockfile-Updates mit öffentlichen und/oder privaten Paketen via npm und yarn (<code>package-lock.json</code> und <code>yarn.lock</code>). Jedes Mal, wenn eine Package-Datei aktualisiert wird, wird das dazugehörige Lockfile auch aktualisiert. Lockfiles mit privaten Paketen werden auch verarbeitet, die erforderlichen Zugangs-Tokens für npm oder GitHub können im <a href="https://account.greenkeeper.io">Greenkeeper Account Dashboard</a> eingerichtet werden.</p>
     <p>Greenkeeper unterstützt Shrinkwrap und Lockfiles mit privaten Paketen durch ein zusätzliches Paket namens <a href="https://github.com/greenkeeperio/greenkeeper-lockfile">greenkeeper-lockfile</a>. Details hierzu finden Sie in dessen Dokumentation. </p>
     <p>Wenn Sie <code>greenkeeper-lockfile</code> eingerichtet haben, werden die verschiedenen Lockfiles wie folgt behandelt: </p>
     <p>Die <code>npm-shrinkwrap.json</code> kann Teil von dem sein, was bei npm in der Registry veröffentlicht wird, und definiert exakt, welche Dependency-Versionen Ihre User bekommen. Wenn ein Update von der bereits in der <code>package.json</code> definierten Range abgedeckt wird und eine <code>npm-shrinkwrap.json</code> existiert, macht Greenkeeper, weil garantiert ist, dass eine potentielle neue Version sowieso nie installiert wird. Wenn es ein out-of-range Update gibt, erhalten Sie aber wie immer trotzdem einen Pull Request.</p>
