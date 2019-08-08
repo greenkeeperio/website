@@ -3,7 +3,7 @@
   "description": "The Greenkeeper Website",
   "devDependencies": {
     "browser-sync": "^2.23.5",
-    "browserify": "^16.1.0",
+    "browserify": "^16.4.0",
     "gh-pages": "^1.0.0",
     "harp": "^0.29.0",
     "uglifyify": "^5.0.1"
