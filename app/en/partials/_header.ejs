@@ -30,13 +30,6 @@
     <li class="<%= current.source=='enterprise'?'enterprise active':'enterprise' %>">
       <a href="/enterprise.html">Enterprise</a>
     </li>
-    <% if (!bodyClass.includes('gk-enterprise')){ %>
-      <% if (bodyClass.includes('index')){ %>
-          <li><a href="#pricing">Pricing</a></li>
-        <% } else { %>
-          <li><a href="/#pricing">Pricing</a></li>
-      <% } %>
-    <% } %>
     <li class="account"><a href="https://account.greenkeeper.io">Your account</a></li>
   </ul>
   <a href="#" class="menu-button">
