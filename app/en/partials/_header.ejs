@@ -1,35 +1,31 @@
 <a href='<%- otherLanguageURL %>' class='language-switch'>DE</a>
-<% if (!bodyClass.includes('index')){ %>
-  <a id="top"></a>
-<% } %>
 
-<div class='companyHeader'>
-  <div class='centeringContainer'>
-    <svg id="neighbourhoodie-n" viewBox="0 0 60 60" width="100%" height="100%"><title>neighbourhoodie-n</title><path d="M53.46,60,18.61,28.7V58.9H5.2V.31L7,0,41.39,31.06V1.1H54.8V59.76Z"></path></svg>
-    <span class='subline'>A product by <a href='https://neighbourhood.ie'>Neighbourhoodie Software</a></span>
+<% if (bodyClass.includes('index')){ %>
+  <div class="companyHeader">
+    <div class="centeringContainer">
+      <span class="subline">Greenkeeper will be saying goodbye 👋 on XX.XX.2020! Read more below…</span>
+    </div>
   </div>
-</div>
+<% } else {%>
+  <a id="top"></a>
+  <div class="companyHeader">
+    <div class="centeringContainer">
+      <span class="subline">Greenkeeper will be saying goodbye 👋 and passing the torch to Snyk on XX.XX.2020! <a href="/">Find&nbsp;out&nbsp;more</a></span>
+    </div>
+  </div>
+<% } %>
 
 <nav class="header">
   <ul role="navigation" aria-label="main navigation">
     <li class="<%= current.source=='index'?'active':'' %>">
       <a href="/">Greenkeeper</a>
     </li>
-    <%# This is so navigating to anchors while on the index page is animated, same below for pricing #%>
-    <% if (bodyClass.includes('index')){ %>
-      <li><a href="#how-it-works">How it works</a></li>
-      <% } else { %>
-      <li><a href="/#how-it-works">How it works</a></li>
-    <% } %>
     <li class="<%= current.source=='docs'?'active':'' %>">
       <a href="/docs.html">Docs</a>
     </li>
-    <li class="<%= current.source=='faq'?'active':'' %>" >
-      <a href="/faq.html">FAQ</a>
-    </li>
-    <li class="<%= current.source=='enterprise'?'enterprise active':'enterprise' %>">
+    <!-- li class="<%= current.source=='enterprise'?'enterprise active':'enterprise' %>">
       <a href="/enterprise.html">Enterprise</a>
-    </li>
+    </li-->
     <li class="account"><a href="https://account.greenkeeper.io">Your account</a></li>
   </ul>
   <a href="#" class="menu-button">
