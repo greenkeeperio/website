@@ -292,10 +292,6 @@ body{
   background-repeat: repeat-y;
   background-size: 100%;
   overflow-x: hidden;
-  // background-image: url(../images/bg_nodes_gk-saas.svg);
-  &.gk-enterprise{
-    // background-image: url(../images/bg_nodes_gk-enterprise.svg);
-  }
   &.no-scroll {
     overflow: hidden;
   }
@@ -310,7 +306,7 @@ strong {
 
 .language-switch {
   position: fixed;
-  top: 7.175rem;
+  top: 5.175rem;
   z-index: 2001;
   left: 1rem;
   font-family: $fonts;
@@ -338,7 +334,7 @@ nav.header {
   height: 3.9rem;
   background: $white;
   padding: 0;
-  top: 6rem;
+  top: 4rem;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
@@ -346,7 +342,10 @@ nav.header {
   z-index: 2000;
   // transition: all 0.5s;
   &.is-active {
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 6rem);
+    @media screen and (min-width: 400px) {
+      height: calc(100vh - 4rem);
+    }
     ul {
       transform: translateX(0);
       @media screen and (max-width: 759px) {
@@ -489,7 +488,7 @@ nav ul li a{
     margin: 0 auto;
     display: flex;
     align-items: center;
-    height: 6rem;
+    height: 4rem;
     flex-direction: column;
     justify-content: center;
     svg {
@@ -498,9 +497,12 @@ nav ul li a{
       margin-right: 0.5em;
     }
     .subline {
-      font-size: 0.75rem;
+      font-size: 1rem;
       color: $white;
       font-family: $fonts;
+      @media screen and (max-width: 320px) {
+        font-size: 0.8rem;
+      }
       a {
         color: white;
         border: none;
@@ -1553,7 +1555,10 @@ figure.wide-img {
       margin-left: 50px;
     }
     p {
-      margin-left: 2.25rem;
+      margin-left: 0;
+      @media screen and (min-width: $column-width) {
+        margin-left: 2.25rem;
+      }
     }
     ul {
       margin-left: 1.5rem;
@@ -1567,7 +1572,11 @@ figure.wide-img {
   }
 }
 
-.cc-banner{
+.cc-window{
+  @media screen and (max-width: 400px) {
+    font-size: 0.6rem;
+  }
+  right: 0;
   .cc-link {
     border: none;
   }
@@ -1715,14 +1724,11 @@ a.cta {
     font-size: 20px;
   }
   body:not(.index) .container {
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
   .companyHeader {
     .centeringContainer {
       height: 4rem;
-      .subline {
-        font-size: 1rem;
-      }
     }
   }
   .language-switch {
@@ -1929,7 +1935,7 @@ a.cta {
     border-radius: 50%;
     top: -0.3em;
     position: absolute;
-    vertical-align: middle;
+    // vertical-align: middle;
     text-align: center;
     padding: 0;
     line-height: 46px;
