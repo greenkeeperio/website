@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-  <title>Greenkeeper | Terms of Service</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=kPxB0q7250">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=kPxB0q7250">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=kPxB0q7250">
-  <link rel="manifest" href="/manifest.json?v=kPxB0q7250">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=kPxB0q7250" color="#00c775">
-  <link rel="shortcut icon" href="/favicon.ico?v=kPxB0q7250">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" type="text/css" href="/css/cookieconsent.min.css" />
-  <link rel="stylesheet" type="text/css" href="/css/styles.css?v=kjasdhfnkjhab">
-  <script src="https://use.typekit.net/pve4wdk.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
-</head>
-<body class="preloading terms-of-service gk-saas">
-  <a href='/de/nutzungsbedingungen.html' class='language-switch'>DE</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimal-ui"
+    />
+    <title>Greenkeeper | Terms of Service</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=kPxB0q7250"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png?v=kPxB0q7250"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png?v=kPxB0q7250"
+    />
+    <link rel="manifest" href="/manifest.json?v=kPxB0q7250" />
+    <link
+      rel="mask-icon"
+      href="/safari-pinned-tab.svg?v=kPxB0q7250"
+      color="#00c775"
+    />
+    <link rel="shortcut icon" href="/favicon.ico?v=kPxB0q7250" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" type="text/css" href="/css/cookieconsent.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/styles.css?v=kjasdhfnkjhab"
+    />
+    <script src="https://use.typekit.net/qof5ele.js"></script>
+    <script>
+      try {
+        Typekit.load({ async: true });
+      } catch (e) {}
+    </script>
+  </head>
+  <body class="preloading terms-of-service gk-saas">
+    <a href='/de/nutzungsbedingungen.html' class='language-switch'>DE</a>
 
   <a id="top"></a>
 
@@ -62,9 +91,7 @@
     </span>
   </a>
 </nav>
-
-
-  <div class="container">
+ <div class="container">
   <div class="main" role="main">
     <h1>Terms of Service</h1>
 
@@ -254,9 +281,7 @@
 
     <p>(3) In the event that any provision in this agreement is or becomes invalid or unenforceable or is incomplete the validity of the remainder of this agreement shall not be affected.</p>
   </div>
-</div>
-
-  <nav class="footer" role="navigation">
+</div> <nav class="footer" role="navigation">
   <ul class="nav">
     <li><a href="https://blog.greenkeeper.io/">Blog</a></li>
     <li class="">
@@ -288,113 +313,127 @@
 </footer>
 
 
-  <script type="text/javascript" src="/js/smoothscroll.min.js"></script>
-  <script type="text/javascript" src="/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/slick.min.js"></script>
-  <script type="text/javascript" src="/js/magnifik.min.js"></script>
-  <script>
-    var domReady = function(callback) {
-        document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
-    };
-    domReady(function() {
-      $('.tweets').slick({
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 7000,
-        prevArrow: '<button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button">←</button>',
-        nextArrow: '<button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Previous" role="button">→</button>'
-      })
-      const ratio = 760 / window.screen.width
-      if (ratio > 1){
-        $('.img img, .wide-img img').magnifik({
-          ratio: ratio
-        })
-      }
-      $(document).on('click', '.menu-button', function(e){
-        event.preventDefault()
-        $('.menu-button, nav.header').toggleClass('is-active')
-        $('body').toggleClass('no-scroll')
-        return false
-      })
-      $(document).on('click', 'body.no-scroll nav.header li a', function(e) {
-        $('.menu-button, nav.header').removeClass('is-active')
-        $('body').removeClass('no-scroll')
-      })
-      $(document).on('click', '#billing-selector .toggle-switch', function(e) {
-        $('#billing-selector').toggleClass('active')
-        $('.plan').toggleClass('yearly')
-      })
-      $(document).on('click', '#billing-selector .toggle-option', function(e) {
-        event.preventDefault()
-        if ($(e.currentTarget).hasClass('toggle-option-active')) {
-          $('#billing-selector').addClass('active')
-          $('.plan').addClass('yearly')
-        } else {
-          $('#billing-selector').removeClass('active')
-          $('.plan').removeClass('yearly')
+    <script type="text/javascript" src="/js/smoothscroll.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
+    <script type="text/javascript" src="/js/magnifik.min.js"></script>
+    <script>
+      var domReady = function(callback) {
+        document.readyState === "interactive" ||
+        document.readyState === "complete"
+          ? callback()
+          : document.addEventListener("DOMContentLoaded", callback);
+      };
+      domReady(function() {
+        $(".tweets").slick({
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 7000,
+          prevArrow:
+            '<button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button">←</button>',
+          nextArrow:
+            '<button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Previous" role="button">→</button>'
+        });
+        const ratio = 760 / window.screen.width;
+        if (ratio > 1) {
+          $(".img img, .wide-img img").magnifik({
+            ratio: ratio
+          });
         }
-        return false
-      })
-      $(document).on('click', '#currency-selector .toggle-switch', function(e) {
-        $('#currency-selector').toggleClass('active')
-        $('.plan').toggleClass('usd')
-      })
-      $(document).on('click', '#currency-selector .toggle-option', function(e) {
-        event.preventDefault()
-        if ($(e.currentTarget).hasClass('toggle-option-active')) {
-          $('#currency-selector').addClass('active')
-          $('.plan').addClass('usd')
-        } else {
-          $('#currency-selector').removeClass('active')
-          $('.plan').removeClass('usd')
+        $(document).on("click", ".menu-button", function(e) {
+          event.preventDefault();
+          $(".menu-button, nav.header").toggleClass("is-active");
+          $("body").toggleClass("no-scroll");
+          return false;
+        });
+        $(document).on("click", "body.no-scroll nav.header li a", function(e) {
+          $(".menu-button, nav.header").removeClass("is-active");
+          $("body").removeClass("no-scroll");
+        });
+        $(document).on("click", "#billing-selector .toggle-switch", function(
+          e
+        ) {
+          $("#billing-selector").toggleClass("active");
+          $(".plan").toggleClass("yearly");
+        });
+        $(document).on("click", "#billing-selector .toggle-option", function(
+          e
+        ) {
+          event.preventDefault();
+          if ($(e.currentTarget).hasClass("toggle-option-active")) {
+            $("#billing-selector").addClass("active");
+            $(".plan").addClass("yearly");
+          } else {
+            $("#billing-selector").removeClass("active");
+            $(".plan").removeClass("yearly");
+          }
+          return false;
+        });
+        $(document).on("click", "#currency-selector .toggle-switch", function(
+          e
+        ) {
+          $("#currency-selector").toggleClass("active");
+          $(".plan").toggleClass("usd");
+        });
+        $(document).on("click", "#currency-selector .toggle-option", function(
+          e
+        ) {
+          event.preventDefault();
+          if ($(e.currentTarget).hasClass("toggle-option-active")) {
+            $("#currency-selector").addClass("active");
+            $(".plan").addClass("usd");
+          } else {
+            $("#currency-selector").removeClass("active");
+            $(".plan").removeClass("usd");
+          }
+          return false;
+        });
+        window.addEventListener("popstate", function(e) {
+          $(".active-hash").removeClass("active-hash");
+          $('[href="' + window.location.hash + '"]').addClass("active-hash");
+        });
+        if (window.location.hash) {
+          $('[href="' + window.location.hash + '"]').addClass("active-hash");
         }
-        return false
-      })
-      window.addEventListener('popstate', function(e){
-        $('.active-hash').removeClass('active-hash')
-        $('[href="' + window.location.hash + '"]').addClass('active-hash')
-      })
-      if (window.location.hash) {
-        $('[href="' + window.location.hash + '"]').addClass('active-hash')
-      }
-    })
-  </script>
-  <script src="/js/cookieconsent.min.js"></script>
-  <script>
-   window.addEventListener("load", function(){
-     var message;
-     var link;
-     var dismiss;
-     if (window.location.pathname.split('/')[1] === 'de') {
-       message = "Diese Website benutzt Cookies unter"
-       link = "diesen Bedingungen."
-       dismiss = "Alles klar!"
-       href="/de/datenschutzerklaerung"
-     } else {
-       message = "This website uses cookies under"
-       link = "these terms."
-       dismiss = "Got it!"
-       href="/privacy-policy"
-     }
-     window.cookieconsent.initialise({
-       "palette": {
-         "popup": {
-           "background": "#333333",
-           "text": "#ffffff"
-         },
-         "button": {
-           "background": "transparent",
-           "text": "#00c775",
-           "border": "#00c775"
-         }
-       },
-       "content": {
-         "message": message,
-         "link": link,
-         "dismiss": dismiss,
-         "href": href
-       }
-     })});
-  </script>
-</body>
+      });
+    </script>
+    <script src="/js/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener("load", function() {
+        var message;
+        var link;
+        var dismiss;
+        if (window.location.pathname.split("/")[1] === "de") {
+          message = "Diese Website benutzt Cookies unter";
+          link = "diesen Bedingungen.";
+          dismiss = "Alles klar!";
+          href = "/de/datenschutzerklaerung";
+        } else {
+          message = "This website uses cookies under";
+          link = "these terms.";
+          dismiss = "Got it!";
+          href = "/privacy-policy";
+        }
+        window.cookieconsent.initialise({
+          palette: {
+            popup: {
+              background: "#333333",
+              text: "#ffffff"
+            },
+            button: {
+              background: "transparent",
+              text: "#00c775",
+              border: "#00c775"
+            }
+          },
+          content: {
+            message: message,
+            link: link,
+            dismiss: dismiss,
+            href: href
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
