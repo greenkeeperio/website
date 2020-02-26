@@ -18,7 +18,7 @@
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M13 16v5a1 1 0 0 1-1 1H9l-3-6a2 2 0 0 1-2-2 2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2 0-1.1.9-2 2-2h7.59l4-4H20a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2.41l-4-4H13zm0-2h1.41l4 4H20V4h-1.59l-4 4H13v6zm-2 0V8H6v2H4v2h2v2h5zm0 2H8.24l2 4H11v-4z"/></svg>
     <h3>An Important Message from the Makers of Greenkeeper</h3>
-    <p style="font-size: 1rem;"><strong>We’ll stop Greenkeeper’s operation as an independent service on June 3rd, 2020. For your dependency update needs, we have a viable alternative for you: <a href="https://snyk.io/">Snyk</a>. </strong>The team behind Greenkeeper have spent the past months working with them on next-generation dependency updates as a part of their product. We invite all of our users to migrate over: Snyk not only has a generous free plan for Open Source repos and small organisations, but also offers security-focused features that Greenkeeper didn’t have. They’re good people, and your repos will be in competent hands.</p>
+    <p style="font-size: 1rem;"><strong>We’ll stop Greenkeeper’s operation as an independent service on June 3rd, 2020. For your dependency update needs, we have a brilliant alternative for you: <a href="https://snyk.io/">Snyk</a>. </strong>The team behind Greenkeeper have spent the past months working with them on next-generation dependency updates as a part of their open-source security product. We invite all of our users to migrate over: Snyk not only has a generous free plan for Open Source repos and small organisations, but also offers dev-friendly security features that Greenkeeper didn’t have. They’re good people, and your repos will be in competent and caring hands.</p>
     <p style="font-size: 1.5rem;">
       <%- partial(locale + "/partials/_migrate-btn") %>
     </p>
@@ -38,7 +38,7 @@
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M17.62 10H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H8.5c-1.2 0-2.3-.72-2.74-1.79l-3.5-7-.03-.06A3 3 0 0 1 5 9h5V4c0-1.1.9-2 2-2h1.62l4 8zM16 11.24L12.38 4H12v7H5a1 1 0 0 0-.93 1.36l3.5 7.02a1 1 0 0 0 .93.62H16v-8.76zm2 .76v8h2v-8h-2z"/></svg>
     <h3>Who are Snyk?</h3>
-    <p><a href="https://snyk.io/">Snyk</a> provides Open Source security with a developer-first focus for over 400&thinsp;000 developers. They truly care about automation, the developer workflow, and doing genuine good in the Open Source community while making it safer and more secure. We honestly couldn’t be more happy about this partnership: not only do we agree on how dependency updates should work, our two companies are also well aligned in terms of values 🤝</p>
+    <p><a href="https://snyk.io/">Snyk</a> helps over 400,000 developers worldwide find and fix vulnerabilities and license issues in their open source dependencies and containers. They truly care about automation, the developer workflow, and doing genuine good in the Open Source community while making it safer and more secure. We honestly couldn’t be more happy about this partnership: not only do we agree on how dependency updates should work, our two companies are also well aligned in terms of values 🤝</p>
   </div>
   <div class="feature">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="heroicon-ui" d="M14 5.62l-4 2v10.76l4-2V5.62zm2 0v10.76l4 2V7.62l-4-2zm-8 2l-4-2v10.76l4 2V7.62zm7 10.5L9.45 20.9a1 1 0 0 1-.9 0l-6-3A1 1 0 0 1 2 17V4a1 1 0 0 1 1.45-.9L9 5.89l5.55-2.77a1 1 0 0 1 .9 0l6 3A1 1 0 0 1 22 7v13a1 1 0 0 1-1.45.89L15 18.12z"/></svg>
@@ -72,7 +72,7 @@
       <li>Snyk’s service works a little differently to Greenkeeper:</li>
       <ul>
         <li>It does not require or directly engage with a CI tool.</li>
-        <li>GitHub repositories are "imported" into Snyk and are tested regularly for both vulnerabilities <em>and</em> new dependency versions.</li>
+        <li>GitHub repositories (just the depency tree in reality) are "imported" into Snyk and are tested regularly for both vulnerabilities <em>and</em> new dependency versions.</li>
         <li>PRs are then raised to remediate any vulnerabilities, as well as to bump any out-of-date dependencies.</li>
         <li>Snyk will <strong>never</strong> knowingly introduce a new vulnerability, and limits the number of simultaneously open pull requests to avoid being too noisy (it’s a configurable limit!)</li>
         <li>These ☝️ address the top 2 feature requests from existing Greenkeeper users.</li>
