@@ -5,6 +5,8 @@ $green-primary: #00c775;
 $green-intermediary: #6fd3a1;
 $green-secondary: #e6faf1;
 
+$purple: #70389f;
+
 $blue-primary: cornflowerblue;
 $blue-intermediary: #a4c0f4;
 $blue-secondary: #e8effc;
@@ -16,6 +18,10 @@ $black: #000;
 $off-white: #FAFAFA;
 
 $fonts: "futura-pt", Futura, sans-serif;
+
+.mt-3{
+  margin-top: 3em;
+}
 
 @mixin theme($name, $primary, $secondary, $intermediary) {
   .#{$name} {
@@ -156,7 +162,7 @@ $fonts: "futura-pt", Futura, sans-serif;
       margin-left: 1.5rem;
       font-size: 0.65rem;
       transform: rotateZ(-5deg);
-      background: #00c775;
+      background: $green-primary;
       color: #fff;
       border-radius: 5px;
       width: 8em;
@@ -286,15 +292,11 @@ body{
   background-repeat: repeat-y;
   background-size: 100%;
   overflow-x: hidden;
-  // background-image: url(../images/bg_nodes_gk-saas.svg);
-  &.gk-enterprise{
-    // background-image: url(../images/bg_nodes_gk-enterprise.svg);
-  }
   &.no-scroll {
     overflow: hidden;
   }
   &:not(.index) .container {
-    margin-top: 4rem;
+    margin-top: 9rem;
   }
 }
 
@@ -304,7 +306,7 @@ strong {
 
 .language-switch {
   position: fixed;
-  top: 3.175rem;
+  top: 5.175rem;
   z-index: 2001;
   left: 1rem;
   font-family: $fonts;
@@ -332,7 +334,7 @@ nav.header {
   height: 3.9rem;
   background: $white;
   padding: 0;
-  top: 2rem;
+  top: 4rem;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
@@ -340,7 +342,10 @@ nav.header {
   z-index: 2000;
   // transition: all 0.5s;
   &.is-active {
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 6rem);
+    @media screen and (min-width: 400px) {
+      height: calc(100vh - 4rem);
+    }
     ul {
       transform: translateX(0);
       @media screen and (max-width: 759px) {
@@ -476,32 +481,36 @@ nav ul li a{
   left: 0;
   right: 0;
   width: 100%;
-  background: $white;
+  background: $purple;
   z-index: 2000;
   .centeringContainer {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    height: 2rem;
-    width: 100%;
-    margin: 0 1.35rem;
+    height: 4rem;
+    flex-direction: column;
+    justify-content: center;
     svg {
       height: 1em;
       width: 1em;
       margin-right: 0.5em;
     }
     .subline {
-      font-size: 0.65rem;
-      color: $black;
+      font-size: 1rem;
+      color: $white;
       font-family: $fonts;
+      @media screen and (max-width: 320px) {
+        font-size: 0.8rem;
+      }
       a {
-        color: inherit;
-        font-weight: inherit;
-        border-color: #dadada;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 0.75em;
+        color: white;
+        border: none;
+        font-weight: 100;
+        font-family: "futura-pt",Futura,sans-serif;
+        text-decoration: underline;
         &:hover, &:focus {
-          border-color: $black;
+          border-color: $white;
         }
       }
     }
@@ -514,7 +523,7 @@ nav ul li a{
   min-height: 190px;
   // box-shadow: 0px 0px 9px 1px hsla(154, 95%, 30%, 1) inset;
   color: $white;
-  margin-top: 4.5rem;
+  margin-top: 8.5rem;
   padding: 3rem 0;
   header{
     margin-top: 0;
@@ -557,16 +566,26 @@ nav ul li a{
   max-width: 400px;
   display: flex;
   flex-wrap: wrap;
-  background: white;
+  background: #71379f;
   z-index: 5;
   margin: -3.5em auto 3em;
   box-shadow: 0px 2px 5px 0px RGBA(0,0,0,0.3);
   padding: 0.25em 1.5em 0.5em;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   h1 {
-    font-size: 1rem;
-    color: hsla(120, 1%, 30%, 1);
-    text-align: center;
+    font-size: 1.5rem;
+    margin: 0.75em 0 0;
+    color: white;
+  }
+  h3 {
+    color: white;
+  }
+  a {
+    border: none;
+    text-decoration: underline;
+    color: white;
   }
 }
 
@@ -704,14 +723,14 @@ header h1{
 }
 
 .get-started .button{
-  background-color: #00c775;
+  background-color: $green-primary;
   color: #FFF;
   padding: 0.4em;
   display: block;
   margin: 0 auto;
   max-width: 600px;
   transition: all 0.25s;
-  border: 3px solid #00c775;
+  border: 3px solid $green-primary;
   font-weight: normal;
   letter-spacing: 1px;
   cursor: pointer;
@@ -721,12 +740,12 @@ header h1{
 .get-started .button:hover,
 .get-started .button:focus{
   background: #fff;
-  color: #00c775;
-  border-bottom: 3px solid #00c775;
+  color: $green-primary;
+  border-bottom: 3px solid $green-primary;
   // Override links in headlines
-  border-color: #00c775;
+  border-color: $green-primary;
   transform: scale(1.1);
-  box-shadow: 0 0 0px 10px #00c775, 0 0 90px 20px rgb(0, 199, 117);
+  box-shadow: 0 0 0px 10px $green-primary, 0 0 90px 20px rgb(0, 199, 117);
   z-index: 1010;
 }
 
@@ -744,8 +763,9 @@ h1, h2, h3, h4, h5, h6{
     &[id] {
       color: black;
       border: none;
-      padding-top: 5em;
+      padding-top: 7em;
       display: inline;
+      pointer-events: none;
     }
   }
 }
@@ -852,7 +872,7 @@ ol {
       counter-increment: listcounter;
       position: absolute;
       left: -2em;
-      background: #00c775;
+      background: $green-primary;
       border-radius: 100%;
       width: 1.5em;
       height: 1.5em;
@@ -1032,11 +1052,11 @@ section h2:after {
 
 .plan:hover,
 .plan:focus{
-  background: #00C775;
+  background: $green-primary;
   color: #000;
-  border-color: #00C775;
+  border-color: $green-primary;
   transform: scale(1.1);
-  box-shadow: 0 0 0px 20px #00c775, 0 0 90px 20px rgb(0, 199, 117), 0px 0px 20px 15px $black;
+  box-shadow: 0 0 0px 20px $green-primary, 0 0 90px 20px rgb(0, 199, 117), 0px 0px 20px 15px $black;
   z-index: 1010;
   .button {
     border: 5px solid $white;
@@ -1233,7 +1253,7 @@ body:not(.index) h2{
   .main{
     width: 90%;
     max-width: $column-width;
-    margin: 0 auto;
+    margin: 11em auto 0;
     padding-bottom: 2em;
   }
 }
@@ -1317,7 +1337,7 @@ figure.wide-img {
         vertical-align: -0.48em;
         margin-right: 0.25em;
         line-height: 0;
-        color: #00c775;
+        color: $green-primary;
       }
       &:after{
         content: '“';
@@ -1326,7 +1346,7 @@ figure.wide-img {
         vertical-align: -0.48em;
         margin-right: 0.25em;
         line-height: 0;
-        color: #00c775;
+        color: $green-primary;
       }
     }
   }
@@ -1377,7 +1397,7 @@ figure.wide-img {
     background-color: #b6b6b6;
     transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
     &:hover, &:focus{
-      border-color: #00c775;
+      border-color: $green-primary;
       background-color: #FFF;
     }
   }
@@ -1518,32 +1538,45 @@ figure.wide-img {
 }
 
 .features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  max-width: 40rem;
+  margin: 0 auto;
   .feature {
-    min-width: 300px;
-    max-width: 40%;
     margin: 0 1em;
     position: relative;
     svg {
       width: 40px;
       height: 40px;
       position: absolute;
-      margin-top: 1.75em;
+      margin-top: -1px;
     }
     h3 {
       font-size: 1.75em;
       text-align: left;
       margin-left: 50px;
     }
-    p, ul {
-      margin-left: 50px;
+    p {
+      margin-left: 0;
+      @media screen and (min-width: $column-width) {
+        margin-left: 2.25rem;
+      }
+    }
+    ul {
+      margin-left: 1.5rem;
+      ul {
+        margin-left: 0.25em;
+      }
+      li {
+        margin-bottom: 0.25em;
+      }
     }
   }
 }
 
-.cc-banner{
+.cc-window{
+  @media screen and (max-width: 400px) {
+    font-size: 0.6rem;
+  }
+  right: 0;
   .cc-link {
     border: none;
   }
@@ -1690,12 +1723,25 @@ a.cta {
   html{
     font-size: 20px;
   }
+  body:not(.index) .container {
+    margin-top: 4rem;
+  }
   .companyHeader {
     .centeringContainer {
-      .subline {
-        font-size: 0.75rem;
-      }
+      height: 4rem;
     }
+  }
+  .language-switch {
+    top: 5.175rem;
+  }
+  nav.header {
+    top: 4rem;
+  }
+  .index .hero {
+    margin-top: 6.5rem;
+  }
+  .features .feature svg {
+    margin-top: 2px;
   }
 }
 
@@ -1722,7 +1768,7 @@ a.cta {
   .language-switch {
     left: auto;
     font-size: 0.6rem;
-    top: 2.6rem;
+    top: 4.6rem;
     display: block;
     right: 1rem;
   }
@@ -1831,6 +1877,8 @@ a.cta {
   .billboard{
     flex-wrap: nowrap;
     max-width: 700px;
+    background: $purple;
+    border: 10px solid #fff;
     h1{
       text-align: left;
     }
@@ -1887,12 +1935,12 @@ a.cta {
     border-radius: 50%;
     top: -0.3em;
     position: absolute;
-    vertical-align: middle;
+    // vertical-align: middle;
     text-align: center;
     padding: 0;
     line-height: 46px;
     background-color: #e6faf1;
-    color: #00c775;
+    color: $green-primary;
     box-shadow: 0 0 0 5px transparent;
     transition: box-shadow 0.25s ease-in-out;
     &.slick-prev{
@@ -1904,8 +1952,8 @@ a.cta {
     &:hover, &:focus{
       outline: none;
       background-color: #e6faf1;
-      color: #00c775;
-      box-shadow: 0 0 0 5px #00c775;
+      color: $green-primary;
+      box-shadow: 0 0 0 5px $green-primary;
     }
   }
   a.cta {
@@ -1977,12 +2025,12 @@ a.cta {
       margin: 0 0 0 auto;
       width: 67vw;
       max-width: none;
-      padding: 0 4rem;
+      padding: 3em 4rem 0;
     }
     .sidebar {
       position: fixed;
       left: 0;
-      top: 3.75rem;
+      top: 5.75rem;
       bottom: 0;
       width: 33vw;
       max-width: 25rem;
@@ -2008,4 +2056,39 @@ a.cta {
 li a:not([href]) {
   margin-bottom: 0;
   transform: translateY(-4em);
+}
+
+// Migration specific new things
+.features a[href^="https://snyk"] {
+  color: $purple;
+  border-bottom-color: #d3bbe8;
+  &:hover, &:focus {
+    border-bottom-color: $purple;
+  }
+}
+
+.gk-saas .features .feature a.migrate-btn {
+  background: $green-primary;
+  color: #fff;
+  padding: 0.25em 0.5em;
+  border-radius: 2px;
+  white-space: pre-wrap;
+  border: none;
+  display: inline-block;
+  &:hover {
+    transform: scale(1.025);
+    background: $purple;
+    color: white;
+    border: none;
+    box-shadow: 0px 3px 5px 1px hsla(273, 49%, 22%, 0.5)
+  }
+  svg {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    fill: currentColor;
+    margin: -0.2em 0.25em 0 0;
+    vertical-align: middle;
+    border: none;
+  }
 }
