@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "harp compile ./app ./www",
-    "deploy": "rsync --recursive www/* hoodie@clients.neighbourhood.ie:/home/hoodie/www/gk.neighbourhood.ie",
+    "deploy": "node deploy.js",
     "start": "harp server ./www",
     "test": "npm run build",
     "server": "harp server ./app & browser-sync start --proxy 'localhost:9000' --files 'app/**/*.ejs, app/*.ejs, app/**/*.md, app/**/*.scss, app/**/_data.json'"
