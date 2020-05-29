@@ -4,7 +4,7 @@
   "devDependencies": {
     "browser-sync": "^2.23.5",
     "browserify": "^16.1.0",
-    "gh-pages": "^1.0.0",
+    "gh-pages": "^3.0.0",
     "harp": "^0.29.0",
     "uglifyify": "^5.0.1"
   },
