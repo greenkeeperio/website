@@ -5,7 +5,7 @@
     "browser-sync": "^2.23.5",
     "browserify": "^16.1.0",
     "gh-pages": "^1.0.0",
-    "harp": "^0.29.0",
+    "harp": "^0.40.2",
     "uglifyify": "^5.0.1"
   },
   "private": true,
